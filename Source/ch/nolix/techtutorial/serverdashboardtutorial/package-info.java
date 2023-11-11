@@ -1,4 +1,3 @@
-//package info
 /**
  * The {@link ch.nolix.techtutorial.serverdashboardtutorial} package defines
  * tutorials for the

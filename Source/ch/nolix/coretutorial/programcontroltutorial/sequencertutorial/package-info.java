@@ -1,4 +1,3 @@
-//package info
 /**
  * The {@link ch.nolix.coretutorial.programcontroltutorial.sequencertutorial}
  * package defines tutorials for the

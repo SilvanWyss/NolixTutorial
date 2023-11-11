@@ -1,4 +1,3 @@
-//package info
 /**
  * The {@link ch.nolix.coretutorial.buildertutorial.maintutorial} package
  * defines tutorials for the {@link ch.nolix.core.builder.main} package.

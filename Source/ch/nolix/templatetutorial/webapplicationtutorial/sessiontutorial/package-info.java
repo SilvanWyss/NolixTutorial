@@ -1,4 +1,3 @@
-//package info
 /**
  * The {@link ch.nolix.templatetutorial.webapplicationtutorial.sessiontutorial}
  * package defines tutorials for the

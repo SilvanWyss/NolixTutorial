@@ -1,4 +1,3 @@
-//package info
 /**
  * The {@link ch.nolix.systemtutorial.webguitutorial} package defines tutorials
  * for the {@link ch.nolix.system.webgui} package.

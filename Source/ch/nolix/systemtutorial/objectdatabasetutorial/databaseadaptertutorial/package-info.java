@@ -1,4 +1,3 @@
-//package info
 /**
  * The
  * {@link ch.nolix.systemtutorial.objectdatabasetutorial.databaseadaptertutorial}

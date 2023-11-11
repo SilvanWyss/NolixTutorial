@@ -1,4 +1,3 @@
-//package info
 /**
  * The {@link ch.nolix.systemtutorial.webguitutorial.atomiccontroltutorial}
  * package defines tutorials for the

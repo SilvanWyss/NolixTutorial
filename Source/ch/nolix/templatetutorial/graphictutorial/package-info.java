@@ -1,4 +1,3 @@
-//package info
 /**
  * The {@link ch.nolix.templatetutorial.graphictutorial} package defines
  * tutorials for the {@link ch.nolix.template.graphic} package.

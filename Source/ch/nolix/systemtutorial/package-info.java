@@ -1,4 +1,3 @@
-//package info
 /**
  * The {@link ch.nolix.systemtutorial} package defines tutorials for the
  * {@link ch.nolix.system} package.

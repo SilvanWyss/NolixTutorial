@@ -1,4 +1,3 @@
-//package info
 /**
  * The {@link ch.nolix.coretutorial.environmenttutorial.runningjartutorial}
  * package defines tutorials for the

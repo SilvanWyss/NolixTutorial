@@ -1,4 +1,3 @@
-//package info
 /**
  * The {@link ch.nolix.techtutorial.mathtutorial.bigdecimalmathtutorial} package
  * defines tutorials for the {@link ch.nolix.tech.math.bigdecimalmath} package.

@@ -1,4 +1,3 @@
-//package info
 /**
  * The {@link ch.nolix.systemtutorial.webguitutorial.resource} package contains
  * the resources for the {@link ch.nolix.systemtutorial.webguitutorial} package.

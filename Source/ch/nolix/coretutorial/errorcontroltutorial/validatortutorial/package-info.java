@@ -1,4 +1,3 @@
-//package info
 /**
  * The {@link ch.nolix.coretutorial.errorcontroltutorial.validatortutorial}
  * package defines tutorials for the
