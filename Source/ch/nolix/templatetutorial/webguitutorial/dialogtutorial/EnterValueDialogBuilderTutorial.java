@@ -2,8 +2,8 @@ package ch.nolix.templatetutorial.webguitutorial.dialogtutorial;
 
 import ch.nolix.core.environment.localcomputer.ShellProvider;
 import ch.nolix.core.errorcontrol.validator.GlobalValidator;
-import ch.nolix.core.programatom.name.LowerCaseCatalogue;
 import ch.nolix.core.programcontrol.sequencer.GlobalSequencer;
+import ch.nolix.coreapi.programatomapi.variablenameapi.LowerCaseCatalogue;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
 import ch.nolix.system.webgui.atomiccontrol.Button;

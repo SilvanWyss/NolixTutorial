@@ -1,7 +1,7 @@
 package ch.nolix.coretutorial.buildertutorial.maintutorial;
 
-import ch.nolix.core.builder.main.ArgumentCapturer;
 import ch.nolix.core.errorcontrol.logger.GlobalLogger;
+import ch.nolix.core.programstructure.builder.main.ArgumentCapturer;
 
 public class BuilderTutorial {
 

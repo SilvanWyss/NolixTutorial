@@ -9,7 +9,7 @@ import ch.nolix.system.objectschema.parameterizedpropertytype.ParameterizedValue
 import ch.nolix.system.objectschema.schema.Column;
 import ch.nolix.system.objectschema.schema.Table;
 import ch.nolix.system.objectschema.schemaadapter.NodeSchemaAdapter;
-import ch.nolix.systemapi.databaseapi.datatypeapi.DataType;
+import ch.nolix.systemapi.entitypropertyapi.datatypeapi.DataType;
 
 public final class NodeSchemaAdapterTutorial {
 
