@@ -44,7 +44,7 @@ public final class UploaderTutorial {
       .runInBackground(server::close);
   }
 
-  private static final class MainSession extends WebClientSession<Object> {
+  private static final class MainSession extends WebClientSession<Object> { //NOSONAR: MainSession is a tutorial class.
 
     private final IImageControl imageControl = new ImageControl();
 
