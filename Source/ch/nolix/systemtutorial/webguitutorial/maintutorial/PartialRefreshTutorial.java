@@ -80,7 +80,7 @@ public final class PartialRefreshTutorial {
 
       timeLabel.setText(getCurrentTimeText());
 
-      refreshControl(timeLabel);
+      updateControlOnCounterpart(timeLabel, false);
     }
 
     private String getCurrentTimeText() {
