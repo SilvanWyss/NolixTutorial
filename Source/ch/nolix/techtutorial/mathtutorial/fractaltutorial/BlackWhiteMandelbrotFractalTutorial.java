@@ -35,7 +35,7 @@ public final class BlackWhiteMandelbrotFractalTutorial {
                 .setMinMagnitudeForDivergence(10.0)
                 .setMaxIterationCount(50)
                 .setColorFunction(i -> Color.WHITE)
-                .setBigDecimalScale(10)
+                .setDecimalPlaces(10)
                 .build()
                 .startImageGeneration()
                 .getStoredImage()));

@@ -62,7 +62,7 @@ public final class JuliaFractalTutorial {
                 .setColorFunction(
                   i -> Color.withRedValueAndGreenValueAndBlueValue((2 * i) % 256, (3 * i) % 256,
                     (4 * i) % 256))
-                .setBigDecimalScale(10)
+                .setDecimalPlaces(10)
                 .build()
                 .startImageGeneration()
                 .getStoredImage()));
