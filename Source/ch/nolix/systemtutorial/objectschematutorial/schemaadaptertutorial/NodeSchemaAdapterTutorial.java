@@ -22,15 +22,15 @@ public final class NodeSchemaAdapterTutorial {
     try (final var nodeDatabaseSchemaAdapter = NodeSchemaAdapter.forDatabaseNode("CountryDatabase", database)) {
 
       final var cityTable = new Table("City")
-        .addColumn(new Column("Name", new ParameterizedValueType<>(DataType.STRING)))
-        .addColumn(new Column("Population", new ParameterizedValueType<>(DataType.INTEGER_4BYTE)));
+        .addColumn(new Column("Name", ParameterizedValueType.forDataType(DataType.STRING)))
+        .addColumn(new Column("Population", ParameterizedValueType.forDataType(DataType.INTEGER_4BYTE)));
 
       final var countryTable = new Table("Country")
-        .addColumn(new Column("Name", new ParameterizedValueType<>(DataType.STRING)));
+        .addColumn(new Column("Name", ParameterizedValueType.forDataType(DataType.STRING)));
 
-      final var citiesColumn = new Column("Cities", new ParameterizedMultiReferenceType(cityTable));
+      final var citiesColumn = new Column("Cities", ParameterizedMultiReferenceType.forReferencedTable(cityTable));
       countryTable.addColumn(citiesColumn);
-      cityTable.addColumn(new Column("Country", new ParameterizedBackReferenceType(citiesColumn)));
+      cityTable.addColumn(new Column("Country", ParameterizedBackReferenceType.forBackReferencedColumn(citiesColumn)));
 
       nodeDatabaseSchemaAdapter.addTable(cityTable).addTable(countryTable).saveChanges();
 
