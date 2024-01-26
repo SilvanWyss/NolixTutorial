@@ -1,6 +1,6 @@
 package ch.nolix.systemtutorial.objectdatabasetutorial.databaseadaptertutorial;
 
-import ch.nolix.core.errorcontrol.logger.GlobalLogger;
+import ch.nolix.core.errorcontrol.logging.GlobalLogger;
 import ch.nolix.system.objectdatabase.dataadapter.MsSqlDataAdapter;
 import ch.nolix.system.objectdatabase.database.Entity;
 import ch.nolix.system.objectdatabase.database.Value;

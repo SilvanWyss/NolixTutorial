@@ -1,6 +1,6 @@
 package ch.nolix.coretutorial.programcontroltutorial.sequencertutorial;
 
-import ch.nolix.core.errorcontrol.logger.GlobalLogger;
+import ch.nolix.core.errorcontrol.logging.GlobalLogger;
 import ch.nolix.core.math.algebra.Matrix;
 import ch.nolix.core.programcontrol.sequencer.GlobalSequencer;
 import ch.nolix.core.programcontrol.sequencer.ResultFuture;

@@ -1,7 +1,7 @@
 package ch.nolix.systemtutorial.objectschematutorial.schemaadaptertutorial;
 
 import ch.nolix.core.document.node.MutableNode;
-import ch.nolix.core.errorcontrol.logger.GlobalLogger;
+import ch.nolix.core.errorcontrol.logging.GlobalLogger;
 import ch.nolix.system.objectschema.parameterizedpropertytype.ParameterizedBackReferenceType;
 import ch.nolix.system.objectschema.parameterizedpropertytype.ParameterizedMultiReferenceType;
 import ch.nolix.system.objectschema.parameterizedpropertytype.ParameterizedValueType;

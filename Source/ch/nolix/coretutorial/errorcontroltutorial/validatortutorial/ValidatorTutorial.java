@@ -3,7 +3,7 @@ package ch.nolix.coretutorial.errorcontroltutorial.validatortutorial;
 import ch.nolix.core.errorcontrol.invalidargumentexception.ArgumentIsNullException;
 import ch.nolix.core.errorcontrol.invalidargumentexception.EmptyArgumentException;
 import ch.nolix.core.errorcontrol.invalidargumentexception.NegativeArgumentException;
-import ch.nolix.core.errorcontrol.logger.GlobalLogger;
+import ch.nolix.core.errorcontrol.logging.GlobalLogger;
 import ch.nolix.core.errorcontrol.validator.GlobalValidator;
 
 /**

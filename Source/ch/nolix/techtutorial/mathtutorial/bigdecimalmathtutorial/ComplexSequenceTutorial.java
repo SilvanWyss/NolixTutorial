@@ -2,7 +2,7 @@ package ch.nolix.techtutorial.mathtutorial.bigdecimalmathtutorial;
 
 import java.util.function.IntConsumer;
 
-import ch.nolix.core.errorcontrol.logger.GlobalLogger;
+import ch.nolix.core.errorcontrol.logging.GlobalLogger;
 import ch.nolix.tech.math.bigdecimalmath.ComplexNumber;
 import ch.nolix.tech.math.bigdecimalmath.ComplexSequenceDefinedBy1Predecessor;
 

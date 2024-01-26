@@ -4,7 +4,7 @@ import ch.nolix.core.environment.localcomputer.ShellProvider;
 import ch.nolix.core.errorcontrol.validator.GlobalValidator;
 import ch.nolix.core.programatom.voidobject.VoidObject;
 import ch.nolix.core.programcontrol.sequencer.GlobalSequencer;
-import ch.nolix.coreapi.programatomapi.variablenameapi.LowerCaseCatalogue;
+import ch.nolix.coreapi.programatomapi.variableapi.LowerCaseVariableCatalogue;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
 import ch.nolix.system.webgui.atomiccontrol.Button;
@@ -59,7 +59,7 @@ public final class ValidationLabelTutorial {
 
       final var number = Integer.parseInt(positiveNumberTextbox.getText());
 
-      GlobalValidator.assertThat(number).thatIsNamed(LowerCaseCatalogue.NUMBER).isPositive();
+      GlobalValidator.assertThat(number).thatIsNamed(LowerCaseVariableCatalogue.NUMBER).isPositive();
     }
   }
 }

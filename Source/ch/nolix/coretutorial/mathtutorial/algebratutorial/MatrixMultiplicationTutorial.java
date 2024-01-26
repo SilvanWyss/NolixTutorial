@@ -1,6 +1,6 @@
 package ch.nolix.coretutorial.mathtutorial.algebratutorial;
 
-import ch.nolix.core.errorcontrol.logger.GlobalLogger;
+import ch.nolix.core.errorcontrol.logging.GlobalLogger;
 import ch.nolix.core.math.algebra.Matrix;
 
 public final class MatrixMultiplicationTutorial {

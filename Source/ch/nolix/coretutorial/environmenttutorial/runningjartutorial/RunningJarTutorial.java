@@ -1,7 +1,7 @@
 package ch.nolix.coretutorial.environmenttutorial.runningjartutorial;
 
 import ch.nolix.core.environment.runningjar.RunningJar;
-import ch.nolix.core.errorcontrol.logger.GlobalLogger;
+import ch.nolix.core.errorcontrol.logging.GlobalLogger;
 
 public final class RunningJarTutorial {
 

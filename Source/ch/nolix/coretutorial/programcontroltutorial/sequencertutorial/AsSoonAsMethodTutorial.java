@@ -2,7 +2,7 @@ package ch.nolix.coretutorial.programcontroltutorial.sequencertutorial;
 
 import java.util.Random;
 
-import ch.nolix.core.errorcontrol.logger.GlobalLogger;
+import ch.nolix.core.errorcontrol.logging.GlobalLogger;
 import ch.nolix.core.programcontrol.sequencer.GlobalSequencer;
 
 public final class AsSoonAsMethodTutorial {
