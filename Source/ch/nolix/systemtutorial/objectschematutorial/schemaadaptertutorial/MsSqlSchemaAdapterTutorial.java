@@ -5,7 +5,7 @@ import ch.nolix.system.objectschema.parameterizedpropertytype.ParameterizedMulti
 import ch.nolix.system.objectschema.parameterizedpropertytype.ParameterizedValueType;
 import ch.nolix.system.objectschema.schema.Column;
 import ch.nolix.system.objectschema.schema.Table;
-import ch.nolix.system.objectschema.schemaadapter.MsSqlSchemaAdapter;
+import ch.nolix.system.objectschema.schemaadapter.MsSqlSchemaAdapterBuilder;
 import ch.nolix.systemapi.entitypropertyapi.datatypeapi.DataType;
 
 public final class MsSqlSchemaAdapterTutorial {
@@ -15,8 +15,10 @@ public final class MsSqlSchemaAdapterTutorial {
 
   public static void main(String[] args) {
     try (
-    final var databaseSchemaAdapter = MsSqlSchemaAdapter
-      .toLocalhost()
+
+    final var databaseSchemaAdapter = //
+    MsSqlSchemaAdapterBuilder.createMsSqlSchemaAdapter()
+      .toLocalAddress()
       .andMsSqlPort()
       .toDatabase("CountryDatabase")
       .withLoginName("sa")
