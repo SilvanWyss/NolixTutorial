@@ -17,9 +17,9 @@ public final class MsSqlDataAdapterTutorial {
 
     final var msSqlDataAdapter = MsSqlDataAdapter
       .toLocalHost()
-      .andDefaultPort()
-      .toDatabase("TestDB")
-      .usingLoginName("sa")
+      .andMsSqlPort()
+      .andDatabase("TestDB")
+      .withLoginName("sa")
       .andLoginPassword("sa1234")
       .andSchema(schema);
 

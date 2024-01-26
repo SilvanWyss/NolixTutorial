@@ -17,9 +17,9 @@ public final class MsSqlSchemaAdapterTutorial {
     try (
     final var databaseSchemaAdapter = MsSqlSchemaAdapter
       .toLocalhost()
-      .andDefaultPort()
+      .andMsSqlPort()
       .toDatabase("CountryDatabase")
-      .usingLoginName("sa")
+      .withLoginName("sa")
       .andLoginPassword("sa1234")) {
 
       final var cityTable = new Table("City")
