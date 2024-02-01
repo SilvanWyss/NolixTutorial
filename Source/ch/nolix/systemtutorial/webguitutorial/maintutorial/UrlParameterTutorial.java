@@ -39,18 +39,20 @@ public final class UrlParameterTutorial {
     @Override
     protected void initialize() {
 
-      final var localUrlParameter1 = getStoredParentClient().getUrlParameterValueByUrlParameterNameOrNull("parameter1");
+      final var localUrlParameter1 = getStoredParentClient()
+        .getOptionalUrlParameterValueByUrlParameterName("parameter1");
 
-      final var localUrlParameter2 = getStoredParentClient().getUrlParameterValueByUrlParameterNameOrNull("parameter2");
+      final var localUrlParameter2 = getStoredParentClient()
+        .getOptionalUrlParameterValueByUrlParameterName("parameter2");
 
       getStoredGui()
         .pushLayerWithRootControl(
           new VerticalStack()
             .addControl(
               new Label()
-                .setText("URL parameter 1: " + localUrlParameter1),
+                .setText("URL parameter 1: " + localUrlParameter1.get()),
               new Label()
-                .setText("URL parameter 2: " + localUrlParameter2))
+                .setText("URL parameter 2: " + localUrlParameter2.get()))
             .editStyle(s -> s.setChildControlMarginForState(ControlState.BASE, 50)));
     }
   }

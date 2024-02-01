@@ -41,9 +41,9 @@ public final class CookieTutorial {
     @Override
     protected void initialize() {
 
-      final var input = getStoredParentClient().getCookieValueByCookieNameOrNull("input");
-      if (input != null) {
-        textbox.setText(input);
+      final var input = getStoredParentClient().getOptionalCookieValueByCookieName("input");
+      if (input.isPresent()) {
+        textbox.setText(input.get());
       }
 
       getStoredGui().pushLayerWithRootControl(
