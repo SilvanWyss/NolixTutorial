@@ -50,9 +50,9 @@ public final class UrlParameterTutorial {
           new VerticalStack()
             .addControl(
               new Label()
-                .setText("URL parameter 1: " + localUrlParameter1.get()),
+                .setText("URL parameter 1: " + localUrlParameter1.orElseThrow()),
               new Label()
-                .setText("URL parameter 2: " + localUrlParameter2.get()))
+                .setText("URL parameter 2: " + localUrlParameter2.orElseThrow()))
             .editStyle(s -> s.setChildControlMarginForState(ControlState.BASE, 50)));
     }
   }

@@ -2,10 +2,10 @@ package ch.nolix.systemtutorial.objectdatabasetutorial.databaseadaptertutorial;
 
 import ch.nolix.core.document.node.MutableNode;
 import ch.nolix.core.errorcontrol.logging.GlobalLogger;
-import ch.nolix.system.objectdatabase.dataadapter.NodeDataAdapter;
-import ch.nolix.system.objectdatabase.database.Entity;
-import ch.nolix.system.objectdatabase.database.Value;
-import ch.nolix.system.objectdatabase.schema.Schema;
+import ch.nolix.system.objectdata.data.Entity;
+import ch.nolix.system.objectdata.data.Value;
+import ch.nolix.system.objectdata.dataadapter.NodeDataAdapter;
+import ch.nolix.system.objectdata.schema.Schema;
 
 public final class NodeDataAdapterTutorial {
 
@@ -23,7 +23,7 @@ public final class NodeDataAdapterTutorial {
     final var donaldDuck = new Person();
     donaldDuck.firstName.setValue("Donald");
     donaldDuck.lastName.setValue("Duck");
-    nodeDataAdapter.insert(donaldDuck);
+    nodeDataAdapter.insertEntity(donaldDuck);
 
     nodeDataAdapter.saveChanges();
 
@@ -35,8 +35,8 @@ public final class NodeDataAdapterTutorial {
 
   private static final class Person extends Entity {
 
-    private final Value<String> firstName = new Value<>();
-    private final Value<String> lastName = new Value<>();
+    private final Value<String> firstName = Value.withValueType(String.class);
+    private final Value<String> lastName = Value.withValueType(String.class);
 
     @Override
     public String toString() {

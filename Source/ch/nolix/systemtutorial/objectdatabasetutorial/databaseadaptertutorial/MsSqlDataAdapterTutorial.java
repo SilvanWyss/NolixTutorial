@@ -1,10 +1,10 @@
 package ch.nolix.systemtutorial.objectdatabasetutorial.databaseadaptertutorial;
 
 import ch.nolix.core.errorcontrol.logging.GlobalLogger;
-import ch.nolix.system.objectdatabase.dataadapter.MsSqlDataAdapterBuilder;
-import ch.nolix.system.objectdatabase.database.Entity;
-import ch.nolix.system.objectdatabase.database.Value;
-import ch.nolix.system.objectdatabase.schema.Schema;
+import ch.nolix.system.objectdata.data.Entity;
+import ch.nolix.system.objectdata.data.Value;
+import ch.nolix.system.objectdata.dataadapter.MsSqlDataAdapterBuilder;
+import ch.nolix.system.objectdata.schema.Schema;
 
 public final class MsSqlDataAdapterTutorial {
 
@@ -26,7 +26,7 @@ public final class MsSqlDataAdapterTutorial {
     final var donaldDuck = new Person();
     donaldDuck.firstName.setValue("Donald");
     donaldDuck.lastName.setValue("Duck");
-    msSqlDataAdapter.insert(donaldDuck);
+    msSqlDataAdapter.insertEntity(donaldDuck);
 
     msSqlDataAdapter.saveChanges();
 
@@ -38,8 +38,8 @@ public final class MsSqlDataAdapterTutorial {
 
   private static final class Person extends Entity {
 
-    private final Value<String> firstName = new Value<>();
-    private final Value<String> lastName = new Value<>();
+    private final Value<String> firstName = Value.withValueType(String.class);
+    private final Value<String> lastName = Value.withValueType(String.class);
 
     @Override
     public String toString() {
