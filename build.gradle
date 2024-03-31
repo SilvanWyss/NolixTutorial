@@ -17,15 +17,11 @@ repositories {
 }
 
 dependencies {
-
-  //foreign dependencies
   implementation 'com.microsoft.sqlserver:mssql-jdbc:12.6.1.jre11'
   implementation 'io.netty:netty-all:4.1.90.Final'
   implementation 'net.bytebuddy:byte-buddy:1.14.11'
   implementation 'net.bytebuddy:byte-buddy-agent:1.14.11'
   implementation 'org.mockito:mockito-core:5.8.0'
-
-  //own dependencies
   implementation name: 'nolix'
 }
 
