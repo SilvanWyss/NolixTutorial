@@ -4,8 +4,8 @@ import ch.nolix.core.environment.localcomputer.ShellProvider;
 import ch.nolix.core.programcontrol.sequencer.GlobalSequencer;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
-import ch.nolix.system.element.stylebuilder.DeepSelectingStyleBuilder;
-import ch.nolix.system.element.stylebuilder.StyleBuilder;
+import ch.nolix.system.element.style.DeepSelectingStyle;
+import ch.nolix.system.element.style.Style;
 import ch.nolix.system.webgui.atomiccontrol.Button;
 import ch.nolix.system.webgui.main.Layer;
 import ch.nolix.systemapi.webguiapi.atomiccontrolapi.ButtonRole;
@@ -59,40 +59,34 @@ public final class YesNoDialogBuilderTutorial {
 
       //Creates and adds a Style to the GUI of the current MainSession.
       getStoredGui().setStyle(
-        new StyleBuilder()
-          .addSubStyle(
-            new DeepSelectingStyleBuilder()
-              .setSelectorType(Button.class)
-              .addAttachingAttribute(
+        new Style()
+          .withSubStyle(
+            new DeepSelectingStyle()
+              .withSelectorType(Button.class)
+              .withAttachingAttribute(
                 "MinWidth(200)",
                 "CursorIcon(Hand)",
                 "BaseBackground(Color(SkyBlue))",
                 "HoverBackground(Color(Blue))",
-                "BaseTextSize(30)")
-              .build(),
-            new DeepSelectingStyleBuilder()
-              .setSelectorType(Layer.class)
-              .addAttachingAttribute("Background(Color(White))")
-              .build(),
-            new DeepSelectingStyleBuilder()
-              .addSelectorRole(ContainerRole.DIALOG_CONTAINER)
-              .addAttachingAttribute(
+                "BaseTextSize(30)"),
+            new DeepSelectingStyle()
+              .withSelectorType(Layer.class)
+              .withAttachingAttribute("Background(Color(White))"),
+            new DeepSelectingStyle()
+              .withSelectorRole(ContainerRole.DIALOG_CONTAINER)
+              .withAttachingAttribute(
                 "BaseBackground(Color(Lavender))")
-              .addSubStyle(
-                new DeepSelectingStyleBuilder()
-                  .addSelectorRole(ButtonRole.CONFIRM_BUTTON)
-                  .addAttachingAttribute("BaseBackground(Color(LightGreen))",
-                    "HoverBackground(Color(Green))")
-                  .build(),
-                new DeepSelectingStyleBuilder()
-                  .addSelectorRole(ButtonRole.CANCEL_BUTTON)
-                  .addAttachingAttribute(
+              .withSubStyle(
+                new DeepSelectingStyle()
+                  .withSelectorRole(ButtonRole.CONFIRM_BUTTON)
+                  .withAttachingAttribute("BaseBackground(Color(LightGreen))",
+                    "HoverBackground(Color(Green))"),
+                new DeepSelectingStyle()
+                  .withSelectorRole(ButtonRole.CANCEL_BUTTON)
+                  .withAttachingAttribute(
                     "CursorIcon(Hand)",
                     "BaseBackground(Color(Salmon))",
-                    "HoverBackground(Color(Red))")
-                  .build())
-              .build())
-          .build());
+                    "HoverBackground(Color(Red))"))));
     }
   }
 }
