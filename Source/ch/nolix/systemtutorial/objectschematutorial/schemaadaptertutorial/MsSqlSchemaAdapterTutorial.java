@@ -1,12 +1,12 @@
 package ch.nolix.systemtutorial.objectschematutorial.schemaadaptertutorial;
 
+import ch.nolix.coreapi.datamodelapi.fieldproperty.DataType;
 import ch.nolix.system.objectschema.parameterizedfieldtype.ParameterizedBackReferenceType;
 import ch.nolix.system.objectschema.parameterizedfieldtype.ParameterizedMultiReferenceType;
 import ch.nolix.system.objectschema.parameterizedfieldtype.ParameterizedValueType;
 import ch.nolix.system.objectschema.schema.Column;
 import ch.nolix.system.objectschema.schema.Table;
 import ch.nolix.system.objectschema.schemaadapter.MsSqlSchemaAdapterBuilder;
-import ch.nolix.systemapi.fieldapi.datatypeapi.DataType;
 
 public final class MsSqlSchemaAdapterTutorial {
 
