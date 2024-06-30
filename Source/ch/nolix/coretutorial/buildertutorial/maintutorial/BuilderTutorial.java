@@ -1,7 +1,7 @@
 package ch.nolix.coretutorial.buildertutorial.maintutorial;
 
+import ch.nolix.core.argumentcaptor.base.ArgumentCaptor;
 import ch.nolix.core.errorcontrol.logging.GlobalLogger;
-import ch.nolix.core.programstructure.builder.main.ArgumentCapturer;
 
 public class BuilderTutorial {
 
@@ -21,24 +21,24 @@ public class BuilderTutorial {
 
   private static class PetBuilder
   extends
-  WithNameCapturer<WithAgeInYearsCapturer<WithWeightInKilogramCapturer<Pet>>> {
+  WithNameCaptor<WithAgeInYearsCaptor<WithWeightInKilogramCaptor<Pet>>> {
 
     public PetBuilder() {
 
-      super(new WithAgeInYearsCapturer<>(new WithWeightInKilogramCapturer<>(null)));
+      super(new WithAgeInYearsCaptor<>(new WithWeightInKilogramCaptor<>()));
 
       setBuilder(this::buildPet);
     }
 
     private Pet buildPet() {
-      return new Pet(getName(), next().getAgeInYears(), next().next().getWeightInKilogram());
+      return new Pet(getName(), nxtArgCpt().getAgeInYears(), nxtArgCpt().nxtArgCpt().getWeightInKilogram());
     }
   }
 
-  private static class WithNameCapturer<N> extends ArgumentCapturer<String, N> {
+  private static class WithNameCaptor<N> extends ArgumentCaptor<String, N> {
 
-    public WithNameCapturer(final N nextArgumentCapturer) {
-      super(nextArgumentCapturer);
+    public WithNameCaptor(final N nextArgumentCaptor) {
+      super(nextArgumentCaptor);
     }
 
     public final String getName() {
@@ -50,10 +50,10 @@ public class BuilderTutorial {
     }
   }
 
-  private static class WithAgeInYearsCapturer<N> extends ArgumentCapturer<Integer, N> {
+  private static class WithAgeInYearsCaptor<N> extends ArgumentCaptor<Integer, N> {
 
-    public WithAgeInYearsCapturer(final N nextArgumentCapturer) {
-      super(nextArgumentCapturer);
+    public WithAgeInYearsCaptor(final N nextArgumentCaptor) {
+      super(nextArgumentCaptor);
     }
 
     public final int getAgeInYears() {
@@ -65,11 +65,7 @@ public class BuilderTutorial {
     }
   }
 
-  private static class WithWeightInKilogramCapturer<N> extends ArgumentCapturer<Integer, N> {
-
-    public WithWeightInKilogramCapturer(final N nextArgumentCapturer) {
-      super(nextArgumentCapturer);
-    }
+  private static class WithWeightInKilogramCaptor<N> extends ArgumentCaptor<Integer, N> {
 
     public final int getWeightInKilogram() {
       return getStoredArgument();
