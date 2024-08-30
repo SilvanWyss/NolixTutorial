@@ -17,7 +17,7 @@ public final class NodeSchemaAdapterTutorial {
 
   public static void main(String[] args) {
 
-    final var database = new MutableNode();
+    final var database = MutableNode.createEmpty();
 
     try (final var nodeDatabaseSchemaAdapter = NodeSchemaAdapter.forDatabaseNode("CountryDatabase", database)) {
 

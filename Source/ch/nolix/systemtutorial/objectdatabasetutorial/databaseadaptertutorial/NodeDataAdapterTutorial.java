@@ -14,7 +14,7 @@ public final class NodeDataAdapterTutorial {
 
   public static void main(String[] args) {
 
-    final var nodeDatabase = new MutableNode();
+    final var nodeDatabase = MutableNode.createEmpty();
 
     final var schema = Schema.withEntityType(Person.class);
 
