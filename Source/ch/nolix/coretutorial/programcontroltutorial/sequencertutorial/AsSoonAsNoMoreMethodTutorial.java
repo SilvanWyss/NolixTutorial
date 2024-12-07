@@ -1,6 +1,6 @@
 package ch.nolix.coretutorial.programcontroltutorial.sequencertutorial;
 
-import ch.nolix.core.container.linkedlist.LinkedList;
+import ch.nolix.core.container.arraylist.ArrayList;
 import ch.nolix.core.errorcontrol.logging.GlobalLogger;
 import ch.nolix.core.programcontrol.sequencer.GlobalSequencer;
 
@@ -11,7 +11,7 @@ public final class AsSoonAsNoMoreMethodTutorial {
 
   public static void main(String[] args) {
 
-    final var cats = LinkedList.withElement("Garfield", "Simba", "Smokey");
+    final var cats = ArrayList.withElement("Garfield", "Simba", "Smokey");
 
     GlobalSequencer
       .asSoonAsNoMore(cats::containsAny)
