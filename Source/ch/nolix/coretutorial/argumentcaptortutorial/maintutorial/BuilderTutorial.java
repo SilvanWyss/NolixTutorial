@@ -1,36 +1,39 @@
-package ch.nolix.coretutorial.buildertutorial.maintutorial;
+package ch.nolix.coretutorial.argumentcaptortutorial.maintutorial;
 
 import ch.nolix.core.argumentcaptor.base.ArgumentCaptor;
 import ch.nolix.core.errorcontrol.logging.GlobalLogger;
 
-public class BuilderTutorial {
+public final class BuilderTutorial {
+
+  private BuilderTutorial() {
+  }
 
   public static void main(String[] args) {
 
+    //Builds a Pet.
     final var garfield = Pet.build().withName("Garfield").withAgeInYears(10).withWeightInKilogram(20);
 
+    //Logs the String representation of the Pet.
     GlobalLogger.logInfo(garfield.toString());
   }
 
-  private static record Pet(String name, int ageInYears, int weightInKilogram) {
+  private static final record Pet(String name, int ageInYears, int weightInKilogram) {
 
     public static PetBuilder build() {
       return new PetBuilder();
     }
   }
 
-  private static class PetBuilder
-  extends
-  WithNameCaptor<WithAgeInYearsCaptor<WithWeightInKilogramCaptor<Pet>>> {
+  private static final class PetBuilder extends WithNameCaptor<WithAgeInYearsCaptor<WithWeightInKilogramCaptor<Pet>>> {
 
     public PetBuilder() {
 
       super(new WithAgeInYearsCaptor<>(new WithWeightInKilogramCaptor<>()));
 
-      setBuilder(this::buildPet);
+      setBuilder(this::build);
     }
 
-    private Pet buildPet() {
+    private Pet build() {
       return new Pet(getName(), nxtArgCpt().getAgeInYears(), nxtArgCpt().nxtArgCpt().getWeightInKilogram());
     }
   }
