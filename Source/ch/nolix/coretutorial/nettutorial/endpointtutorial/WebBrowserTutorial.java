@@ -4,9 +4,9 @@ import ch.nolix.core.environment.localcomputer.ShellProvider;
 import ch.nolix.core.net.endpoint.Server;
 import ch.nolix.core.programcontrol.sequencer.GlobalSequencer;
 
-public final class BrowserFrontEndTutorial {
+public final class WebBrowserTutorial {
 
-  private BrowserFrontEndTutorial() {
+  private WebBrowserTutorial() {
   }
 
   public static void main(String[] args) {
