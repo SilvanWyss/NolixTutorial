@@ -13,12 +13,19 @@ public final class AsSoonAsMethodTutorial {
   }
 
   public static void main(String[] args) {
+
+    final var startTime = System.currentTimeMillis();
+
     GlobalSequencer
-      .asSoonAs(() -> getRandomNumberBetween1And100() == 100)
-      .runInBackground(() -> GlobalLogger.logInfo("Number 100 occured!"));
+      .asSoonAs(() -> getRandomNumberBetween1And100() == 50)
+      .runInBackground(
+        () -> //
+        GlobalLogger.logInfo("Number 50 occured after " + (System.currentTimeMillis() - startTime) + " milliseconds!") //
+      );
+
   }
 
   private static int getRandomNumberBetween1And100() {
-    return (random.nextInt(100) + 1);
+    return (random.nextInt(50) + 1);
   }
 }
