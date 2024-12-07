@@ -12,9 +12,9 @@ public final class RunningJarTutorial {
 
     //Defines resourcePath.
     final var resourcePath = //
-    "ch/nolix/coretutorial/environmenttutorial/runningjartutorialresource/willkommen_und_abschied.txt";
+    "text/willkommen_und_abschied.txt";
 
-    //Gets resource from the resourcePath.
+    //Gets the resource from the resourcePath.
     final var resource = RunningJar.getResource(resourcePath);
 
     //Logs the resource.
