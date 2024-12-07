@@ -8,9 +8,9 @@ import ch.nolix.system.application.webapplication.WebClientSession;
 import ch.nolix.system.webgui.atomiccontrol.Label;
 import ch.nolix.systemapi.webguiapi.mainapi.ControlState;
 
-public final class HelloWorldGuiTutorial {
+public final class HelloWorldTutorial {
 
-  private HelloWorldGuiTutorial() {
+  private HelloWorldTutorial() {
   }
 
   public static void main(String[] args) {
@@ -20,7 +20,7 @@ public final class HelloWorldGuiTutorial {
 
     //Adds a default Application to the Server.
     server.addDefaultApplicationWithNameAndInitialSessionClassAndContext(
-      "Hello World GUI tutorial",
+      "Hello World tutorial",
       MainSession.class,
       new VoidObject());
 
@@ -44,7 +44,7 @@ public final class HelloWorldGuiTutorial {
       final var label = new Label().setText("Hello World!");
 
       //Configures the style of the Label.
-      label.getStoredStyle().setTextSizeForState(ControlState.BASE, 50);
+      label.getStoredStyle().setPaddingForState(ControlState.BASE, 50).setTextSizeForState(ControlState.BASE, 50);
 
       //Adds the Label to the GUI of the current MainSession.
       getStoredGui().pushLayerWithRootControl(label);
