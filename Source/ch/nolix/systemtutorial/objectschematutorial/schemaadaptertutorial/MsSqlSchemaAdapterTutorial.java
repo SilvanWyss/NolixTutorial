@@ -14,29 +14,43 @@ public final class MsSqlSchemaAdapterTutorial {
   }
 
   public static void main(String[] args) {
-    try (
 
-    final var databaseSchemaAdapter = //
+    //Creates msSqlSchemaAdapter.
+    final var msSqlSchemaAdapter = //
     MsSqlSchemaAdapterBuilder.createMsSqlSchemaAdapter()
       .toLocalAddress()
       .andMsSqlPort()
-      .toDatabase("CountryDatabase")
-      .withLoginName("sa")
-      .andLoginPassword("sa1234")) {
+      .toDatabase("CountryDB")
+      .withLoginName("mssqluser")
+      .andLoginPassword("mssql1234");
 
-      final var cityTable = new Table("City")
-        .addColumn(new Column("Name", ParameterizedValueType.forDataType(DataType.STRING)))
-        .addColumn(new Column("Population", ParameterizedValueType.forDataType(DataType.STRING)));
+    //Creates cityTable.
+    final var cityTable = //
+    new Table("City")
+      .addColumn(new Column("Name", ParameterizedValueType.forDataType(DataType.STRING)))
+      .addColumn(new Column("Population", ParameterizedValueType.forDataType(DataType.STRING)));
 
-      final var countryTable = new Table("Country")
-        .addColumn(new Column("Name", ParameterizedValueType.forDataType(DataType.STRING)));
+    //Creates countryTable.
+    final var countryTable = //
+    new Table("Country").addColumn(new Column("Name", ParameterizedValueType.forDataType(DataType.STRING)));
 
-      final var citiesColumn = new Column("Cities", ParameterizedMultiReferenceType.forReferencedTable(cityTable));
-      countryTable.addColumn(citiesColumn);
+    //Creates citiesColumn.
+    final var citiesColumn = new Column("Cities", ParameterizedMultiReferenceType.forReferencedTable(cityTable));
 
-      cityTable.addColumn(new Column("Country", ParameterizedBackReferenceType.forBackReferencedColumn(citiesColumn)));
+    //Adds citiesColumn to the countryTable.
+    countryTable.addColumn(citiesColumn);
 
-      databaseSchemaAdapter.addTable(cityTable).addTable(countryTable).saveChanges();
-    }
+    //Creates countryColumn.
+    final var countryColumn = //
+    new Column("Country", ParameterizedBackReferenceType.forBackReferencedColumn(citiesColumn));
+
+    //Adds countryColumn to the cityTable. 
+    cityTable.addColumn(countryColumn);
+
+    //Adds the cityTable and countryTable to the msSqlSchemaAdapter.
+    msSqlSchemaAdapter.addTable(cityTable).addTable(countryTable);
+
+    //Lets the msSqlSchemaAdapter save its changes.
+    msSqlSchemaAdapter.saveChanges();
   }
 }
