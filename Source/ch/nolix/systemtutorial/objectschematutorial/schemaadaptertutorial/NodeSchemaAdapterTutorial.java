@@ -21,7 +21,7 @@ public final class NodeSchemaAdapterTutorial {
     final var nodeDatabase = MutableNode.createEmpty();
 
     //Creates nodeSchemaAdapter.
-    final var nodeSchemaAdapter = NodeSchemaAdapter.forDatabaseNode("CountryDB", nodeDatabase);
+    final var nodeSchemaAdapter = NodeSchemaAdapter.forNodeDatabase("CountryDB", nodeDatabase);
 
     //Creates cityTable.
     final var cityTable = //
