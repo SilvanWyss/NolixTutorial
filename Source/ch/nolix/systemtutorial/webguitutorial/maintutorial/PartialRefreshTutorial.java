@@ -16,7 +16,7 @@ import ch.nolix.systemapi.webguiapi.mainapi.ControlState;
 
 public final class PartialRefreshTutorial {
 
-  private static final IImage IMAGE = Image.fromResource("ch/nolix/systemtutorial/webguitutorial/resource/pilatus.jpg")
+  private static final IImage IMAGE = Image.fromResource("image/pilatus.jpg")
     .withWidthAndHeight(1200, 600);
 
   private PartialRefreshTutorial() {

@@ -86,7 +86,7 @@ public final class StyleCatalogueTutorial {
                   new ImageControl()
                     .setImage(
                       Image.fromResource(
-                        "ch/nolix/systemtutorial/webguitutorial/resource/singer_building.jpg")))
+                        "image/singer_building.jpg")))
                 .insertTextAtRowAndColumn(5, 1, "Open show value dialog")
                 .insertControlAtRowAndColumn(
                   5,
