@@ -14,28 +14,48 @@ public final class NodeDataAdapterTutorial {
 
   public static void main(String[] args) {
 
+    //Creates nodeDatabase.
     final var nodeDatabase = MutableNode.createEmpty();
 
+    //Creates schema.
     final var schema = Schema.withEntityType(Person.class);
 
-    final var nodeDataAdapter = NodeDataAdapter.forNodeDatabase(nodeDatabase).withName("TestDB").andSchema(schema);
+    //Creates nodeDataAdapter.
+    final var nodeDataAdapter = NodeDataAdapter.forNodeDatabase(nodeDatabase).withName("PersonDB").andSchema(schema);
 
+    //Creates a first Entity.
     final var donaldDuck = new Person();
     donaldDuck.firstName.setValue("Donald");
     donaldDuck.lastName.setValue("Duck");
-    nodeDataAdapter.insertEntity(donaldDuck);
 
+    //Creates a second Entity.
+    final var daisyDuck = new Person();
+    daisyDuck.firstName.setValue("Daisy");
+    daisyDuck.lastName.setValue("Duck");
+
+    //Inserts the created Entities into the nodeDataAdapter.
+    nodeDataAdapter.insertEntity(daisyDuck, donaldDuck);
+
+    //Lets the nodeDataAdapter save its changes.
     nodeDataAdapter.saveChanges();
 
-    final var loadedDonaldDuck = nodeDataAdapter.getStoredTableByEntityType(Person.class)
-      .getStoredEntityById(donaldDuck.getId());
+    //Lets the nodeDataAdapter load the first Entity.
+    final var loadedDonaldDuck = //
+    nodeDataAdapter.getStoredTableByEntityType(Person.class).getStoredEntityById(donaldDuck.getId());
 
+    //Lets the nodeDataAdapter load the second Entity.
+    final var loadedDaisyDuck = //
+    nodeDataAdapter.getStoredTableByEntityType(Person.class).getStoredEntityById(daisyDuck.getId());
+
+    //Logs the loaded Entities.
     GlobalLogger.logInfo(loadedDonaldDuck.toString());
+    GlobalLogger.logInfo(loadedDaisyDuck.toString());
   }
 
   private static final class Person extends Entity {
 
     private final Value<String> firstName = Value.withValueType(String.class);
+
     private final Value<String> lastName = Value.withValueType(String.class);
 
     @Override
