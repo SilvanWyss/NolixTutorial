@@ -8,6 +8,7 @@ import ch.nolix.system.webgui.atomiccontrol.Button;
 import ch.nolix.system.webgui.atomiccontrol.Label;
 import ch.nolix.system.webgui.linearcontainer.VerticalStack;
 import ch.nolix.systemapi.webguiapi.atomiccontrolapi.ILabel;
+import ch.nolix.systemapi.webguiapi.mainapi.ControlState;
 
 public final class ButtonTutorial {
 
@@ -41,17 +42,28 @@ public final class ButtonTutorial {
 
     @Override
     protected void initialize() {
-      getStoredGui().pushLayerWithRootControl(
-        new VerticalStack()
-          .addControl(
-            countLabel,
-            new Button().setText("Increment").setLeftMouseButtonPressAction(this::incrementCount)));
+
+      //Creates rootControl.
+      final var rootControl = //
+      new VerticalStack()
+        .addControl(
+          countLabel,
+          new Button().setText("Increment").setLeftMouseButtonPressAction(this::incrementCountAndUpdateCountLabel));
+
+      //Configures the style if the rootControl.
+      rootControl.editStyle(s -> s.setPaddingForState(ControlState.BASE, 50));
+
+      //Adds the rootControl to the GUI of the current MainSession.
+      getStoredGui().pushLayerWithRootControl(rootControl);
     }
 
-    private void incrementCount() {
+    private void incrementCountAndUpdateCountLabel() {
+
+      //Increments the count.
       count++;
+
+      //Updates the countLabel.
       countLabel.setText(String.valueOf(count));
-      refresh();
     }
   }
 }
