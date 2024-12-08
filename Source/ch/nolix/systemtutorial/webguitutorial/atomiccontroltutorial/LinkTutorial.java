@@ -1,7 +1,6 @@
 package ch.nolix.systemtutorial.webguitutorial.atomiccontroltutorial;
 
 import ch.nolix.core.environment.localcomputer.ShellProvider;
-import ch.nolix.core.programatom.voidobject.VoidObject;
 import ch.nolix.core.programcontrol.sequencer.GlobalSequencer;
 import ch.nolix.coreapi.webapi.webproperty.LinkTarget;
 import ch.nolix.system.application.main.Server;
@@ -19,17 +18,14 @@ public final class LinkTutorial {
     final var server = Server.forHttpPort();
 
     //Adds a default Application to the Server.
-    server.addDefaultApplicationWithNameAndInitialSessionClassAndContext(
-      "Link tutorial",
-      MainSession.class,
-      new VoidObject());
+    server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("Link tutorial", MainSession.class);
 
     //Starts a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
 
     //Closes the Server as soon as it does not have a client connected any more.
     GlobalSequencer
-      .waitForSeconds(2)
+      .waitForSeconds(450000)
       .andThen()
       .asSoonAsNoMore(server::hasClientConnected)
       .runInBackground(server::close);
@@ -41,10 +37,7 @@ public final class LinkTutorial {
     protected void initialize() {
 
       //Creates a Link.
-      final var link = new Link()
-        .setDisplayText("Nolix")
-        .setTarget(LinkTarget.NEW_TAB)
-        .setUrl("https://nolix.ch");
+      final var link = new Link().setDisplayText("Nolix").setTarget(LinkTarget.NEW_TAB).setUrl("https://nolix.ch");
 
       //Adds the Link to the GUI of the current MainSession.
       getStoredGui().pushLayerWithRootControl(link);
