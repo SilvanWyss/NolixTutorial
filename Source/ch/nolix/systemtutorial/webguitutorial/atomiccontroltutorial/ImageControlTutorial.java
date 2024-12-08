@@ -6,6 +6,8 @@ import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
 import ch.nolix.system.graphic.image.MutableImage;
 import ch.nolix.system.webgui.atomiccontrol.ImageControl;
+import ch.nolix.system.webgui.container.SingleContainer;
+import ch.nolix.systemapi.webguiapi.mainapi.ControlState;
 
 public final class ImageControlTutorial {
 
@@ -45,7 +47,8 @@ public final class ImageControlTutorial {
       final var imageControl = new ImageControl().setImage(image);
 
       //Adds the ImageControl to the GUI of the current MainSession.
-      getStoredGui().pushLayerWithRootControl(imageControl);
+      getStoredGui().pushLayerWithRootControl(
+        new SingleContainer().setControl(imageControl).editStyle(s -> s.setPaddingForState(ControlState.BASE, 50)));
     }
   }
 }
