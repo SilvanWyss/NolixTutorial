@@ -4,7 +4,6 @@ import ch.nolix.core.environment.localcomputer.ShellProvider;
 import ch.nolix.core.programcontrol.sequencer.GlobalSequencer;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
-import ch.nolix.system.graphic.color.Color;
 import ch.nolix.system.graphic.image.MutableImage;
 import ch.nolix.system.webgui.atomiccontrol.ImageControl;
 import ch.nolix.systemapi.webguiapi.mainapi.ControlState;
@@ -41,17 +40,13 @@ public final class ImageControlTutorial {
     protected void initialize() {
 
       //Loads an Image.
-      final var image = MutableImage
-        .fromResource("image/singer_building.jpg");
+      final var image = MutableImage.fromResource("image/singer_building.jpg");
 
       //Creates an ImageControl with the Image.
       final var imageControl = new ImageControl().setImage(image);
 
       //Configures the style of the ImageControl.
-      imageControl.getStoredStyle()
-        .setBorderThicknessForState(ControlState.BASE, 5)
-        .setBackgroundColorForState(ControlState.BASE, Color.LAVENDER)
-        .setPaddingForState(ControlState.BASE, 5);
+      imageControl.editStyle(s -> s.setPaddingForState(ControlState.BASE, 50));
 
       //Adds the ImageControl to the GUI of the current MainSession.
       getStoredGui().pushLayerWithRootControl(imageControl);
