@@ -17,24 +17,42 @@ public final class NodeSchemaAdapterTutorial {
 
   public static void main(String[] args) {
 
-    final var database = MutableNode.createEmpty();
+    //Creates nodeDatabase.
+    final var nodeDatabase = MutableNode.createEmpty();
 
-    try (final var nodeDatabaseSchemaAdapter = NodeSchemaAdapter.forDatabaseNode("CountryDatabase", database)) {
+    //Creates nodeSchemaAdapter.
+    final var nodeSchemaAdapter = NodeSchemaAdapter.forDatabaseNode("CountryDB", nodeDatabase);
 
-      final var cityTable = new Table("City")
-        .addColumn(new Column("Name", ParameterizedValueType.forDataType(DataType.STRING)))
-        .addColumn(new Column("Population", ParameterizedValueType.forDataType(DataType.INTEGER_4BYTE)));
+    //Creates cityTable.
+    final var cityTable = //
+    new Table("City")
+      .addColumn(new Column("Name", ParameterizedValueType.forDataType(DataType.STRING)))
+      .addColumn(new Column("Population", ParameterizedValueType.forDataType(DataType.STRING)));
 
-      final var countryTable = new Table("Country")
-        .addColumn(new Column("Name", ParameterizedValueType.forDataType(DataType.STRING)));
+    //Creates countryTable.
+    final var countryTable = //
+    new Table("Country").addColumn(new Column("Name", ParameterizedValueType.forDataType(DataType.STRING)));
 
-      final var citiesColumn = new Column("Cities", ParameterizedMultiReferenceType.forReferencedTable(cityTable));
-      countryTable.addColumn(citiesColumn);
-      cityTable.addColumn(new Column("Country", ParameterizedBackReferenceType.forBackReferencedColumn(citiesColumn)));
+    //Creates citiesColumn.
+    final var citiesColumn = new Column("Cities", ParameterizedMultiReferenceType.forReferencedTable(cityTable));
 
-      nodeDatabaseSchemaAdapter.addTable(cityTable).addTable(countryTable).saveChanges();
+    //Adds citiesColumn to the countryTable.
+    countryTable.addColumn(citiesColumn);
 
-      GlobalLogger.logInfo(database.toFormattedString());
-    }
+    //Creates countryColumn.
+    final var countryColumn = //
+    new Column("Country", ParameterizedBackReferenceType.forBackReferencedColumn(citiesColumn));
+
+    //Adds countryColumn to the cityTable. 
+    cityTable.addColumn(countryColumn);
+
+    //Adds the cityTable and countryTable to the nodeSchemaAdapter.
+    nodeSchemaAdapter.addTable(cityTable).addTable(countryTable);
+
+    //Lets the nodeSchemaAdapter save its changes.
+    nodeSchemaAdapter.saveChanges();
+
+    //Logs the nodeDatabase.
+    GlobalLogger.logInfo(nodeDatabase.toFormattedString());
   }
 }
