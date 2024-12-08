@@ -7,15 +7,6 @@ import ch.nolix.system.webgui.atomiccontrol.Label;
 import ch.nolix.system.webgui.linearcontainer.VerticalStack;
 import ch.nolix.systemapi.webguiapi.atomiccontrolapi.ILabel;
 
-/**
- * The {@link SslButtonTutorial} does the same as the {@link ButtonTutorial},
- * but it is configured for a productive environment. That means there is
- * required a {@link SslServer}, a domain and a valid SSL certificate. A
- * {@link SslServer} is a secure web socket server.
- * 
- * @author Silvan Wyss
- * @date 2023-05-07
- */
 public final class SslButtonTutorial {
 
   private SslButtonTutorial() {
@@ -38,17 +29,25 @@ public final class SslButtonTutorial {
 
     @Override
     protected void initialize() {
-      getStoredGui().pushLayerWithRootControl(
-        new VerticalStack()
-          .addControl(
-            countLabel,
-            new Button().setText("Increment").setLeftMouseButtonPressAction(this::incrementCount)));
+
+      //Creates rootControl.
+      final var rootControl = //
+      new VerticalStack()
+        .addControl(
+          countLabel,
+          new Button().setText("Increment").setLeftMouseButtonPressAction(this::incrementCountAndUpdateCountLabel));
+
+      //Adds the rootControl to the GUI of the current MainSession.
+      getStoredGui().pushLayerWithRootControl(rootControl);
     }
 
-    private void incrementCount() {
+    private void incrementCountAndUpdateCountLabel() {
+
+      //Increments the count.
       count++;
+
+      //Updates the countLabel.
       countLabel.setText(String.valueOf(count));
-      refresh();
     }
   }
 }
