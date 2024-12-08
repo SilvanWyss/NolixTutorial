@@ -6,6 +6,8 @@ import ch.nolix.coreapi.webapi.webproperty.LinkTarget;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
 import ch.nolix.system.webgui.atomiccontrol.Link;
+import ch.nolix.system.webgui.container.SingleContainer;
+import ch.nolix.systemapi.webguiapi.mainapi.ControlState;
 
 public final class LinkTutorial {
 
@@ -37,10 +39,11 @@ public final class LinkTutorial {
     protected void initialize() {
 
       //Creates a Link.
-      final var link = new Link().setDisplayText("Nolix").setTarget(LinkTarget.NEW_TAB).setUrl("https://nolix.ch");
+      final var link = new Link().setDisplayText("nolix.ch").setTarget(LinkTarget.NEW_TAB).setUrl("https://nolix.ch");
 
       //Adds the Link to the GUI of the current MainSession.
-      getStoredGui().pushLayerWithRootControl(link);
+      getStoredGui().pushLayerWithRootControl(
+        new SingleContainer().setControl(link).editStyle(s -> s.setPaddingForState(ControlState.BASE, 50)));
     }
   }
 }
