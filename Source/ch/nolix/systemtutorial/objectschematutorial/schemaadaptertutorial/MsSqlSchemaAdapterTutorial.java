@@ -37,7 +37,7 @@ public final class MsSqlSchemaAdapterTutorial {
     //Creates citiesColumn.
     final var citiesColumn = new Column("Cities", ParameterizedMultiReferenceType.forReferencedTable(cityTable));
 
-    //Adds citiesColumn to the countryTable.
+    //Adds the citiesColumn to the countryTable.
     countryTable.addColumn(citiesColumn);
 
     //Creates countryColumn.
