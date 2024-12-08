@@ -1,36 +1,33 @@
-package ch.nolix.systemtutorial.objectdatabasetutorial.databaseadaptertutorial;
+package ch.nolix.systemtutorial.objectdatatutorial.dataadaptertutorial;
 
+import ch.nolix.core.document.node.MutableNode;
 import ch.nolix.core.errorcontrol.logging.GlobalLogger;
 import ch.nolix.system.objectdata.data.Entity;
 import ch.nolix.system.objectdata.data.Value;
-import ch.nolix.system.objectdata.dataadapter.MsSqlDataAdapterBuilder;
+import ch.nolix.system.objectdata.dataadapter.NodeDataAdapter;
 import ch.nolix.system.objectdata.schema.Schema;
 
-public final class MsSqlDataAdapterTutorial {
+public final class NodeDataAdapterTutorial {
 
-  private MsSqlDataAdapterTutorial() {
+  private NodeDataAdapterTutorial() {
   }
 
   public static void main(String[] args) {
 
+    final var nodeDatabase = MutableNode.createEmpty();
+
     final var schema = Schema.withEntityType(Person.class);
 
-    final var msSqlDataAdapter = MsSqlDataAdapterBuilder.createMsSqlDataAdapter()
-      .toLocalAddress()
-      .andMsSqlPort()
-      .andDatabase("TestDB")
-      .withLoginName("sa")
-      .andLoginPassword("sa1234")
-      .andSchema(schema);
+    final var nodeDataAdapter = NodeDataAdapter.forNodeDatabase(nodeDatabase).withName("TestDB").andSchema(schema);
 
     final var donaldDuck = new Person();
     donaldDuck.firstName.setValue("Donald");
     donaldDuck.lastName.setValue("Duck");
-    msSqlDataAdapter.insertEntity(donaldDuck);
+    nodeDataAdapter.insertEntity(donaldDuck);
 
-    msSqlDataAdapter.saveChanges();
+    nodeDataAdapter.saveChanges();
 
-    final var loadedDonaldDuck = msSqlDataAdapter.getStoredTableByEntityType(Person.class)
+    final var loadedDonaldDuck = nodeDataAdapter.getStoredTableByEntityType(Person.class)
       .getStoredEntityById(donaldDuck.getId());
 
     GlobalLogger.logInfo(loadedDonaldDuck.toString());
