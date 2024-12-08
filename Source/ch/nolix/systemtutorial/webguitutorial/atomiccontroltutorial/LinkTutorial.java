@@ -25,7 +25,7 @@ public final class LinkTutorial {
 
     //Closes the Server as soon as it does not have a client connected any more.
     GlobalSequencer
-      .waitForSeconds(450000)
+      .waitForSeconds(2)
       .andThen()
       .asSoonAsNoMore(server::hasClientConnected)
       .runInBackground(server::close);
