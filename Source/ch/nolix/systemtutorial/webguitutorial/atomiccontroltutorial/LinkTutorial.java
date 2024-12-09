@@ -39,7 +39,7 @@ public final class LinkTutorial {
     protected void initialize() {
 
       //Creates a Link.
-      final var link = new Link().setDisplayText("nolix.ch").setTarget(LinkTarget.NEW_TAB).setUrl("https://nolix.ch");
+      final var link = new Link().setUrlAndDisplayTextFromIt("https://nolix.ch").setTarget(LinkTarget.NEW_TAB);
 
       //Adds the Link to the GUI of the current MainSession.
       getStoredGui().pushLayerWithRootControl(
