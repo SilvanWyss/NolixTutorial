@@ -50,7 +50,7 @@ public final class ShowValueDialogBuilderTutorial {
       final var time = Time.ofNow();
 
       final var dateString = String.format("%02d.%02d.%04d", time.getDayOfMonth(), time.getMonthOfYearAsInt(),
-        time.getYearAsInt());
+        time.getYear());
 
       final var showDateDialog = new ShowValueDialogBuilder().setValueName(LowerCaseVariableCatalogue.DATE)
         .setValue(dateString)
