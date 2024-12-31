@@ -4,8 +4,8 @@ import ch.nolix.core.environment.localcomputer.ShellProvider;
 import ch.nolix.core.programcontrol.sequencer.GlobalSequencer;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
-import ch.nolix.system.graphic.color.Color;
 import ch.nolix.system.graphic.color.ColorGradient;
+import ch.nolix.system.graphic.color.X11ColorCatalogue;
 
 public final class GuiBackgroundColorGradientTutorial {
 
@@ -39,7 +39,8 @@ public final class GuiBackgroundColorGradientTutorial {
     protected void initialize() {
 
       //Sets a background ColorGradient to the GUI of the current MainSession.
-      getStoredGui().setBackgroundColorGradient(ColorGradient.withColors(Color.SKY_BLUE, Color.WHITE));
+      getStoredGui().setBackgroundColorGradient(
+        ColorGradient.withColors(X11ColorCatalogue.SKY_BLUE, X11ColorCatalogue.WHITE));
     }
   }
 }

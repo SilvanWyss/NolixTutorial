@@ -4,7 +4,7 @@ import ch.nolix.core.environment.localcomputer.ShellProvider;
 import ch.nolix.core.programcontrol.sequencer.GlobalSequencer;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
-import ch.nolix.system.webgui.atomiccontrol.Textbox;
+import ch.nolix.system.webgui.atomiccontrol.textbox.Textbox;
 import ch.nolix.systemapi.webguiapi.mainapi.ControlState;
 
 public final class TextboxTutorial {

@@ -5,8 +5,8 @@ import ch.nolix.core.programatom.voidobject.VoidObject;
 import ch.nolix.core.programcontrol.sequencer.GlobalSequencer;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
-import ch.nolix.system.graphic.color.Color;
-import ch.nolix.system.webgui.atomiccontrol.ImageControl;
+import ch.nolix.system.graphic.color.X11ColorCatalogue;
+import ch.nolix.system.webgui.atomiccontrol.imagecontrol.ImageControl;
 import ch.nolix.tech.math.bigdecimalmath.ComplexNumber;
 import ch.nolix.tech.math.bigdecimalmath.ComplexSequenceDefinedBy1Predecessor;
 import ch.nolix.tech.math.fractal.FractalBuilder;
@@ -59,7 +59,7 @@ public final class BlackWhiteJuliaFractalTutorial {
                     p -> p.getPower2().getSum(new ComplexNumber(-0.8, 0.15))))
                 .setMinMagnitudeForDivergence(10.0)
                 .setMaxIterationCount(50)
-                .setColorFunction(i -> Color.WHITE)
+                .setColorFunction(i -> X11ColorCatalogue.WHITE)
                 .setDecimalPlaces(10)
                 .build()
                 .startImageGeneration()

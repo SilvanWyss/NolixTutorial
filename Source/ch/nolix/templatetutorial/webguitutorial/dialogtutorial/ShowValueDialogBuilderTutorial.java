@@ -6,7 +6,7 @@ import ch.nolix.coreapi.programatomapi.variableapi.LowerCaseVariableCatalogue;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
 import ch.nolix.system.time.moment.Time;
-import ch.nolix.system.webgui.atomiccontrol.Button;
+import ch.nolix.system.webgui.atomiccontrol.button.Button;
 import ch.nolix.template.webgui.dialog.ShowValueDialogBuilder;
 
 public final class ShowValueDialogBuilderTutorial {

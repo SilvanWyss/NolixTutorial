@@ -6,15 +6,15 @@ import ch.nolix.core.programatom.voidobject.VoidObject;
 import ch.nolix.core.programcontrol.sequencer.GlobalSequencer;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
-import ch.nolix.system.graphic.color.Color;
+import ch.nolix.system.graphic.color.X11ColorCatalogue;
 import ch.nolix.system.graphic.image.Image;
-import ch.nolix.system.webgui.atomiccontrol.Button;
-import ch.nolix.system.webgui.atomiccontrol.ImageControl;
-import ch.nolix.system.webgui.atomiccontrol.Uploader;
-import ch.nolix.system.webgui.atomiccontrol.ValidationLabel;
+import ch.nolix.system.webgui.atomiccontrol.button.Button;
+import ch.nolix.system.webgui.atomiccontrol.imagecontrol.ImageControl;
+import ch.nolix.system.webgui.atomiccontrol.uploader.Uploader;
+import ch.nolix.system.webgui.atomiccontrol.validationlabel.ValidationLabel;
 import ch.nolix.system.webgui.linearcontainer.VerticalStack;
-import ch.nolix.systemapi.webguiapi.atomiccontrolapi.IImageControl;
-import ch.nolix.systemapi.webguiapi.atomiccontrolapi.IUploader;
+import ch.nolix.systemapi.webguiapi.atomiccontrolapi.imagecontrolapi.IImageControl;
+import ch.nolix.systemapi.webguiapi.atomiccontrolapi.uploaderapi.IUploader;
 import ch.nolix.systemapi.webguiapi.mainapi.ControlState;
 
 public final class UploaderTutorial {
@@ -70,7 +70,7 @@ public final class UploaderTutorial {
         s -> s
           .setWidthForState(ControlState.BASE, 500)
           .setHeightForState(ControlState.BASE, 300)
-          .setBackgroundColorForState(ControlState.BASE, Color.GREY));
+          .setBackgroundColorForState(ControlState.BASE, X11ColorCatalogue.GREY));
     }
 
     private void displayImage() {

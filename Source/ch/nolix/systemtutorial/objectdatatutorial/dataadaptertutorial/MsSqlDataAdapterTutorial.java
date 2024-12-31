@@ -1,10 +1,10 @@
 package ch.nolix.systemtutorial.objectdatatutorial.dataadaptertutorial;
 
 import ch.nolix.core.errorcontrol.logging.GlobalLogger;
-import ch.nolix.system.objectdata.data.Entity;
-import ch.nolix.system.objectdata.data.Value;
-import ch.nolix.system.objectdata.dataadapter.MsSqlDataAdapterBuilder;
-import ch.nolix.system.objectdata.schema.Schema;
+import ch.nolix.system.objectdata.adapter.MsSqlDataAdapterBuilder;
+import ch.nolix.system.objectdata.model.Entity;
+import ch.nolix.system.objectdata.model.Value;
+import ch.nolix.system.objectdata.schemamodel.Schema;
 
 public final class MsSqlDataAdapterTutorial {
 

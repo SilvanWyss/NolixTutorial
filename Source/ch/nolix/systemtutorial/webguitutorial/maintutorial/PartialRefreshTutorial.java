@@ -4,14 +4,14 @@ import ch.nolix.core.environment.localcomputer.ShellProvider;
 import ch.nolix.core.programcontrol.sequencer.GlobalSequencer;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
-import ch.nolix.system.graphic.color.Color;
+import ch.nolix.system.graphic.color.X11ColorCatalogue;
 import ch.nolix.system.graphic.image.Image;
 import ch.nolix.system.time.moment.Time;
-import ch.nolix.system.webgui.atomiccontrol.ImageControl;
-import ch.nolix.system.webgui.atomiccontrol.Label;
+import ch.nolix.system.webgui.atomiccontrol.imagecontrol.ImageControl;
+import ch.nolix.system.webgui.atomiccontrol.label.Label;
 import ch.nolix.system.webgui.linearcontainer.VerticalStack;
 import ch.nolix.systemapi.graphicapi.imageapi.IImage;
-import ch.nolix.systemapi.webguiapi.atomiccontrolapi.ILabel;
+import ch.nolix.systemapi.webguiapi.atomiccontrolapi.labelapi.ILabel;
 import ch.nolix.systemapi.webguiapi.mainapi.ControlState;
 
 public final class PartialRefreshTutorial {
@@ -50,7 +50,7 @@ public final class PartialRefreshTutorial {
       .editStyle(
         s -> s
           .setTextSizeForState(ControlState.BASE, 50)
-          .setTextColorForState(ControlState.BASE, Color.GREY));
+          .setTextColorForState(ControlState.BASE, X11ColorCatalogue.GREY));
 
     @Override
     protected void initialize() {

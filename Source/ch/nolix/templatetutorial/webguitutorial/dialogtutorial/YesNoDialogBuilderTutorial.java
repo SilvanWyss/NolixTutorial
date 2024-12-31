@@ -6,9 +6,9 @@ import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
 import ch.nolix.system.element.style.DeepSelectingStyle;
 import ch.nolix.system.element.style.Style;
-import ch.nolix.system.webgui.atomiccontrol.Button;
+import ch.nolix.system.webgui.atomiccontrol.button.Button;
 import ch.nolix.system.webgui.main.Layer;
-import ch.nolix.systemapi.webguiapi.atomiccontrolapi.ButtonRole;
+import ch.nolix.systemapi.webguiapi.atomiccontrolapi.buttonapi.ButtonRole;
 import ch.nolix.systemapi.webguiapi.basecontainerapi.ContainerRole;
 import ch.nolix.template.webgui.dialog.YesNoDialogBuilder;
 

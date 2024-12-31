@@ -3,12 +3,12 @@ package ch.nolix.systemtutorial.objectschematutorial.schemaadaptertutorial;
 import ch.nolix.core.document.node.MutableNode;
 import ch.nolix.core.errorcontrol.logging.GlobalLogger;
 import ch.nolix.coreapi.datamodelapi.fieldproperty.DataType;
-import ch.nolix.system.objectschema.contentmodel.BackReferenceModel;
-import ch.nolix.system.objectschema.contentmodel.MultiReferenceModel;
-import ch.nolix.system.objectschema.contentmodel.ValueModel;
-import ch.nolix.system.objectschema.schema.Column;
-import ch.nolix.system.objectschema.schema.Table;
-import ch.nolix.system.objectschema.schemaadapter.NodeSchemaAdapter;
+import ch.nolix.system.objectschema.adapter.NodeSchemaAdapter;
+import ch.nolix.system.objectschema.model.BackReferenceModel;
+import ch.nolix.system.objectschema.model.Column;
+import ch.nolix.system.objectschema.model.MultiReferenceModel;
+import ch.nolix.system.objectschema.model.Table;
+import ch.nolix.system.objectschema.model.ValueModel;
 
 public final class NodeSchemaAdapterTutorial {
 
@@ -25,13 +25,13 @@ public final class NodeSchemaAdapterTutorial {
 
     //Creates cityTable.
     final var cityTable = //
-    new Table("City")
+    Table.withName("City")
       .addColumn(new Column("Name", ValueModel.forDataType(DataType.STRING)))
       .addColumn(new Column("Population", ValueModel.forDataType(DataType.STRING)));
 
     //Creates countryTable.
     final var countryTable = //
-    new Table("Country").addColumn(new Column("Name", ValueModel.forDataType(DataType.STRING)));
+    Table.withName("Country").addColumn(new Column("Name", ValueModel.forDataType(DataType.STRING)));
 
     //Creates citiesColumn.
     final var citiesColumn = new Column("Cities", MultiReferenceModel.forReferencedTable(cityTable));

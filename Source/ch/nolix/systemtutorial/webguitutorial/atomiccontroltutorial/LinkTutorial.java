@@ -5,7 +5,7 @@ import ch.nolix.core.programcontrol.sequencer.GlobalSequencer;
 import ch.nolix.coreapi.webapi.webproperty.LinkTarget;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
-import ch.nolix.system.webgui.atomiccontrol.Link;
+import ch.nolix.system.webgui.atomiccontrol.link.Link;
 import ch.nolix.system.webgui.container.SingleContainer;
 import ch.nolix.systemapi.webguiapi.mainapi.ControlState;
 

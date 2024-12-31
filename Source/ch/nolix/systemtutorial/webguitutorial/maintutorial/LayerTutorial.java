@@ -4,8 +4,8 @@ import ch.nolix.core.environment.localcomputer.ShellProvider;
 import ch.nolix.core.programcontrol.sequencer.GlobalSequencer;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
-import ch.nolix.system.graphic.color.Color;
-import ch.nolix.system.webgui.atomiccontrol.Label;
+import ch.nolix.system.graphic.color.X11ColorCatalogue;
+import ch.nolix.system.webgui.atomiccontrol.label.Label;
 import ch.nolix.systemapi.webguiapi.mainapi.ControlState;
 
 public final class LayerTutorial {
@@ -48,12 +48,12 @@ public final class LayerTutorial {
       //Configures the style of labelA.
       labelA.getStoredStyle()
         .setTextSizeForState(ControlState.BASE, 200)
-        .setTextColorForState(ControlState.BASE, Color.GREY);
+        .setTextColorForState(ControlState.BASE, X11ColorCatalogue.GREY);
 
       //Configures the look of labelB.
       labelB.getStoredStyle()
         .setTextSizeForState(ControlState.BASE, 180)
-        .setTextColorForState(ControlState.BASE, Color.BLACK);
+        .setTextColorForState(ControlState.BASE, X11ColorCatalogue.BLACK);
 
       //Adds a new layer with labelA to the Frame.
       getStoredGui().pushLayerWithRootControl(labelA);
