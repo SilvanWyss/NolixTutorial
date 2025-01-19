@@ -17,6 +17,7 @@ import ch.nolix.system.webgui.linearcontainer.HorizontalStack;
 import ch.nolix.system.webgui.linearcontainer.VerticalStack;
 import ch.nolix.systemapi.webguiapi.atomiccontrolapi.labelapi.LabelRole;
 import ch.nolix.template.webgui.dialog.ShowValueDialogBuilder;
+import ch.nolix.template.webgui.style.StyleCatalog;
 
 public final class StyleCatalogueTutorial {
 
