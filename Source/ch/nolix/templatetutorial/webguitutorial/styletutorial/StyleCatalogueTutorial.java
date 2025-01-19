@@ -17,7 +17,6 @@ import ch.nolix.system.webgui.linearcontainer.HorizontalStack;
 import ch.nolix.system.webgui.linearcontainer.VerticalStack;
 import ch.nolix.systemapi.webguiapi.atomiccontrolapi.labelapi.LabelRole;
 import ch.nolix.template.webgui.dialog.ShowValueDialogBuilder;
-import ch.nolix.template.webgui.style.StyleCatalogue;
 
 public final class StyleCatalogueTutorial {
 
@@ -66,7 +65,7 @@ public final class StyleCatalogueTutorial {
                     .addItemWithTextAndSelectAction("none", () -> getStoredGui().removeStyle())
                     .addItemWithTextAndSelectAction(
                       "Dark mode",
-                      () -> getStoredGui().setStyle(StyleCatalogue.DARK_STYLE))),
+                      () -> getStoredGui().setStyle(StyleCatalog.DARK_STYLE))),
               new Grid()
                 .insertTextAtRowAndColumn(1, 1, "Button")
                 .insertControlAtRowAndColumn(1, 2, new Button())

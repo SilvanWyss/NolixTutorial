@@ -2,7 +2,7 @@ package ch.nolix.templatetutorial.webguitutorial.dialogtutorial;
 
 import ch.nolix.core.environment.localcomputer.ShellProvider;
 import ch.nolix.core.programcontrol.sequencer.GlobalSequencer;
-import ch.nolix.coreapi.programatomapi.variableapi.LowerCaseVariableCatalogue;
+import ch.nolix.coreapi.programatomapi.variableapi.LowerCaseVariableCatalog;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
 import ch.nolix.system.time.moment.Time;
@@ -52,7 +52,7 @@ public final class ShowValueDialogBuilderTutorial {
       final var dateString = String.format("%02d.%02d.%04d", time.getDayOfMonth(), time.getMonthOfYearAsInt(),
         time.getYear());
 
-      final var showDateDialog = new ShowValueDialogBuilder().setValueName(LowerCaseVariableCatalogue.DATE)
+      final var showDateDialog = new ShowValueDialogBuilder().setValueName(LowerCaseVariableCatalog.DATE)
         .setValue(dateString)
         .build();
 

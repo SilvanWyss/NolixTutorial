@@ -4,7 +4,7 @@ import ch.nolix.core.environment.localcomputer.ShellProvider;
 import ch.nolix.core.programcontrol.sequencer.GlobalSequencer;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
-import ch.nolix.system.graphic.color.X11ColorCatalogue;
+import ch.nolix.system.graphic.color.X11ColorCatalog;
 import ch.nolix.system.graphic.image.Image;
 import ch.nolix.system.time.moment.Time;
 import ch.nolix.system.webgui.atomiccontrol.imagecontrol.ImageControl;
@@ -50,7 +50,7 @@ public final class PartialRefreshTutorial {
       .editStyle(
         s -> s
           .setTextSizeForState(ControlState.BASE, 50)
-          .setTextColorForState(ControlState.BASE, X11ColorCatalogue.GREY));
+          .setTextColorForState(ControlState.BASE, X11ColorCatalog.GREY));
 
     @Override
     protected void initialize() {

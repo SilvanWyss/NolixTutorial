@@ -6,7 +6,7 @@ import ch.nolix.core.programatom.voidobject.VoidObject;
 import ch.nolix.core.programcontrol.sequencer.GlobalSequencer;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
-import ch.nolix.system.graphic.color.X11ColorCatalogue;
+import ch.nolix.system.graphic.color.X11ColorCatalog;
 import ch.nolix.system.graphic.image.Image;
 import ch.nolix.system.webgui.atomiccontrol.button.Button;
 import ch.nolix.system.webgui.atomiccontrol.imagecontrol.ImageControl;
@@ -70,7 +70,7 @@ public final class UploaderTutorial {
         s -> s
           .setWidthForState(ControlState.BASE, 500)
           .setHeightForState(ControlState.BASE, 300)
-          .setBackgroundColorForState(ControlState.BASE, X11ColorCatalogue.GREY));
+          .setBackgroundColorForState(ControlState.BASE, X11ColorCatalog.GREY));
     }
 
     private void displayImage() {

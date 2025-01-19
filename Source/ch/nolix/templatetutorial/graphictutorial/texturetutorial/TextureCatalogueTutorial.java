@@ -9,7 +9,7 @@ import ch.nolix.system.webgui.atomiccontrol.label.Label;
 import ch.nolix.system.webgui.linearcontainer.FloatContainer;
 import ch.nolix.system.webgui.linearcontainer.VerticalStack;
 import ch.nolix.systemapi.webguiapi.mainapi.ControlState;
-import ch.nolix.template.graphic.texture.TextureCatalogue;
+import ch.nolix.template.graphic.texture.TextureCatalog;
 
 public final class TextureCatalogueTutorial {
 
@@ -41,11 +41,11 @@ public final class TextureCatalogueTutorial {
     protected void initialize() {
 
       //Creates textures.
-      final var concreteTexture = TextureCatalogue.CONCRETE_TEXTURE.toScaledImage(10);
-      final var fireWoodTexture = TextureCatalogue.FIR_WOOD_TEXTURE.toScaledImage(10);
-      final var juteTexture = TextureCatalogue.JUTE_TEXTURE.toScaledImage(10);
-      final var parchmentTexture = TextureCatalogue.PARCHMENT_TEXTURE.toScaledImage(10);
-      final var whiteMarbleTexture = TextureCatalogue.WHITE_MARBLE_TEXTURE.toScaledImage(10);
+      final var concreteTexture = TextureCatalog.CONCRETE_TEXTURE.toScaledImage(10);
+      final var fireWoodTexture = TextureCatalog.FIR_WOOD_TEXTURE.toScaledImage(10);
+      final var juteTexture = TextureCatalog.JUTE_TEXTURE.toScaledImage(10);
+      final var parchmentTexture = TextureCatalog.PARCHMENT_TEXTURE.toScaledImage(10);
+      final var whiteMarbleTexture = TextureCatalog.WHITE_MARBLE_TEXTURE.toScaledImage(10);
 
       //Adds the textures to the GUI of the current MainSession.
       getStoredGui()

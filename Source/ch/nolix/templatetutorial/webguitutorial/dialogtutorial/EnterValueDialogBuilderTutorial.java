@@ -3,7 +3,7 @@ package ch.nolix.templatetutorial.webguitutorial.dialogtutorial;
 import ch.nolix.core.environment.localcomputer.ShellProvider;
 import ch.nolix.core.errorcontrol.validator.GlobalValidator;
 import ch.nolix.core.programcontrol.sequencer.GlobalSequencer;
-import ch.nolix.coreapi.programatomapi.variableapi.LowerCaseVariableCatalogue;
+import ch.nolix.coreapi.programatomapi.variableapi.LowerCaseVariableCatalog;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
 import ch.nolix.system.webgui.atomiccontrol.button.Button;
@@ -65,7 +65,7 @@ public final class EnterValueDialogBuilderTutorial {
 
       GlobalValidator
         .assertThat(name)
-        .thatIsNamed(LowerCaseVariableCatalogue.NAME)
+        .thatIsNamed(LowerCaseVariableCatalog.NAME)
         .isNotShorterThan(4);
 
       nameLabel.setText(name);
