@@ -1,7 +1,7 @@
 package ch.nolix.systemtutorial.webguitutorial.maintutorial;
 
 import ch.nolix.core.environment.localcomputer.ShellProvider;
-import ch.nolix.core.programcontrol.sequencer.GlobalSequencer;
+import ch.nolix.core.programcontrol.flowcontrol.GlobalFlowController;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
 import ch.nolix.system.graphic.image.Image;
@@ -25,8 +25,8 @@ public final class GuiIconTutorial {
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
 
     //Closes the Server as soon as it does not have a client connected any more.
-    GlobalSequencer.waitForSeconds(2);
-    GlobalSequencer.asSoonAsNoMore(server::hasClientConnected).runInBackground(server::close);
+    GlobalFlowController.waitForSeconds(2);
+    GlobalFlowController.asSoonAsNoMore(server::hasClientConnected).runInBackground(server::close);
   }
 
   public static final class MainSession extends WebClientSession<Object> {

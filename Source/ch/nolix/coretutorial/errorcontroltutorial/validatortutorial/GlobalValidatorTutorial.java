@@ -2,7 +2,7 @@ package ch.nolix.coretutorial.errorcontroltutorial.validatortutorial;
 
 import ch.nolix.core.errorcontrol.logging.GlobalLogger;
 import ch.nolix.core.errorcontrol.validator.GlobalValidator;
-import ch.nolix.core.programcontrol.sequencer.GlobalSequencer;
+import ch.nolix.core.programcontrol.flowcontrol.GlobalFlowController;
 
 public final class GlobalValidatorTutorial {
 
@@ -14,8 +14,8 @@ public final class GlobalValidatorTutorial {
     printAmount("apple", 2);
     printAmount("banana", 5);
 
-    GlobalSequencer.runInEnclosedMode(() -> printAmount(" ", 20));
-    GlobalSequencer.runInEnclosedMode(() -> printAmount("bred", -1));
+    GlobalFlowController.runInEnclosedMode(() -> printAmount(" ", 20));
+    GlobalFlowController.runInEnclosedMode(() -> printAmount("bred", -1));
 
     printAmount("cake", 10);
     printAmount("steak", 15);

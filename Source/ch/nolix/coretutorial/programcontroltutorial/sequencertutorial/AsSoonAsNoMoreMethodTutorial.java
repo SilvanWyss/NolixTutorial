@@ -2,7 +2,7 @@ package ch.nolix.coretutorial.programcontroltutorial.sequencertutorial;
 
 import ch.nolix.core.container.arraylist.ArrayList;
 import ch.nolix.core.errorcontrol.logging.GlobalLogger;
-import ch.nolix.core.programcontrol.sequencer.GlobalSequencer;
+import ch.nolix.core.programcontrol.flowcontrol.GlobalFlowController;
 
 public final class AsSoonAsNoMoreMethodTutorial {
 
@@ -13,7 +13,7 @@ public final class AsSoonAsNoMoreMethodTutorial {
 
     final var cats = ArrayList.withElement("Garfield", "Simba", "Smokey");
 
-    GlobalSequencer
+    GlobalFlowController
       .asSoonAsNoMore(cats::containsAny)
       .runInBackground(() -> GlobalLogger.logInfo("Couch is not scratched anymore!"));
 

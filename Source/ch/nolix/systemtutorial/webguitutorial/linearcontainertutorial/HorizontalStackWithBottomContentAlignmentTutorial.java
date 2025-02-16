@@ -1,7 +1,7 @@
 package ch.nolix.systemtutorial.webguitutorial.linearcontainertutorial;
 
 import ch.nolix.core.environment.localcomputer.ShellProvider;
-import ch.nolix.core.programcontrol.sequencer.GlobalSequencer;
+import ch.nolix.core.programcontrol.flowcontrol.GlobalFlowController;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
 import ch.nolix.system.webgui.atomiccontrol.label.Label;
@@ -28,7 +28,7 @@ public final class HorizontalStackWithBottomContentAlignmentTutorial {
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
 
     //Closes the Server as soon as it does not have a client connected any more.
-    GlobalSequencer
+    GlobalFlowController
       .waitForSeconds(2)
       .andThen()
       .asSoonAsNoMore(server::hasClientConnected).runInBackground(server::close);

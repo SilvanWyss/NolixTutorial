@@ -3,7 +3,7 @@ package ch.nolix.coretutorial.programcontroltutorial.sequencertutorial;
 import java.util.Random;
 
 import ch.nolix.core.errorcontrol.logging.GlobalLogger;
-import ch.nolix.core.programcontrol.sequencer.GlobalSequencer;
+import ch.nolix.core.programcontrol.flowcontrol.GlobalFlowController;
 
 public final class AsSoonAsMethodTutorial {
 
@@ -16,7 +16,7 @@ public final class AsSoonAsMethodTutorial {
 
     final var startTime = System.currentTimeMillis();
 
-    GlobalSequencer
+    GlobalFlowController
       .asSoonAs(() -> getRandomNumberBetween1And100() == 50)
       .runInBackground(
         () -> //
