@@ -2,7 +2,7 @@ package ch.nolix.coretutorial.nettutorial.endpointtutorial;
 
 import ch.nolix.core.environment.localcomputer.ShellProvider;
 import ch.nolix.core.net.endpoint.Server;
-import ch.nolix.core.programcontrol.flowcontrol.GlobalFlowController;
+import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 
 public final class WebBrowserTutorial {
 
@@ -18,7 +18,7 @@ public final class WebBrowserTutorial {
       ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
 
       //Closes the Server after 2 seconds.
-      GlobalFlowController.waitForSeconds(2);
+      FlowController.waitForSeconds(2);
     }
   }
 }

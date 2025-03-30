@@ -1,8 +1,8 @@
 package ch.nolix.coretutorial.programcontroltutorial.sequencertutorial;
 
 import ch.nolix.core.container.arraylist.ArrayList;
-import ch.nolix.core.errorcontrol.logging.GlobalLogger;
-import ch.nolix.core.programcontrol.flowcontrol.GlobalFlowController;
+import ch.nolix.core.errorcontrol.logging.Logger;
+import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 
 public final class AsSoonAsNoMoreMethodTutorial {
 
@@ -13,9 +13,9 @@ public final class AsSoonAsNoMoreMethodTutorial {
 
     final var cats = ArrayList.withElement("Garfield", "Simba", "Smokey");
 
-    GlobalFlowController
+    FlowController
       .asSoonAsNoMore(cats::containsAny)
-      .runInBackground(() -> GlobalLogger.logInfo("Couch is not scratched anymore!"));
+      .runInBackground(() -> Logger.logInfo("Couch is not scratched anymore!"));
 
     cats.clear();
   }

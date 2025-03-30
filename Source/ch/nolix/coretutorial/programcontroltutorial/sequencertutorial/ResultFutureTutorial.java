@@ -1,8 +1,8 @@
 package ch.nolix.coretutorial.programcontroltutorial.sequencertutorial;
 
-import ch.nolix.core.errorcontrol.logging.GlobalLogger;
+import ch.nolix.core.errorcontrol.logging.Logger;
 import ch.nolix.core.math.algebra.Matrix;
-import ch.nolix.core.programcontrol.flowcontrol.GlobalFlowController;
+import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 
 public final class ResultFutureTutorial {
 
@@ -12,11 +12,11 @@ public final class ResultFutureTutorial {
   public static void main(String[] args) {
 
     final var matrix = Matrix.createIdendityMatrix(2000);
-    final var resultFuture = GlobalFlowController.runInBackground(matrix::getRank);
+    final var resultFuture = FlowController.runInBackground(matrix::getRank);
 
-    GlobalLogger.logInfo("Calculations are done in background.");
-    GlobalLogger.logInfo("...");
+    Logger.logInfo("Calculations are done in background.");
+    Logger.logInfo("...");
     resultFuture.waitUntilIsFinished();
-    GlobalLogger.logInfo("matrix rank: " + resultFuture.getResult());
+    Logger.logInfo("matrix rank: " + resultFuture.getResult());
   }
 }

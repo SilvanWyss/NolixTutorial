@@ -1,7 +1,7 @@
 package ch.nolix.systemtutorial.webguitutorial.maintutorial;
 
 import ch.nolix.core.environment.localcomputer.ShellProvider;
-import ch.nolix.core.programcontrol.flowcontrol.GlobalFlowController;
+import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
 import ch.nolix.system.graphic.color.X11ColorCatalog;
@@ -36,7 +36,7 @@ public final class PartialRefreshTutorial {
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
 
     //Closes the Server as soon as it does not have a client connected any more.
-    GlobalFlowController
+    FlowController
       .waitForSeconds(2)
       .andThen()
       .asSoonAsNoMore(server::hasClientConnected)
@@ -62,14 +62,14 @@ public final class PartialRefreshTutorial {
               new ImageControl().setImage(IMAGE),
               timeLabel));
 
-      GlobalFlowController
+      FlowController
         .runInBackground(
           () -> {
 
             //We must wait until the client has received the first version of the page.
-            GlobalFlowController.waitForMilliseconds(1000);
+            FlowController.waitForMilliseconds(1000);
 
-            GlobalFlowController
+            FlowController
               .asLongAs(this::isAlive)
               .afterEveryMilliseconds(50)
               .runInBackground(this::updateTime);

@@ -1,7 +1,7 @@
 package ch.nolix.systemtutorial.objectschematutorial.schemaadaptertutorial;
 
 import ch.nolix.core.document.node.MutableNode;
-import ch.nolix.core.errorcontrol.logging.GlobalLogger;
+import ch.nolix.core.errorcontrol.logging.Logger;
 import ch.nolix.coreapi.datamodelapi.fieldproperty.DataType;
 import ch.nolix.system.objectschema.adapter.NodeSchemaAdapter;
 import ch.nolix.system.objectschema.model.BackReferenceModel;
@@ -53,6 +53,6 @@ public final class NodeSchemaAdapterTutorial {
     nodeSchemaAdapter.saveChanges();
 
     //Logs the nodeDatabase.
-    GlobalLogger.logInfo(nodeDatabase.toFormattedString());
+    Logger.logInfo(nodeDatabase.toFormattedString());
   }
 }

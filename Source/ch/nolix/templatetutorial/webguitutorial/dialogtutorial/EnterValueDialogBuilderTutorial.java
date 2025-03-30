@@ -1,8 +1,8 @@
 package ch.nolix.templatetutorial.webguitutorial.dialogtutorial;
 
 import ch.nolix.core.environment.localcomputer.ShellProvider;
-import ch.nolix.core.errorcontrol.validator.GlobalValidator;
-import ch.nolix.core.programcontrol.flowcontrol.GlobalFlowController;
+import ch.nolix.core.errorcontrol.validator.Validator;
+import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 import ch.nolix.coreapi.programatomapi.variableapi.LowerCaseVariableCatalog;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
@@ -31,7 +31,7 @@ public final class EnterValueDialogBuilderTutorial {
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
 
     //Closes the Server as soon as it does not have a client connected any more.
-    GlobalFlowController
+    FlowController
       .waitForSeconds(2)
       .andThen()
       .asSoonAsNoMore(server::hasClientConnected)
@@ -63,7 +63,7 @@ public final class EnterValueDialogBuilderTutorial {
 
     private void setNewName(final String name, final ILabel nameLabel) {
 
-      GlobalValidator
+      Validator
         .assertThat(name)
         .thatIsNamed(LowerCaseVariableCatalog.NAME)
         .isNotShorterThan(4);

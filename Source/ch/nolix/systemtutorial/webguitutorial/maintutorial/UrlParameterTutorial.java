@@ -1,7 +1,7 @@
 package ch.nolix.systemtutorial.webguitutorial.maintutorial;
 
 import ch.nolix.core.environment.localcomputer.ShellProvider;
-import ch.nolix.core.programcontrol.flowcontrol.GlobalFlowController;
+import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
 import ch.nolix.system.webgui.atomiccontrol.label.Label;
@@ -27,7 +27,7 @@ public final class UrlParameterTutorial {
     ShellProvider.startDefaultWebBrowserOpeningUrl("http://127.0.0.1/?parameter1=5000&parameter2=60000");
 
     //Closes the Server as soon as it does not have a client connected any more.
-    GlobalFlowController
+    FlowController
       .waitForSeconds(2)
       .andThen()
       .asSoonAsNoMore(server::hasClientConnected)

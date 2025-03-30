@@ -1,10 +1,10 @@
 package ch.nolix.systemtutorial.objectdatatutorial.dataadaptertutorial;
 
-import ch.nolix.core.errorcontrol.logging.GlobalLogger;
+import ch.nolix.core.errorcontrol.logging.Logger;
 import ch.nolix.system.objectdata.adapter.MsSqlDataAdapterBuilder;
 import ch.nolix.system.objectdata.model.Entity;
+import ch.nolix.system.objectdata.model.EntityTypeSet;
 import ch.nolix.system.objectdata.model.Value;
-import ch.nolix.system.objectdata.schemamodel.Schema;
 
 public final class MsSqlDataAdapterTutorial {
 
@@ -14,7 +14,7 @@ public final class MsSqlDataAdapterTutorial {
   public static void main(String[] args) {
 
     //Creates schema.
-    final var schema = Schema.withEntityType(Person.class);
+    final var entityTypeSet = EntityTypeSet.withEntityType(Person.class);
 
     //Creates msSqlDataAdapter.
     final var msSqlDataAdapter = //
@@ -25,7 +25,7 @@ public final class MsSqlDataAdapterTutorial {
       .andDatabase("PersonDB")
       .withLoginName("mssqluser")
       .andLoginPassword("mssql1234")
-      .andSchema(schema);
+      .andSchema(entityTypeSet);
 
     //Creates a first Entity.
     final var donaldDuck = new Person();
@@ -52,8 +52,8 @@ public final class MsSqlDataAdapterTutorial {
     msSqlDataAdapter.getStoredTableByEntityType(Person.class).getStoredEntityById(daisyDuck.getId());
 
     //Logs the loaded Entities.
-    GlobalLogger.logInfo(loadedDonaldDuck.toString());
-    GlobalLogger.logInfo(loadedDaisyDuck.toString());
+    Logger.logInfo(loadedDonaldDuck.toString());
+    Logger.logInfo(loadedDaisyDuck.toString());
   }
 
   private static final class Person extends Entity {

@@ -1,7 +1,7 @@
 package ch.nolix.coretutorial.argumentcaptortutorial.maintutorial;
 
 import ch.nolix.core.argumentcaptor.base.ArgumentCaptor;
-import ch.nolix.core.errorcontrol.logging.GlobalLogger;
+import ch.nolix.core.errorcontrol.logging.Logger;
 
 public final class BuilderTutorial {
 
@@ -14,7 +14,7 @@ public final class BuilderTutorial {
     final var garfield = Pet.build().withName("Garfield").withAgeInYears(10).withWeightInKilogram(20);
 
     //Logs the String representation of the Pet.
-    GlobalLogger.logInfo(garfield.toString());
+    Logger.logInfo(garfield.toString());
   }
 
   private static final record Pet(String name, int ageInYears, int weightInKilogram) {

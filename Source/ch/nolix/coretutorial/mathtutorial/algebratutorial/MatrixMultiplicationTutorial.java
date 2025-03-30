@@ -1,6 +1,6 @@
 package ch.nolix.coretutorial.mathtutorial.algebratutorial;
 
-import ch.nolix.core.errorcontrol.logging.GlobalLogger;
+import ch.nolix.core.errorcontrol.logging.Logger;
 import ch.nolix.core.math.algebra.Matrix;
 
 public final class MatrixMultiplicationTutorial {
@@ -22,6 +22,6 @@ public final class MatrixMultiplicationTutorial {
     final var productMatrix = matrix1.getProduct(matrix2);
 
     //Logs matrix1, matrix2 and the productMatrix.
-    GlobalLogger.logInfo(matrix1 + " * " + matrix2 + " = " + productMatrix);
+    Logger.logInfo(matrix1 + " * " + matrix2 + " = " + productMatrix);
   }
 }

@@ -1,11 +1,11 @@
 package ch.nolix.systemtutorial.objectdatatutorial.dataadaptertutorial;
 
 import ch.nolix.core.document.node.MutableNode;
-import ch.nolix.core.errorcontrol.logging.GlobalLogger;
+import ch.nolix.core.errorcontrol.logging.Logger;
 import ch.nolix.system.objectdata.adapter.NodeDataAdapter;
 import ch.nolix.system.objectdata.model.Entity;
+import ch.nolix.system.objectdata.model.EntityTypeSet;
 import ch.nolix.system.objectdata.model.Value;
-import ch.nolix.system.objectdata.schemamodel.Schema;
 
 public final class NodeDataAdapterTutorial {
 
@@ -18,10 +18,10 @@ public final class NodeDataAdapterTutorial {
     final var nodeDatabase = MutableNode.createEmpty();
 
     //Creates schema.
-    final var schema = Schema.withEntityType(Person.class);
+    final var entityTypeSet = EntityTypeSet.withEntityType(Person.class);
 
     //Creates nodeDataAdapter.
-    final var nodeDataAdapter = NodeDataAdapter.forNodeDatabase(nodeDatabase).withName("PersonDB").andSchema(schema);
+    final var nodeDataAdapter = NodeDataAdapter.forNodeDatabase(nodeDatabase).withName("PersonDB").andSchema(entityTypeSet);
 
     //Creates a first Entity.
     final var donaldDuck = new Person();
@@ -48,8 +48,8 @@ public final class NodeDataAdapterTutorial {
     nodeDataAdapter.getStoredTableByEntityType(Person.class).getStoredEntityById(daisyDuck.getId());
 
     //Logs the loaded Entities.
-    GlobalLogger.logInfo(loadedDonaldDuck.toString());
-    GlobalLogger.logInfo(loadedDaisyDuck.toString());
+    Logger.logInfo(loadedDonaldDuck.toString());
+    Logger.logInfo(loadedDaisyDuck.toString());
   }
 
   private static final class Person extends Entity {
