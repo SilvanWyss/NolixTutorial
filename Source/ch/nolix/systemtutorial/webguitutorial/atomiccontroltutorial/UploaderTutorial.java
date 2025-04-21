@@ -1,7 +1,7 @@
 package ch.nolix.systemtutorial.webguitutorial.atomiccontroltutorial;
 
 import ch.nolix.core.environment.localcomputer.ShellProvider;
-import ch.nolix.core.errorcontrol.exception.GeneralException;
+import ch.nolix.core.errorcontrol.generalexception.GeneralException;
 import ch.nolix.core.programatom.voidobject.VoidObject;
 import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
