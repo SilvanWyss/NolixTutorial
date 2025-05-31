@@ -17,8 +17,8 @@ public final class ComplexSequenceTutorial {
       new ComplexNumber(0.0, 0.0),
       p -> p.getPower2().getSum(new ComplexNumber(0.0, 1.0)));
 
-    final IntConsumer printFunction = (int i) -> Logger
-      .logInfo("a(" + i + ") = " + complexSequence.getValueAt1BasedIndex(i));
+    final IntConsumer printFunction = //
+    (int i) -> Logger.logInfo("a(" + i + ") = " + complexSequence.getValueAtOneBasedIndex(i));
 
     printFunction.accept(1);
     printFunction.accept(2);
