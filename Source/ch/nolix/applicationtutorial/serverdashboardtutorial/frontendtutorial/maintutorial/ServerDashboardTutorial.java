@@ -26,7 +26,7 @@ public final class ServerDashboardTutorial {
     //Creates and adds more Applications to the Server.
     server.addApplicationWithNameAndInitialSessionClassAndVoidContext(
       "Hello World tutorial",
-      HelloWorldTutorial.MainSession.class);
+      HelloWorldTutorial.Session.class);
     server.addApplicationWithNameAndInitialSessionClassAndVoidContext(
       "ImageControl tutorial",
       ImageControlTutorial.MainSession.class);
