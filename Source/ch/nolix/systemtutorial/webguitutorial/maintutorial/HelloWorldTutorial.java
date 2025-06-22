@@ -1,7 +1,6 @@
 package ch.nolix.systemtutorial.webguitutorial.maintutorial;
 
 import ch.nolix.core.environment.localcomputer.ShellProvider;
-import ch.nolix.core.programatom.voidobject.VoidObject;
 import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
@@ -19,10 +18,7 @@ public final class HelloWorldTutorial {
     final var server = Server.forHttpPort();
 
     //Adds a default Application to the Server.
-    server.addDefaultApplicationWithNameAndInitialSessionClassAndContext(
-      "Hello World tutorial",
-      MainSession.class,
-      new VoidObject());
+    server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("Hello World tutorial", Session.class);
 
     //Starts a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
@@ -35,18 +31,18 @@ public final class HelloWorldTutorial {
       .runInBackground(server::close);
   }
 
-  public static final class MainSession extends WebClientSession<Object> {
+  public static final class Session extends WebClientSession<Object> {
 
     @Override
     protected void initialize() {
 
-      //Creates Label.
+      //Creates a Label.
       final var label = new Label().setText("Hello World!");
 
       //Configures the style of the Label.
-      label.getStoredStyle().setPaddingForState(ControlState.BASE, 50).setTextSizeForState(ControlState.BASE, 50);
+      label.getStoredStyle().setTextSizeForState(ControlState.BASE, 50);
 
-      //Adds the Label to the GUI of the current MainSession.
+      //Adds the Label to the GUI of the current Session.
       getStoredGui().pushLayerWithRootControl(label);
     }
   }
