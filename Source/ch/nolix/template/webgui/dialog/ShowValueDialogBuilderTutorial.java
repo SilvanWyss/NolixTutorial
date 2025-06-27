@@ -1,0 +1,61 @@
+package ch.nolix.template.webgui.dialog;
+
+import ch.nolix.core.environment.localcomputer.ShellProvider;
+import ch.nolix.core.programcontrol.flowcontrol.FlowController;
+import ch.nolix.coreapi.programatomapi.variableapi.LowerCaseVariableCatalog;
+import ch.nolix.system.application.main.Server;
+import ch.nolix.system.application.webapplication.WebClientSession;
+import ch.nolix.system.time.moment.Time;
+import ch.nolix.system.webgui.atomiccontrol.button.Button;
+
+public final class ShowValueDialogBuilderTutorial {
+
+  private ShowValueDialogBuilderTutorial() {
+  }
+
+  public static void main(String[] args) {
+
+    //Creates a Server.
+    final var server = Server.forHttpPort();
+
+    //Adds a default Application to the Server.
+    server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext(
+      "ShowValueDialogBuilder tutorial",
+      MainSession.class);
+
+    //Starts a web browser that will connect to the Server.
+    ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
+
+    //Closes the Server as soon as it does not have a client connected any more.
+    FlowController
+      .waitForSeconds(2)
+      .andThen()
+      .asSoonAsNoMore(server::hasClientConnected)
+      .runInBackground(server::close);
+  }
+
+  private static final class MainSession extends WebClientSession<Object> {
+
+    @Override
+    protected void initialize() {
+      getStoredGui().pushLayerWithRootControl(
+        new Button()
+          .setText("Show date")
+          .setLeftMouseButtonPressAction(this::showDate));
+    }
+
+    private void showDate() {
+
+      final var time = Time.ofNow();
+
+      final var dateString = String.format("%02d.%02d.%04d", time.getDayOfMonth(), time.getMonthOfYearAsInt(),
+        time.getYear());
+
+      final var showDateDialog = new ShowValueDialogBuilder().setValueName(LowerCaseVariableCatalog.DATE)
+        .setValue(dateString)
+        .build();
+
+      getStoredGui().pushLayer(showDateDialog);
+    }
+  }
+}
