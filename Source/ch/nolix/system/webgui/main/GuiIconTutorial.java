@@ -6,7 +6,7 @@ import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
 import ch.nolix.system.graphic.image.Image;
 
-public final class GuiIconTutorial {
+final class GuiIconTutorial {
 
   private GuiIconTutorial() {
   }

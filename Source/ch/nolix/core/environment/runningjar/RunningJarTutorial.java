@@ -2,7 +2,7 @@ package ch.nolix.core.environment.runningjar;
 
 import ch.nolix.core.errorcontrol.logging.Logger;
 
-public final class RunningJarTutorial {
+final class RunningJarTutorial {
 
   private RunningJarTutorial() {
   }

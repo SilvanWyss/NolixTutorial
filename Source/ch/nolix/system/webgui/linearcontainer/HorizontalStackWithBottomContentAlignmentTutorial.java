@@ -8,7 +8,7 @@ import ch.nolix.system.webgui.atomiccontrol.label.Label;
 import ch.nolix.systemapi.guiapi.contentalignmentproperty.VerticalContentAlignment;
 import ch.nolix.systemapi.webguiapi.mainapi.ControlState;
 
-public final class HorizontalStackWithBottomContentAlignmentTutorial {
+final class HorizontalStackWithBottomContentAlignmentTutorial {
 
   private HorizontalStackWithBottomContentAlignmentTutorial() {
   }

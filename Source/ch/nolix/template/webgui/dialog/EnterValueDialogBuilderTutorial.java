@@ -11,7 +11,7 @@ import ch.nolix.system.webgui.atomiccontrol.label.Label;
 import ch.nolix.system.webgui.linearcontainer.VerticalStack;
 import ch.nolix.systemapi.webguiapi.atomiccontrolapi.labelapi.ILabel;
 
-public final class EnterValueDialogBuilderTutorial {
+final class EnterValueDialogBuilderTutorial {
 
   private EnterValueDialogBuilderTutorial() {
   }

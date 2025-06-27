@@ -2,7 +2,7 @@ package ch.nolix.core.math.algebra;
 
 import ch.nolix.core.errorcontrol.logging.Logger;
 
-public final class MatrixMultiplicationTutorial {
+final class MatrixMultiplicationTutorial {
 
   private MatrixMultiplicationTutorial() {
   }

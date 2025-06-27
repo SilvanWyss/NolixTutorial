@@ -6,7 +6,7 @@ import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
 
-public final class EmptyGuiTutorial {
+final class EmptyGuiTutorial {
 
   private EmptyGuiTutorial() {
   }

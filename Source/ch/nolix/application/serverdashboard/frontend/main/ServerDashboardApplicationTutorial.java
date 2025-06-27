@@ -6,7 +6,7 @@ import ch.nolix.system.webgui.atomiccontrol.ImageControlTutorial;
 import ch.nolix.system.webgui.main.HelloWorldTutorial;
 import ch.nolix.system.webgui.main.PartialRefreshTutorial;
 
-public final class ServerDashboardApplicationTutorial {
+final class ServerDashboardApplicationTutorial {
 
   private ServerDashboardApplicationTutorial() {
   }

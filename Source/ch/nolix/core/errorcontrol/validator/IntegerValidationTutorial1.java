@@ -1,6 +1,6 @@
 package ch.nolix.core.errorcontrol.validator;
 
-public final class IntegerValidationTutorial1 {
+final class IntegerValidationTutorial1 {
 
   private IntegerValidationTutorial1() {
   }

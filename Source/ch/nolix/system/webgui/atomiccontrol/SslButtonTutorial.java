@@ -9,7 +9,7 @@ import ch.nolix.system.webgui.linearcontainer.VerticalStack;
 import ch.nolix.systemapi.webguiapi.atomiccontrolapi.labelapi.ILabel;
 import ch.nolix.systemapi.webguiapi.mainapi.ControlState;
 
-public final class SslButtonTutorial {
+final class SslButtonTutorial {
 
   private SslButtonTutorial() {
   }

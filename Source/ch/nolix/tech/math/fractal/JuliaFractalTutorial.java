@@ -10,7 +10,7 @@ import ch.nolix.system.webgui.atomiccontrol.imagecontrol.ImageControl;
 import ch.nolix.tech.math.bigdecimalmath.ComplexNumber;
 import ch.nolix.tech.math.bigdecimalmath.ComplexSequenceDefinedBy1Predecessor;
 
-public final class JuliaFractalTutorial {
+final class JuliaFractalTutorial {
 
   private JuliaFractalTutorial() {
   }

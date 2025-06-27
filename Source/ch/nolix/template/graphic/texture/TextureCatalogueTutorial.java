@@ -10,7 +10,7 @@ import ch.nolix.system.webgui.linearcontainer.FloatContainer;
 import ch.nolix.system.webgui.linearcontainer.VerticalStack;
 import ch.nolix.systemapi.webguiapi.mainapi.ControlState;
 
-public final class TextureCatalogueTutorial {
+final class TextureCatalogueTutorial {
 
   public static void main(String[] args) {
 

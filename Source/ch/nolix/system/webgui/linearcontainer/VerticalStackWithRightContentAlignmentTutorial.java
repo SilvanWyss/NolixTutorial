@@ -9,7 +9,7 @@ import ch.nolix.system.webgui.atomiccontrol.label.Label;
 import ch.nolix.systemapi.guiapi.contentalignmentproperty.HorizontalContentAlignment;
 import ch.nolix.systemapi.webguiapi.mainapi.ControlState;
 
-public final class VerticalStackWithRightContentAlignmentTutorial {
+final class VerticalStackWithRightContentAlignmentTutorial {
 
   private VerticalStackWithRightContentAlignmentTutorial() {
   }

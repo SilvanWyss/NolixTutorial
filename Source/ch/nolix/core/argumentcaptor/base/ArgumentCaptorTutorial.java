@@ -2,7 +2,7 @@ package ch.nolix.core.argumentcaptor.base;
 
 import ch.nolix.core.errorcontrol.logging.Logger;
 
-public final class ArgumentCaptorTutorial {
+final class ArgumentCaptorTutorial {
 
   private ArgumentCaptorTutorial() {
   }

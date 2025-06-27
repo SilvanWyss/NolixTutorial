@@ -17,7 +17,7 @@ import ch.nolix.systemapi.webguiapi.atomiccontrolapi.imagecontrolapi.IImageContr
 import ch.nolix.systemapi.webguiapi.atomiccontrolapi.uploaderapi.IUploader;
 import ch.nolix.systemapi.webguiapi.mainapi.ControlState;
 
-public final class UploaderTutorial {
+final class UploaderTutorial {
 
   private UploaderTutorial() {
   }

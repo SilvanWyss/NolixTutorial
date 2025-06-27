@@ -11,7 +11,7 @@ import ch.nolix.system.webgui.linearcontainer.VerticalStack;
 import ch.nolix.systemapi.webguiapi.atomiccontrolapi.labelapi.ILabel;
 import ch.nolix.systemapi.webguiapi.mainapi.ControlState;
 
-public final class ButtonTutorial {
+final class ButtonTutorial {
 
   private ButtonTutorial() {
   }

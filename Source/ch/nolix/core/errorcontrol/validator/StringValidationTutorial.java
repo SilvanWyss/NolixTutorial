@@ -6,7 +6,7 @@ package ch.nolix.core.errorcontrol.validator;
  * @author Silvan
  * @date 2017-03-05
  */
-public final class StringValidationTutorial {
+final class StringValidationTutorial {
 
   /**
    * Prevents that an instance of the {@link Validator} can be created.

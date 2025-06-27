@@ -7,7 +7,7 @@ import ch.nolix.system.application.webapplication.WebClientSession;
 import ch.nolix.system.webgui.atomiccontrol.textbox.Textbox;
 import ch.nolix.systemapi.webguiapi.mainapi.ControlState;
 
-public final class TextboxTutorial {
+final class TextboxTutorial {
 
   private TextboxTutorial() {
   }

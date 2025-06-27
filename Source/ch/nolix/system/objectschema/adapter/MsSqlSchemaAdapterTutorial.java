@@ -7,7 +7,7 @@ import ch.nolix.system.objectschema.model.MultiReferenceModel;
 import ch.nolix.system.objectschema.model.Table;
 import ch.nolix.system.objectschema.model.ValueModel;
 
-public final class MsSqlSchemaAdapterTutorial {
+final class MsSqlSchemaAdapterTutorial {
 
   private MsSqlSchemaAdapterTutorial() {
   }

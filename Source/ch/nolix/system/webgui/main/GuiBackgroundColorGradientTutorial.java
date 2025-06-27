@@ -7,7 +7,7 @@ import ch.nolix.system.application.webapplication.WebClientSession;
 import ch.nolix.system.graphic.color.ColorGradient;
 import ch.nolix.system.graphic.color.X11ColorCatalog;
 
-public final class GuiBackgroundColorGradientTutorial {
+final class GuiBackgroundColorGradientTutorial {
 
   private GuiBackgroundColorGradientTutorial() {
   }

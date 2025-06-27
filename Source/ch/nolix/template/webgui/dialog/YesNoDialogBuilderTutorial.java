@@ -11,7 +11,7 @@ import ch.nolix.system.webgui.main.Layer;
 import ch.nolix.systemapi.webguiapi.atomiccontrolapi.buttonapi.ButtonRole;
 import ch.nolix.systemapi.webguiapi.basecontainerapi.ContainerRole;
 
-public final class YesNoDialogBuilderTutorial {
+final class YesNoDialogBuilderTutorial {
 
   private YesNoDialogBuilderTutorial() {
   }

@@ -8,7 +8,7 @@ import ch.nolix.system.graphic.color.X11ColorCatalog;
 import ch.nolix.system.webgui.atomiccontrol.label.Label;
 import ch.nolix.systemapi.webguiapi.mainapi.ControlState;
 
-public final class LayerTutorial {
+final class LayerTutorial {
 
   private LayerTutorial() {
   }

@@ -10,7 +10,7 @@ import ch.nolix.system.webgui.linearcontainer.HorizontalStack;
 import ch.nolix.systemapi.webguiapi.atomiccontrolapi.textboxapi.ITextbox;
 import ch.nolix.systemapi.webguiapi.mainapi.ControlState;
 
-public final class CookieTutorial {
+final class CookieTutorial {
 
   private CookieTutorial() {
   }

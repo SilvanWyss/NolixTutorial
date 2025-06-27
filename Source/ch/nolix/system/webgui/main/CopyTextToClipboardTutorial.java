@@ -10,7 +10,7 @@ import ch.nolix.system.webgui.atomiccontrol.textbox.Textbox;
 import ch.nolix.system.webgui.linearcontainer.HorizontalStack;
 import ch.nolix.systemapi.webguiapi.mainapi.ControlState;
 
-public final class CopyTextToClipboardTutorial {
+final class CopyTextToClipboardTutorial {
 
   private CopyTextToClipboardTutorial() {
   }

@@ -8,7 +8,7 @@ import ch.nolix.system.webgui.atomiccontrol.label.Label;
 import ch.nolix.system.webgui.linearcontainer.VerticalStack;
 import ch.nolix.systemapi.webguiapi.mainapi.ControlState;
 
-public final class UrlParameterTutorial {
+final class UrlParameterTutorial {
 
   private UrlParameterTutorial() {
   }

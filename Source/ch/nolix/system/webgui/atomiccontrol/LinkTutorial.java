@@ -9,7 +9,7 @@ import ch.nolix.system.webgui.atomiccontrol.link.Link;
 import ch.nolix.system.webgui.container.SingleContainer;
 import ch.nolix.systemapi.webguiapi.mainapi.ControlState;
 
-public final class LinkTutorial {
+final class LinkTutorial {
 
   private LinkTutorial() {
   }

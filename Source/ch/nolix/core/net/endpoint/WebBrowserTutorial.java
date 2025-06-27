@@ -3,7 +3,7 @@ package ch.nolix.core.net.endpoint;
 import ch.nolix.core.environment.localcomputer.ShellProvider;
 import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 
-public final class WebBrowserTutorial {
+final class WebBrowserTutorial {
 
   private WebBrowserTutorial() {
   }

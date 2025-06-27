@@ -8,7 +8,7 @@ import ch.nolix.system.application.webapplication.WebClientSession;
 import ch.nolix.system.time.moment.Time;
 import ch.nolix.system.webgui.atomiccontrol.button.Button;
 
-public final class ShowValueDialogBuilderTutorial {
+final class ShowValueDialogBuilderTutorial {
 
   private ShowValueDialogBuilderTutorial() {
   }

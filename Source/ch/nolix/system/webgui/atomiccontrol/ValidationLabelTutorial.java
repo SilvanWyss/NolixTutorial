@@ -13,7 +13,7 @@ import ch.nolix.system.webgui.atomiccontrol.textbox.Textbox;
 import ch.nolix.system.webgui.atomiccontrol.validationlabel.ValidationLabel;
 import ch.nolix.system.webgui.linearcontainer.VerticalStack;
 
-public final class ValidationLabelTutorial {
+final class ValidationLabelTutorial {
 
   private ValidationLabelTutorial() {
   }

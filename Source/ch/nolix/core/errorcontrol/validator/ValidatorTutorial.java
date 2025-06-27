@@ -3,7 +3,7 @@ package ch.nolix.core.errorcontrol.validator;
 import ch.nolix.core.errorcontrol.logging.Logger;
 import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 
-public final class ValidatorTutorial {
+final class ValidatorTutorial {
 
   private ValidatorTutorial() {
   }

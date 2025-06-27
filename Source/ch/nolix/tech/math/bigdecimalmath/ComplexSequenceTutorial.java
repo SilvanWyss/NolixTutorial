@@ -4,7 +4,7 @@ import java.util.function.IntConsumer;
 
 import ch.nolix.core.errorcontrol.logging.Logger;
 
-public final class ComplexSequenceTutorial {
+final class ComplexSequenceTutorial {
 
   private ComplexSequenceTutorial() {
   }

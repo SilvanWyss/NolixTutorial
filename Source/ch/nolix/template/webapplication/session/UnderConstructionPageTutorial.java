@@ -9,7 +9,7 @@ import ch.nolix.system.webgui.atomiccontrol.button.Button;
 import ch.nolix.system.webgui.atomiccontrol.label.Label;
 import ch.nolix.system.webgui.linearcontainer.VerticalStack;
 
-public final class UnderConstructionPageTutorial {
+final class UnderConstructionPageTutorial {
 
   private UnderConstructionPageTutorial() {
   }

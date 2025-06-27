@@ -6,7 +6,7 @@ import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
 import ch.nolix.system.webgui.itemmenu.dropdownmenu.DropdownMenu;
 
-public final class DropdownMenuTutorial {
+final class DropdownMenuTutorial {
 
   private DropdownMenuTutorial() {
   }

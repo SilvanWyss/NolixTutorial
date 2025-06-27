@@ -7,7 +7,7 @@ import ch.nolix.system.application.webapplication.WebClientSession;
 import ch.nolix.system.graphic.image.Image;
 import ch.nolix.systemapi.graphicapi.imageapi.ImageApplication;
 
-public final class GuiBackgroundImageTutorial {
+final class GuiBackgroundImageTutorial {
 
   private GuiBackgroundImageTutorial() {
   }

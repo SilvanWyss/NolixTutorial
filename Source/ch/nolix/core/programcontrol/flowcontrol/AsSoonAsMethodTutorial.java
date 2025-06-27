@@ -4,7 +4,7 @@ import java.util.Random;
 
 import ch.nolix.core.errorcontrol.logging.Logger;
 
-public final class AsSoonAsMethodTutorial {
+final class AsSoonAsMethodTutorial {
 
   private static final Random random = new Random();
 

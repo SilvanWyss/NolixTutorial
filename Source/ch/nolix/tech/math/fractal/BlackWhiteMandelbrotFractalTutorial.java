@@ -10,7 +10,7 @@ import ch.nolix.system.webgui.atomiccontrol.imagecontrol.ImageControl;
 import ch.nolix.tech.math.bigdecimalmath.ComplexNumber;
 import ch.nolix.tech.math.bigdecimalmath.ComplexSequenceDefinedBy1Predecessor;
 
-public final class BlackWhiteMandelbrotFractalTutorial {
+final class BlackWhiteMandelbrotFractalTutorial {
 
   private static final class MainSession //NOSONAR: A single-file-tutorial is allowed to have a long static class.
   extends WebClientSession<Object> {
