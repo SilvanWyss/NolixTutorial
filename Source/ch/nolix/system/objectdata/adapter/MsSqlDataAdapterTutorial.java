@@ -7,15 +7,12 @@ import ch.nolix.system.objectdata.model.Value;
 
 final class MsSqlDataAdapterTutorial {
 
-  private MsSqlDataAdapterTutorial() {
-  }
-
   public static void main(String[] args) {
 
     //Creates schema.
     final var entityTypeSet = EntityTypeSet.withEntityType(Person.class);
 
-    //Creates msSqlDataAdapter.
+    //Creates a MsSqlDataAdapter.
     final var msSqlDataAdapter = //
     MsSqlDataAdapterBuilder
       .createMsSqlDataAdapter()
@@ -36,17 +33,17 @@ final class MsSqlDataAdapterTutorial {
     daisyDuck.firstName.setValue("Daisy");
     daisyDuck.lastName.setValue("Duck");
 
-    //Inserts the created Entities into the msSqlDataAdapter.
+    //Inserts the created Entities into the MsSqlDataAdapter.
     msSqlDataAdapter.insertEntity(daisyDuck, donaldDuck);
 
-    //Lets the msSqlDataAdapter save its changes.
+    //Lets the MsSqlDataAdapter save its changes.
     msSqlDataAdapter.saveChanges();
 
-    //Lets the msSqlDataAdapter load the first Entity.
+    //Lets the MsSqlDataAdapter load the first Entity.
     final var loadedDonaldDuck = //
     msSqlDataAdapter.getStoredTableByEntityType(Person.class).getStoredEntityById(donaldDuck.getId());
 
-    //Lets the msSqlDataAdapter load the second Entity.
+    //Lets the MsSqlDataAdapter load the second Entity.
     final var loadedDaisyDuck = //
     msSqlDataAdapter.getStoredTableByEntityType(Person.class).getStoredEntityById(daisyDuck.getId());
 
@@ -65,5 +62,8 @@ final class MsSqlDataAdapterTutorial {
     public String toString() {
       return (firstName.getStoredValue() + " " + lastName.getStoredValue());
     }
+  }
+
+  private MsSqlDataAdapterTutorial() {
   }
 }
