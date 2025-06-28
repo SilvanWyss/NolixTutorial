@@ -6,7 +6,6 @@ import ch.nolix.core.programatom.voidobject.VoidObject;
 import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
-import ch.nolix.system.graphic.color.X11ColorCatalog;
 import ch.nolix.system.graphic.image.Image;
 import ch.nolix.system.webgui.atomiccontrol.button.Button;
 import ch.nolix.system.webgui.atomiccontrol.imagecontrol.ImageControl;
@@ -15,12 +14,8 @@ import ch.nolix.system.webgui.atomiccontrol.validationlabel.ValidationLabel;
 import ch.nolix.system.webgui.linearcontainer.VerticalStack;
 import ch.nolix.systemapi.webguiapi.atomiccontrolapi.imagecontrolapi.IImageControl;
 import ch.nolix.systemapi.webguiapi.atomiccontrolapi.uploaderapi.IUploader;
-import ch.nolix.systemapi.webguiapi.mainapi.ControlState;
 
 public final class UploaderTutorial {
-
-  private UploaderTutorial() {
-  }
 
   public static void main(String[] args) {
 
@@ -30,7 +25,7 @@ public final class UploaderTutorial {
     //Adds a default Application to the Server.
     server.addDefaultApplicationWithNameAndInitialSessionClassAndContext(
       "Uploader tutorial",
-      MainSession.class,
+      Session.class,
       new VoidObject());
 
     //Starts a web browser that will connect to the Server.
@@ -44,7 +39,7 @@ public final class UploaderTutorial {
       .runInBackground(server::close);
   }
 
-  public static final class MainSession extends WebClientSession<Object> { //NOSONAR: MainSession is a tutorial class.
+  public static final class Session extends WebClientSession<Object> { //NOSONAR: MainSession is a tutorial class.
 
     private final IImageControl imageControl = new ImageControl();
 
@@ -53,7 +48,7 @@ public final class UploaderTutorial {
     @Override
     protected void initialize() {
 
-      //Adds the Uploader to the GUI of the current MainSession.
+      //Adds the Uploader to the GUI of the current Session.
       getStoredGui()
         .pushLayerWithRootControl(
           new VerticalStack()
@@ -66,22 +61,24 @@ public final class UploaderTutorial {
                 .setLeftMouseButtonPressAction(this::displayImage)));
 
       //Configures the style of the imageControl.
-      imageControl.editStyle(
-        s -> s
-          .setWidthForState(ControlState.BASE, 500)
-          .setHeightForState(ControlState.BASE, 300)
-          .setBackgroundColorForState(ControlState.BASE, X11ColorCatalog.GREY));
+      imageControl.setMinWidth(200).setMinHeight(200).setMaxWidth(500).setMaxHeight(500);
     }
 
     private void displayImage() {
 
+      //Asserts that the Uploader has a file.
       if (!uploader.hasFile()) {
         throw GeneralException.withErrorMessage("No image selected.");
       }
 
+      //Creates an image from the file of the Uploader.
       final var image = Image.fromBytes(uploader.getFile());
 
+      //Sets the image to the ImageControl.
       imageControl.setImage(image);
     }
+  }
+
+  private UploaderTutorial() {
   }
 }

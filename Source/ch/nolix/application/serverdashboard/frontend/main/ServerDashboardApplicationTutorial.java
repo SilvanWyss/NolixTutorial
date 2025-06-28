@@ -28,7 +28,7 @@ final class ServerDashboardApplicationTutorial {
       PartialRefreshTutorial.MainSession.class);
     server.addApplicationWithNameAndInitialSessionClassAndVoidContext(
       "ImageControl tutorial",
-      UploaderTutorial.MainSession.class);
+      UploaderTutorial.Session.class);
 
     //Starts a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
