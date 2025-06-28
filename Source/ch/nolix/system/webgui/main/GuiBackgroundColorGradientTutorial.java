@@ -6,11 +6,9 @@ import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
 import ch.nolix.system.graphic.color.ColorGradient;
 import ch.nolix.system.graphic.color.X11ColorCatalog;
+import ch.nolix.systemapi.graphicapi.imageproperty.Alignment;
 
 final class GuiBackgroundColorGradientTutorial {
-
-  private GuiBackgroundColorGradientTutorial() {
-  }
 
   public static void main(String[] args) {
 
@@ -20,7 +18,7 @@ final class GuiBackgroundColorGradientTutorial {
     //Adds a default Application to the Server.
     server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext(
       "Background ColorGradient tutorial",
-      MainSession.class);
+      Session.class);
 
     //Starts a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
@@ -33,14 +31,20 @@ final class GuiBackgroundColorGradientTutorial {
       .runInBackground(server::close);
   }
 
-  private static final class MainSession extends WebClientSession<Object> {
+  private static final class Session extends WebClientSession<Object> {
 
     @Override
     protected void initialize() {
 
-      //Sets a background ColorGradient to the GUI of the current MainSession.
-      getStoredGui().setBackgroundColorGradient(
-        ColorGradient.withColors(X11ColorCatalog.SKY_BLUE, X11ColorCatalog.WHITE));
+      //Creates a ColorGradient.
+      final var colorGradient = //
+      ColorGradient.withDirectionAndColors(Alignment.VERTICAL, X11ColorCatalog.SKY_BLUE, X11ColorCatalog.WHITE);
+
+      //Sets the ColorGradient as background ColorGradient to the GUI of the current Session.
+      getStoredGui().setBackgroundColorGradient(colorGradient);
     }
+  }
+
+  private GuiBackgroundColorGradientTutorial() {
   }
 }
