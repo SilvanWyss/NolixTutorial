@@ -6,13 +6,8 @@ import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
 import ch.nolix.system.graphic.image.MutableImage;
 import ch.nolix.system.webgui.atomiccontrol.imagecontrol.ImageControl;
-import ch.nolix.system.webgui.container.SingleContainer;
-import ch.nolix.systemapi.webguiapi.mainapi.ControlState;
 
 public final class ImageControlTutorial {
-
-  private ImageControlTutorial() {
-  }
 
   public static void main(String[] args) {
 
@@ -20,9 +15,7 @@ public final class ImageControlTutorial {
     final var server = Server.forHttpPort();
 
     //Adds a default Application to the Server.
-    server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext(
-      "ImageControl tutorial",
-      MainSession.class);
+    server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("ImageControl tutorial", Session.class);
 
     //Starts a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
@@ -35,20 +28,22 @@ public final class ImageControlTutorial {
       .runInBackground(server::close);
   }
 
-  public static final class MainSession extends WebClientSession<Object> {
+  private static final class Session extends WebClientSession<Object> {
 
     @Override
     protected void initialize() {
 
-      //Loads an Image.
+      //Loads an image.
       final var image = MutableImage.fromResource("image/singer_building.jpg");
 
-      //Creates an ImageControl with the Image.
+      //Creates an ImageControl with the image.
       final var imageControl = new ImageControl().setImage(image);
 
-      //Adds the ImageControl to the GUI of the current MainSession.
-      getStoredGui().pushLayerWithRootControl(
-        new SingleContainer().setControl(imageControl).editStyle(s -> s.setPaddingForState(ControlState.BASE, 50)));
+      //Adds the ImageControl to the GUI of the current Session.
+      getStoredGui().pushLayerWithRootControl(imageControl);
     }
+  }
+
+  private ImageControlTutorial() {
   }
 }
