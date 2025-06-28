@@ -1,15 +1,11 @@
 package ch.nolix.system.webgui.main;
 
 import ch.nolix.core.environment.localcomputer.ShellProvider;
-import ch.nolix.core.programatom.voidobject.VoidObject;
 import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
 
 final class EmptyGuiTutorial {
-
-  private EmptyGuiTutorial() {
-  }
 
   public static void main(String[] args) {
 
@@ -17,10 +13,7 @@ final class EmptyGuiTutorial {
     final var server = Server.forHttpPort();
 
     //Adds a default Application to the Server.
-    server.addDefaultApplicationWithNameAndInitialSessionClassAndContext(
-      "Empty GUI tutorial",
-      MainSession.class,
-      new VoidObject());
+    server.addApplicationWithNameAndInitialSessionClassAndVoidContext("Empty GUI tutorial", Session.class);
 
     //Starts a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
@@ -33,11 +26,14 @@ final class EmptyGuiTutorial {
       .runInBackground(server::close);
   }
 
-  private static final class MainSession extends WebClientSession<Object> {
+  private static final class Session extends WebClientSession<Object> {
 
     @Override
     protected void initialize() {
       //Does nothing.
     }
+  }
+
+  private EmptyGuiTutorial() {
   }
 }
