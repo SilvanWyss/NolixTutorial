@@ -6,25 +6,22 @@ import ch.nolix.core.errorcontrol.logging.Logger;
 
 final class AsSoonAsMethodTutorial {
 
-  private static final Random random = new Random();
-
-  private AsSoonAsMethodTutorial() {
-  }
-
   public static void main(String[] args) {
 
     final var startTime = System.currentTimeMillis();
 
     FlowController
-      .asSoonAs(() -> getRandomNumberBetween1And100() == 50)
+      .asSoonAs(() -> getRandomNumberBetween1And50() == 50)
       .runInBackground(
-        () -> //
-        Logger.logInfo("Number 50 occured after " + (System.currentTimeMillis() - startTime) + " milliseconds!") //
-      );
-
+        () -> Logger.logInfo("Number occured in " + (System.currentTimeMillis() - startTime) + " milliseconds!"));
   }
 
-  private static int getRandomNumberBetween1And100() {
-    return (random.nextInt(50) + 1);
+  private static final Random RANDOM = new Random();
+
+  private static int getRandomNumberBetween1And50() {
+    return (RANDOM.nextInt(50) + 1);
+  }
+
+  private AsSoonAsMethodTutorial() {
   }
 }
