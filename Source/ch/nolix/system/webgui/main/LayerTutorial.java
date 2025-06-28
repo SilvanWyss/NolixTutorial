@@ -10,16 +10,13 @@ import ch.nolix.systemapi.webguiapi.mainapi.ControlState;
 
 final class LayerTutorial {
 
-  private LayerTutorial() {
-  }
-
   public static void main(String[] args) {
 
     //Creates a Server.
     final var server = Server.forHttpPort();
 
     //Adds a default Application to the Server.
-    server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("Layer tutorial", MainSession.class);
+    server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("Layer tutorial", Session.class);
 
     //Starts a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
@@ -32,34 +29,39 @@ final class LayerTutorial {
       .runInBackground(server::close);
   }
 
-  private static final class MainSession extends WebClientSession<Object> {
+  private static final class Session extends WebClientSession<Object> {
 
     @Override
     protected void initialize() {
 
       getStoredGui().setTitle("Layer tutorial");
 
-      //Creates labelA.
-      final var labelA = new Label().setText("A");
+      //Creates layer1Label.
+      final var layer1Label = new Label().setText("Layer 1");
 
-      //Creates labelB.
-      final var labelB = new Label().setText("B");
+      //Creates layer2Label.
+      final var layer2Label = new Label().setText("Layer 2");
 
-      //Configures the style of labelA.
-      labelA.getStoredStyle()
+      //Configures the style of layer1Label.
+      layer1Label
+        .getStoredStyle()
+        .setTextSizeForState(ControlState.BASE, 100)
+        .setTextColorForState(ControlState.BASE, X11ColorCatalog.BLACK);
+
+      //Configures the look of layer2Label.
+      layer2Label
+        .getStoredStyle()
         .setTextSizeForState(ControlState.BASE, 200)
         .setTextColorForState(ControlState.BASE, X11ColorCatalog.GREY);
 
-      //Configures the look of labelB.
-      labelB.getStoredStyle()
-        .setTextSizeForState(ControlState.BASE, 180)
-        .setTextColorForState(ControlState.BASE, X11ColorCatalog.BLACK);
+      //Adds a new layer with the layer1Label to the GUI of the current Session.
+      getStoredGui().pushLayerWithRootControl(layer1Label);
 
-      //Adds a new layer with labelA to the Frame.
-      getStoredGui().pushLayerWithRootControl(labelA);
-
-      //Adds a new layer with labelB to the Frame.
-      getStoredGui().pushLayerWithRootControl(labelB);
+      //Adds a new layer with the layer2Label to the GUI of the current Session.
+      getStoredGui().pushLayerWithRootControl(layer2Label);
     }
+  }
+
+  private LayerTutorial() {
   }
 }
