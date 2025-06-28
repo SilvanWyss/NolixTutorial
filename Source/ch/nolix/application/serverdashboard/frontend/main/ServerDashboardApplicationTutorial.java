@@ -2,14 +2,11 @@ package ch.nolix.application.serverdashboard.frontend.main;
 
 import ch.nolix.core.environment.localcomputer.ShellProvider;
 import ch.nolix.system.application.main.Server;
-import ch.nolix.system.webgui.atomiccontrol.ImageControlTutorial;
+import ch.nolix.system.webgui.atomiccontrol.UploaderTutorial;
 import ch.nolix.system.webgui.main.HelloWorldTutorial;
 import ch.nolix.system.webgui.main.PartialRefreshTutorial;
 
 final class ServerDashboardApplicationTutorial {
-
-  private ServerDashboardApplicationTutorial() {
-  }
 
   public static void main(String[] args) {
 
@@ -27,13 +24,16 @@ final class ServerDashboardApplicationTutorial {
       "Hello World tutorial",
       HelloWorldTutorial.Session.class);
     server.addApplicationWithNameAndInitialSessionClassAndVoidContext(
-      "ImageControl tutorial",
-      ImageControlTutorial.MainSession.class);
-    server.addApplicationWithNameAndInitialSessionClassAndVoidContext(
       "Partial refresh tutorial",
       PartialRefreshTutorial.MainSession.class);
+    server.addApplicationWithNameAndInitialSessionClassAndVoidContext(
+      "ImageControl tutorial",
+      UploaderTutorial.MainSession.class);
 
     //Starts a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
+  }
+
+  private ServerDashboardApplicationTutorial() {
   }
 }
