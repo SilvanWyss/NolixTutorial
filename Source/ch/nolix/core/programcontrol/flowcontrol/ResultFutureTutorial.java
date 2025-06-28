@@ -5,17 +5,16 @@ import ch.nolix.core.math.algebra.Matrix;
 
 final class ResultFutureTutorial {
 
-  private ResultFutureTutorial() {
-  }
-
   public static void main(String[] args) {
 
-    final var matrix = Matrix.createIdendityMatrixWithLength(2000);
+    final var matrix = Matrix.createIdendityMatrixWithLength(3000);
     final var resultFuture = FlowController.runInBackground(matrix::getRank);
 
-    Logger.logInfo("Calculations are done in background.");
-    Logger.logInfo("...");
+    Logger.logInfo("Calculations are made in background.");
     resultFuture.waitUntilIsFinished();
     Logger.logInfo("matrix rank: " + resultFuture.getResult());
+  }
+
+  private ResultFutureTutorial() {
   }
 }
