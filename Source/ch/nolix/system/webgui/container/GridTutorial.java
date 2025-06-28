@@ -9,18 +9,13 @@ import ch.nolix.systemapi.webguiapi.mainapi.ControlState;
 
 final class GridTutorial {
 
-  private GridTutorial() {
-  }
-
   public static void main(String[] args) {
 
     //Creates a Server.
     final var server = Server.forHttpPort();
 
     //Adds a default Application to the Server.
-    server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext(
-      "Grid tutorial",
-      MainSession.class);
+    server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("Grid tutorial", Session.class);
 
     //Starts a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
@@ -33,7 +28,7 @@ final class GridTutorial {
       .runInBackground(server::close);
   }
 
-  private static final class MainSession extends WebClientSession<Object> {
+  private static final class Session extends WebClientSession<Object> {
 
     @Override
     protected void initialize() {
@@ -53,12 +48,13 @@ final class GridTutorial {
         .insertControlAtRowAndColumn(4, 4, new Label().setText("H"));
 
       //Configures the style of the Grid.
-      grid
-        .getStoredStyle()
-        .setTextSizeForState(ControlState.BASE, 50);
+      grid.getStoredStyle().setTextSizeForState(ControlState.BASE, 50);
 
-      //Adds the Grid to the GUI of the current MainSession.
+      //Adds the Grid to the GUI of the current Session.
       getStoredGui().pushLayerWithRootControl(grid);
     }
+  }
+
+  private GridTutorial() {
   }
 }
