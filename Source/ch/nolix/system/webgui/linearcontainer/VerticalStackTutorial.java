@@ -9,18 +9,13 @@ import ch.nolix.systemapi.webguiapi.mainapi.ControlState;
 
 final class VerticalStackTutorial {
 
-  private VerticalStackTutorial() {
-  }
-
   public static void main(String[] args) {
 
     //Creates a Server.
     final var server = Server.forHttpPort();
 
     //Adds a default Application to the Server.
-    server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext(
-      "VerticalStack tutorial",
-      MainSession.class);
+    server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("VerticalStack tutorial", Session.class);
 
     //Starts a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
@@ -33,7 +28,7 @@ final class VerticalStackTutorial {
       .runInBackground(server::close);
   }
 
-  private static final class MainSession extends WebClientSession<Object> {
+  private static final class Session extends WebClientSession<Object> {
 
     @Override
     protected void initialize() {
@@ -41,26 +36,24 @@ final class VerticalStackTutorial {
       //Creates a VerticalStack.
       final var verticalStack = new VerticalStack();
 
-      //Creates 4 Labels.
-      final var label1 = new Label().setText("A");
-      final var label2 = new Label().setText("B");
-      final var label3 = new Label().setText("C");
-      final var label4 = new Label().setText("D");
-
-      //Adds the Labels to the VerticalStack.
-      verticalStack.addControl(label1, label2, label3, label4);
+      //Creates and adds 4 Labels to the VerticalStack.
+      verticalStack.addControl(
+        new Label().setText("A"),
+        new Label().setText("B"),
+        new Label().setText("C"),
+        new Label().setText("D"));
 
       //Configures the style of the VerticalStack.
-      verticalStack.getStoredStyle().setChildControlMarginForState(ControlState.BASE, 20);
+      verticalStack
+        .getStoredStyle()
+        .setChildControlMarginForState(ControlState.BASE, 50)
+        .setTextSizeForState(ControlState.BASE, 100);
 
-      //Configures the style of the Labels.
-      label1.getStoredStyle().setTextSizeForState(ControlState.BASE, 50);
-      label2.getStoredStyle().setTextSizeForState(ControlState.BASE, 50);
-      label3.getStoredStyle().setTextSizeForState(ControlState.BASE, 50);
-      label4.getStoredStyle().setTextSizeForState(ControlState.BASE, 50);
-
-      //Adds the VerticalStack to the GUI of the current MainSession.
+      //Adds the VerticalStack to the GUI of the current Session.
       getStoredGui().pushLayerWithRootControl(verticalStack);
     }
+  }
+
+  private VerticalStackTutorial() {
   }
 }
