@@ -1,32 +1,22 @@
 package ch.nolix.core.errorcontrol.validator;
 
-/**
- * The {@link StringValidationTutorial} is a tutorial for the {@link Validator}.
- * 
- * @author Silvan
- * @date 2017-03-05
- */
 final class StringValidationTutorial {
 
-  /**
-   * Prevents that an instance of the {@link Validator} can be created.
-   */
-  private StringValidationTutorial() {
-  }
-
-  /**
-   * Lets the {@link Validator} validate the maximum length of a {@link String}.
-   * 
-   * @param args
-   */
   public static void main(String[] args) {
 
-    //Lets the validator validate that the string 'Hello World!' is not null and
-    //not empty.
+    /*
+     * Lets the Validator assert that the String 'Hello World!' is not null and not
+     * empty, what will not result in any complain.
+     */
     Validator.assertThat("Hello World!").isNotEmpty();
 
-    //Lets the validator validate that he string 'Hello World!' has the max length
-    //20.
-    Validator.assertThat("Hello World!").isNotLongerThan(12);
+    /*
+     * Lets the Validator assert that he String 'Hello World!' is not longer than 10
+     * characters, what will result in an InvalidArgumentException.
+     */
+    Validator.assertThat("Hello World!").isNotLongerThan(10);
+  }
+
+  private StringValidationTutorial() {
   }
 }

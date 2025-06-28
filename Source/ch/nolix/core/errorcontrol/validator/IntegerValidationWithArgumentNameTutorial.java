@@ -1,9 +1,6 @@
 package ch.nolix.core.errorcontrol.validator;
 
-final class IntegerValidationTutorial2 {
-
-  private IntegerValidationTutorial2() {
-  }
+final class IntegerValidationWithArgumentNameTutorial {
 
   public static void main(String[] args) {
 
@@ -12,5 +9,8 @@ final class IntegerValidationTutorial2 {
 
     //Lets the Validator assert that 5 is negative, what will result in a NegativeArgumentException.
     Validator.assertThat(5).thatIsNamed("size").isNegative();
+  }
+
+  private IntegerValidationWithArgumentNameTutorial() {
   }
 }
