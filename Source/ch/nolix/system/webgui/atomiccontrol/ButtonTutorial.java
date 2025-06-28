@@ -6,15 +6,12 @@ import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
 import ch.nolix.system.webgui.atomiccontrol.button.Button;
 import ch.nolix.system.webgui.atomiccontrol.label.Label;
-import ch.nolix.system.webgui.container.SingleContainer;
 import ch.nolix.system.webgui.linearcontainer.VerticalStack;
+import ch.nolix.systemapi.guiapi.contentalignmentproperty.HorizontalContentAlignment;
 import ch.nolix.systemapi.webguiapi.atomiccontrolapi.labelapi.ILabel;
 import ch.nolix.systemapi.webguiapi.mainapi.ControlState;
 
 final class ButtonTutorial {
-
-  private ButtonTutorial() {
-  }
 
   public static void main(String[] args) {
 
@@ -22,7 +19,7 @@ final class ButtonTutorial {
     final var server = Server.forHttpPort();
 
     //Adds a default Application to the Server.
-    server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("Button tutorial", MainSession.class);
+    server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("Button tutorial", Session.class);
 
     //Starts a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
@@ -35,7 +32,7 @@ final class ButtonTutorial {
       .runInBackground(server::close);
   }
 
-  private static final class MainSession extends WebClientSession<Object> {
+  private static final class Session extends WebClientSession<Object> {
 
     private int count;
 
@@ -44,16 +41,21 @@ final class ButtonTutorial {
     @Override
     protected void initialize() {
 
-      //Creates a VerticalStack with the countLabel and button.
-      final var verticalStack = //
-      new VerticalStack()
-        .addControl(
-          countLabel,
-          new Button().setText("Increment").setLeftMouseButtonPressAction(this::incrementCountAndUpdateCountLabel));
+      //Creates incrementButton.
+      final var incrementButton = //
+      new Button().setText("Increment").setLeftMouseButtonPressAction(this::incrementCountAndUpdateCountLabel);
 
-      //Adds the VerticalStack to the GUI of the current MainSession.
-      getStoredGui().pushLayerWithRootControl(
-        new SingleContainer().setControl(verticalStack).editStyle(s -> s.setPaddingForState(ControlState.BASE, 50)));
+      //Configures the style of the countLabel.
+      countLabel.getStoredStyle().setTextSizeForState(ControlState.BASE, 100);
+
+      //Creates a VerticalStack with the countLabel and the incrementButton.
+      final var verticalStack = new VerticalStack().addControl(countLabel, incrementButton);
+
+      //Configures the style of the verticalStack.
+      verticalStack.setContentAlignment(HorizontalContentAlignment.CENTER);
+
+      //Adds the VerticalStack to the GUI of the current Session.
+      getStoredGui().pushLayerWithRootControl(verticalStack);
     }
 
     private void incrementCountAndUpdateCountLabel() {
@@ -64,5 +66,8 @@ final class ButtonTutorial {
       //Updates the countLabel.
       countLabel.setText(String.valueOf(count));
     }
+  }
+
+  private ButtonTutorial() {
   }
 }
