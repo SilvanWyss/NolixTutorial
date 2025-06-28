@@ -10,9 +10,6 @@ import ch.nolix.systemapi.webguiapi.mainapi.ControlState;
 
 final class HorizontalStackWithBottomContentAlignmentTutorial {
 
-  private HorizontalStackWithBottomContentAlignmentTutorial() {
-  }
-
   public static void main(String[] args) {
 
     //Creates a Server.
@@ -20,8 +17,8 @@ final class HorizontalStackWithBottomContentAlignmentTutorial {
 
     //Adds a default Application to the Server.
     server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext(
-      "HorizontalStack tutorial",
-      MainSession.class);
+      "HorizontalStack with bottom content alignment tutorial",
+      Session.class);
 
     //Starts a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
@@ -33,7 +30,7 @@ final class HorizontalStackWithBottomContentAlignmentTutorial {
       .asSoonAsNoMore(server::hasClientConnected).runInBackground(server::close);
   }
 
-  private static final class MainSession extends WebClientSession<Object> {
+  private static final class Session extends WebClientSession<Object> {
 
     @Override
     protected void initialize() {
@@ -42,27 +39,29 @@ final class HorizontalStackWithBottomContentAlignmentTutorial {
       final var horizontalStack = new HorizontalStack();
 
       //Creates 4 Labels.
-      final var label1 = new Label().setText("Ap");
-      final var label2 = new Label().setText("Bp");
-      final var label3 = new Label().setText("Cp");
-      final var label4 = new Label().setText("Dp");
+      final var label1 = new Label().setText("A");
+      final var label2 = new Label().setText("B");
+      final var label3 = new Label().setText("C");
+      final var label4 = new Label().setText("D");
+
+      //Configures the style of the Labels.
+      label1.getStoredStyle().setTextSizeForState(ControlState.BASE, 100);
+      label2.getStoredStyle().setTextSizeForState(ControlState.BASE, 50);
+      label3.getStoredStyle().setTextSizeForState(ControlState.BASE, 100);
+      label4.getStoredStyle().setTextSizeForState(ControlState.BASE, 50);
 
       //Adds the Labels to the HorizontalStack.
       horizontalStack.addControl(label1, label2, label3, label4);
 
       //Configures the style of the HorizontalStack.
-      horizontalStack
-        .setContentAlignment(VerticalContentAlignment.BOTTOM)
-        .editStyle(s -> s.setChildControlMarginForState(ControlState.BASE, 20));
+      horizontalStack.setContentAlignment(VerticalContentAlignment.BOTTOM);
+      horizontalStack.getStoredStyle().setChildControlMarginForState(ControlState.BASE, 100);
 
-      //Configures the style of the Labels.
-      label1.editStyle(s -> s.setTextSizeForState(ControlState.BASE, 50));
-      label2.editStyle(s -> s.setTextSizeForState(ControlState.BASE, 20));
-      label3.editStyle(s -> s.setTextSizeForState(ControlState.BASE, 20));
-      label4.editStyle(s -> s.setTextSizeForState(ControlState.BASE, 20));
-
-      //Adds the HorizontalStack to the GUI of the current MainSession.
+      //Adds the HorizontalStack to the GUI of the current Session.
       getStoredGui().pushLayerWithRootControl(horizontalStack);
     }
+  }
+
+  private HorizontalStackWithBottomContentAlignmentTutorial() {
   }
 }
