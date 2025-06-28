@@ -36,7 +36,7 @@ final class LinkTutorial {
       //Creates a Link.
       final var link = new Link().setUrlAndDisplayTextFromIt("https://nolix.ch").setTarget(LinkTarget.NEW_TAB);
 
-      //Adds the Link to the GUI of the current MainSession.
+      //Adds the Link to the GUI of the current Session.
       getStoredGui().pushLayerWithRootControl(link);
     }
   }
