@@ -1,8 +1,8 @@
 package ch.nolix.system.webgui.atomiccontrol;
 
 import ch.nolix.core.environment.localcomputer.ShellProvider;
+import ch.nolix.core.errorcontrol.invalidargumentexception.UnrepresentingArgumentException;
 import ch.nolix.core.errorcontrol.validator.Validator;
-import ch.nolix.core.programatom.voidobject.VoidObject;
 import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 import ch.nolix.coreapi.programatomapi.variableapi.LowerCaseVariableCatalog;
 import ch.nolix.system.application.main.Server;
@@ -15,19 +15,13 @@ import ch.nolix.system.webgui.linearcontainer.VerticalStack;
 
 final class ValidationLabelTutorial {
 
-  private ValidationLabelTutorial() {
-  }
-
   public static void main(String[] args) {
 
     //Creates a Server.
     final var server = Server.forHttpPort();
 
     //Adds a default Application to the Server.
-    server.addDefaultApplicationWithNameAndInitialSessionClassAndContext(
-      "ValidationLabel tutorial",
-      MainSession.class,
-      new VoidObject());
+    server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("ValidationLabel tutorial", Session.class);
 
     //Starts a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
@@ -40,26 +34,47 @@ final class ValidationLabelTutorial {
       .runInBackground(server::close);
   }
 
-  private static final class MainSession extends WebClientSession<Object> {
+  private static final class Session extends WebClientSession<Object> {
 
-    private final Textbox positiveNumberTextbox = new Textbox();
+    private final Textbox numberTextbox = new Textbox();
 
     @Override
     protected void initialize() {
+
+      //Adds a ValidationLabel to the GUI of the current Session.
       getStoredGui().pushLayerWithRootControl(
         new VerticalStack()
           .addControl(
-            new Label().setText("Enter a positive number"),
+            new Label().setText("Enter a positive number:"),
+            numberTextbox,
             new ValidationLabel(),
-            positiveNumberTextbox,
             new Button().setText("Ok").setLeftMouseButtonPressAction(this::enterPositiveNumber)));
     }
 
     private void enterPositiveNumber() {
 
-      final var number = Integer.parseInt(positiveNumberTextbox.getText());
+      //Gets the input of the numberTextBox.
+      final var input = numberTextbox.getText();
 
-      Validator.assertThat(number).thatIsNamed(LowerCaseVariableCatalog.NUMBER).isPositive();
+      try {
+
+        //Parses the input to a number.
+        final var number = Integer.parseInt(input);
+
+        //Asserts that the number is positive.
+        Validator.assertThat(number).thatIsNamed(LowerCaseVariableCatalog.NUMBER).isPositive();
+      } catch (final NumberFormatException numberFormatException) {
+
+        //Creates and throws an UnrepresentingArgumentException for the input.
+        throw //
+        UnrepresentingArgumentException.forArgumentAndArgumentNameAndType(
+          input,
+          LowerCaseVariableCatalog.INPUT,
+          Integer.class);
+      }
     }
+  }
+
+  private ValidationLabelTutorial() {
   }
 }
