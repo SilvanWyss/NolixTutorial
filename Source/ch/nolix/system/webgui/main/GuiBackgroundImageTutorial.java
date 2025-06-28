@@ -9,9 +9,6 @@ import ch.nolix.systemapi.graphicapi.imageapi.ImageApplication;
 
 final class GuiBackgroundImageTutorial {
 
-  private GuiBackgroundImageTutorial() {
-  }
-
   public static void main(String[] args) {
 
     //Creates a Server.
@@ -19,8 +16,8 @@ final class GuiBackgroundImageTutorial {
 
     //Adds a default Application to the Server.
     server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext(
-      "Background image tutorial",
-      MainSession.class);
+      "Background Image tutorial",
+      Session.class);
 
     //Starts a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
@@ -33,7 +30,7 @@ final class GuiBackgroundImageTutorial {
       .runInBackground(server::close);
   }
 
-  private static final class MainSession extends WebClientSession<Object> {
+  private static final class Session extends WebClientSession<Object> {
 
     @Override
     protected void initialize() {
@@ -41,8 +38,11 @@ final class GuiBackgroundImageTutorial {
       //Loads an Image.
       final var image = Image.fromResource("image/pilatus.jpg");
 
-      //Sets the Image as background image to the GUI of the current MainSession.
+      //Sets the Image as background image to the GUI of the current Session.
       getStoredGui().setBackgroundImage(image, ImageApplication.SCALE_TO_FRAME);
     }
+  }
+
+  private GuiBackgroundImageTutorial() {
   }
 }
