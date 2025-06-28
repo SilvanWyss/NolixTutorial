@@ -12,16 +12,13 @@ import ch.nolix.systemapi.webguiapi.mainapi.ControlState;
 
 final class CookieTutorial {
 
-  private CookieTutorial() {
-  }
-
   public static void main(String[] args) {
 
     //Creates a Server.
     final var server = Server.forHttpPort();
 
     //Adds a default Application to the Server.
-    server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("Cookie tutorial", MainSession.class);
+    server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("Cookie tutorial", Session.class);
 
     //Starts a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
@@ -34,16 +31,17 @@ final class CookieTutorial {
       .runInBackground(server::close);
   }
 
-  public static final class MainSession extends WebClientSession<Object> {
+  private static final class Session extends WebClientSession<Object> {
 
     private final ITextbox textbox = new Textbox().editStyle(ts -> ts.setBorderThicknessForState(ControlState.BASE, 1));
 
     @Override
     protected void initialize() {
 
-      final var input = getStoredParentClient().getOptionalCookieValueByCookieName("input");
-      if (input.isPresent()) {
-        textbox.setText(input.get());
+      final var cookieValue = getStoredParentClient().getOptionalCookieValueByCookieName("myCookie");
+
+      if (cookieValue.isPresent()) {
+        textbox.setText(cookieValue.get());
       }
 
       getStoredGui().pushLayerWithRootControl(
@@ -51,15 +49,18 @@ final class CookieTutorial {
           .addControl(
             textbox,
             new Button()
-              .setText("Save input in cookie")
-              .setLeftMouseButtonPressAction(this::saveInputInCookie)));
+              .setText("Save text in cookie")
+              .setLeftMouseButtonPressAction(this::saveTextInCookie)));
     }
 
-    private void saveInputInCookie() {
+    private void saveTextInCookie() {
 
-      getStoredParentClient().setOrAddCookieWithNameAndValue("input", textbox.getText());
+      getStoredParentClient().setOrAddCookieWithNameAndValue("myCookie", textbox.getText());
 
       ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
     }
+  }
+
+  private CookieTutorial() {
   }
 }
