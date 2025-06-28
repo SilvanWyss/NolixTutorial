@@ -1,7 +1,6 @@
 package ch.nolix.system.webgui.linearcontainer;
 
 import ch.nolix.core.environment.localcomputer.ShellProvider;
-import ch.nolix.core.programatom.voidobject.VoidObject;
 import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
@@ -11,19 +10,15 @@ import ch.nolix.systemapi.webguiapi.mainapi.ControlState;
 
 final class VerticalStackWithRightContentAlignmentTutorial {
 
-  private VerticalStackWithRightContentAlignmentTutorial() {
-  }
-
   public static void main(String[] args) {
 
     //Creates a Server.
     final var server = Server.forHttpPort();
 
     //Adds a default Application to the Server.
-    server.addDefaultApplicationWithNameAndInitialSessionClassAndContext(
+    server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext(
       "VerticalStack with right content alignment tutorial",
-      MainSession.class,
-      new VoidObject());
+      Session.class);
 
     //Starts a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
@@ -36,7 +31,7 @@ final class VerticalStackWithRightContentAlignmentTutorial {
       .runInBackground(server::close);
   }
 
-  private static final class MainSession extends WebClientSession<Object> {
+  private static final class Session extends WebClientSession<Object> {
 
     @Override
     protected void initialize() {
@@ -50,22 +45,24 @@ final class VerticalStackWithRightContentAlignmentTutorial {
       final var label3 = new Label().setText("C");
       final var label4 = new Label().setText("D");
 
-      //Adds the Labels to the VerticalStack.
+      //Configures the style of the Labels.
+      label1.getStoredStyle().setTextSizeForState(ControlState.BASE, 100);
+      label2.getStoredStyle().setTextSizeForState(ControlState.BASE, 50);
+      label3.getStoredStyle().setTextSizeForState(ControlState.BASE, 100);
+      label4.getStoredStyle().setTextSizeForState(ControlState.BASE, 50);
+
+      //Adds the Labels to the HorizontalStack.
       verticalStack.addControl(label1, label2, label3, label4);
 
-      //Configures the style of the VerticalStack.
-      verticalStack
-        .setContentAlignment(HorizontalContentAlignment.RIGHT)
-        .editStyle(s -> s.setChildControlMarginForState(ControlState.BASE, 20));
+      //Configures the style of the HorizontalStack.
+      verticalStack.setContentAlignment(HorizontalContentAlignment.RIGHT);
+      verticalStack.getStoredStyle().setChildControlMarginForState(ControlState.BASE, 100);
 
-      //Configures the style of the Labels.
-      label1.getStoredStyle().setTextSizeForState(ControlState.BASE, 50);
-      label2.getStoredStyle().setTextSizeForState(ControlState.BASE, 20);
-      label3.getStoredStyle().setTextSizeForState(ControlState.BASE, 20);
-      label4.getStoredStyle().setTextSizeForState(ControlState.BASE, 20);
-
-      //Adds the VerticalStack to the GUI of the current MainSession.
+      //Adds the HorizontalStack to the GUI of the current Session.
       getStoredGui().pushLayerWithRootControl(verticalStack);
     }
+  }
+
+  private VerticalStackWithRightContentAlignmentTutorial() {
   }
 }
