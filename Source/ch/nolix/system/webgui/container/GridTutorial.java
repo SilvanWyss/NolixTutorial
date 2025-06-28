@@ -48,7 +48,7 @@ final class GridTutorial {
         .insertControlAtRowAndColumn(4, 4, new Label().setText("H"));
 
       //Configures the style of the Grid.
-      grid.getStoredStyle().setTextSizeForState(ControlState.BASE, 50);
+      grid.getStoredStyle().setTextSizeForState(ControlState.BASE, 100);
 
       //Adds the Grid to the GUI of the current Session.
       getStoredGui().pushLayerWithRootControl(grid);
