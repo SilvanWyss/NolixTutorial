@@ -9,12 +9,9 @@ import ch.nolix.system.objectschema.model.ValueModel;
 
 final class MsSqlSchemaAdapterTutorial {
 
-  private MsSqlSchemaAdapterTutorial() {
-  }
-
   public static void main(String[] args) {
 
-    //Creates msSqlSchemaAdapter.
+    //Creates a MsSqlSchemaAdapter.
     final var msSqlSchemaAdapter = //
     MsSqlSchemaAdapterBuilder.createMsSqlSchemaAdapter()
       .toLocalAddress()
@@ -25,7 +22,8 @@ final class MsSqlSchemaAdapterTutorial {
 
     //Creates cityTable.
     final var cityTable = //
-    Table.withName("City")
+    Table
+      .withName("City")
       .addColumn(new Column("Name", ValueModel.forDataType(DataType.STRING)))
       .addColumn(new Column("Population", ValueModel.forDataType(DataType.STRING)));
 
@@ -46,10 +44,13 @@ final class MsSqlSchemaAdapterTutorial {
     //Adds countryColumn to the cityTable. 
     cityTable.addColumn(countryColumn);
 
-    //Adds the cityTable and countryTable to the msSqlSchemaAdapter.
+    //Adds the cityTable and countryTable to the MsSqlSchemaAdapter.
     msSqlSchemaAdapter.addTable(cityTable).addTable(countryTable);
 
-    //Lets the msSqlSchemaAdapter save its changes.
+    //Lets the MsSqlSchemaAdapter save its changes.
     msSqlSchemaAdapter.saveChanges();
+  }
+
+  private MsSqlSchemaAdapterTutorial() {
   }
 }
