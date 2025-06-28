@@ -11,20 +11,18 @@ import ch.nolix.system.objectschema.model.ValueModel;
 
 final class NodeSchemaAdapterTutorial {
 
-  private NodeSchemaAdapterTutorial() {
-  }
-
   public static void main(String[] args) {
 
     //Creates nodeDatabase.
     final var nodeDatabase = MutableNode.createEmpty();
 
-    //Creates nodeSchemaAdapter.
+    //Creates a NodeSchemaAdapter.
     final var nodeSchemaAdapter = NodeSchemaAdapter.forNodeDatabase("CountryDB", nodeDatabase);
 
     //Creates cityTable.
     final var cityTable = //
-    Table.withName("City")
+    Table
+      .withName("City")
       .addColumn(new Column("Name", ValueModel.forDataType(DataType.STRING)))
       .addColumn(new Column("Population", ValueModel.forDataType(DataType.STRING)));
 
@@ -45,13 +43,16 @@ final class NodeSchemaAdapterTutorial {
     //Adds countryColumn to the cityTable. 
     cityTable.addColumn(countryColumn);
 
-    //Adds the cityTable and countryTable to the nodeSchemaAdapter.
+    //Adds the cityTable and countryTable to the NodeSchemaAdapter.
     nodeSchemaAdapter.addTable(cityTable).addTable(countryTable);
 
-    //Lets the nodeSchemaAdapter save its changes.
+    //Lets the NodeSchemaAdapter save its changes.
     nodeSchemaAdapter.saveChanges();
 
     //Logs the nodeDatabase.
     Logger.logInfo(nodeDatabase.toFormattedString());
+  }
+
+  private NodeSchemaAdapterTutorial() {
   }
 }
