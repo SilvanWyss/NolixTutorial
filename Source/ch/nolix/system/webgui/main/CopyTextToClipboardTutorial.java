@@ -1,19 +1,15 @@
 package ch.nolix.system.webgui.main;
 
 import ch.nolix.core.environment.localcomputer.ShellProvider;
-import ch.nolix.core.programatom.voidobject.VoidObject;
 import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
 import ch.nolix.system.webgui.atomiccontrol.button.Button;
 import ch.nolix.system.webgui.atomiccontrol.textbox.Textbox;
-import ch.nolix.system.webgui.linearcontainer.HorizontalStack;
+import ch.nolix.system.webgui.linearcontainer.VerticalStack;
 import ch.nolix.systemapi.webguiapi.mainapi.ControlState;
 
 final class CopyTextToClipboardTutorial {
-
-  private CopyTextToClipboardTutorial() {
-  }
 
   public static void main(String[] args) {
 
@@ -21,10 +17,9 @@ final class CopyTextToClipboardTutorial {
     final var server = Server.forHttpPort();
 
     //Adds a default Application to the Server.
-    server.addDefaultApplicationWithNameAndInitialSessionClassAndContext(
+    server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext(
       "Copy text to clipboard tutorial",
-      MainSession.class,
-      new VoidObject());
+      Session.class);
 
     //Starts a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
@@ -37,7 +32,7 @@ final class CopyTextToClipboardTutorial {
       .runInBackground(server::close);
   }
 
-  private static final class MainSession extends WebClientSession<Object> {
+  private static final class Session extends WebClientSession<Object> {
 
     @Override
     protected void initialize() {
@@ -45,26 +40,24 @@ final class CopyTextToClipboardTutorial {
       //Creates inputTextbox.
       final var inputTextbox = new Textbox();
 
+      //Configures the style of the inputTextbox.
+      inputTextbox.getStoredStyle().setWidthForState(ControlState.BASE, 500);
+
       //Adds an initial text to the inputTextbox.
       inputTextbox.setText("Supercalifragilisticexpialigetisch");
 
-      //Creates rootControl.
-      final var rootControl = new HorizontalStack()
-        .addControl(
-          inputTextbox,
-          new Button()
-            .setText("Copy text")
-            .setLeftMouseButtonPressAction(
-              () -> getStoredGui().onFrontEnd().writeTextToClipboard(inputTextbox.getText())));
-
-      //Configures the style of the rootControl.
-      rootControl.editStyle(s -> s.setChildControlMarginForState(ControlState.BASE, 10));
-
-      //Configures the style of the inputTextbox.
-      inputTextbox.editStyle(s -> s.setWidthForState(ControlState.BASE, 500));
-
-      //Adds the rootControl to the GUI of the current MainSession.
-      getStoredGui().pushLayerWithRootControl(rootControl);
+      //Adds the inputTextbox to the GUI of the current Session.
+      getStoredGui().pushLayerWithRootControl(
+        new VerticalStack()
+          .addControl(
+            inputTextbox,
+            new Button()
+              .setText("Copy text")
+              .setLeftMouseButtonPressAction(
+                () -> getStoredGui().onFrontEnd().writeTextToClipboard(inputTextbox.getText()))));
     }
+  }
+
+  private CopyTextToClipboardTutorial() {
   }
 }
