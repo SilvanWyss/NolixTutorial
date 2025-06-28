@@ -17,8 +17,8 @@ final class NodeDataAdapterTutorial {
     final var entityTypeSet = EntityTypeSet.withEntityType(Person.class);
 
     //Creates a NodeDataAdapter.
-    final var nodeDataAdapter = NodeDataAdapter.forNodeDatabase(nodeDatabase).withName("PersonDB")
-      .andSchema(entityTypeSet);
+    final var nodeDataAdapter = //
+    NodeDataAdapter.forNodeDatabase(nodeDatabase).withName("PersonDB").andSchema(entityTypeSet);
 
     //Creates a first Entity.
     final var donaldDuck = new Person();
