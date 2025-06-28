@@ -8,32 +8,38 @@ import ch.nolix.system.graphic.image.Image;
 
 final class GuiIconTutorial {
 
-  private GuiIconTutorial() {
-  }
-
   public static void main(String[] args) {
 
     //Creates a Server.
     final var server = Server.forHttpPort();
 
     //Adds a default Application to the Server.
-    server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext(
-      "GUI icon tutorial",
-      MainSession.class);
+    server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("GUI icon tutorial", Session.class);
 
     //Starts a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
 
     //Closes the Server as soon as it does not have a client connected any more.
-    FlowController.waitForSeconds(2);
-    FlowController.asSoonAsNoMore(server::hasClientConnected).runInBackground(server::close);
+    FlowController
+      .waitForSeconds(2)
+      .andThen()
+      .asSoonAsNoMore(server::hasClientConnected)
+      .runInBackground(server::close);
   }
 
-  public static final class MainSession extends WebClientSession<Object> {
+  private static final class Session extends WebClientSession<Object> {
 
     @Override
     protected void initialize() {
-      getStoredGui().setIcon(Image.fromResource("image/matterhorn.jpg"));
+
+      //Loads an Image.
+      final var image = Image.fromResource("image/matterhorn.jpg");
+
+      //Sets the Image as icon to the GUI of the current Session.
+      getStoredGui().setIcon(image);
     }
+  }
+
+  private GuiIconTutorial() {
   }
 }
