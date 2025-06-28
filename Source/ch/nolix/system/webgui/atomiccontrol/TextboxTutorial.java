@@ -5,12 +5,8 @@ import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
 import ch.nolix.system.webgui.atomiccontrol.textbox.Textbox;
-import ch.nolix.systemapi.webguiapi.mainapi.ControlState;
 
 final class TextboxTutorial {
-
-  private TextboxTutorial() {
-  }
 
   public static void main(String[] args) {
 
@@ -18,9 +14,7 @@ final class TextboxTutorial {
     final var server = Server.forHttpPort();
 
     //Adds a default Application to the Server.
-    server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext(
-      "Textbox tutorial",
-      MainSession.class);
+    server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("Textbox tutorial", Session.class);
 
     //Starts a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
@@ -33,7 +27,7 @@ final class TextboxTutorial {
       .runInBackground(server::close);
   }
 
-  private static final class MainSession extends WebClientSession<Object> {
+  private static final class Session extends WebClientSession<Object> {
 
     @Override
     protected void initialize() {
@@ -41,13 +35,11 @@ final class TextboxTutorial {
       //Creates a Textbox.
       final var textBox = new Textbox();
 
-      //Configures the style of the Textbox.
-      textBox
-        .getStoredStyle()
-        .setBorderThicknessForState(ControlState.BASE, 1);
-
-      //Adds the Textbox to the GUI of the current MainSession.
+      //Adds the Textbox to the GUI of the current Session.
       getStoredGui().pushLayerWithRootControl(textBox);
     }
+  }
+
+  private TextboxTutorial() {
   }
 }
