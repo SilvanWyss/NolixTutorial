@@ -8,9 +8,6 @@ import ch.nolix.system.objectdata.model.Value;
 
 final class NodeDataAdapterTutorial {
 
-  private NodeDataAdapterTutorial() {
-  }
-
   public static void main(String[] args) {
 
     //Creates nodeDatabase.
@@ -19,7 +16,7 @@ final class NodeDataAdapterTutorial {
     //Creates schema.
     final var entityTypeSet = EntityTypeSet.withEntityType(Person.class);
 
-    //Creates nodeDataAdapter.
+    //Creates a NodeDataAdapter.
     final var nodeDataAdapter = NodeDataAdapter.forNodeDatabase(nodeDatabase).withName("PersonDB")
       .andSchema(entityTypeSet);
 
@@ -33,17 +30,17 @@ final class NodeDataAdapterTutorial {
     daisyDuck.firstName.setValue("Daisy");
     daisyDuck.lastName.setValue("Duck");
 
-    //Inserts the created Entities into the nodeDataAdapter.
+    //Inserts the created Entities into the NodeDataAdapter.
     nodeDataAdapter.insertEntity(daisyDuck, donaldDuck);
 
-    //Lets the nodeDataAdapter save its changes.
+    //Lets the NodeDataAdapter save its changes.
     nodeDataAdapter.saveChanges();
 
-    //Lets the nodeDataAdapter load the first Entity.
+    //Lets the NodeDataAdapter load the first Entity.
     final var loadedDonaldDuck = //
     nodeDataAdapter.getStoredTableByEntityType(Person.class).getStoredEntityById(donaldDuck.getId());
 
-    //Lets the nodeDataAdapter load the second Entity.
+    //Lets the NodeDataAdapter load the second Entity.
     final var loadedDaisyDuck = //
     nodeDataAdapter.getStoredTableByEntityType(Person.class).getStoredEntityById(daisyDuck.getId());
 
@@ -62,5 +59,8 @@ final class NodeDataAdapterTutorial {
     public String toString() {
       return (firstName.getStoredValue() + " " + lastName.getStoredValue());
     }
+  }
+
+  private NodeDataAdapterTutorial() {
   }
 }
