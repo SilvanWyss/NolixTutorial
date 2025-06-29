@@ -6,15 +6,13 @@ import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 import ch.nolix.coreapi.programatomapi.variableapi.LowerCaseVariableCatalog;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
+import ch.nolix.system.graphic.color.X11ColorCatalog;
 import ch.nolix.system.webgui.atomiccontrol.button.Button;
 import ch.nolix.system.webgui.atomiccontrol.label.Label;
 import ch.nolix.system.webgui.linearcontainer.VerticalStack;
 import ch.nolix.systemapi.webguiapi.atomiccontrolapi.labelapi.ILabel;
 
 final class EnterValueDialogBuilderTutorial {
-
-  private EnterValueDialogBuilderTutorial() {
-  }
 
   public static void main(String[] args) {
 
@@ -24,7 +22,7 @@ final class EnterValueDialogBuilderTutorial {
     //Adds a default Application to the Server.
     server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext(
       "EnterValueDialogBuilder tutorial",
-      MainSession.class);
+      Session.class);
 
     //Starts a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
@@ -37,37 +35,45 @@ final class EnterValueDialogBuilderTutorial {
       .runInBackground(server::close);
   }
 
-  private static final class MainSession //NOSONAR: A single-file-tutorial is allowed to have a long static class.
+  private static final class Session //NOSONAR: A single-file-tutorial is allowed to have a medium-sized static class.
   extends WebClientSession<Object> {
+
+    private final ILabel nameLabel = new Label().setText("?");
 
     @Override
     protected void initialize() {
 
-      final var nameLabel = new Label().setText("Mister ?");
-
-      getStoredGui().pushLayerWithRootControl(
-        new VerticalStack()
-          .addControl(
-            nameLabel,
-            new Button()
-              .setText("Edit your name")
-              .setLeftMouseButtonPressAction(
-                () -> getStoredGui().pushLayer(
-                  new EnterValueDialogBuilder()
-                    .setInfoText("Enter your name")
-                    .setOriginalValue(nameLabel.getText())
-                    .setValueTaker(n -> setNewName(n, nameLabel))
-                    .build()))));
+      //Adds the nameLabel and a Button, that leads to a dialog to enter a name, to the GUI of the current Session.
+      getStoredGui()
+        .pushLayerWithRootControl(
+          new VerticalStack()
+            .addControl(
+              new Label().setText("You are:"),
+              nameLabel,
+              new Button()
+                .setText("Edit your name")
+                .setLeftMouseButtonPressAction(
+                  () -> //
+                  getStoredGui()
+                    .pushLayer(
+                      new EnterValueDialogBuilder()
+                        .setInfoText("Enter your name")
+                        .setOriginalValue(nameLabel.getText())
+                        .setValueTaker(this::setNameInNameLabel)
+                        .build()
+                        .setBackgroundColor(X11ColorCatalog.WHITE)))));
     }
 
-    private void setNewName(final String name, final ILabel nameLabel) {
+    private void setNameInNameLabel(final String name) {
 
-      Validator
-        .assertThat(name)
-        .thatIsNamed(LowerCaseVariableCatalog.NAME)
-        .isNotShorterThan(4);
+      //Asserts that the given name is not shorter than 4 characters.
+      Validator.assertThat(name).thatIsNamed(LowerCaseVariableCatalog.NAME).isNotShorterThan(4);
 
+      //Sets the given name to the nameLabel.
       nameLabel.setText(name);
     }
+  }
+
+  private EnterValueDialogBuilderTutorial() {
   }
 }
