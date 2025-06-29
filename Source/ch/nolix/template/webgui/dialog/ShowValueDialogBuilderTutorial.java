@@ -5,13 +5,11 @@ import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 import ch.nolix.coreapi.programatomapi.variableapi.LowerCaseVariableCatalog;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
+import ch.nolix.system.graphic.color.X11ColorCatalog;
 import ch.nolix.system.time.moment.Time;
 import ch.nolix.system.webgui.atomiccontrol.button.Button;
 
 final class ShowValueDialogBuilderTutorial {
-
-  private ShowValueDialogBuilderTutorial() {
-  }
 
   public static void main(String[] args) {
 
@@ -21,7 +19,7 @@ final class ShowValueDialogBuilderTutorial {
     //Adds a default Application to the Server.
     server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext(
       "ShowValueDialogBuilder tutorial",
-      MainSession.class);
+      Session.class);
 
     //Starts a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
@@ -34,28 +32,45 @@ final class ShowValueDialogBuilderTutorial {
       .runInBackground(server::close);
   }
 
-  private static final class MainSession extends WebClientSession<Object> {
+  private static final class Session //NOSONAR: A single-file-tutorial is allowed to have a medium-sized static class.
+  extends WebClientSession<Object> {
 
     @Override
     protected void initialize() {
-      getStoredGui().pushLayerWithRootControl(
-        new Button()
-          .setText("Show date")
-          .setLeftMouseButtonPressAction(this::showDate));
+
+      //Adds a Button, that leads to a dialog to show the date, to the GUI of the current Session.
+      getStoredGui()
+        .pushLayerWithRootControl(
+          new Button().setText("Show date").setLeftMouseButtonPressAction(this::showDate));
     }
 
     private void showDate() {
 
-      final var time = Time.ofNow();
+      //Gets the current time.
+      final var currentTime = Time.ofNow();
 
-      final var dateString = String.format("%02d.%02d.%04d", time.getDayOfMonth(), time.getMonthOfYearAsInt(),
-        time.getYear());
+      //Gets a String with the date from the currentTime.
+      final var dateString = getDateAsStringFromTime(currentTime);
 
-      final var showDateDialog = new ShowValueDialogBuilder().setValueName(LowerCaseVariableCatalog.DATE)
-        .setValue(dateString)
-        .build();
+      //Creates a dialog that shows the dateString.
+      final var showDateDialog = //
+      new ShowValueDialogBuilder()
+        .setValueName(LowerCaseVariableCatalog.DATE)
+        .setValue(dateString).build()
+        .setBackgroundColor(X11ColorCatalog.WHITE);
 
+      //Adds a new layer with the showDateDialog to the GUI of the current Session.
       getStoredGui().pushLayer(showDateDialog);
     }
+
+    private String getDateAsStringFromTime(final Time time) {
+
+      //Formats the given time to a date String.
+      return //
+      String.format("%02d.%02d.%04d", time.getDayOfMonth(), time.getMonthOfYearAsInt(), time.getYear());
+    }
+  }
+
+  private ShowValueDialogBuilderTutorial() {
   }
 }
