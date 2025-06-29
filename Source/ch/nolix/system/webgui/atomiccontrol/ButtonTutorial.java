@@ -11,7 +11,7 @@ import ch.nolix.systemapi.guiapi.contentalignmentproperty.HorizontalContentAlign
 import ch.nolix.systemapi.webguiapi.atomiccontrolapi.labelapi.ILabel;
 import ch.nolix.systemapi.webguiapi.mainapi.ControlState;
 
-final class ButtonTutorial {
+public final class ButtonTutorial {
 
   public static void main(String[] args) {
 
@@ -32,7 +32,7 @@ final class ButtonTutorial {
       .runInBackground(server::close);
   }
 
-  private static final class Session extends WebClientSession<Object> {
+  public static final class Session extends WebClientSession<Object> {
 
     private int count;
 
