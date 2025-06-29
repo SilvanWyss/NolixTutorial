@@ -4,17 +4,10 @@ import ch.nolix.core.environment.localcomputer.ShellProvider;
 import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
-import ch.nolix.system.element.style.DeepSelectingStyle;
-import ch.nolix.system.element.style.Style;
+import ch.nolix.system.graphic.color.X11ColorCatalog;
 import ch.nolix.system.webgui.atomiccontrol.button.Button;
-import ch.nolix.system.webgui.main.Layer;
-import ch.nolix.systemapi.webguiapi.atomiccontrolapi.buttonapi.ButtonRole;
-import ch.nolix.systemapi.webguiapi.basecontainerapi.ContainerRole;
 
 final class YesNoDialogBuilderTutorial {
-
-  private YesNoDialogBuilderTutorial() {
-  }
 
   public static void main(String[] args) {
 
@@ -24,7 +17,7 @@ final class YesNoDialogBuilderTutorial {
     //Adds a default Application to the Server.
     server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext(
       "YesNoDialogBuilder tutorial",
-      MainSession.class);
+      Session.class);
 
     //Starts a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
@@ -37,55 +30,29 @@ final class YesNoDialogBuilderTutorial {
       .runInBackground(server::close);
   }
 
-  public static final class MainSession //NOSONAR: A single-file-tutorial is allowed to have a long static class.
+  private static final class Session //NOSONAR: A single-file-tutorial is allowed to have a medium-sized static class.
   extends WebClientSession<Object> {
 
     @Override
     protected void initialize() {
 
-      //Adds a Button, that can open a YesNoDialog, to the GUI of the current
-      //MainSession.
-      getStoredGui().pushLayerWithRootControl(
-        new Button()
-          .setText("Click me")
-          .setLeftMouseButtonPressAction(
-            () -> getStoredGui()
-              .pushLayer(
-                new YesNoDialogBuilder()
-                  .setYesNoQuestion("Do you want to redirect to nolix.ch?")
-                  .setConfirmAction(() -> getStoredGui().onFrontEnd().openNewTabWithUrl("nolix.ch"))
-                  .build())));
-
-      //Creates and adds a Style to the GUI of the current MainSession.
-      getStoredGui().setStyle(
-        new Style()
-          .withSubStyle(
-            new DeepSelectingStyle()
-              .withSelectorType(Button.class)
-              .withAttachingAttribute(
-                "MinWidth(200)",
-                "CursorIcon(Hand)",
-                "BaseBackground(Color(SkyBlue))",
-                "HoverBackground(Color(Blue))",
-                "BaseTextSize(30)"),
-            new DeepSelectingStyle()
-              .withSelectorType(Layer.class)
-              .withAttachingAttribute("Background(Color(White))"),
-            new DeepSelectingStyle()
-              .withSelectorRole(ContainerRole.DIALOG_CONTAINER)
-              .withAttachingAttribute(
-                "BaseBackground(Color(Lavender))")
-              .withSubStyle(
-                new DeepSelectingStyle()
-                  .withSelectorRole(ButtonRole.CONFIRM_BUTTON)
-                  .withAttachingAttribute("BaseBackground(Color(LightGreen))",
-                    "HoverBackground(Color(Green))"),
-                new DeepSelectingStyle()
-                  .withSelectorRole(ButtonRole.CANCEL_BUTTON)
-                  .withAttachingAttribute(
-                    "CursorIcon(Hand)",
-                    "BaseBackground(Color(Salmon))",
-                    "HoverBackground(Color(Red))"))));
+      //Adds a Button, that leads to a yes-no-dialog, to the GUI of the current Session.
+      getStoredGui()
+        .pushLayerWithRootControl(
+          new Button()
+            .setText("Go")
+            .setLeftMouseButtonPressAction(
+              () -> //
+              getStoredGui()
+                .pushLayer(
+                  new YesNoDialogBuilder()
+                    .setYesNoQuestion("Do you want to open nolix.ch?")
+                    .setConfirmAction(() -> getStoredGui().onFrontEnd().openNewTabWithUrl("https://nolix.ch"))
+                    .build()
+                    .setBackgroundColor(X11ColorCatalog.WHITE))));
     }
+  }
+
+  private YesNoDialogBuilderTutorial() {
   }
 }
