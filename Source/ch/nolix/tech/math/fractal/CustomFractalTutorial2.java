@@ -1,7 +1,6 @@
 package ch.nolix.tech.math.fractal;
 
 import ch.nolix.core.environment.localcomputer.ShellProvider;
-import ch.nolix.core.programatom.voidobject.VoidObject;
 import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
@@ -12,19 +11,13 @@ import ch.nolix.tech.math.bigdecimalmath.ComplexSequenceDefinedBy1Predecessor;
 
 final class CustomFractalTutorial2 {
 
-  private CustomFractalTutorial2() {
-  }
-
   public static void main(String[] args) {
 
     //Creates a Server.
     final var server = Server.forHttpPort();
 
     //Adds a default Application to the Server.
-    server.addDefaultApplicationWithNameAndInitialSessionClassAndContext(
-      "Custom fractal tutorial",
-      MainSession.class,
-      new VoidObject());
+    server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("Custom fractal tutorial", Session.class);
 
     //Starts a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
@@ -37,7 +30,7 @@ final class CustomFractalTutorial2 {
       .runInBackground(server::close);
   }
 
-  private static final class MainSession //NOSONAR: A single-file-tutorial is allowed to have a long static class.
+  private static final class Session //NOSONAR: A single-file-tutorial is allowed to have a medium-sized static class.
   extends WebClientSession<Object> {
 
     @Override
@@ -72,5 +65,8 @@ final class CustomFractalTutorial2 {
         .afterEverySecond()
         .runInBackground(this::refresh);
     }
+  }
+
+  private CustomFractalTutorial2() {
   }
 }
