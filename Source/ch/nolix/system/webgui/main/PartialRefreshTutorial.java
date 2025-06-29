@@ -16,21 +16,13 @@ import ch.nolix.systemapi.webguiapi.mainapi.ControlState;
 
 public final class PartialRefreshTutorial {
 
-  private static final IImage IMAGE = Image.fromResource("image/pilatus.jpg")
-    .withWidthAndHeight(1200, 600);
-
-  private PartialRefreshTutorial() {
-  }
-
   public static void main(String[] args) {
 
     //Creates a Server.
     final var server = Server.forHttpPort();
 
     //Adds a default Application to the Server.
-    server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext(
-      "Partial refresh tutorial",
-      MainSession.class);
+    server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("Partial refresh tutorial", Session.class);
 
     //Starts a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
@@ -43,57 +35,71 @@ public final class PartialRefreshTutorial {
       .runInBackground(server::close);
   }
 
-  public static final class MainSession //NOSONAR: A single-file-tutorial is allowed to have a long static class.
+  public static final class Session //NOSONAR: A single-file-tutorial is allowed to have a medium-sized static class.
   extends WebClientSession<Object> {
 
-    private final ILabel timeLabel = new Label()
-      .editStyle(
-        s -> s
-          .setTextSizeForState(ControlState.BASE, 50)
-          .setTextColorForState(ControlState.BASE, X11ColorCatalog.GREY));
+    private static final IImage IMAGE = Image.fromResource("image/pilatus.jpg").withWidthAndHeight(1200, 600);
+
+    private final ILabel timeLabel = new Label();
 
     @Override
     protected void initialize() {
 
-      getStoredGui()
-        .pushLayerWithRootControl(
-          new VerticalStack()
-            .addControl(
-              new ImageControl().setImage(IMAGE),
-              timeLabel));
+      //Configures the style of the timeLabel.
+      timeLabel
+        .getStoredStyle()
+        .setTextSizeForState(ControlState.BASE, 100)
+        .setTextColorForState(ControlState.BASE, X11ColorCatalog.GREY);
 
-      FlowController
-        .runInBackground(
-          () -> {
+      //Adds an ImageContorl and the timeLabel to the GUI of the current Session.
+      getStoredGui().pushLayerWithRootControl(
+        new VerticalStack().addControl(new ImageControl().setImage(IMAGE), timeLabel));
 
-            //We must wait until the client has received the first version of the page.
-            FlowController.waitForMilliseconds(1000);
+      //Updates the timeLabel every 100 milliseconds.
+      FlowController.runInBackground(
+        () -> {
 
-            FlowController
-              .asLongAs(this::isAlive)
-              .afterEveryMilliseconds(50)
-              .runInBackground(this::updateTime);
-          });
+          //There have to be wait until the client has received the web page.
+          FlowController.waitForSeconds(1);
+
+          FlowController
+            .asLongAs(this::isAlive)
+            .afterEveryMilliseconds(100)
+            .runInBackground(this::updateTime);
+        });
     }
 
     private void updateTime() {
 
-      timeLabel.setText(getCurrentTimeText());
+      //Sets the current time to the timeLabel.
+      timeLabel.setText(getCurrentTimeAsString());
 
+      //Updates the timeLable on the counterpart of the current Session.
       updateControlOnCounterpart(timeLabel, false);
     }
 
-    private String getCurrentTimeText() {
-      return getTimeAsText(Time.ofNow());
+    private String getCurrentTimeAsString() {
+
+      //Gets the currentTime.
+      final var currentTime = Time.ofNow();
+
+      //Returns the current time as String.
+      return getTimeAsString(currentTime);
     }
 
-    private String getTimeAsText(final Time time) {
-      return String.format(
-        "%02d:%02d:%02d.%d",
+    private String getTimeAsString(final Time time) {
+
+      //Formats the given time to a String.
+      return //
+      String.format(
+        "%02d:%02d:%02d:%d00",
         time.getHourOfDay(),
         time.getMinuteOfHour(),
         time.getSecondOfMinute(),
         time.getMillisecondOfSecond() / 100);
     }
+  }
+
+  private PartialRefreshTutorial() {
   }
 }

@@ -25,7 +25,7 @@ final class ServerDashboardApplicationTutorial {
       HelloWorldTutorial.Session.class);
     server.addApplicationWithNameAndInitialSessionClassAndVoidContext(
       "Partial refresh tutorial",
-      PartialRefreshTutorial.MainSession.class);
+      PartialRefreshTutorial.Session.class);
     server.addApplicationWithNameAndInitialSessionClassAndVoidContext(
       "ImageControl tutorial",
       UploaderTutorial.Session.class);

@@ -2,7 +2,7 @@ package ch.nolix.system.webgui.main;
 
 import ch.nolix.core.programatom.voidobject.VoidObject;
 import ch.nolix.system.application.main.SslServer;
-import ch.nolix.system.webgui.main.PartialRefreshTutorial.MainSession;
+import ch.nolix.system.webgui.main.PartialRefreshTutorial.Session;
 
 public class SslPartialRefreshTutorial {
 
@@ -14,7 +14,7 @@ public class SslPartialRefreshTutorial {
     //Adds a default Application to the SslServer.
     sslServer.addDefaultApplicationWithNameAndInitialSessionClassAndContext(
       "Ssl partial refresh tutorial",
-      MainSession.class,
+      Session.class,
       new VoidObject());
   }
 }
