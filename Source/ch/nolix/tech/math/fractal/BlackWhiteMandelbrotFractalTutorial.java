@@ -28,7 +28,8 @@ final class BlackWhiteMandelbrotFractalTutorial {
                 .setWidthInPixel(500)
                 .setHeightInPixel(500)
                 .setSequenceCreator(
-                  z -> new ComplexSequenceDefinedBy1Predecessor(
+                  z -> //
+                  ComplexSequenceDefinedBy1Predecessor.withFirstValueAndNextValueFunction(
                     new ComplexNumber(0.0, 0.0),
                     p -> p.getPower2().getSum(z)))
                 .setMinMagnitudeForDivergence(10.0)

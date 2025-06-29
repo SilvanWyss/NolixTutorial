@@ -53,7 +53,8 @@ final class BlackWhiteJuliaFractalTutorial {
                 .setWidthInPixel(500)
                 .setHeightInPixel(500)
                 .setSequenceCreator(
-                  z -> new ComplexSequenceDefinedBy1Predecessor(
+                  z -> //
+                  ComplexSequenceDefinedBy1Predecessor.withFirstValueAndNextValueFunction(
                     z,
                     p -> p.getPower2().getSum(new ComplexNumber(-0.8, 0.15))))
                 .setMinMagnitudeForDivergence(10.0)

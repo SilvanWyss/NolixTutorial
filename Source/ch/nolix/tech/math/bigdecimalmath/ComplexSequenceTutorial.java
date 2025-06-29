@@ -6,12 +6,10 @@ import ch.nolix.core.errorcontrol.logging.Logger;
 
 final class ComplexSequenceTutorial {
 
-  private ComplexSequenceTutorial() {
-  }
-
   public static void main(String[] args) {
 
-    final var complexSequence = new ComplexSequenceDefinedBy1Predecessor(
+    final var complexSequence = //
+    ComplexSequenceDefinedBy1Predecessor.withFirstValueAndNextValueFunction(
       new ComplexNumber(0.0, 0.0),
       p -> p.getPower2().getSum(new ComplexNumber(0.0, 1.0)));
 
@@ -26,5 +24,8 @@ final class ComplexSequenceTutorial {
     printFunction.accept(10);
     printFunction.accept(100);
     printFunction.accept(1000);
+  }
+
+  private ComplexSequenceTutorial() {
   }
 }
