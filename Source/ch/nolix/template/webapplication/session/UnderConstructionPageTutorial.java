@@ -1,18 +1,13 @@
 package ch.nolix.template.webapplication.session;
 
 import ch.nolix.core.environment.localcomputer.ShellProvider;
-import ch.nolix.core.programatom.voidobject.VoidObject;
 import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
 import ch.nolix.system.webgui.atomiccontrol.button.Button;
-import ch.nolix.system.webgui.atomiccontrol.label.Label;
 import ch.nolix.system.webgui.linearcontainer.VerticalStack;
 
 final class UnderConstructionPageTutorial {
-
-  private UnderConstructionPageTutorial() {
-  }
 
   public static void main(String[] args) {
 
@@ -20,10 +15,9 @@ final class UnderConstructionPageTutorial {
     final var server = Server.forHttpPort();
 
     //Adds a default Application to the Server.
-    server.addDefaultApplicationWithNameAndInitialSessionClassAndContext(
+    server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext(
       "Under construction page tutorial",
-      MainSession.class,
-      new VoidObject());
+      Session.class);
 
     //Starts a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
@@ -36,19 +30,22 @@ final class UnderConstructionPageTutorial {
       .runInBackground(server::close);
   }
 
-  public static final class MainSession extends WebClientSession<Object> {
+  private static final class Session extends WebClientSession<Object> {
 
     @Override
     protected void initialize() {
+
+      //Adds a Button that leads to an UnderConstructionPageSession to the GUI of the current Session.
       getStoredGui()
         .pushLayerWithRootControl(
           new VerticalStack()
             .addControl(
-              new Label()
-                .setText("Page 1"),
               new Button()
                 .setText("Go")
                 .setLeftMouseButtonPressAction(() -> push(new UnderConstructionPageSession()))));
     }
+  }
+
+  private UnderConstructionPageTutorial() {
   }
 }
