@@ -1,7 +1,6 @@
 package ch.nolix.tech.math.fractal;
 
 import ch.nolix.core.environment.localcomputer.ShellProvider;
-import ch.nolix.core.programatom.voidobject.VoidObject;
 import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.application.webapplication.WebClientSession;
@@ -9,19 +8,13 @@ import ch.nolix.system.webgui.atomiccontrol.imagecontrol.ImageControl;
 
 final class DefaultFractalTutorial {
 
-  private DefaultFractalTutorial() {
-  }
-
   public static void main(String[] args) {
 
     //Creates a Server.
     final var server = Server.forHttpPort();
 
     //Adds a default Application to the Server.
-    server.addDefaultApplicationWithNameAndInitialSessionClassAndContext(
-      "Default fractal tutorial",
-      MainSession.class,
-      new VoidObject());
+    server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("Default fractal tutorial", Session.class);
 
     //Starts a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
@@ -34,19 +27,21 @@ final class DefaultFractalTutorial {
       .runInBackground(server::close);
   }
 
-  private static final class MainSession extends WebClientSession<Object> {
+  private static final class Session extends WebClientSession<Object> {
 
     @Override
     protected void initialize() {
 
-      getStoredGui()
-        .pushLayerWithRootControl(
-          new ImageControl().setImage(new FractalBuilder().build().startImageGeneration().getStoredImage()));
+      getStoredGui().pushLayerWithRootControl(
+        new ImageControl().setImage(new FractalBuilder().build().startImageGeneration().getStoredImage()));
 
       FlowController
         .asLongAs(this::isAlive)
         .afterEverySecond()
         .runInBackground(this::refresh);
     }
+  }
+
+  private DefaultFractalTutorial() {
   }
 }
