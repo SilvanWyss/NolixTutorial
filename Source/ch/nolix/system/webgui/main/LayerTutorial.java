@@ -48,7 +48,7 @@ final class LayerTutorial {
         .setTextSizeForState(ControlState.BASE, 100)
         .setTextColorForState(ControlState.BASE, X11ColorCatalog.BLACK);
 
-      //Configures the look of layer2Label.
+      //Configures the style of layer2Label.
       layer2Label
         .getStoredStyle()
         .setTextSizeForState(ControlState.BASE, 200)
