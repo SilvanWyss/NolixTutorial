@@ -3,7 +3,7 @@ package ch.nolix.template.webapplication.session;
 import ch.nolix.core.environment.localcomputer.ShellProvider;
 import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
-import ch.nolix.system.application.webapplication.WebClientSession;
+import ch.nolix.system.webapplication.main.WebClientSession;
 import ch.nolix.system.webgui.atomiccontrol.button.Button;
 import ch.nolix.system.webgui.linearcontainer.VerticalStack;
 

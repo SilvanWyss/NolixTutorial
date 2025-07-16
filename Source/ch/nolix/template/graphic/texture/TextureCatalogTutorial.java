@@ -3,7 +3,7 @@ package ch.nolix.template.graphic.texture;
 import ch.nolix.core.environment.localcomputer.ShellProvider;
 import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
-import ch.nolix.system.application.webapplication.WebClientSession;
+import ch.nolix.system.webapplication.main.WebClientSession;
 import ch.nolix.system.webgui.atomiccontrol.imagecontrol.ImageControl;
 import ch.nolix.system.webgui.atomiccontrol.label.Label;
 import ch.nolix.system.webgui.linearcontainer.FloatContainer;

@@ -4,7 +4,7 @@ import ch.nolix.core.environment.localcomputer.ShellProvider;
 import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 import ch.nolix.coreapi.webapi.webproperty.LinkTarget;
 import ch.nolix.system.application.main.Server;
-import ch.nolix.system.application.webapplication.WebClientSession;
+import ch.nolix.system.webapplication.main.WebClientSession;
 import ch.nolix.system.webgui.atomiccontrol.link.Link;
 
 final class LinkTutorial {

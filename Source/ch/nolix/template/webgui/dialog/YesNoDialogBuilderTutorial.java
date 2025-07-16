@@ -3,8 +3,8 @@ package ch.nolix.template.webgui.dialog;
 import ch.nolix.core.environment.localcomputer.ShellProvider;
 import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
-import ch.nolix.system.application.webapplication.WebClientSession;
 import ch.nolix.system.graphic.color.X11ColorCatalog;
+import ch.nolix.system.webapplication.main.WebClientSession;
 import ch.nolix.system.webgui.atomiccontrol.button.Button;
 
 final class YesNoDialogBuilderTutorial {

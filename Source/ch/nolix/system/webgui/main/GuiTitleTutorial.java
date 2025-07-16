@@ -3,7 +3,7 @@ package ch.nolix.system.webgui.main;
 import ch.nolix.core.environment.localcomputer.ShellProvider;
 import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
-import ch.nolix.system.application.webapplication.WebClientSession;
+import ch.nolix.system.webapplication.main.WebClientSession;
 
 final class GuiTitleTutorial {
 
