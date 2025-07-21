@@ -7,7 +7,7 @@ import ch.nolix.system.webapplication.main.WebClientSession;
 import ch.nolix.system.webgui.atomiccontrol.label.Label;
 import ch.nolix.systemapi.webguiapi.mainapi.ControlState;
 
-public final class HelloWorldTutorial {
+final class HelloWorldTutorial {
 
   public static void main(String[] args) {
 
@@ -28,7 +28,7 @@ public final class HelloWorldTutorial {
       .runInBackground(server::close);
   }
 
-  public static final class Session extends WebClientSession<Object> {
+  private static final class Session extends WebClientSession<Object> {
 
     @Override
     protected void initialize() {

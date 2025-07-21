@@ -7,7 +7,7 @@ import ch.nolix.system.graphic.image.MutableImage;
 import ch.nolix.system.webapplication.main.WebClientSession;
 import ch.nolix.system.webgui.atomiccontrol.imagecontrol.ImageControl;
 
-public final class ImageControlTutorial {
+final class ImageControlTutorial {
 
   public static void main(String[] args) {
 

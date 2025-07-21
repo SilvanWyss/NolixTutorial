@@ -14,7 +14,7 @@ import ch.nolix.system.webgui.linearcontainer.VerticalStack;
 import ch.nolix.systemapi.webguiapi.atomiccontrolapi.imagecontrolapi.IImageControl;
 import ch.nolix.systemapi.webguiapi.atomiccontrolapi.uploaderapi.IUploader;
 
-public final class UploaderTutorial {
+final class UploaderTutorial {
 
   public static void main(String[] args) {
 
@@ -35,7 +35,7 @@ public final class UploaderTutorial {
       .runInBackground(server::close);
   }
 
-  public static final class Session extends WebClientSession<Object> { //NOSONAR: MainSession is a tutorial class.
+  private static final class Session extends WebClientSession<Object> { //NOSONAR: MainSession is a tutorial class.
 
     private final IImageControl imageControl = new ImageControl();
 

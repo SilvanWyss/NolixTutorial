@@ -2,7 +2,7 @@ package ch.nolix.system.webgui.main;
 
 import ch.nolix.system.application.main.SslServer;
 
-public final class PartialRefreshOnSslServerTutorial {
+final class PartialRefreshOnSslServerTutorial {
 
   public static void main(String[] args) {
 
