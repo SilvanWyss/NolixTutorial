@@ -4,7 +4,7 @@ import ch.nolix.core.document.node.MutableNode;
 import ch.nolix.core.errorcontrol.logging.Logger;
 import ch.nolix.system.objectdata.model.Entity;
 import ch.nolix.system.objectdata.model.EntityTypeSet;
-import ch.nolix.system.objectdata.model.Value;
+import ch.nolix.system.objectdata.model.ValueField;
 
 final class NodeDataAdapterTutorial {
 
@@ -51,9 +51,9 @@ final class NodeDataAdapterTutorial {
 
   private static final class Person extends Entity {
 
-    private final Value<String> firstName = Value.withValueType(String.class);
+    private final ValueField<String> firstName = ValueField.withValueType(String.class);
 
-    private final Value<String> lastName = Value.withValueType(String.class);
+    private final ValueField<String> lastName = ValueField.withValueType(String.class);
 
     @Override
     public String toString() {

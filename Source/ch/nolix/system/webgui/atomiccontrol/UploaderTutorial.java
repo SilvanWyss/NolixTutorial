@@ -11,8 +11,8 @@ import ch.nolix.system.webgui.atomiccontrol.imagecontrol.ImageControl;
 import ch.nolix.system.webgui.atomiccontrol.uploader.Uploader;
 import ch.nolix.system.webgui.atomiccontrol.validationlabel.ValidationLabel;
 import ch.nolix.system.webgui.linearcontainer.VerticalStack;
-import ch.nolix.systemapi.webguiapi.atomiccontrolapi.imagecontrolapi.IImageControl;
-import ch.nolix.systemapi.webguiapi.atomiccontrolapi.uploaderapi.IUploader;
+import ch.nolix.systemapi.webgui.atomiccontrol.imagecontrolapi.IImageControl;
+import ch.nolix.systemapi.webgui.atomiccontrol.uploaderapi.IUploader;
 
 final class UploaderTutorial {
 

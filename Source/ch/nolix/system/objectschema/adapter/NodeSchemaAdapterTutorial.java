@@ -2,7 +2,7 @@ package ch.nolix.system.objectschema.adapter;
 
 import ch.nolix.core.document.node.MutableNode;
 import ch.nolix.core.errorcontrol.logging.Logger;
-import ch.nolix.coreapi.datamodelapi.fieldproperty.DataType;
+import ch.nolix.coreapi.datamodel.fieldproperty.DataType;
 import ch.nolix.system.objectschema.model.BackReferenceModel;
 import ch.nolix.system.objectschema.model.Column;
 import ch.nolix.system.objectschema.model.MultiReferenceModel;

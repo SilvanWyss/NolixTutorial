@@ -5,7 +5,7 @@ import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.graphic.image.Image;
 import ch.nolix.system.webapplication.main.WebClientSession;
-import ch.nolix.systemapi.graphicapi.imageapi.ImageApplication;
+import ch.nolix.systemapi.graphic.image.ImageApplication;
 
 final class GuiBackgroundImageTutorial {
 

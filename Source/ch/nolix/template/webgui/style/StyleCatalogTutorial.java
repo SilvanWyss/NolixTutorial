@@ -15,7 +15,7 @@ import ch.nolix.system.webgui.container.Grid;
 import ch.nolix.system.webgui.itemmenu.dropdownmenu.DropdownMenu;
 import ch.nolix.system.webgui.linearcontainer.HorizontalStack;
 import ch.nolix.system.webgui.linearcontainer.VerticalStack;
-import ch.nolix.systemapi.webguiapi.atomiccontrolapi.labelapi.LabelRole;
+import ch.nolix.systemapi.webgui.atomiccontrol.labelapi.LabelRole;
 import ch.nolix.template.webgui.dialog.ShowValueDialogBuilder;
 
 final class StyleCatalogTutorial {

@@ -6,7 +6,7 @@ import ch.nolix.system.application.main.Server;
 import ch.nolix.system.graphic.color.ColorGradient;
 import ch.nolix.system.graphic.color.X11ColorCatalog;
 import ch.nolix.system.webapplication.main.WebClientSession;
-import ch.nolix.systemapi.graphicapi.imageproperty.Alignment;
+import ch.nolix.systemapi.graphic.imageproperty.Alignment;
 
 final class GuiBackgroundColorGradientTutorial {
 
