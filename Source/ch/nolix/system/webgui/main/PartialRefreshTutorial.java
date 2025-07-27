@@ -45,6 +45,27 @@ public final class PartialRefreshTutorial {
 
     private final ILabel timeLabel = new Label();
 
+    private static String getCurrentTimeAsString() {
+
+      //Gets the currentTime.
+      final var currentTime = Time.ofNow();
+
+      //Returns the current time as String.
+      return getTimeAsString(currentTime);
+    }
+
+    private static String getTimeAsString(final Time time) {
+
+      //Formats the given time to a String.
+      return //
+      String.format(
+        "%02d:%02d:%02d:%d00",
+        time.getHourOfDay(),
+        time.getMinuteOfHour(),
+        time.getSecondOfMinute(),
+        time.getMillisecondOfSecond() / 100);
+    }
+
     @Override
     protected void initialize() {
 
@@ -79,27 +100,6 @@ public final class PartialRefreshTutorial {
 
       //Updates the timeLable on the counterpart of the current Session.
       updateControlOnCounterpart(timeLabel, false);
-    }
-
-    private String getCurrentTimeAsString() {
-
-      //Gets the currentTime.
-      final var currentTime = Time.ofNow();
-
-      //Returns the current time as String.
-      return getTimeAsString(currentTime);
-    }
-
-    private String getTimeAsString(final Time time) {
-
-      //Formats the given time to a String.
-      return //
-      String.format(
-        "%02d:%02d:%02d:%d00",
-        time.getHourOfDay(),
-        time.getMinuteOfHour(),
-        time.getSecondOfMinute(),
-        time.getMillisecondOfSecond() / 100);
     }
   }
 }

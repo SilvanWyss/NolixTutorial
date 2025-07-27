@@ -10,10 +10,10 @@ final class RunningJarTutorial {
   public static void main(String[] args) {
 
     //Defines resourcePath.
-    final var resourcePath = "text/willkommen_und_abschied.txt";
+    final var RESOURCE_PATH = "text/willkommen_und_abschied.txt";
 
     //Gets the resource from the resourcePath.
-    final var resource = RunningJar.getResource(resourcePath);
+    final var resource = RunningJar.getResource(RESOURCE_PATH);
 
     //Logs the resource.
     Logger.logInfo(resource);

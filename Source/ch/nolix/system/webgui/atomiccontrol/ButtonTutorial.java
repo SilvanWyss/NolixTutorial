@@ -37,7 +37,9 @@ public final class ButtonTutorial {
 
   public static final class Session extends WebClientSession<Object> {
 
-    private int count;
+    private static final int START_COUNT = 0;
+
+    private int count = START_COUNT;
 
     private final ILabel countLabel = new Label().setText(String.valueOf(count));
 

@@ -38,6 +38,12 @@ final class ShowValueDialogBuilderTutorial {
   private static final class Session //NOSONAR: A single-file-tutorial can contain a larger static class.
   extends WebClientSession<Object> {
 
+    private static String getDateAsStringFromTime(final Time time) {
+    
+      //Formats the given time to a date String.
+      return String.format("%02d.%02d.%04d", time.getDayOfMonth(), time.getMonthOfYearAsInt(), time.getYear());
+    }
+
     @Override
     protected void initialize() {
 
@@ -64,13 +70,6 @@ final class ShowValueDialogBuilderTutorial {
 
       //Adds a new layer with the showDateDialog to the GUI of the current Session.
       getStoredGui().pushLayer(showDateDialog);
-    }
-
-    private String getDateAsStringFromTime(final Time time) {
-
-      //Formats the given time to a date String.
-      return //
-      String.format("%02d.%02d.%04d", time.getDayOfMonth(), time.getMonthOfYearAsInt(), time.getYear());
     }
   }
 }
