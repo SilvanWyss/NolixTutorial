@@ -34,7 +34,8 @@ final class TextureCatalogTutorial {
       .runInBackground(server::close);
   }
 
-  private static final class Session extends WebClientSession<Object> {
+  private static final class Session //NOSONAR: A single-file-tutorial can contain a larger static class.
+  extends WebClientSession<Object> {
 
     @Override
     protected void initialize() {

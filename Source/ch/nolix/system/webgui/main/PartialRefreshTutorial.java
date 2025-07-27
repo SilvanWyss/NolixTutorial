@@ -38,7 +38,7 @@ public final class PartialRefreshTutorial {
       .runInBackground(server::close);
   }
 
-  public static final class Session //NOSONAR: A single-file-tutorial is allowed to have a medium-sized static class.
+  public static final class Session //NOSONAR: A single-file-tutorial can contain a larger static class.
   extends WebClientSession<Object> {
 
     private static final IImage IMAGE = Image.fromResource("image/pilatus.jpg").withWidthAndHeight(1200, 600);
