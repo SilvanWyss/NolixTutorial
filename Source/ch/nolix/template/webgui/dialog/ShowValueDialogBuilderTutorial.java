@@ -39,7 +39,7 @@ final class ShowValueDialogBuilderTutorial {
   extends WebClientSession<Object> {
 
     private static String getDateAsStringFromTime(final Time time) {
-    
+
       //Formats the given time to a date String.
       return String.format("%02d.%02d.%04d", time.getDayOfMonth(), time.getMonthOfYearAsInt(), time.getYear());
     }
