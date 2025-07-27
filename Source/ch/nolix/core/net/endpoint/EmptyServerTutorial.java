@@ -5,6 +5,9 @@ import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 
 final class EmptyServerTutorial {
 
+  private EmptyServerTutorial() {
+  }
+
   public static void main(String[] args) {
 
     //Creates a Server.
@@ -16,8 +19,5 @@ final class EmptyServerTutorial {
       //Waits 2 seconds.
       FlowController.waitForSeconds(2);
     }
-  }
-
-  private EmptyServerTutorial() {
   }
 }

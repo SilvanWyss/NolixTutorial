@@ -4,6 +4,9 @@ import ch.nolix.core.errorcontrol.logging.Logger;
 
 final class MatrixMultiplicationTutorial {
 
+  private MatrixMultiplicationTutorial() {
+  }
+
   public static void main(String[] args) {
 
     //Creates matrix1.
@@ -17,8 +20,5 @@ final class MatrixMultiplicationTutorial {
 
     //Logs matrix1, matrix2 and the productMatrix.
     Logger.logInfo(matrix1 + " * " + matrix2 + " = " + productMatrix);
-  }
-
-  private MatrixMultiplicationTutorial() {
   }
 }

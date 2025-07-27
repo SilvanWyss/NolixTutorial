@@ -10,6 +10,9 @@ import ch.nolix.systemapi.webgui.main.ControlState;
 
 final class LayerTutorial {
 
+  private LayerTutorial() {
+  }
+
   public static void main(String[] args) {
 
     //Creates a Server.
@@ -60,8 +63,5 @@ final class LayerTutorial {
       //Adds a new layer with the layer2Label to the GUI of the current Session.
       getStoredGui().pushLayerWithRootControl(layer2Label);
     }
-  }
-
-  private LayerTutorial() {
   }
 }

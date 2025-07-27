@@ -16,6 +16,9 @@ import ch.nolix.systemapi.webgui.main.ControlState;
 
 public final class PartialRefreshTutorial {
 
+  private PartialRefreshTutorial() {
+  }
+
   public static void main(String[] args) {
 
     //Creates a Server.
@@ -98,8 +101,5 @@ public final class PartialRefreshTutorial {
         time.getSecondOfMinute(),
         time.getMillisecondOfSecond() / 100);
     }
-  }
-
-  private PartialRefreshTutorial() {
   }
 }

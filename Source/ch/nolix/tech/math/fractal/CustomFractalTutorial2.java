@@ -11,6 +11,9 @@ import ch.nolix.tech.math.bigdecimalmath.ComplexSequenceDefinedBy1Predecessor;
 
 final class CustomFractalTutorial2 {
 
+  private CustomFractalTutorial2() {
+  }
+
   public static void main(String[] args) {
 
     //Creates a Server.
@@ -65,8 +68,5 @@ final class CustomFractalTutorial2 {
         .afterEverySecond()
         .runInBackground(this::refresh);
     }
-  }
-
-  private CustomFractalTutorial2() {
   }
 }

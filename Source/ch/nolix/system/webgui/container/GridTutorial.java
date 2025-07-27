@@ -9,6 +9,9 @@ import ch.nolix.systemapi.webgui.main.ControlState;
 
 final class GridTutorial {
 
+  private GridTutorial() {
+  }
+
   public static void main(String[] args) {
 
     //Creates a Server.
@@ -53,8 +56,5 @@ final class GridTutorial {
       //Adds the Grid to the GUI of the current Session.
       getStoredGui().pushLayerWithRootControl(grid);
     }
-  }
-
-  private GridTutorial() {
   }
 }

@@ -4,6 +4,9 @@ import ch.nolix.core.errorcontrol.logging.Logger;
 
 final class ArgumentCaptorTutorial {
 
+  private ArgumentCaptorTutorial() {
+  }
+
   public static void main(String[] args) {
 
     //Builds a Pet.
@@ -13,7 +16,7 @@ final class ArgumentCaptorTutorial {
     Logger.logInfo(garfield.toString());
   }
 
-  private static final record Pet(String name, int ageInYears, int weightInKilogram) {
+  private static record Pet(String name, int ageInYears, int weightInKilogram) {
 
     public static PetBuilder build() {
       return new PetBuilder();
@@ -73,8 +76,5 @@ final class ArgumentCaptorTutorial {
     public final N withWeightInKilogram(final int ageInYears) {
       return setArgumentAndGetNext(ageInYears);
     }
-  }
-
-  private ArgumentCaptorTutorial() {
   }
 }

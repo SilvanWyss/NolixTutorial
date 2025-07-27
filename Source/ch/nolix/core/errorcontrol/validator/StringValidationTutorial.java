@@ -2,6 +2,9 @@ package ch.nolix.core.errorcontrol.validator;
 
 final class StringValidationTutorial {
 
+  private StringValidationTutorial() {
+  }
+
   public static void main(String[] args) {
 
     /*
@@ -15,8 +18,5 @@ final class StringValidationTutorial {
      * characters, what will result in an InvalidArgumentException.
      */
     Validator.assertThat("Hello World!").isNotLongerThan(10);
-  }
-
-  private StringValidationTutorial() {
   }
 }

@@ -13,6 +13,9 @@ import ch.nolix.systemapi.webgui.main.ControlState;
 
 public final class ButtonTutorial {
 
+  private ButtonTutorial() {
+  }
+
   public static void main(String[] args) {
 
     //Creates a Server.
@@ -66,8 +69,5 @@ public final class ButtonTutorial {
       //Updates the countLabel.
       countLabel.setText(String.valueOf(count));
     }
-  }
-
-  private ButtonTutorial() {
   }
 }

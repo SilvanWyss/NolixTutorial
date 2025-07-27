@@ -10,6 +10,9 @@ import ch.nolix.systemapi.graphic.imageproperty.Alignment;
 
 final class GuiBackgroundColorGradientTutorial {
 
+  private GuiBackgroundColorGradientTutorial() {
+  }
+
   public static void main(String[] args) {
 
     //Creates a Server.
@@ -43,8 +46,5 @@ final class GuiBackgroundColorGradientTutorial {
       //Sets the ColorGradient as background ColorGradient to the GUI of the current Session.
       getStoredGui().setBackgroundColorGradient(colorGradient);
     }
-  }
-
-  private GuiBackgroundColorGradientTutorial() {
   }
 }

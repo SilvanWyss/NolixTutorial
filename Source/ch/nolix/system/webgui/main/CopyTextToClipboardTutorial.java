@@ -11,6 +11,9 @@ import ch.nolix.systemapi.webgui.main.ControlState;
 
 final class CopyTextToClipboardTutorial {
 
+  private CopyTextToClipboardTutorial() {
+  }
+
   public static void main(String[] args) {
 
     //Creates a Server.
@@ -56,8 +59,5 @@ final class CopyTextToClipboardTutorial {
               .setLeftMouseButtonPressAction(
                 () -> getStoredGui().onFrontEnd().writeTextToClipboard(inputTextbox.getText()))));
     }
-  }
-
-  private CopyTextToClipboardTutorial() {
   }
 }

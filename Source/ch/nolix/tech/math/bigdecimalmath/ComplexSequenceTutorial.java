@@ -6,6 +6,9 @@ import ch.nolix.core.errorcontrol.logging.Logger;
 
 final class ComplexSequenceTutorial {
 
+  private ComplexSequenceTutorial() {
+  }
+
   public static void main(String[] args) {
 
     final var complexSequence = //
@@ -24,8 +27,5 @@ final class ComplexSequenceTutorial {
     printFunction.accept(10);
     printFunction.accept(100);
     printFunction.accept(1000);
-  }
-
-  private ComplexSequenceTutorial() {
   }
 }

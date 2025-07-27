@@ -12,6 +12,9 @@ import ch.nolix.systemapi.webgui.main.ControlState;
 
 final class TextureCatalogTutorial {
 
+  private TextureCatalogTutorial() {
+  }
+
   public static void main(String[] args) {
 
     //Creates a Server.
@@ -70,8 +73,5 @@ final class TextureCatalogTutorial {
                 new Label().setText("White Marble"),
                 new ImageControl().setImage(whiteMarbleTexture))));
     }
-  }
-
-  private TextureCatalogTutorial() {
   }
 }

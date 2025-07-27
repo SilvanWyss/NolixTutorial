@@ -8,6 +8,9 @@ import ch.nolix.system.objectdata.model.ValueField;
 
 final class NodeDataAdapterTutorial {
 
+  private NodeDataAdapterTutorial() {
+  }
+
   public static void main(String[] args) {
 
     //Creates nodeDatabase.
@@ -59,8 +62,5 @@ final class NodeDataAdapterTutorial {
     public String toString() {
       return (firstName.getStoredValue() + " " + lastName.getStoredValue());
     }
-  }
-
-  private NodeDataAdapterTutorial() {
   }
 }

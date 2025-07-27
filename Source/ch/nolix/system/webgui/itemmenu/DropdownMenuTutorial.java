@@ -8,6 +8,9 @@ import ch.nolix.system.webgui.itemmenu.dropdownmenu.DropdownMenu;
 
 final class DropdownMenuTutorial {
 
+  private DropdownMenuTutorial() {
+  }
+
   public static void main(String[] args) {
 
     //Creates a Server.
@@ -38,8 +41,5 @@ final class DropdownMenuTutorial {
       //Adds the DropdownMenu to the GUI of the current Session.
       getStoredGui().pushLayerWithRootControl(dropdownMenu);
     }
-  }
-
-  private DropdownMenuTutorial() {
   }
 }

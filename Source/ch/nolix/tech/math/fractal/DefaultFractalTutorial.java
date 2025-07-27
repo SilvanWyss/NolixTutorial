@@ -8,6 +8,9 @@ import ch.nolix.system.webgui.atomiccontrol.imagecontrol.ImageControl;
 
 final class DefaultFractalTutorial {
 
+  private DefaultFractalTutorial() {
+  }
+
   public static void main(String[] args) {
 
     //Creates a Server.
@@ -40,8 +43,5 @@ final class DefaultFractalTutorial {
         .afterEverySecond()
         .runInBackground(this::refresh);
     }
-  }
-
-  private DefaultFractalTutorial() {
   }
 }

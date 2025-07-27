@@ -5,6 +5,9 @@ import ch.nolix.core.math.algebra.Matrix;
 
 final class ResultFutureTutorial {
 
+  private ResultFutureTutorial() {
+  }
+
   public static void main(String[] args) {
 
     final var matrix = Matrix.createIdendityMatrixWithLength(3000);
@@ -13,8 +16,5 @@ final class ResultFutureTutorial {
     Logger.logInfo("Calculations are made in background.");
     resultFuture.waitUntilIsFinished();
     Logger.logInfo("matrix rank: " + resultFuture.getResult());
-  }
-
-  private ResultFutureTutorial() {
   }
 }

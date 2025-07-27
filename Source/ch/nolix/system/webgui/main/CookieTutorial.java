@@ -12,6 +12,9 @@ import ch.nolix.systemapi.webgui.main.ControlState;
 
 final class CookieTutorial {
 
+  private CookieTutorial() {
+  }
+
   public static void main(String[] args) {
 
     //Creates a Server.
@@ -59,8 +62,5 @@ final class CookieTutorial {
 
       ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
     }
-  }
-
-  private CookieTutorial() {
   }
 }

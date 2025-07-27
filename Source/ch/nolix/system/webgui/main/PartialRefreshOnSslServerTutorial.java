@@ -4,6 +4,9 @@ import ch.nolix.system.application.main.SslServer;
 
 final class PartialRefreshOnSslServerTutorial {
 
+  private PartialRefreshOnSslServerTutorial() {
+  }
+
   public static void main(String[] args) {
 
     //Creates a SslServer.
@@ -13,8 +16,5 @@ final class PartialRefreshOnSslServerTutorial {
     sslServer.addApplicationWithNameAndInitialSessionClassAndVoidContext(
       "Partial refresh tutorial",
       PartialRefreshTutorial.Session.class);
-  }
-
-  private PartialRefreshOnSslServerTutorial() {
   }
 }

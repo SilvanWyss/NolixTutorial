@@ -9,6 +9,9 @@ import ch.nolix.system.webgui.atomiccontrol.button.Button;
 
 final class YesNoDialogBuilderTutorial {
 
+  private YesNoDialogBuilderTutorial() {
+  }
+
   public static void main(String[] args) {
 
     //Creates a Server.
@@ -51,8 +54,5 @@ final class YesNoDialogBuilderTutorial {
                     .build()
                     .setBackgroundColor(X11ColorCatalog.WHITE))));
     }
-  }
-
-  private YesNoDialogBuilderTutorial() {
   }
 }

@@ -14,6 +14,9 @@ import ch.nolix.systemapi.webgui.atomiccontrol.labelapi.ILabel;
 
 final class EnterValueDialogBuilderTutorial {
 
+  private EnterValueDialogBuilderTutorial() {
+  }
+
   public static void main(String[] args) {
 
     //Creates a Server.
@@ -72,8 +75,5 @@ final class EnterValueDialogBuilderTutorial {
       //Sets the given name to the nameLabel.
       nameLabel.setText(name);
     }
-  }
-
-  private EnterValueDialogBuilderTutorial() {
   }
 }

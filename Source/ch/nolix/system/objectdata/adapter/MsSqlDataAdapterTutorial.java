@@ -7,6 +7,9 @@ import ch.nolix.system.objectdata.model.ValueField;
 
 final class MsSqlDataAdapterTutorial {
 
+  private MsSqlDataAdapterTutorial() {
+  }
+
   public static void main(String[] args) {
 
     //Creates schema.
@@ -62,8 +65,5 @@ final class MsSqlDataAdapterTutorial {
     public String toString() {
       return (firstName.getStoredValue() + " " + lastName.getStoredValue());
     }
-  }
-
-  private MsSqlDataAdapterTutorial() {
   }
 }

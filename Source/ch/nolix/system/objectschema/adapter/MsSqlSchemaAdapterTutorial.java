@@ -9,6 +9,9 @@ import ch.nolix.system.objectschema.model.ValueModel;
 
 final class MsSqlSchemaAdapterTutorial {
 
+  private MsSqlSchemaAdapterTutorial() {
+  }
+
   public static void main(String[] args) {
 
     //Creates a MsSqlSchemaAdapter.
@@ -49,8 +52,5 @@ final class MsSqlSchemaAdapterTutorial {
 
     //Lets the MsSqlSchemaAdapter save its changes.
     msSqlSchemaAdapter.saveChanges();
-  }
-
-  private MsSqlSchemaAdapterTutorial() {
   }
 }

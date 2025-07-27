@@ -20,6 +20,9 @@ import ch.nolix.template.webgui.dialog.ShowValueDialogBuilder;
 
 final class StyleCatalogTutorial {
 
+  private StyleCatalogTutorial() {
+  }
+
   public static void main(String[] args) {
 
     //Creates a Server.
@@ -85,8 +88,5 @@ final class StyleCatalogTutorial {
                   new ImageControl().setImage(Image.fromResource("image/singer_building.jpg")))))
         .resetStyleRecursively();
     }
-  }
-
-  private StyleCatalogTutorial() {
   }
 }

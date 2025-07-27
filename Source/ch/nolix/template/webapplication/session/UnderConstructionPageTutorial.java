@@ -9,6 +9,9 @@ import ch.nolix.system.webgui.linearcontainer.VerticalStack;
 
 final class UnderConstructionPageTutorial {
 
+  private UnderConstructionPageTutorial() {
+  }
+
   public static void main(String[] args) {
 
     //Creates a Server.
@@ -44,8 +47,5 @@ final class UnderConstructionPageTutorial {
                 .setText("Go")
                 .setLeftMouseButtonPressAction(() -> push(new UnderConstructionPageSession()))));
     }
-  }
-
-  private UnderConstructionPageTutorial() {
   }
 }

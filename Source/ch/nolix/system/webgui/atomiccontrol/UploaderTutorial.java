@@ -16,6 +16,9 @@ import ch.nolix.systemapi.webgui.atomiccontrol.uploaderapi.IUploader;
 
 final class UploaderTutorial {
 
+  private UploaderTutorial() {
+  }
+
   public static void main(String[] args) {
 
     //Creates a Server.
@@ -73,8 +76,5 @@ final class UploaderTutorial {
       //Sets the image to the ImageControl.
       imageControl.setImage(image);
     }
-  }
-
-  private UploaderTutorial() {
   }
 }

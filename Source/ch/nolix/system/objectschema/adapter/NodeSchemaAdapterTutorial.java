@@ -11,6 +11,9 @@ import ch.nolix.system.objectschema.model.ValueModel;
 
 final class NodeSchemaAdapterTutorial {
 
+  private NodeSchemaAdapterTutorial() {
+  }
+
   public static void main(String[] args) {
 
     //Creates nodeDatabase.
@@ -51,8 +54,5 @@ final class NodeSchemaAdapterTutorial {
 
     //Logs the nodeDatabase.
     Logger.logInfo(nodeDatabase.toFormattedString());
-  }
-
-  private NodeSchemaAdapterTutorial() {
   }
 }

@@ -11,6 +11,9 @@ import ch.nolix.system.webgui.atomiccontrol.button.Button;
 
 final class ShowValueDialogBuilderTutorial {
 
+  private ShowValueDialogBuilderTutorial() {
+  }
+
   public static void main(String[] args) {
 
     //Creates a Server.
@@ -69,8 +72,5 @@ final class ShowValueDialogBuilderTutorial {
       return //
       String.format("%02d.%02d.%04d", time.getDayOfMonth(), time.getMonthOfYearAsInt(), time.getYear());
     }
-  }
-
-  private ShowValueDialogBuilderTutorial() {
   }
 }

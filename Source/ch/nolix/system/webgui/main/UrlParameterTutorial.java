@@ -9,6 +9,9 @@ import ch.nolix.system.webgui.linearcontainer.VerticalStack;
 
 final class UrlParameterTutorial {
 
+  private UrlParameterTutorial() {
+  }
+
   public static void main(String[] args) {
 
     //Creates a Server.
@@ -47,8 +50,5 @@ final class UrlParameterTutorial {
               new Label()
                 .setText("URL parameter param2: " + param2.orElseThrow())));
     }
-  }
-
-  private UrlParameterTutorial() {
   }
 }

@@ -4,6 +4,9 @@ import ch.nolix.core.errorcontrol.logging.Logger;
 
 final class RunningJarTutorial {
 
+  private RunningJarTutorial() {
+  }
+
   public static void main(String[] args) {
 
     //Defines resourcePath.
@@ -14,8 +17,5 @@ final class RunningJarTutorial {
 
     //Logs the resource.
     Logger.logInfo(resource);
-  }
-
-  private RunningJarTutorial() {
   }
 }

@@ -8,6 +8,9 @@ import ch.nolix.system.webgui.atomiccontrol.textbox.Textbox;
 
 final class TextboxTutorial {
 
+  private TextboxTutorial() {
+  }
+
   public static void main(String[] args) {
 
     //Creates a Server.
@@ -38,8 +41,5 @@ final class TextboxTutorial {
       //Adds the Textbox to the GUI of the current Session.
       getStoredGui().pushLayerWithRootControl(textBox);
     }
-  }
-
-  private TextboxTutorial() {
   }
 }

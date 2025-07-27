@@ -8,6 +8,9 @@ import ch.nolix.system.webapplication.main.WebClientSession;
 
 final class GuiIconTutorial {
 
+  private GuiIconTutorial() {
+  }
+
   public static void main(String[] args) {
 
     //Creates a Server.
@@ -38,8 +41,5 @@ final class GuiIconTutorial {
       //Sets the Image as icon to the GUI of the current Session.
       getStoredGui().setIcon(image);
     }
-  }
-
-  private GuiIconTutorial() {
   }
 }

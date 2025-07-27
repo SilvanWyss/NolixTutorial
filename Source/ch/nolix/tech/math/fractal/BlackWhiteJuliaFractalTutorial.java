@@ -11,6 +11,9 @@ import ch.nolix.tech.math.bigdecimalmath.ComplexSequenceDefinedBy1Predecessor;
 
 final class BlackWhiteJuliaFractalTutorial {
 
+  private BlackWhiteJuliaFractalTutorial() {
+  }
+
   public static void main(String[] args) {
 
     //Creates a Server.
@@ -65,8 +68,5 @@ final class BlackWhiteJuliaFractalTutorial {
         .afterEverySecond()
         .runInBackground(this::refresh);
     }
-  }
-
-  private BlackWhiteJuliaFractalTutorial() {
   }
 }

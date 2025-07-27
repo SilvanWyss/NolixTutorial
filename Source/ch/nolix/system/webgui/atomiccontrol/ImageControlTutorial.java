@@ -9,6 +9,9 @@ import ch.nolix.system.webgui.atomiccontrol.imagecontrol.ImageControl;
 
 final class ImageControlTutorial {
 
+  private ImageControlTutorial() {
+  }
+
   public static void main(String[] args) {
 
     //Creates a Server.
@@ -42,8 +45,5 @@ final class ImageControlTutorial {
       //Adds the ImageControl to the GUI of the current Session.
       getStoredGui().pushLayerWithRootControl(imageControl);
     }
-  }
-
-  private ImageControlTutorial() {
   }
 }

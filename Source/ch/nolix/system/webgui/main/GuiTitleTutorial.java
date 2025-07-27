@@ -7,6 +7,9 @@ import ch.nolix.system.webapplication.main.WebClientSession;
 
 final class GuiTitleTutorial {
 
+  private GuiTitleTutorial() {
+  }
+
   public static void main(String[] args) {
 
     //Creates a Server.
@@ -34,8 +37,5 @@ final class GuiTitleTutorial {
       //Sets the title of the GUI of the current Session.
       getStoredGui().setTitle("---Demo---");
     }
-  }
-
-  private GuiTitleTutorial() {
   }
 }

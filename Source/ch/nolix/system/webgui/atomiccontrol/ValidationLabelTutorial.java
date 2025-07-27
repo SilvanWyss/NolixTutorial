@@ -15,6 +15,9 @@ import ch.nolix.system.webgui.linearcontainer.VerticalStack;
 
 final class ValidationLabelTutorial {
 
+  private ValidationLabelTutorial() {
+  }
+
   public static void main(String[] args) {
 
     //Creates a Server.
@@ -73,8 +76,5 @@ final class ValidationLabelTutorial {
           Integer.class);
       }
     }
-  }
-
-  private ValidationLabelTutorial() {
   }
 }
