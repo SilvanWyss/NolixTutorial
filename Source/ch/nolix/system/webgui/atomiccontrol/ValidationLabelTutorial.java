@@ -4,7 +4,7 @@ import ch.nolix.core.environment.localcomputer.ShellProvider;
 import ch.nolix.core.errorcontrol.invalidargumentexception.UnrepresentingArgumentException;
 import ch.nolix.core.errorcontrol.validator.Validator;
 import ch.nolix.core.programcontrol.flowcontrol.FlowController;
-import ch.nolix.coreapi.programatom.variable.LowerCaseVariableCatalog;
+import ch.nolix.coreapi.misc.variable.LowerCaseVariableCatalog;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.webapplication.main.WebClientSession;
 import ch.nolix.system.webgui.atomiccontrol.button.Button;
