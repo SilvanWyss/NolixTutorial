@@ -3,10 +3,10 @@ package ch.nolix.system.webgui.main;
 import ch.nolix.core.environment.localcomputer.ShellProvider;
 import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
-import ch.nolix.system.graphic.color.ColorGradient;
 import ch.nolix.system.graphic.color.X11ColorCatalog;
+import ch.nolix.system.gui.colorgradient.ColorGradient;
 import ch.nolix.system.webapplication.main.WebClientSession;
-import ch.nolix.systemapi.graphic.imageproperty.Alignment;
+import ch.nolix.systemapi.gui.box.Direction;
 
 final class GuiBackgroundColorGradientTutorial {
 
@@ -41,7 +41,7 @@ final class GuiBackgroundColorGradientTutorial {
 
       //Creates a ColorGradient.
       final var colorGradient = //
-      ColorGradient.withDirectionAndColors(Alignment.VERTICAL, X11ColorCatalog.SKY_BLUE, X11ColorCatalog.WHITE);
+      ColorGradient.withDirectionAndColors(Direction.VERTICAL, X11ColorCatalog.SKY_BLUE, X11ColorCatalog.WHITE);
 
       //Sets the ColorGradient as background ColorGradient to the GUI of the current Session.
       getStoredGui().setBackgroundColorGradient(colorGradient);

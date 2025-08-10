@@ -7,7 +7,7 @@ import ch.nolix.system.webapplication.main.WebClientSession;
 import ch.nolix.system.webgui.atomiccontrol.button.Button;
 import ch.nolix.system.webgui.atomiccontrol.label.Label;
 import ch.nolix.system.webgui.linearcontainer.VerticalStack;
-import ch.nolix.systemapi.gui.contentalignmentproperty.HorizontalContentAlignment;
+import ch.nolix.systemapi.gui.box.HorizontalContentAlignment;
 import ch.nolix.systemapi.webgui.atomiccontrol.labelapi.ILabel;
 import ch.nolix.systemapi.webgui.main.ControlState;
 

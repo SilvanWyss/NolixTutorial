@@ -5,7 +5,7 @@ import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.webapplication.main.WebClientSession;
 import ch.nolix.system.webgui.atomiccontrol.label.Label;
-import ch.nolix.systemapi.gui.contentalignmentproperty.HorizontalContentAlignment;
+import ch.nolix.systemapi.gui.box.HorizontalContentAlignment;
 import ch.nolix.systemapi.webgui.main.ControlState;
 
 final class VerticalStackWithRightContentAlignmentTutorial {
