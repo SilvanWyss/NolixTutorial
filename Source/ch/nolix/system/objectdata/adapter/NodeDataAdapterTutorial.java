@@ -34,7 +34,7 @@ final class NodeDataAdapterTutorial {
     daisyDuck.lastName.setValue("Duck");
 
     //Inserts the created Entities into the NodeDataAdapter.
-    nodeDataAdapter.insertEntity(daisyDuck, donaldDuck);
+    nodeDataAdapter.insertEntity(daisyDuck).insertEntity(donaldDuck);
 
     //Lets the NodeDataAdapter save its changes.
     nodeDataAdapter.saveChanges();

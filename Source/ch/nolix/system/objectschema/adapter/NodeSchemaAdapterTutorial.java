@@ -34,7 +34,7 @@ final class NodeSchemaAdapterTutorial {
     Table.withName("Country").addColumn(new Column("Name", ValueModel.forDataType(DataType.STRING)));
 
     //Creates citiesColumn.
-    final var citiesColumn = new Column("Cities", MultiReferenceModel.forReferencedTable(cityTable));
+    final var citiesColumn = new Column("Cities", MultiReferenceModel.forReferenceableTable(cityTable));
 
     //Adds the citiesColumn to the countryTable.
     countryTable.addColumn(citiesColumn);

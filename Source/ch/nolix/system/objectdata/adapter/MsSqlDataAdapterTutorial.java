@@ -37,7 +37,7 @@ final class MsSqlDataAdapterTutorial {
     daisyDuck.lastName.setValue("Duck");
 
     //Inserts the created Entities into the MsSqlDataAdapter.
-    msSqlDataAdapter.insertEntity(daisyDuck, donaldDuck);
+    msSqlDataAdapter.insertEntity(daisyDuck).insertEntity(donaldDuck);
 
     //Lets the MsSqlDataAdapter save its changes.
     msSqlDataAdapter.saveChanges();
