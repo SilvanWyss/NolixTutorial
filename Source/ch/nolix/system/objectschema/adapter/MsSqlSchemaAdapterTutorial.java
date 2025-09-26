@@ -1,11 +1,10 @@
 package ch.nolix.system.objectschema.adapter;
 
+import ch.nolix.core.container.immutablelist.ImmutableList;
 import ch.nolix.coreapi.datamodel.fieldproperty.DataType;
-import ch.nolix.system.objectschema.model.BackReferenceModel;
 import ch.nolix.system.objectschema.model.Column;
-import ch.nolix.system.objectschema.model.MultiReferenceModel;
 import ch.nolix.system.objectschema.model.Table;
-import ch.nolix.system.objectschema.model.ValueModel;
+import ch.nolix.systemapi.midschema.fieldproperty.FieldType;
 
 final class MsSqlSchemaAdapterTutorial {
 
@@ -27,22 +26,51 @@ final class MsSqlSchemaAdapterTutorial {
     final var cityTable = //
     Table
       .withName("City")
-      .addColumn(new Column("Name", ValueModel.forDataType(DataType.STRING)))
-      .addColumn(new Column("Population", ValueModel.forDataType(DataType.STRING)));
+      .addColumn(
+        new Column(
+          "Name",
+          FieldType.VALUE_FIELD,
+          DataType.STRING,
+          ImmutableList.createEmpty(),
+          ImmutableList.createEmpty()))
+      .addColumn(
+        new Column(
+          "Population",
+          FieldType.VALUE_FIELD,
+          DataType.STRING,
+          ImmutableList.createEmpty(),
+          ImmutableList.createEmpty()));
 
     //Creates countryTable.
     final var countryTable = //
-    Table.withName("Country").addColumn(new Column("Name", ValueModel.forDataType(DataType.STRING)));
+    Table.withName("Country").addColumn(
+      new Column(
+        "Name",
+        FieldType.VALUE_FIELD,
+        DataType.STRING,
+        ImmutableList.createEmpty(),
+        ImmutableList.createEmpty()));
 
     //Creates citiesColumn.
-    final var citiesColumn = new Column("Cities", MultiReferenceModel.forReferenceableTable(cityTable));
+    final var citiesColumn = //
+    new Column(
+      "Cities",
+      FieldType.MULTI_REFERENCE,
+      DataType.STRING,
+      ImmutableList.withElement(cityTable),
+      ImmutableList.createEmpty());
 
     //Adds the citiesColumn to the countryTable.
     countryTable.addColumn(citiesColumn);
 
     //Creates countryColumn.
     final var countryColumn = //
-    new Column("Country", BackReferenceModel.forBackReferencedColumn(citiesColumn));
+    new Column(
+      "Country",
+      FieldType.BACK_REFERENCE,
+      DataType.STRING,
+      ImmutableList.createEmpty(),
+      ImmutableList.withElement(citiesColumn));
 
     //Adds countryColumn to the cityTable. 
     cityTable.addColumn(countryColumn);
