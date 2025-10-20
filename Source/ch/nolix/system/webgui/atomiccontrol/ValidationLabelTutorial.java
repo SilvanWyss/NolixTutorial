@@ -67,7 +67,7 @@ final class ValidationLabelTutorial {
 
         //Asserts that the number is positive.
         Validator.assertThat(number).thatIsNamed(LowerCaseVariableCatalog.NUMBER).isPositive();
-      } catch (final NumberFormatException numberFormatException) {
+      } catch (final NumberFormatException _) {
 
         //Creates and throws an UnrepresentingArgumentException for the input.
         throw //
