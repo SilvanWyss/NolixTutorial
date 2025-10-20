@@ -57,7 +57,7 @@ final class BlackWhiteMandelbrotFractalTutorial {
                     p -> p.getPower2().getSum(z)))
                 .setMinMagnitudeForDivergence(10.0)
                 .setMaxIterationCount(50)
-                .setColorFunction(i -> X11ColorCatalog.WHITE)
+                .setColorFunction(_ -> X11ColorCatalog.WHITE)
                 .setDecimalPlaces(10)
                 .build()
                 .startImageGeneration()

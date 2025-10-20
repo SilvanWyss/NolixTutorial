@@ -11,7 +11,7 @@ final class EmptyServerTutorial {
   public static void main(String[] args) {
 
     //Creates a Server.
-    try (final var server = Server.forHttpPort()) {
+    try (final var _ = Server.forHttpPort()) {
 
       //Starts a web browser that will connect to the Server.
       ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();

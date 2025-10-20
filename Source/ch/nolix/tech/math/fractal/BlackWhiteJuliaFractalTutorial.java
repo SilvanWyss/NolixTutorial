@@ -57,7 +57,7 @@ final class BlackWhiteJuliaFractalTutorial {
                     p -> p.getPower2().getSum(new ComplexNumber(-0.8, 0.15))))
                 .setMinMagnitudeForDivergence(10.0)
                 .setMaxIterationCount(50)
-                .setColorFunction(i -> X11ColorCatalog.WHITE)
+                .setColorFunction(_ -> X11ColorCatalog.WHITE)
                 .setDecimalPlaces(10)
                 .build()
                 .startImageGeneration()
