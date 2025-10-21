@@ -7,12 +7,10 @@ import ch.nolix.system.webapplication.main.WebClientSession;
 import ch.nolix.system.webgui.atomiccontrol.imagecontrol.ImageControl;
 
 final class DefaultFractalTutorial {
-
   private DefaultFractalTutorial() {
   }
 
   public static void main(String[] args) {
-
     //Creates a Server.
     final var server = Server.forHttpPort();
 
@@ -31,10 +29,8 @@ final class DefaultFractalTutorial {
   }
 
   private static final class Session extends WebClientSession<Object> {
-
     @Override
     protected void initialize() {
-
       getStoredGui().pushLayerWithRootControl(
         new ImageControl().setImage(new FractalBuilder().build().startImageGeneration().getStoredImage()));
 

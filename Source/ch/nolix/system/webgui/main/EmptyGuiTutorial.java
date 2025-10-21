@@ -6,12 +6,10 @@ import ch.nolix.system.application.main.Server;
 import ch.nolix.system.webapplication.main.WebClientSession;
 
 final class EmptyGuiTutorial {
-
   private EmptyGuiTutorial() {
   }
 
   public static void main(String[] args) {
-
     //Creates a Server.
     final var server = Server.forHttpPort();
 
@@ -30,7 +28,6 @@ final class EmptyGuiTutorial {
   }
 
   private static final class Session extends WebClientSession<Object> {
-
     @Override
     protected void initialize() {
       //Does nothing.

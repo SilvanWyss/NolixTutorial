@@ -13,12 +13,10 @@ import ch.nolix.system.webgui.linearcontainer.VerticalStack;
 import ch.nolix.systemapi.webgui.atomiccontrol.labelapi.ILabel;
 
 final class EnterValueDialogBuilderTutorial {
-
   private EnterValueDialogBuilderTutorial() {
   }
 
   public static void main(String[] args) {
-
     //Creates a Server.
     final var server = Server.forHttpPort();
 
@@ -40,12 +38,10 @@ final class EnterValueDialogBuilderTutorial {
 
   private static final class Session //NOSONAR: A single-file-tutorial can contain a larger static class.
   extends WebClientSession<Object> {
-
     private final ILabel nameLabel = new Label().setText("?");
 
     @Override
     protected void initialize() {
-
       //Adds the nameLabel and a Button, that leads to a dialog to enter a name, to the GUI of the current Session.
       getStoredGui()
         .pushLayerWithRootControl(
@@ -68,7 +64,6 @@ final class EnterValueDialogBuilderTutorial {
     }
 
     private void setNameInNameLabel(final String name) {
-
       //Asserts that the given name is not shorter than 4 characters.
       Validator.assertThat(name).thatIsNamed(LowerCaseVariableCatalog.NAME).isNotShorterThan(4);
 

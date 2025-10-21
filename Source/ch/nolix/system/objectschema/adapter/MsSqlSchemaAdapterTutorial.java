@@ -7,12 +7,10 @@ import ch.nolix.system.objectschema.model.Table;
 import ch.nolix.systemapi.midschema.fieldproperty.FieldType;
 
 final class MsSqlSchemaAdapterTutorial {
-
   private MsSqlSchemaAdapterTutorial() {
   }
 
   public static void main(String[] args) {
-
     //Creates a MsSqlSchemaAdapter.
     final var msSqlSchemaAdapter = //
     MsSqlSchemaAdapterBuilder.createMsSqlSchemaAdapter()

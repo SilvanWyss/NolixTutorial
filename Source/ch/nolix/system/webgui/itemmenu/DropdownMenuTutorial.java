@@ -7,12 +7,10 @@ import ch.nolix.system.webapplication.main.WebClientSession;
 import ch.nolix.system.webgui.itemmenu.dropdownmenu.DropdownMenu;
 
 final class DropdownMenuTutorial {
-
   private DropdownMenuTutorial() {
   }
 
   public static void main(String[] args) {
-
     //Creates a Server.
     final var server = Server.forHttpPort();
 
@@ -31,10 +29,8 @@ final class DropdownMenuTutorial {
   }
 
   private static final class Session extends WebClientSession<Object> {
-
     @Override
     protected void initialize() {
-
       //Creates a DropdownMenu.
       final var dropdownMenu = new DropdownMenu().addItemWithText("red", "blue", "green", "yellow", "orange", "purple");
 

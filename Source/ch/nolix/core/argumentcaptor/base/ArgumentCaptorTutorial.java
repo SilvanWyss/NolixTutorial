@@ -3,12 +3,10 @@ package ch.nolix.core.argumentcaptor.base;
 import ch.nolix.core.errorcontrol.logging.Logger;
 
 final class ArgumentCaptorTutorial {
-
   private ArgumentCaptorTutorial() {
   }
 
   public static void main(String[] args) {
-
     //Builds a Pet.
     final var garfield = Pet.build().withName("Garfield").withAgeInYears(10).withWeightInKilogram(20);
 
@@ -17,16 +15,13 @@ final class ArgumentCaptorTutorial {
   }
 
   private static record Pet(String name, int ageInYears, int weightInKilogram) {
-
     public static PetBuilder build() {
       return new PetBuilder();
     }
   }
 
   private static final class PetBuilder extends WithNameCaptor<WithAgeInYearsCaptor<WithWeightInKilogramCaptor<Pet>>> {
-
     public PetBuilder() {
-
       super(new WithAgeInYearsCaptor<>(new WithWeightInKilogramCaptor<>()));
 
       setBuilder(this::build);
@@ -38,7 +33,6 @@ final class ArgumentCaptorTutorial {
   }
 
   private static class WithNameCaptor<N> extends ArgumentCaptor<String, N> {
-
     public WithNameCaptor(final N nextArgumentCaptor) {
       super(nextArgumentCaptor);
     }
@@ -53,7 +47,6 @@ final class ArgumentCaptorTutorial {
   }
 
   private static class WithAgeInYearsCaptor<N> extends ArgumentCaptor<Integer, N> {
-
     public WithAgeInYearsCaptor(final N nextArgumentCaptor) {
       super(nextArgumentCaptor);
     }
@@ -68,7 +61,6 @@ final class ArgumentCaptorTutorial {
   }
 
   private static class WithWeightInKilogramCaptor<N> extends ArgumentCaptor<Integer, N> {
-
     public final int getWeightInKilogram() {
       return getStoredArgument();
     }

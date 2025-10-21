@@ -15,12 +15,10 @@ import ch.nolix.systemapi.webgui.atomiccontrol.imagecontrolapi.IImageControl;
 import ch.nolix.systemapi.webgui.atomiccontrol.uploaderapi.IUploader;
 
 final class UploaderTutorial {
-
   private UploaderTutorial() {
   }
 
   public static void main(String[] args) {
-
     //Creates a Server.
     final var server = Server.forHttpPort();
 
@@ -39,14 +37,12 @@ final class UploaderTutorial {
   }
 
   private static final class Session extends WebClientSession<Object> {
-
     private final IImageControl imageControl = new ImageControl();
 
     private final IUploader uploader = new Uploader();
 
     @Override
     protected void initialize() {
-
       //Adds the Uploader to the GUI of the current Session.
       getStoredGui()
         .pushLayerWithRootControl(
@@ -64,7 +60,6 @@ final class UploaderTutorial {
     }
 
     private void displayImage() {
-
       //Asserts that the Uploader has a file.
       if (!uploader.hasFile()) {
         throw GeneralException.withErrorMessage("No image selected.");

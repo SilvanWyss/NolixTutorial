@@ -10,12 +10,10 @@ import ch.nolix.tech.math.bigdecimalmath.ComplexNumber;
 import ch.nolix.tech.math.bigdecimalmath.ComplexSequenceDefinedBy1Predecessor;
 
 final class MandelbrotFractalTutorial {
-
   private MandelbrotFractalTutorial() {
   }
 
   public static void main(String[] args) {
-
     //Creates a Server.
     final var server = Server.forHttpPort();
 
@@ -37,10 +35,8 @@ final class MandelbrotFractalTutorial {
 
   private static final class Session //NOSONAR: A single-file-tutorial can contain a larger static class.
   extends WebClientSession<Object> {
-
     @Override
     protected void initialize() {
-
       getStoredGui()
         .pushLayerWithRootControl(
           new ImageControl()

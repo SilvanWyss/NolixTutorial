@@ -9,12 +9,10 @@ import ch.nolix.system.objectschema.model.Table;
 import ch.nolix.systemapi.midschema.fieldproperty.FieldType;
 
 final class NodeSchemaAdapterTutorial {
-
   private NodeSchemaAdapterTutorial() {
   }
 
   public static void main(String[] args) {
-
     //Creates nodeDatabase.
     final var nodeDatabase = MutableNode.createEmpty();
 

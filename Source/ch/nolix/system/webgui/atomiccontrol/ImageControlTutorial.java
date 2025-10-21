@@ -8,12 +8,10 @@ import ch.nolix.system.webapplication.main.WebClientSession;
 import ch.nolix.system.webgui.atomiccontrol.imagecontrol.ImageControl;
 
 final class ImageControlTutorial {
-
   private ImageControlTutorial() {
   }
 
   public static void main(String[] args) {
-
     //Creates a Server.
     final var server = Server.forHttpPort();
 
@@ -32,10 +30,8 @@ final class ImageControlTutorial {
   }
 
   private static final class Session extends WebClientSession<Object> {
-
     @Override
     protected void initialize() {
-
       //Loads an image.
       final var image = MutableImage.fromResource("image/singer_building.jpg");
 

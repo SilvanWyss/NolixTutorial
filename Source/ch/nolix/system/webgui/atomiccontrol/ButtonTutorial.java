@@ -12,12 +12,10 @@ import ch.nolix.systemapi.webgui.atomiccontrol.labelapi.ILabel;
 import ch.nolix.systemapi.webgui.main.ControlState;
 
 public final class ButtonTutorial {
-
   private ButtonTutorial() {
   }
 
   public static void main(String[] args) {
-
     //Creates a Server.
     final var server = Server.forHttpPort();
 
@@ -36,7 +34,6 @@ public final class ButtonTutorial {
   }
 
   public static final class Session extends WebClientSession<Object> {
-
     private static final int START_COUNT = 0;
 
     private int count = START_COUNT;
@@ -45,7 +42,6 @@ public final class ButtonTutorial {
 
     @Override
     protected void initialize() {
-
       //Creates incrementButton.
       final var incrementButton = //
       new Button().setText("Increment").setLeftMouseButtonPressAction(this::incrementCountAndUpdateCountLabel);
@@ -64,7 +60,6 @@ public final class ButtonTutorial {
     }
 
     private void incrementCountAndUpdateCountLabel() {
-
       //Increments the count.
       count++;
 

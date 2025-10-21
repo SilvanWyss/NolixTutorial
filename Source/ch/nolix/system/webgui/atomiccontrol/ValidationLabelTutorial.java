@@ -14,12 +14,10 @@ import ch.nolix.system.webgui.atomiccontrol.validationlabel.ValidationLabel;
 import ch.nolix.system.webgui.linearcontainer.VerticalStack;
 
 final class ValidationLabelTutorial {
-
   private ValidationLabelTutorial() {
   }
 
   public static void main(String[] args) {
-
     //Creates a Server.
     final var server = Server.forHttpPort();
 
@@ -39,12 +37,10 @@ final class ValidationLabelTutorial {
 
   private static final class Session //NOSONAR: A single-file-tutorial can contain a larger static class.
   extends WebClientSession<Object> {
-
     private final Textbox numberTextbox = new Textbox();
 
     @Override
     protected void initialize() {
-
       //Adds a ValidationLabel to the GUI of the current Session.
       getStoredGui().pushLayerWithRootControl(
         new VerticalStack()
@@ -56,19 +52,16 @@ final class ValidationLabelTutorial {
     }
 
     private void enterPositiveNumber() {
-
       //Gets the input of the numberTextBox.
       final var input = numberTextbox.getText();
 
       try {
-
         //Parses the input to a number.
         final var number = Integer.parseInt(input);
 
         //Asserts that the number is positive.
         Validator.assertThat(number).thatIsNamed(LowerCaseVariableCatalog.NUMBER).isPositive();
       } catch (final NumberFormatException _) {
-
         //Creates and throws an UnrepresentingArgumentException for the input.
         throw //
         UnrepresentingArgumentException.forArgumentAndArgumentNameAndType(

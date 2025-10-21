@@ -8,12 +8,10 @@ import ch.nolix.system.webapplication.main.WebClientSession;
 import ch.nolix.system.webgui.atomiccontrol.link.Link;
 
 final class LinkTutorial {
-
   private LinkTutorial() {
   }
 
   public static void main(String[] args) {
-
     //Creates a Server.
     final var server = Server.forHttpPort();
 
@@ -32,10 +30,8 @@ final class LinkTutorial {
   }
 
   private static final class Session extends WebClientSession<Object> {
-
     @Override
     protected void initialize() {
-
       //Creates a Link.
       final var link = new Link().setUrlAndDisplayTextFromIt("https://nolix.ch").setTarget(LinkTarget.NEW_TAB);
 

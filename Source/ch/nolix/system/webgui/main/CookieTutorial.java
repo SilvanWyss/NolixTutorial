@@ -11,12 +11,10 @@ import ch.nolix.systemapi.webgui.atomiccontrol.textboxapi.ITextbox;
 import ch.nolix.systemapi.webgui.main.ControlState;
 
 final class CookieTutorial {
-
   private CookieTutorial() {
   }
 
   public static void main(String[] args) {
-
     //Creates a Server.
     final var server = Server.forHttpPort();
 
@@ -35,12 +33,10 @@ final class CookieTutorial {
   }
 
   private static final class Session extends WebClientSession<Object> {
-
     private final ITextbox textbox = new Textbox().editStyle(ts -> ts.setBorderThicknessForState(ControlState.BASE, 1));
 
     @Override
     protected void initialize() {
-
       final var cookieValue = getStoredParentClient().getOptionalCookieValueByCookieName("myCookie");
 
       if (cookieValue.isPresent()) {
@@ -57,7 +53,6 @@ final class CookieTutorial {
     }
 
     private void saveTextInCookie() {
-
       getStoredParentClient().setOrAddCookieWithNameAndValue("myCookie", textbox.getText());
 
       ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();

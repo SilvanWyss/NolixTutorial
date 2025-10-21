@@ -5,12 +5,10 @@ import java.util.function.IntConsumer;
 import ch.nolix.core.errorcontrol.logging.Logger;
 
 final class ComplexSequenceTutorial {
-
   private ComplexSequenceTutorial() {
   }
 
   public static void main(String[] args) {
-
     final var complexSequence = //
     ComplexSequenceDefinedBy1Predecessor.withFirstValueAndNextValueFunction(
       new ComplexNumber(0.0, 0.0),

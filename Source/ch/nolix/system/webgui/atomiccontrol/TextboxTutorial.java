@@ -7,12 +7,10 @@ import ch.nolix.system.webapplication.main.WebClientSession;
 import ch.nolix.system.webgui.atomiccontrol.textbox.Textbox;
 
 final class TextboxTutorial {
-
   private TextboxTutorial() {
   }
 
   public static void main(String[] args) {
-
     //Creates a Server.
     final var server = Server.forHttpPort();
 
@@ -31,10 +29,8 @@ final class TextboxTutorial {
   }
 
   private static final class Session extends WebClientSession<Object> {
-
     @Override
     protected void initialize() {
-
       //Creates a Textbox.
       final var textBox = new Textbox();
 

@@ -6,12 +6,10 @@ import ch.nolix.system.application.main.Server;
 import ch.nolix.system.webapplication.main.WebClientSession;
 
 final class GuiTitleTutorial {
-
   private GuiTitleTutorial() {
   }
 
   public static void main(String[] args) {
-
     //Creates a Server.
     final var server = Server.forHttpPort();
 
@@ -30,10 +28,8 @@ final class GuiTitleTutorial {
   }
 
   private static final class Session extends WebClientSession<Object> {
-
     @Override
     protected void initialize() {
-
       //Sets the title of the GUI of the current Session.
       getStoredGui().setTitle("---Demo---");
     }

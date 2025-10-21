@@ -9,12 +9,10 @@ import ch.nolix.system.webapplication.main.WebClientSession;
 import ch.nolix.systemapi.gui.box.Direction;
 
 final class GuiBackgroundColorGradientTutorial {
-
   private GuiBackgroundColorGradientTutorial() {
   }
 
   public static void main(String[] args) {
-
     //Creates a Server.
     final var server = Server.forHttpPort();
 
@@ -35,10 +33,8 @@ final class GuiBackgroundColorGradientTutorial {
   }
 
   private static final class Session extends WebClientSession<Object> {
-
     @Override
     protected void initialize() {
-
       //Creates a ColorGradient.
       final var colorGradient = //
       ColorGradient.withDirectionAndColors(Direction.VERTICAL, X11ColorCatalog.SKY_BLUE, X11ColorCatalog.WHITE);

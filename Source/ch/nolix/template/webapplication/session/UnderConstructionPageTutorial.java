@@ -8,12 +8,10 @@ import ch.nolix.system.webgui.atomiccontrol.button.Button;
 import ch.nolix.system.webgui.linearcontainer.VerticalStack;
 
 final class UnderConstructionPageTutorial {
-
   private UnderConstructionPageTutorial() {
   }
 
   public static void main(String[] args) {
-
     //Creates a Server.
     final var server = Server.forHttpPort();
 
@@ -34,10 +32,8 @@ final class UnderConstructionPageTutorial {
   }
 
   private static final class Session extends WebClientSession<Object> {
-
     @Override
     protected void initialize() {
-
       //Adds a Button that leads to an UnderConstructionPageSession to the GUI of the current Session.
       getStoredGui()
         .pushLayerWithRootControl(

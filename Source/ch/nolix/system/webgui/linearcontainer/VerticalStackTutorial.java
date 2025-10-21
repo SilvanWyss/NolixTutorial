@@ -8,12 +8,10 @@ import ch.nolix.system.webgui.atomiccontrol.label.Label;
 import ch.nolix.systemapi.webgui.main.ControlState;
 
 final class VerticalStackTutorial {
-
   private VerticalStackTutorial() {
   }
 
   public static void main(String[] args) {
-
     //Creates a Server.
     final var server = Server.forHttpPort();
 
@@ -32,10 +30,8 @@ final class VerticalStackTutorial {
   }
 
   private static final class Session extends WebClientSession<Object> {
-
     @Override
     protected void initialize() {
-
       //Creates a VerticalStack.
       final var verticalStack = new VerticalStack();
 

@@ -11,12 +11,10 @@ import ch.nolix.system.webgui.linearcontainer.VerticalStack;
 import ch.nolix.systemapi.webgui.main.ControlState;
 
 final class TextureCatalogTutorial {
-
   private TextureCatalogTutorial() {
   }
 
   public static void main(String[] args) {
-
     //Creates a Server.
     final var server = Server.forHttpPort();
 
@@ -36,10 +34,8 @@ final class TextureCatalogTutorial {
 
   private static final class Session //NOSONAR: A single-file-tutorial can contain a larger static class.
   extends WebClientSession<Object> {
-
     @Override
     protected void initialize() {
-
       //Creates textures.
       final var concreteTexture = TextureCatalog.CONCRETE_TEXTURE.toScaledImage(10);
       final var fireWoodTexture = TextureCatalog.FIR_WOOD_TEXTURE.toScaledImage(10);

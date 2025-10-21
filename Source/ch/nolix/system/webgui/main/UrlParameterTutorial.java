@@ -8,12 +8,10 @@ import ch.nolix.system.webgui.atomiccontrol.label.Label;
 import ch.nolix.system.webgui.linearcontainer.VerticalStack;
 
 final class UrlParameterTutorial {
-
   private UrlParameterTutorial() {
   }
 
   public static void main(String[] args) {
-
     //Creates a Server.
     final var server = Server.forHttpPort();
 
@@ -32,10 +30,8 @@ final class UrlParameterTutorial {
   }
 
   private static final class Session extends WebClientSession<Object> {
-
     @Override
     protected void initialize() {
-
       //Gets the Url parameters param1 and param2 from the Url.
       final var param1 = getStoredParentClient().getOptionalUrlParameterValueByUrlParameterName("param1");
       final var param2 = getStoredParentClient().getOptionalUrlParameterValueByUrlParameterName("param2");

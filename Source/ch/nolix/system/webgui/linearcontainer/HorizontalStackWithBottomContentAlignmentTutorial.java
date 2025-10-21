@@ -9,12 +9,10 @@ import ch.nolix.systemapi.gui.box.VerticalContentAlignment;
 import ch.nolix.systemapi.webgui.main.ControlState;
 
 final class HorizontalStackWithBottomContentAlignmentTutorial {
-
   private HorizontalStackWithBottomContentAlignmentTutorial() {
   }
 
   public static void main(String[] args) {
-
     //Creates a Server.
     final var server = Server.forHttpPort();
 
@@ -34,10 +32,8 @@ final class HorizontalStackWithBottomContentAlignmentTutorial {
   }
 
   private static final class Session extends WebClientSession<Object> {
-
     @Override
     protected void initialize() {
-
       //Creates a HorizontalStack.
       final var horizontalStack = new HorizontalStack();
 

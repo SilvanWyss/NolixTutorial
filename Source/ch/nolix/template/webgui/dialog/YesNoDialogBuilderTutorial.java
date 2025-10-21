@@ -8,12 +8,10 @@ import ch.nolix.system.webapplication.main.WebClientSession;
 import ch.nolix.system.webgui.atomiccontrol.button.Button;
 
 final class YesNoDialogBuilderTutorial {
-
   private YesNoDialogBuilderTutorial() {
   }
 
   public static void main(String[] args) {
-
     //Creates a Server.
     final var server = Server.forHttpPort();
 
@@ -35,10 +33,8 @@ final class YesNoDialogBuilderTutorial {
 
   private static final class Session //NOSONAR: A single-file-tutorial can contain a larger static class.
   extends WebClientSession<Object> {
-
     @Override
     protected void initialize() {
-
       //Adds a Button, that leads to a yes-no-dialog, to the GUI of the current Session.
       getStoredGui()
         .pushLayerWithRootControl(

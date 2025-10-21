@@ -4,12 +4,10 @@ import ch.nolix.core.errorcontrol.logging.Logger;
 import ch.nolix.core.math.algebra.Matrix;
 
 final class ResultFutureTutorial {
-
   private ResultFutureTutorial() {
   }
 
   public static void main(String[] args) {
-
     final var matrix = Matrix.createIdendityMatrixWithLength(3000);
     final var resultFuture = FlowController.runInBackground(matrix::getRank);
 

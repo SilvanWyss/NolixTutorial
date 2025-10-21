@@ -8,12 +8,10 @@ import ch.nolix.system.webgui.atomiccontrol.label.Label;
 import ch.nolix.systemapi.webgui.main.ControlState;
 
 final class GridTutorial {
-
   private GridTutorial() {
   }
 
   public static void main(String[] args) {
-
     //Creates a Server.
     final var server = Server.forHttpPort();
 
@@ -32,10 +30,8 @@ final class GridTutorial {
   }
 
   private static final class Session extends WebClientSession<Object> {
-
     @Override
     protected void initialize() {
-
       //Creates a Grid.
       final var grid = new Grid();
 

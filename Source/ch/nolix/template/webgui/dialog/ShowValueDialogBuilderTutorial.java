@@ -10,12 +10,10 @@ import ch.nolix.system.webapplication.main.WebClientSession;
 import ch.nolix.system.webgui.atomiccontrol.button.Button;
 
 final class ShowValueDialogBuilderTutorial {
-
   private ShowValueDialogBuilderTutorial() {
   }
 
   public static void main(String[] args) {
-
     //Creates a Server.
     final var server = Server.forHttpPort();
 
@@ -37,16 +35,13 @@ final class ShowValueDialogBuilderTutorial {
 
   private static final class Session //NOSONAR: A single-file-tutorial can contain a larger static class.
   extends WebClientSession<Object> {
-
     private static String getDateAsStringFromTime(final Time time) {
-
       //Formats the given time to a date String.
       return String.format("%02d.%02d.%04d", time.getDayOfMonth(), time.getMonthOfYearAsInt(), time.getYear());
     }
 
     @Override
     protected void initialize() {
-
       //Adds a Button, that leads to a dialog to show the date, to the GUI of the current Session.
       getStoredGui()
         .pushLayerWithRootControl(
@@ -54,7 +49,6 @@ final class ShowValueDialogBuilderTutorial {
     }
 
     private void showDate() {
-
       //Gets the current time.
       final var currentTime = Time.ofNow();
 

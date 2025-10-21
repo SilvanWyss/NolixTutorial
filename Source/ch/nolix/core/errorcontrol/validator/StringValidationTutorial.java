@@ -1,12 +1,10 @@
 package ch.nolix.core.errorcontrol.validator;
 
 final class StringValidationTutorial {
-
   private StringValidationTutorial() {
   }
 
   public static void main(String[] args) {
-
     /*
      * Lets the Validator assert that the String 'Hello World!' is not null and not
      * empty, what will not result in any complain.

@@ -9,12 +9,10 @@ import ch.nolix.system.webgui.atomiccontrol.label.Label;
 import ch.nolix.systemapi.webgui.main.ControlState;
 
 final class LayerTutorial {
-
   private LayerTutorial() {
   }
 
   public static void main(String[] args) {
-
     //Creates a Server.
     final var server = Server.forHttpPort();
 
@@ -33,10 +31,8 @@ final class LayerTutorial {
   }
 
   private static final class Session extends WebClientSession<Object> {
-
     @Override
     protected void initialize() {
-
       getStoredGui().setTitle("Layer tutorial");
 
       //Creates layer1Label.

@@ -7,12 +7,10 @@ import ch.nolix.system.graphic.image.Image;
 import ch.nolix.system.webapplication.main.WebClientSession;
 
 final class GuiIconTutorial {
-
   private GuiIconTutorial() {
   }
 
   public static void main(String[] args) {
-
     //Creates a Server.
     final var server = Server.forHttpPort();
 
@@ -31,10 +29,8 @@ final class GuiIconTutorial {
   }
 
   private static final class Session extends WebClientSession<Object> {
-
     @Override
     protected void initialize() {
-
       //Loads an Image.
       final var image = Image.fromResource("image/matterhorn.jpg");
 

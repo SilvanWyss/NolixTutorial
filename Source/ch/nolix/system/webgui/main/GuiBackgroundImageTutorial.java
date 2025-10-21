@@ -8,12 +8,10 @@ import ch.nolix.system.webapplication.main.WebClientSession;
 import ch.nolix.systemapi.gui.background.ImageApplication;
 
 final class GuiBackgroundImageTutorial {
-
   private GuiBackgroundImageTutorial() {
   }
 
   public static void main(String[] args) {
-
     //Creates a Server.
     final var server = Server.forHttpPort();
 
@@ -34,10 +32,8 @@ final class GuiBackgroundImageTutorial {
   }
 
   private static final class Session extends WebClientSession<Object> {
-
     @Override
     protected void initialize() {
-
       //Loads an Image.
       final var image = Image.fromResource("image/pilatus.jpg");
 

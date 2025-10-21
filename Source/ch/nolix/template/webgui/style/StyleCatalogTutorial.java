@@ -19,12 +19,10 @@ import ch.nolix.systemapi.webgui.atomiccontrol.labelapi.LabelRole;
 import ch.nolix.template.webgui.dialog.ShowValueDialogBuilder;
 
 final class StyleCatalogTutorial {
-
   private StyleCatalogTutorial() {
   }
 
   public static void main(String[] args) {
-
     //Creates a Server.
     final var server = Server.forHttpPort();
 
@@ -44,7 +42,6 @@ final class StyleCatalogTutorial {
 
   private static final class Session //NOSONAR: A single-file-tutorial can contain a larger static class.
   extends WebClientSession<Object> {
-
     @Override
     protected void initialize() {
       getStoredGui()
