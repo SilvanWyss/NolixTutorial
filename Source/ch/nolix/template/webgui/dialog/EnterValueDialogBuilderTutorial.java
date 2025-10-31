@@ -10,7 +10,7 @@ import ch.nolix.system.webapplication.main.WebClientSession;
 import ch.nolix.system.webgui.atomiccontrol.button.Button;
 import ch.nolix.system.webgui.atomiccontrol.label.Label;
 import ch.nolix.system.webgui.linearcontainer.VerticalStack;
-import ch.nolix.systemapi.webgui.atomiccontrol.labelapi.ILabel;
+import ch.nolix.systemapi.webgui.atomiccontrol.label.ILabel;
 
 final class EnterValueDialogBuilderTutorial {
   private EnterValueDialogBuilderTutorial() {

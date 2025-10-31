@@ -11,7 +11,7 @@ import ch.nolix.system.webgui.atomiccontrol.imagecontrol.ImageControl;
 import ch.nolix.system.webgui.atomiccontrol.label.Label;
 import ch.nolix.system.webgui.linearcontainer.VerticalStack;
 import ch.nolix.systemapi.graphic.image.IImage;
-import ch.nolix.systemapi.webgui.atomiccontrol.labelapi.ILabel;
+import ch.nolix.systemapi.webgui.atomiccontrol.label.ILabel;
 import ch.nolix.systemapi.webgui.main.ControlState;
 
 public final class PartialRefreshTutorial {

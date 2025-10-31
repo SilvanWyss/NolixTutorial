@@ -1,11 +1,10 @@
-package ch.nolix.system.webgui.atomiccontrol;
+package ch.nolix.system.webgui.atomiccontrol.link;
 
 import ch.nolix.core.environment.localcomputer.ShellProvider;
 import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 import ch.nolix.coreapi.web.htmlattribute.LinkTarget;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.webapplication.main.WebClientSession;
-import ch.nolix.system.webgui.atomiccontrol.link.Link;
 
 final class LinkTutorial {
   private LinkTutorial() {

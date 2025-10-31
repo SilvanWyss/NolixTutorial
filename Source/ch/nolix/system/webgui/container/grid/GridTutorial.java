@@ -1,4 +1,4 @@
-package ch.nolix.system.webgui.container;
+package ch.nolix.system.webgui.container.grid;
 
 import ch.nolix.core.environment.localcomputer.ShellProvider;
 import ch.nolix.core.programcontrol.flowcontrol.FlowController;

@@ -1,4 +1,4 @@
-package ch.nolix.system.webgui.atomiccontrol;
+package ch.nolix.system.webgui.atomiccontrol.uploader;
 
 import ch.nolix.core.environment.localcomputer.ShellProvider;
 import ch.nolix.core.errorcontrol.generalexception.GeneralException;
@@ -8,11 +8,10 @@ import ch.nolix.system.graphic.image.Image;
 import ch.nolix.system.webapplication.main.WebClientSession;
 import ch.nolix.system.webgui.atomiccontrol.button.Button;
 import ch.nolix.system.webgui.atomiccontrol.imagecontrol.ImageControl;
-import ch.nolix.system.webgui.atomiccontrol.uploader.Uploader;
 import ch.nolix.system.webgui.atomiccontrol.validationlabel.ValidationLabel;
 import ch.nolix.system.webgui.linearcontainer.VerticalStack;
-import ch.nolix.systemapi.webgui.atomiccontrol.imagecontrolapi.IImageControl;
-import ch.nolix.systemapi.webgui.atomiccontrol.uploaderapi.IUploader;
+import ch.nolix.systemapi.webgui.atomiccontrol.imagecontrol.IImageControl;
+import ch.nolix.systemapi.webgui.atomiccontrol.uploader.IUploader;
 
 final class UploaderTutorial {
   private UploaderTutorial() {

@@ -1,7 +1,7 @@
 package ch.nolix.system.webgui.main;
 
 import ch.nolix.system.application.main.SslServer;
-import ch.nolix.system.webgui.atomiccontrol.ButtonTutorial;
+import ch.nolix.system.webgui.atomiccontrol.button.ButtonTutorial;
 
 final class ButtonOnSslServerTutorial {
   private ButtonOnSslServerTutorial() {

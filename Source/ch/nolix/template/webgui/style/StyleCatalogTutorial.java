@@ -11,11 +11,11 @@ import ch.nolix.system.webgui.atomiccontrol.imagecontrol.ImageControl;
 import ch.nolix.system.webgui.atomiccontrol.label.Label;
 import ch.nolix.system.webgui.atomiccontrol.link.Link;
 import ch.nolix.system.webgui.atomiccontrol.textbox.Textbox;
-import ch.nolix.system.webgui.container.Grid;
+import ch.nolix.system.webgui.container.grid.Grid;
 import ch.nolix.system.webgui.itemmenu.dropdownmenu.DropdownMenu;
 import ch.nolix.system.webgui.linearcontainer.HorizontalStack;
 import ch.nolix.system.webgui.linearcontainer.VerticalStack;
-import ch.nolix.systemapi.webgui.atomiccontrol.labelapi.LabelRole;
+import ch.nolix.systemapi.webgui.atomiccontrol.label.LabelRole;
 import ch.nolix.template.webgui.dialog.ShowValueDialogBuilder;
 
 final class StyleCatalogTutorial {

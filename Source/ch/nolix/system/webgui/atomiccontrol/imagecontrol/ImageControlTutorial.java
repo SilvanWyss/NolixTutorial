@@ -1,13 +1,13 @@
-package ch.nolix.system.webgui.atomiccontrol;
+package ch.nolix.system.webgui.atomiccontrol.imagecontrol;
 
 import ch.nolix.core.environment.localcomputer.ShellProvider;
 import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
+import ch.nolix.system.graphic.image.MutableImage;
 import ch.nolix.system.webapplication.main.WebClientSession;
-import ch.nolix.system.webgui.atomiccontrol.textbox.Textbox;
 
-final class TextboxTutorial {
-  private TextboxTutorial() {
+final class ImageControlTutorial {
+  private ImageControlTutorial() {
   }
 
   public static void main(String[] args) {
@@ -15,7 +15,7 @@ final class TextboxTutorial {
     final var server = Server.forHttpPort();
 
     //Adds a default Application to the Server.
-    server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("Textbox tutorial", Session.class);
+    server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("ImageControl tutorial", Session.class);
 
     //Starts a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
@@ -31,11 +31,14 @@ final class TextboxTutorial {
   private static final class Session extends WebClientSession<Object> {
     @Override
     protected void initialize() {
-      //Creates a Textbox.
-      final var textBox = new Textbox();
+      //Loads an image.
+      final var image = MutableImage.fromResource("image/singer_building.jpg");
 
-      //Adds the Textbox to the GUI of the current Session.
-      getStoredGui().pushLayerWithRootControl(textBox);
+      //Creates an ImageControl with the image.
+      final var imageControl = new ImageControl().setImage(image);
+
+      //Adds the ImageControl to the GUI of the current Session.
+      getStoredGui().pushLayerWithRootControl(imageControl);
     }
   }
 }
