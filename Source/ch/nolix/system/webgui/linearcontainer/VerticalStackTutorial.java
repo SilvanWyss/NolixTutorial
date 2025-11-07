@@ -4,7 +4,8 @@ import ch.nolix.core.environment.localcomputer.ShellProvider;
 import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.webapplication.main.WebClientSession;
-import ch.nolix.system.webgui.atomiccontrol.label.Label;
+import ch.nolix.system.webatomiccontrol.label.Label;
+import ch.nolix.system.webcontainercontrol.verticalstack.VerticalStack;
 import ch.nolix.systemapi.webgui.main.ControlState;
 
 final class VerticalStackTutorial {
@@ -36,7 +37,7 @@ final class VerticalStackTutorial {
       final var verticalStack = new VerticalStack();
 
       //Creates and adds 4 Labels to the VerticalStack.
-      verticalStack.addControl(
+      verticalStack.addControls(
         new Label().setText("A"),
         new Label().setText("B"),
         new Label().setText("C"),

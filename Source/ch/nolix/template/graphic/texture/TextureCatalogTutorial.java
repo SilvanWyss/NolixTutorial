@@ -4,10 +4,10 @@ import ch.nolix.core.environment.localcomputer.ShellProvider;
 import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.webapplication.main.WebClientSession;
-import ch.nolix.system.webgui.atomiccontrol.imagecontrol.ImageControl;
-import ch.nolix.system.webgui.atomiccontrol.label.Label;
-import ch.nolix.system.webgui.linearcontainer.FloatContainer;
-import ch.nolix.system.webgui.linearcontainer.VerticalStack;
+import ch.nolix.system.webatomiccontrol.imagecontrol.ImageControl;
+import ch.nolix.system.webatomiccontrol.label.Label;
+import ch.nolix.system.webcontainercontrol.floatcontainer.FloatContainer;
+import ch.nolix.system.webcontainercontrol.verticalstack.VerticalStack;
 import ch.nolix.systemapi.webgui.main.ControlState;
 
 final class TextureCatalogTutorial {
@@ -48,25 +48,25 @@ final class TextureCatalogTutorial {
         new FloatContainer()
           .setMaxWidth(1000)
           .editStyle(s -> s.setChildControlMarginForState(ControlState.BASE, 20))
-          .addControl(
+          .addControls(
             new VerticalStack()
-              .addControl(
+              .addControls(
                 new Label().setText("Concrete"),
                 new ImageControl().setImage(concreteTexture)),
             new VerticalStack()
-              .addControl(
+              .addControls(
                 new Label().setText("Fir Wood"),
                 new ImageControl().setImage(fireWoodTexture)),
             new VerticalStack()
-              .addControl(
+              .addControls(
                 new Label().setText("Jute"),
                 new ImageControl().setImage(juteTexture)),
             new VerticalStack()
-              .addControl(
+              .addControls(
                 new Label().setText("Parchment"),
                 new ImageControl().setImage(parchmentTexture)),
             new VerticalStack()
-              .addControl(
+              .addControls(
                 new Label().setText("White Marble"),
                 new ImageControl().setImage(whiteMarbleTexture))));
     }

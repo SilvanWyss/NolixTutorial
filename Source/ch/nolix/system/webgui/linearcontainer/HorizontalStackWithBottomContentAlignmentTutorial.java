@@ -4,7 +4,8 @@ import ch.nolix.core.environment.localcomputer.ShellProvider;
 import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.webapplication.main.WebClientSession;
-import ch.nolix.system.webgui.atomiccontrol.label.Label;
+import ch.nolix.system.webatomiccontrol.label.Label;
+import ch.nolix.system.webcontainercontrol.horizontalstack.HorizontalStack;
 import ch.nolix.systemapi.gui.box.VerticalContentAlignment;
 import ch.nolix.systemapi.webgui.main.ControlState;
 
@@ -50,7 +51,7 @@ final class HorizontalStackWithBottomContentAlignmentTutorial {
       label4.getStoredStyle().setTextSizeForState(ControlState.BASE, 50);
 
       //Adds the Labels to the HorizontalStack.
-      horizontalStack.addControl(label1, label2, label3, label4);
+      horizontalStack.addControls(label1, label2, label3, label4);
 
       //Configures the style of the HorizontalStack.
       horizontalStack.setContentAlignment(VerticalContentAlignment.BOTTOM);

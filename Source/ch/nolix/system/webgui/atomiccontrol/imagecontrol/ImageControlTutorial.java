@@ -5,6 +5,7 @@ import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.graphic.image.MutableImage;
 import ch.nolix.system.webapplication.main.WebClientSession;
+import ch.nolix.system.webatomiccontrol.imagecontrol.ImageControl;
 
 final class ImageControlTutorial {
   private ImageControlTutorial() {

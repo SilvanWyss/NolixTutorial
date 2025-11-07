@@ -7,7 +7,7 @@ import ch.nolix.system.application.main.Server;
 import ch.nolix.system.graphic.color.X11ColorCatalog;
 import ch.nolix.system.time.moment.Time;
 import ch.nolix.system.webapplication.main.WebClientSession;
-import ch.nolix.system.webgui.atomiccontrol.button.Button;
+import ch.nolix.system.webatomiccontrol.button.Button;
 
 final class ShowValueDialogBuilderTutorial {
   private ShowValueDialogBuilderTutorial() {

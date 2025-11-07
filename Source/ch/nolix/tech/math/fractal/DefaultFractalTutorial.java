@@ -4,7 +4,7 @@ import ch.nolix.core.environment.localcomputer.ShellProvider;
 import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.webapplication.main.WebClientSession;
-import ch.nolix.system.webgui.atomiccontrol.imagecontrol.ImageControl;
+import ch.nolix.system.webatomiccontrol.imagecontrol.ImageControl;
 
 final class DefaultFractalTutorial {
   private DefaultFractalTutorial() {

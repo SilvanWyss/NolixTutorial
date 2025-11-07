@@ -4,10 +4,11 @@ import ch.nolix.core.environment.localcomputer.ShellProvider;
 import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.webapplication.main.WebClientSession;
-import ch.nolix.system.webgui.atomiccontrol.label.Label;
-import ch.nolix.system.webgui.linearcontainer.VerticalStack;
+import ch.nolix.system.webatomiccontrol.button.Button;
+import ch.nolix.system.webatomiccontrol.label.Label;
+import ch.nolix.system.webcontainercontrol.verticalstack.VerticalStack;
 import ch.nolix.systemapi.gui.box.HorizontalContentAlignment;
-import ch.nolix.systemapi.webgui.atomiccontrol.label.ILabel;
+import ch.nolix.systemapi.webatomiccontrol.label.ILabel;
 import ch.nolix.systemapi.webgui.main.ControlState;
 
 public final class ButtonTutorial {
@@ -49,7 +50,7 @@ public final class ButtonTutorial {
       countLabel.getStoredStyle().setTextSizeForState(ControlState.BASE, 100);
 
       //Creates a VerticalStack with the countLabel and the incrementButton.
-      final var verticalStack = new VerticalStack().addControl(countLabel, incrementButton);
+      final var verticalStack = new VerticalStack().addControls(countLabel, incrementButton);
 
       //Configures the style of the verticalStack.
       verticalStack.setContentAlignment(HorizontalContentAlignment.CENTER);

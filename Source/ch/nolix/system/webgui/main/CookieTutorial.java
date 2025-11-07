@@ -4,10 +4,10 @@ import ch.nolix.core.environment.localcomputer.ShellProvider;
 import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.webapplication.main.WebClientSession;
-import ch.nolix.system.webgui.atomiccontrol.button.Button;
-import ch.nolix.system.webgui.atomiccontrol.textbox.Textbox;
-import ch.nolix.system.webgui.linearcontainer.HorizontalStack;
-import ch.nolix.systemapi.webgui.atomiccontrol.textbox.ITextbox;
+import ch.nolix.system.webatomiccontrol.button.Button;
+import ch.nolix.system.webatomiccontrol.textbox.Textbox;
+import ch.nolix.system.webcontainercontrol.horizontalstack.HorizontalStack;
+import ch.nolix.systemapi.webatomiccontrol.textbox.ITextbox;
 import ch.nolix.systemapi.webgui.main.ControlState;
 
 final class CookieTutorial {
@@ -45,7 +45,7 @@ final class CookieTutorial {
 
       getStoredGui().pushLayerWithRootControl(
         new HorizontalStack()
-          .addControl(
+          .addControls(
             textbox,
             new Button()
               .setText("Save text in cookie")

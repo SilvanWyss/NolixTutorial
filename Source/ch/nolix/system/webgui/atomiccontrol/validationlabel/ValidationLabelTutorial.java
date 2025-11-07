@@ -7,10 +7,11 @@ import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 import ch.nolix.coreapi.misc.variable.LowerCaseVariableCatalog;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.webapplication.main.WebClientSession;
-import ch.nolix.system.webgui.atomiccontrol.button.Button;
-import ch.nolix.system.webgui.atomiccontrol.label.Label;
-import ch.nolix.system.webgui.atomiccontrol.textbox.Textbox;
-import ch.nolix.system.webgui.linearcontainer.VerticalStack;
+import ch.nolix.system.webatomiccontrol.button.Button;
+import ch.nolix.system.webatomiccontrol.label.Label;
+import ch.nolix.system.webatomiccontrol.textbox.Textbox;
+import ch.nolix.system.webatomiccontrol.validationlabel.ValidationLabel;
+import ch.nolix.system.webcontainercontrol.verticalstack.VerticalStack;
 
 final class ValidationLabelTutorial {
   private ValidationLabelTutorial() {
@@ -43,7 +44,7 @@ final class ValidationLabelTutorial {
       //Adds a ValidationLabel to the GUI of the current Session.
       getStoredGui().pushLayerWithRootControl(
         new VerticalStack()
-          .addControl(
+          .addControls(
             new Label().setText("Enter a positive number:"),
             numberTextbox,
             new ValidationLabel(),

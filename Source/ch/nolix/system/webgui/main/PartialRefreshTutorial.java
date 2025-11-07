@@ -7,11 +7,11 @@ import ch.nolix.system.graphic.color.X11ColorCatalog;
 import ch.nolix.system.graphic.image.Image;
 import ch.nolix.system.time.moment.Time;
 import ch.nolix.system.webapplication.main.WebClientSession;
-import ch.nolix.system.webgui.atomiccontrol.imagecontrol.ImageControl;
-import ch.nolix.system.webgui.atomiccontrol.label.Label;
-import ch.nolix.system.webgui.linearcontainer.VerticalStack;
+import ch.nolix.system.webatomiccontrol.imagecontrol.ImageControl;
+import ch.nolix.system.webatomiccontrol.label.Label;
+import ch.nolix.system.webcontainercontrol.verticalstack.VerticalStack;
 import ch.nolix.systemapi.graphic.image.IImage;
-import ch.nolix.systemapi.webgui.atomiccontrol.label.ILabel;
+import ch.nolix.systemapi.webatomiccontrol.label.ILabel;
 import ch.nolix.systemapi.webgui.main.ControlState;
 
 public final class PartialRefreshTutorial {
@@ -71,7 +71,7 @@ public final class PartialRefreshTutorial {
 
       //Adds an ImageContorl and the timeLabel to the GUI of the current Session.
       getStoredGui().pushLayerWithRootControl(
-        new VerticalStack().addControl(new ImageControl().setImage(IMAGE), timeLabel));
+        new VerticalStack().addControls(new ImageControl().setImage(IMAGE), timeLabel));
 
       //Updates the timeLabel every 100 milliseconds.
       FlowController.runInBackground(

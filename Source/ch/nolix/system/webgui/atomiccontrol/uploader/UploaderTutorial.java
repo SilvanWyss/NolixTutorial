@@ -6,12 +6,13 @@ import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.graphic.image.Image;
 import ch.nolix.system.webapplication.main.WebClientSession;
-import ch.nolix.system.webgui.atomiccontrol.button.Button;
-import ch.nolix.system.webgui.atomiccontrol.imagecontrol.ImageControl;
-import ch.nolix.system.webgui.atomiccontrol.validationlabel.ValidationLabel;
-import ch.nolix.system.webgui.linearcontainer.VerticalStack;
-import ch.nolix.systemapi.webgui.atomiccontrol.imagecontrol.IImageControl;
-import ch.nolix.systemapi.webgui.atomiccontrol.uploader.IUploader;
+import ch.nolix.system.webatomiccontrol.button.Button;
+import ch.nolix.system.webatomiccontrol.imagecontrol.ImageControl;
+import ch.nolix.system.webatomiccontrol.uploader.Uploader;
+import ch.nolix.system.webatomiccontrol.validationlabel.ValidationLabel;
+import ch.nolix.system.webcontainercontrol.verticalstack.VerticalStack;
+import ch.nolix.systemapi.webatomiccontrol.imagecontrol.IImageControl;
+import ch.nolix.systemapi.webatomiccontrol.uploader.IUploader;
 
 final class UploaderTutorial {
   private UploaderTutorial() {
@@ -46,7 +47,7 @@ final class UploaderTutorial {
       getStoredGui()
         .pushLayerWithRootControl(
           new VerticalStack()
-            .addControl(
+            .addControls(
               imageControl,
               new ValidationLabel(),
               uploader,

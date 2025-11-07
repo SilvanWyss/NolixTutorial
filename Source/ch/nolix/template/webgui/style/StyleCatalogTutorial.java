@@ -6,16 +6,16 @@ import ch.nolix.system.application.main.Server;
 import ch.nolix.system.graphic.image.Image;
 import ch.nolix.system.time.moment.Time;
 import ch.nolix.system.webapplication.main.WebClientSession;
-import ch.nolix.system.webgui.atomiccontrol.button.Button;
-import ch.nolix.system.webgui.atomiccontrol.imagecontrol.ImageControl;
-import ch.nolix.system.webgui.atomiccontrol.label.Label;
-import ch.nolix.system.webgui.atomiccontrol.link.Link;
-import ch.nolix.system.webgui.atomiccontrol.textbox.Textbox;
-import ch.nolix.system.webgui.container.grid.Grid;
-import ch.nolix.system.webgui.itemmenu.dropdownmenu.DropdownMenu;
-import ch.nolix.system.webgui.linearcontainer.HorizontalStack;
-import ch.nolix.system.webgui.linearcontainer.VerticalStack;
-import ch.nolix.systemapi.webgui.atomiccontrol.label.LabelRole;
+import ch.nolix.system.webatomiccontrol.button.Button;
+import ch.nolix.system.webatomiccontrol.dropdownmenu.DropdownMenu;
+import ch.nolix.system.webatomiccontrol.imagecontrol.ImageControl;
+import ch.nolix.system.webatomiccontrol.label.Label;
+import ch.nolix.system.webatomiccontrol.link.Link;
+import ch.nolix.system.webatomiccontrol.textbox.Textbox;
+import ch.nolix.system.webcontainercontrol.grid.Grid;
+import ch.nolix.system.webcontainercontrol.horizontalstack.HorizontalStack;
+import ch.nolix.system.webcontainercontrol.verticalstack.VerticalStack;
+import ch.nolix.systemapi.webatomiccontrol.label.LabelRole;
 import ch.nolix.template.webgui.dialog.ShowValueDialogBuilder;
 
 final class StyleCatalogTutorial {
@@ -47,12 +47,12 @@ final class StyleCatalogTutorial {
       getStoredGui()
         .pushLayerWithRootControl(
           new VerticalStack()
-            .addControl(
+            .addControls(
               new Label()
                 .setRole(LabelRole.TITLE)
                 .setText(getApplicationName()),
               new HorizontalStack()
-                .addControl(
+                .addControls(
                   new Label().setText("Select style:"),
                   new DropdownMenu()
                     .addItemWithTextAndSelectAction("none", () -> getStoredGui().removeStyle())

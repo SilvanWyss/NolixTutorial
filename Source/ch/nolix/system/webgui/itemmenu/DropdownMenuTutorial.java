@@ -4,7 +4,7 @@ import ch.nolix.core.environment.localcomputer.ShellProvider;
 import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.webapplication.main.WebClientSession;
-import ch.nolix.system.webgui.itemmenu.dropdownmenu.DropdownMenu;
+import ch.nolix.system.webatomiccontrol.dropdownmenu.DropdownMenu;
 
 final class DropdownMenuTutorial {
   private DropdownMenuTutorial() {

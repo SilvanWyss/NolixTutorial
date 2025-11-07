@@ -5,6 +5,7 @@ import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 import ch.nolix.coreapi.web.htmlattribute.LinkTarget;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.webapplication.main.WebClientSession;
+import ch.nolix.system.webatomiccontrol.link.Link;
 
 final class LinkTutorial {
   private LinkTutorial() {

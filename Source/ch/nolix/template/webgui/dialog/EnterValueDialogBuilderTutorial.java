@@ -7,10 +7,10 @@ import ch.nolix.coreapi.misc.variable.LowerCaseVariableCatalog;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.graphic.color.X11ColorCatalog;
 import ch.nolix.system.webapplication.main.WebClientSession;
-import ch.nolix.system.webgui.atomiccontrol.button.Button;
-import ch.nolix.system.webgui.atomiccontrol.label.Label;
-import ch.nolix.system.webgui.linearcontainer.VerticalStack;
-import ch.nolix.systemapi.webgui.atomiccontrol.label.ILabel;
+import ch.nolix.system.webatomiccontrol.button.Button;
+import ch.nolix.system.webatomiccontrol.label.Label;
+import ch.nolix.system.webcontainercontrol.verticalstack.VerticalStack;
+import ch.nolix.systemapi.webatomiccontrol.label.ILabel;
 
 final class EnterValueDialogBuilderTutorial {
   private EnterValueDialogBuilderTutorial() {
@@ -46,7 +46,7 @@ final class EnterValueDialogBuilderTutorial {
       getStoredGui()
         .pushLayerWithRootControl(
           new VerticalStack()
-            .addControl(
+            .addControls(
               new Label().setText("You are:"),
               nameLabel,
               new Button()

@@ -4,8 +4,8 @@ import ch.nolix.core.environment.localcomputer.ShellProvider;
 import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.webapplication.main.WebClientSession;
-import ch.nolix.system.webgui.atomiccontrol.label.Label;
-import ch.nolix.system.webgui.linearcontainer.VerticalStack;
+import ch.nolix.system.webatomiccontrol.label.Label;
+import ch.nolix.system.webcontainercontrol.verticalstack.VerticalStack;
 
 final class UrlParameterTutorial {
   private UrlParameterTutorial() {
@@ -40,7 +40,7 @@ final class UrlParameterTutorial {
       getStoredGui()
         .pushLayerWithRootControl(
           new VerticalStack()
-            .addControl(
+            .addControls(
               new Label()
                 .setText("URL parameter param1: " + param1.orElseThrow()),
               new Label()
