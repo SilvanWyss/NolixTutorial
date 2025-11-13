@@ -33,7 +33,7 @@ final class CookieTutorial {
   }
 
   private static final class Session extends WebClientSession<Object> {
-    private final ITextbox textbox = new Textbox().editStyle(ts -> ts.setBorderThicknessForState(ControlState.BASE, 1));
+    private final ITextbox textbox = new Textbox().editStyle(ts -> ts.forStateSetBorderThickness(ControlState.BASE, 1));
 
     @Override
     protected void initialize() {

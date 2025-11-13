@@ -44,14 +44,14 @@ final class LayerTutorial {
       //Configures the style of layer1Label.
       layer1Label
         .getStoredStyle()
-        .setTextSizeForState(ControlState.BASE, 100)
-        .setTextColorForState(ControlState.BASE, X11ColorCatalog.BLACK);
+        .forStateSetTextSize(ControlState.BASE, 100)
+        .forStateSetTextColor(ControlState.BASE, X11ColorCatalog.BLACK);
 
       //Configures the style of layer2Label.
       layer2Label
         .getStoredStyle()
-        .setTextSizeForState(ControlState.BASE, 200)
-        .setTextColorForState(ControlState.BASE, X11ColorCatalog.GREY);
+        .forStateSetTextSize(ControlState.BASE, 200)
+        .forStateSetTextColor(ControlState.BASE, X11ColorCatalog.GREY);
 
       //Adds a new layer with the layer1Label to the GUI of the current Session.
       getStoredGui().pushLayerWithRootControl(layer1Label);

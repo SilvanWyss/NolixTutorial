@@ -47,7 +47,7 @@ final class HorizontalStackTutorial {
       horizontalStack
         .getStoredStyle()
         .setChildControlMarginForState(ControlState.BASE, 50)
-        .setTextSizeForState(ControlState.BASE, 100);
+        .forStateSetTextSize(ControlState.BASE, 100);
 
       //Adds the HorizontalStack to the GUI of the current Session.
       getStoredGui().pushLayerWithRootControl(horizontalStack);

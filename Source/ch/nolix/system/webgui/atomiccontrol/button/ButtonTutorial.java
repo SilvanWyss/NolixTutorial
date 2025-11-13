@@ -47,7 +47,7 @@ public final class ButtonTutorial {
       new Button().setText("Increment").setLeftMouseButtonPressAction(this::incrementCountAndUpdateCountLabel);
 
       //Configures the style of the countLabel.
-      countLabel.getStoredStyle().setTextSizeForState(ControlState.BASE, 100);
+      countLabel.getStoredStyle().forStateSetTextSize(ControlState.BASE, 100);
 
       //Creates a VerticalStack with the countLabel and the incrementButton.
       final var verticalStack = new VerticalStack().addControls(countLabel, incrementButton);

@@ -40,7 +40,7 @@ final class CopyTextToClipboardTutorial {
       final var inputTextbox = new Textbox();
 
       //Configures the style of the inputTextbox.
-      inputTextbox.getStoredStyle().setWidthForState(ControlState.BASE, 500);
+      inputTextbox.getStoredStyle().forStateSetWidth(ControlState.BASE, 500);
 
       //Adds an initial text to the inputTextbox.
       inputTextbox.setText("Supercalifragilisticexpialigetisch");

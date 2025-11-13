@@ -46,10 +46,10 @@ final class VerticalStackWithRightContentAlignmentTutorial {
       final var label4 = new Label().setText("D");
 
       //Configures the style of the Labels.
-      label1.getStoredStyle().setTextSizeForState(ControlState.BASE, 100);
-      label2.getStoredStyle().setTextSizeForState(ControlState.BASE, 50);
-      label3.getStoredStyle().setTextSizeForState(ControlState.BASE, 100);
-      label4.getStoredStyle().setTextSizeForState(ControlState.BASE, 50);
+      label1.getStoredStyle().forStateSetTextSize(ControlState.BASE, 100);
+      label2.getStoredStyle().forStateSetTextSize(ControlState.BASE, 50);
+      label3.getStoredStyle().forStateSetTextSize(ControlState.BASE, 100);
+      label4.getStoredStyle().forStateSetTextSize(ControlState.BASE, 50);
 
       //Adds the Labels to the HorizontalStack.
       verticalStack.addControls(label1, label2, label3, label4);

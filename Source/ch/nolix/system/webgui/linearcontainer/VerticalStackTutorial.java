@@ -47,7 +47,7 @@ final class VerticalStackTutorial {
       verticalStack
         .getStoredStyle()
         .setChildControlMarginForState(ControlState.BASE, 50)
-        .setTextSizeForState(ControlState.BASE, 100);
+        .forStateSetTextSize(ControlState.BASE, 100);
 
       //Adds the VerticalStack to the GUI of the current Session.
       getStoredGui().pushLayerWithRootControl(verticalStack);

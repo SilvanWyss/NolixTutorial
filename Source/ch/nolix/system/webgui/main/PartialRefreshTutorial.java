@@ -66,8 +66,8 @@ public final class PartialRefreshTutorial {
       //Configures the style of the timeLabel.
       timeLabel
         .getStoredStyle()
-        .setTextSizeForState(ControlState.BASE, 100)
-        .setTextColorForState(ControlState.BASE, X11ColorCatalog.GREY);
+        .forStateSetTextSize(ControlState.BASE, 100)
+        .forStateSetTextColor(ControlState.BASE, X11ColorCatalog.GREY);
 
       //Adds an ImageContorl and the timeLabel to the GUI of the current Session.
       getStoredGui().pushLayerWithRootControl(
