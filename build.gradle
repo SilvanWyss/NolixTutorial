@@ -8,7 +8,6 @@ java {
 }
 
 repositories {
-
   mavenCentral()
 
   flatDir {
@@ -17,18 +16,14 @@ repositories {
 }
 
 dependencies {
-
-  //automatically resolved dependencies
-  implementation 'com.microsoft.sqlserver:mssql-jdbc:12.8.1.jre11'
-  implementation 'io.netty:netty-all:4.1.115.Final'
-
-  //manually added dependencies 
+  //dependencies for implementations
+  implementation 'com.microsoft.sqlserver:mssql-jdbc:13.2.1.jre11'
+  implementation 'io.netty:netty-all:4.2.7.Final'
   implementation name: 'nolix'
 }
 
 sourceSets {
   main {
-
     java {
       srcDirs = ['Source']
     }
