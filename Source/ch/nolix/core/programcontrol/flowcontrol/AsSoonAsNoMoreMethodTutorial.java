@@ -8,7 +8,7 @@ final class AsSoonAsNoMoreMethodTutorial {
   }
 
   public static void main(String[] args) {
-    final var cats = ArrayList.withElement("Garfield", "Simba", "Smokey");
+    final var cats = ArrayList.withElements("Garfield", "Simba", "Smokey");
 
     FlowController
       .asSoonAsNoMore(cats::containsAny)
