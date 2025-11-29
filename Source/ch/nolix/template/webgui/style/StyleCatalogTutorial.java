@@ -57,8 +57,11 @@ final class StyleCatalogTutorial {
                   new DropdownMenu()
                     .addItemWithTextAndSelectAction("none", () -> getStoredGui().removeStyle())
                     .addItemWithTextAndSelectAction(
-                      "Dark mode",
-                      () -> getStoredGui().setStyle(StyleCatalog.DARK_STYLE))),
+                      "Dark edge style",
+                      () -> getStoredGui().setStyle(StyleCatalog.DARK_EDGE_STYLE))
+                    .addItemWithTextAndSelectAction(
+                      "Parchment edge style",
+                      () -> getStoredGui().setStyle(StyleCatalog.PARCHMENT_EDGE_STYLE))),
               new Grid()
                 .insertTextAtRowAndColumn(1, 1, "Textbox")
                 .insertControlAtRowAndColumn(1, 2, new Textbox())
