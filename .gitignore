@@ -1,6 +1,11 @@
+# folders
 .gradle/
 .settings/
 bin/
 build/
 Javadoc/
 Library/
+
+# files
+.classpath
+.project
