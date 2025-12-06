@@ -16,7 +16,6 @@ repositories {
 }
 
 dependencies {
-  //dependencies for implementations
   implementation 'com.microsoft.sqlserver:mssql-jdbc:13.2.1.jre11'
   implementation 'io.netty:netty-all:4.2.7.Final'
   implementation name: 'nolix'
