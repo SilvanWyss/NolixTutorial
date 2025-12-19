@@ -3,6 +3,9 @@ package ch.nolix.core.net.endpoint;
 import ch.nolix.core.environment.localcomputer.ShellProvider;
 import ch.nolix.core.programcontrol.flowcontrol.FlowController;
 
+/**
+ * @author Silvan Wyss
+ */
 final class EmptyServerTutorial {
   private EmptyServerTutorial() {
   }

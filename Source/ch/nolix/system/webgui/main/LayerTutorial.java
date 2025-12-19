@@ -8,6 +8,9 @@ import ch.nolix.system.webapplication.main.WebClientSession;
 import ch.nolix.system.webatomiccontrol.label.Label;
 import ch.nolix.systemapi.webgui.main.ControlState;
 
+/**
+ * @author Silvan Wyss
+ */
 final class LayerTutorial {
   private LayerTutorial() {
   }

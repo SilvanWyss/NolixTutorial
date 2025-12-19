@@ -9,6 +9,9 @@ import ch.nolix.system.webcontainercontrol.verticalstack.VerticalStack;
 import ch.nolix.systemapi.gui.box.HorizontalContentAlignment;
 import ch.nolix.systemapi.webgui.main.ControlState;
 
+/**
+ * @author Silvan Wyss
+ */
 final class VerticalStackWithRightContentAlignmentTutorial {
   private VerticalStackWithRightContentAlignmentTutorial() {
   }

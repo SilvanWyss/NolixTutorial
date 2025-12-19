@@ -5,6 +5,9 @@ import ch.nolix.system.objectdata.model.Entity;
 import ch.nolix.system.objectdata.model.EntityTypeSet;
 import ch.nolix.system.objectdata.model.ValueField;
 
+/**
+ * @author Silvan Wyss
+ */
 final class MsSqlDataAdapterTutorial {
   private MsSqlDataAdapterTutorial() {
   }

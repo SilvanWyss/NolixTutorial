@@ -1,5 +1,8 @@
 package ch.nolix.core.errorcontrol.validator;
 
+/**
+ * @author Silvan Wyss
+ */
 final class StringValidationTutorial {
   private StringValidationTutorial() {
   }

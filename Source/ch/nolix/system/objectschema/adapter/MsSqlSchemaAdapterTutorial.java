@@ -6,6 +6,9 @@ import ch.nolix.system.objectschema.model.Column;
 import ch.nolix.system.objectschema.model.Table;
 import ch.nolix.systemapi.midschema.fieldproperty.FieldType;
 
+/**
+ * @author Silvan Wyss
+ */
 final class MsSqlSchemaAdapterTutorial {
   private MsSqlSchemaAdapterTutorial() {
   }

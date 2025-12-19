@@ -7,6 +7,9 @@ import ch.nolix.system.webapplication.main.WebClientSession;
 import ch.nolix.system.webatomiccontrol.button.Button;
 import ch.nolix.system.webcontainercontrol.verticalstack.VerticalStack;
 
+/**
+ * @author Silvan Wyss
+ */
 final class UnderConstructionPageTutorial {
   private UnderConstructionPageTutorial() {
   }

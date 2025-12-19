@@ -2,6 +2,9 @@ package ch.nolix.core.argumentcaptor.base;
 
 import ch.nolix.core.errorcontrol.logging.Logger;
 
+/**
+ * @author Silvan Wyss
+ */
 final class ArgumentCaptorTutorial {
   private ArgumentCaptorTutorial() {
   }

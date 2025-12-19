@@ -6,6 +6,9 @@ import ch.nolix.system.application.main.Server;
 import ch.nolix.system.graphic.image.Image;
 import ch.nolix.system.webapplication.main.WebClientSession;
 
+/**
+ * @author Silvan Wyss
+ */
 final class GuiIconTutorial {
   private GuiIconTutorial() {
   }

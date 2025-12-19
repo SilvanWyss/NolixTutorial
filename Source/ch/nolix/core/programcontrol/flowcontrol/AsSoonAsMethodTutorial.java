@@ -4,6 +4,9 @@ import java.util.Random;
 
 import ch.nolix.core.errorcontrol.logging.Logger;
 
+/**
+ * @author Silvan Wyss
+ */
 final class AsSoonAsMethodTutorial {
   private static final Random RANDOM = new Random();
 

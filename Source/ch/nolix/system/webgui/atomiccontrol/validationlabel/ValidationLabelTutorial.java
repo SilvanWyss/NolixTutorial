@@ -13,6 +13,9 @@ import ch.nolix.system.webatomiccontrol.textbox.Textbox;
 import ch.nolix.system.webatomiccontrol.validationlabel.ValidationLabel;
 import ch.nolix.system.webcontainercontrol.verticalstack.VerticalStack;
 
+/**
+ * @author Silvan Wyss
+ */
 final class ValidationLabelTutorial {
   private ValidationLabelTutorial() {
   }

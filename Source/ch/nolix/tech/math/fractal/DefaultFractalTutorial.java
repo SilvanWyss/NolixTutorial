@@ -6,6 +6,9 @@ import ch.nolix.system.application.main.Server;
 import ch.nolix.system.webapplication.main.WebClientSession;
 import ch.nolix.system.webatomiccontrol.imagecontrol.ImageControl;
 
+/**
+ * @author Silvan Wyss
+ */
 final class DefaultFractalTutorial {
   private DefaultFractalTutorial() {
   }

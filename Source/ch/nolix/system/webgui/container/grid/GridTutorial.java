@@ -8,6 +8,9 @@ import ch.nolix.system.webatomiccontrol.label.Label;
 import ch.nolix.system.webcontainercontrol.grid.Grid;
 import ch.nolix.systemapi.webgui.main.ControlState;
 
+/**
+ * @author Silvan Wyss
+ */
 final class GridTutorial {
   private GridTutorial() {
   }

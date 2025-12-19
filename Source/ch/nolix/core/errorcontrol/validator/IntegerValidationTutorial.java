@@ -1,5 +1,8 @@
 package ch.nolix.core.errorcontrol.validator;
 
+/**
+ * @author Silvan Wyss
+ */
 final class IntegerValidationTutorial {
   private IntegerValidationTutorial() {
   }

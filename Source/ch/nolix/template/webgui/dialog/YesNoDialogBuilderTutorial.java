@@ -7,6 +7,9 @@ import ch.nolix.system.graphic.color.X11ColorCatalog;
 import ch.nolix.system.webapplication.main.WebClientSession;
 import ch.nolix.system.webatomiccontrol.button.Button;
 
+/**
+ * @author Silvan Wyss
+ */
 final class YesNoDialogBuilderTutorial {
   private YesNoDialogBuilderTutorial() {
   }

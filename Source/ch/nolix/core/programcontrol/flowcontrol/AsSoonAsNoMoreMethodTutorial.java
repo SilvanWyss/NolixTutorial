@@ -3,6 +3,9 @@ package ch.nolix.core.programcontrol.flowcontrol;
 import ch.nolix.core.container.arraylist.ArrayList;
 import ch.nolix.core.errorcontrol.logging.Logger;
 
+/**
+ * @author Silvan Wyss
+ */
 final class AsSoonAsNoMoreMethodTutorial {
   private AsSoonAsNoMoreMethodTutorial() {
   }

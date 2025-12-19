@@ -7,6 +7,9 @@ import ch.nolix.system.graphic.image.MutableImage;
 import ch.nolix.system.webapplication.main.WebClientSession;
 import ch.nolix.system.webatomiccontrol.imagecontrol.ImageControl;
 
+/**
+ * @author Silvan Wyss
+ */
 final class ImageControlTutorial {
   private ImageControlTutorial() {
   }

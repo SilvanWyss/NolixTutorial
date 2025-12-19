@@ -3,6 +3,9 @@ package ch.nolix.system.webgui.main;
 import ch.nolix.system.application.main.SslServer;
 import ch.nolix.system.webgui.atomiccontrol.button.ButtonTutorial;
 
+/**
+ * @author Silvan Wyss
+ */
 final class ButtonOnSslServerTutorial {
   private ButtonOnSslServerTutorial() {
   }

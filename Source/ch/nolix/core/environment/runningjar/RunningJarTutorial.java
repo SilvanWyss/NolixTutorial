@@ -2,6 +2,9 @@ package ch.nolix.core.environment.runningjar;
 
 import ch.nolix.core.errorcontrol.logging.Logger;
 
+/**
+ * @author Silvan Wyss
+ */
 final class RunningJarTutorial {
   private RunningJarTutorial() {
   }

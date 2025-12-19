@@ -10,6 +10,9 @@ import ch.nolix.system.webcontainercontrol.floatcontainer.FloatContainer;
 import ch.nolix.system.webcontainercontrol.verticalstack.VerticalStack;
 import ch.nolix.systemapi.webgui.main.ControlState;
 
+/**
+ * @author Silvan Wyss
+ */
 final class TextureCatalogTutorial {
   private TextureCatalogTutorial() {
   }

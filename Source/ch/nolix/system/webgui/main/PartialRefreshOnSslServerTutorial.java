@@ -2,6 +2,9 @@ package ch.nolix.system.webgui.main;
 
 import ch.nolix.system.application.main.SslServer;
 
+/**
+ * @author Silvan Wyss
+ */
 final class PartialRefreshOnSslServerTutorial {
   private PartialRefreshOnSslServerTutorial() {
   }

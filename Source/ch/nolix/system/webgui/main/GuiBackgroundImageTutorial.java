@@ -7,6 +7,9 @@ import ch.nolix.system.graphic.image.Image;
 import ch.nolix.system.webapplication.main.WebClientSession;
 import ch.nolix.systemapi.gui.background.ImageApplication;
 
+/**
+ * @author Silvan Wyss
+ */
 final class GuiBackgroundImageTutorial {
   private GuiBackgroundImageTutorial() {
   }

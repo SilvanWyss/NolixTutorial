@@ -7,6 +7,9 @@ import ch.nolix.system.application.main.Server;
 import ch.nolix.system.webapplication.main.WebClientSession;
 import ch.nolix.system.webatomiccontrol.link.Link;
 
+/**
+ * @author Silvan Wyss
+ */
 final class LinkTutorial {
   private LinkTutorial() {
   }

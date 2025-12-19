@@ -9,6 +9,9 @@ import ch.nolix.system.webatomiccontrol.textbox.Textbox;
 import ch.nolix.system.webcontainercontrol.verticalstack.VerticalStack;
 import ch.nolix.systemapi.webgui.main.ControlState;
 
+/**
+ * @author Silvan Wyss
+ */
 final class CopyTextToClipboardTutorial {
   private CopyTextToClipboardTutorial() {
   }

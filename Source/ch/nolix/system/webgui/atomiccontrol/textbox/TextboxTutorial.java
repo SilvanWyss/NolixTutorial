@@ -6,6 +6,9 @@ import ch.nolix.system.application.main.Server;
 import ch.nolix.system.webapplication.main.WebClientSession;
 import ch.nolix.system.webatomiccontrol.textbox.Textbox;
 
+/**
+ * @author Silvan Wyss
+ */
 final class TextboxTutorial {
   private TextboxTutorial() {
   }

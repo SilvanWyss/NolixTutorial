@@ -3,6 +3,9 @@ package ch.nolix.core.programcontrol.flowcontrol;
 import ch.nolix.core.errorcontrol.logging.Logger;
 import ch.nolix.core.math.algebra.Matrix;
 
+/**
+ * @author Silvan Wyss
+ */
 final class ResultFutureTutorial {
   private ResultFutureTutorial() {
   }

@@ -9,6 +9,9 @@ import ch.nolix.system.webatomiccontrol.imagecontrol.ImageControl;
 import ch.nolix.tech.math.bigdecimalmath.ComplexNumber;
 import ch.nolix.tech.math.bigdecimalmath.ComplexSequenceDefinedBy1Predecessor;
 
+/**
+ * @author Silvan Wyss
+ */
 final class CustomFractalTutorial2 {
   private CustomFractalTutorial2() {
   }

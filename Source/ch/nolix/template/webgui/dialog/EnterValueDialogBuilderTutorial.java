@@ -12,6 +12,9 @@ import ch.nolix.system.webatomiccontrol.label.Label;
 import ch.nolix.system.webcontainercontrol.verticalstack.VerticalStack;
 import ch.nolix.systemapi.webatomiccontrol.label.ILabel;
 
+/**
+ * @author Silvan Wyss
+ */
 final class EnterValueDialogBuilderTutorial {
   private EnterValueDialogBuilderTutorial() {
   }

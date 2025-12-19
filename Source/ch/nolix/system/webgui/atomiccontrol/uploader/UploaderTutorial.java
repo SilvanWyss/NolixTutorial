@@ -14,6 +14,9 @@ import ch.nolix.system.webcontainercontrol.verticalstack.VerticalStack;
 import ch.nolix.systemapi.webatomiccontrol.imagecontrol.IImageControl;
 import ch.nolix.systemapi.webatomiccontrol.uploader.IUploader;
 
+/**
+ * @author Silvan Wyss
+ */
 final class UploaderTutorial {
   private UploaderTutorial() {
   }
