@@ -1,3 +1,6 @@
+/*
+ * Copyright © by Silvan Wyss. All rights reserved.
+ */
 package ch.nolix.template.webapplication.session;
 
 import ch.nolix.core.environment.localcomputer.ShellProvider;

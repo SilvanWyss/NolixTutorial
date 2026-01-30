@@ -1,3 +1,6 @@
+/*
+ * Copyright © by Silvan Wyss. All rights reserved.
+ */
 package ch.nolix.system.webgui.main;
 
 import ch.nolix.system.application.main.SslServer;

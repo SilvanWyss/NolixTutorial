@@ -1,3 +1,6 @@
+/*
+ * Copyright © by Silvan Wyss. All rights reserved.
+ */
 package ch.nolix.core.argumentcaptor.base;
 
 import ch.nolix.core.errorcontrol.logging.Logger;

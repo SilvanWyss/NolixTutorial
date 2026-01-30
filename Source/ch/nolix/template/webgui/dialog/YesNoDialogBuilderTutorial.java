@@ -1,3 +1,6 @@
+/*
+ * Copyright © by Silvan Wyss. All rights reserved.
+ */
 package ch.nolix.template.webgui.dialog;
 
 import ch.nolix.core.environment.localcomputer.ShellProvider;

@@ -1,3 +1,6 @@
+/*
+ * Copyright © by Silvan Wyss. All rights reserved.
+ */
 package ch.nolix.system.webgui.atomiccontrol.textbox;
 
 import ch.nolix.core.environment.localcomputer.ShellProvider;
