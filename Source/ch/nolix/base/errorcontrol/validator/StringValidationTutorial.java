@@ -1,7 +1,7 @@
 /*
  * Copyright © by Silvan Wyss. All rights reserved.
  */
-package ch.nolix.core.errorcontrol.validator;
+package ch.nolix.base.errorcontrol.validator;
 
 /**
  * @author Silvan Wyss

@@ -5,7 +5,7 @@ package ch.nolix.tech.math.bigdecimalmath;
 
 import java.util.function.IntConsumer;
 
-import ch.nolix.core.errorcontrol.logging.Logger;
+import ch.nolix.base.errorcontrol.logging.Logger;
 
 /**
  * @author Silvan Wyss

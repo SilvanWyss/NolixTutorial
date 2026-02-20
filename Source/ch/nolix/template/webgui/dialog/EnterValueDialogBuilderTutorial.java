@@ -3,10 +3,10 @@
  */
 package ch.nolix.template.webgui.dialog;
 
-import ch.nolix.core.environment.localcomputer.ShellProvider;
-import ch.nolix.core.errorcontrol.validator.Validator;
-import ch.nolix.core.programcontrol.flowcontrol.FlowController;
-import ch.nolix.coreapi.misc.variable.LowerCaseVariableCatalog;
+import ch.nolix.base.environment.localcomputer.ShellProvider;
+import ch.nolix.base.errorcontrol.validator.Validator;
+import ch.nolix.base.programcontrol.flowcontrol.FlowController;
+import ch.nolix.baseapi.misc.variable.LowerCaseVariableCatalog;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.graphic.color.X11ColorCatalog;
 import ch.nolix.system.webapplication.main.WebClientSession;

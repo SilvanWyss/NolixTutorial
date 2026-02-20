@@ -1,10 +1,10 @@
 /*
  * Copyright © by Silvan Wyss. All rights reserved.
  */
-package ch.nolix.core.net.endpoint;
+package ch.nolix.base.net.endpoint;
 
-import ch.nolix.core.environment.localcomputer.ShellProvider;
-import ch.nolix.core.programcontrol.flowcontrol.FlowController;
+import ch.nolix.base.environment.localcomputer.ShellProvider;
+import ch.nolix.base.programcontrol.flowcontrol.FlowController;
 
 /**
  * @author Silvan Wyss

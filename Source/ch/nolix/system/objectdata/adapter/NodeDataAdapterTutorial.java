@@ -3,8 +3,8 @@
  */
 package ch.nolix.system.objectdata.adapter;
 
-import ch.nolix.core.document.node.MutableNode;
-import ch.nolix.core.errorcontrol.logging.Logger;
+import ch.nolix.base.document.node.MutableNode;
+import ch.nolix.base.errorcontrol.logging.Logger;
 import ch.nolix.system.objectdata.model.Entity;
 import ch.nolix.system.objectdata.model.EntityTypeSet;
 import ch.nolix.system.objectdata.model.ValueField;

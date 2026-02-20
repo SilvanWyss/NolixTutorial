@@ -3,8 +3,8 @@
  */
 package ch.nolix.template.webgui.style;
 
-import ch.nolix.core.environment.localcomputer.ShellProvider;
-import ch.nolix.core.programcontrol.flowcontrol.FlowController;
+import ch.nolix.base.environment.localcomputer.ShellProvider;
+import ch.nolix.base.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.graphic.image.Image;
 import ch.nolix.system.time.moment.Time;

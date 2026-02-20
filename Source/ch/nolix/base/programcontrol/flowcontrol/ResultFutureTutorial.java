@@ -1,10 +1,10 @@
 /*
  * Copyright © by Silvan Wyss. All rights reserved.
  */
-package ch.nolix.core.programcontrol.flowcontrol;
+package ch.nolix.base.programcontrol.flowcontrol;
 
-import ch.nolix.core.errorcontrol.logging.Logger;
-import ch.nolix.core.math.algebra.Matrix;
+import ch.nolix.base.errorcontrol.logging.Logger;
+import ch.nolix.base.math.algebra.Matrix;
 
 /**
  * @author Silvan Wyss

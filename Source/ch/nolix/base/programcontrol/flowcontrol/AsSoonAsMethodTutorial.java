@@ -1,11 +1,11 @@
 /*
  * Copyright © by Silvan Wyss. All rights reserved.
  */
-package ch.nolix.core.programcontrol.flowcontrol;
+package ch.nolix.base.programcontrol.flowcontrol;
 
 import java.util.Random;
 
-import ch.nolix.core.errorcontrol.logging.Logger;
+import ch.nolix.base.errorcontrol.logging.Logger;
 
 /**
  * @author Silvan Wyss

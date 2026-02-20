@@ -1,9 +1,9 @@
 /*
  * Copyright © by Silvan Wyss. All rights reserved.
  */
-package ch.nolix.core.environment.runningjar;
+package ch.nolix.base.environment.runningjar;
 
-import ch.nolix.core.errorcontrol.logging.Logger;
+import ch.nolix.base.errorcontrol.logging.Logger;
 
 /**
  * @author Silvan Wyss

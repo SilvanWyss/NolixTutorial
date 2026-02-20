@@ -3,8 +3,8 @@
  */
 package ch.nolix.system.objectschema.adapter;
 
-import ch.nolix.core.container.immutablelist.ImmutableList;
-import ch.nolix.coreapi.datamodel.fieldproperty.DataType;
+import ch.nolix.base.container.immutablelist.ImmutableList;
+import ch.nolix.baseapi.datamodel.fieldproperty.DataType;
 import ch.nolix.system.objectschema.model.Column;
 import ch.nolix.system.objectschema.model.Table;
 import ch.nolix.systemapi.midschema.fieldproperty.FieldType;

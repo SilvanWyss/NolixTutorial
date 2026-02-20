@@ -3,8 +3,8 @@
  */
 package ch.nolix.system.webgui.container.grid;
 
-import ch.nolix.core.environment.localcomputer.ShellProvider;
-import ch.nolix.core.programcontrol.flowcontrol.FlowController;
+import ch.nolix.base.environment.localcomputer.ShellProvider;
+import ch.nolix.base.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.webapplication.main.WebClientSession;
 import ch.nolix.system.webatomiccontrol.label.Label;
