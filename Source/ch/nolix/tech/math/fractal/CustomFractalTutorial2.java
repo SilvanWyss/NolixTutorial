@@ -54,7 +54,7 @@ final class CustomFractalTutorial2 {
                   z -> //
                   ComplexSequenceDefinedBy1Predecessor.withFirstValueAndNextValueFunction(
                     z,
-                    p -> p.getPower(6).getSum(new ComplexNumber(-0.8, 0.15))))
+                    p -> p.getPower(6).getSum(ComplexNumber.withRealComponentAndImaginaryComponent(-0.8, 0.15))))
                 .setMinMagnitudeForDivergence(10.0)
                 .setMaxIterationCount(50)
                 .setColorFunction(

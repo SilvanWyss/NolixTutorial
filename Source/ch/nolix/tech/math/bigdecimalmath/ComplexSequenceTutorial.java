@@ -17,8 +17,8 @@ final class ComplexSequenceTutorial {
   public static void main(String[] args) {
     final var complexSequence = //
     ComplexSequenceDefinedBy1Predecessor.withFirstValueAndNextValueFunction(
-      new ComplexNumber(0.0, 0.0),
-      p -> p.getPower2().getSum(new ComplexNumber(0.0, 1.0)));
+      ComplexNumber.withRealComponentAndImaginaryComponent(0.0, 0.0),
+      p -> p.getPower2().getSum(ComplexNumber.withRealComponentAndImaginaryComponent(0.0, 1.0)));
 
     final IntConsumer printFunction = //
     (int i) -> Logger.logInfo("a(" + i + ") = " + complexSequence.getValueAtOneBasedIndex(i));

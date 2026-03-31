@@ -4,8 +4,8 @@
 package ch.nolix.template.webgui.dialog;
 
 import ch.nolix.base.environment.localcomputer.ShellProvider;
-import ch.nolix.base.errorcontrol.validator.Validator;
 import ch.nolix.base.programcontrol.flowcontrol.FlowController;
+import ch.nolix.base.validation.validator.Validator;
 import ch.nolix.baseapi.misc.variable.LowerCaseVariableCatalog;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.graphic.color.X11ColorCatalog;

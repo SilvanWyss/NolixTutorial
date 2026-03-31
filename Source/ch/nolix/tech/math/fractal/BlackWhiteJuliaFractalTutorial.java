@@ -56,7 +56,7 @@ final class BlackWhiteJuliaFractalTutorial {
                   z -> //
                   ComplexSequenceDefinedBy1Predecessor.withFirstValueAndNextValueFunction(
                     z,
-                    p -> p.getPower2().getSum(new ComplexNumber(-0.8, 0.15))))
+                    p -> p.getPower2().getSum(ComplexNumber.withRealComponentAndImaginaryComponent(-0.8, 0.15))))
                 .setMinMagnitudeForDivergence(10.0)
                 .setMaxIterationCount(50)
                 .setColorFunction(_ -> X11ColorCatalog.WHITE)
