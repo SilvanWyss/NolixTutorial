@@ -30,32 +30,38 @@ final class NodeSchemaAdapterTutorial {
     Table
       .withName("City")
       .addColumn(
-        new Column(
+        Column.withIdAndNameAndContentModel(
+          "1",
           "Name",
           FieldType.VALUE_FIELD,
           DataType.STRING,
           ImmutableList.createEmpty(),
           ImmutableList.createEmpty()))
-      .addColumn(new Column(
-        "Population",
-        FieldType.VALUE_FIELD,
-        DataType.STRING,
-        ImmutableList.createEmpty(),
-        ImmutableList.createEmpty()));
+      .addColumn(
+        Column.withIdAndNameAndContentModel(
+          "2",
+          "Population",
+          FieldType.VALUE_FIELD,
+          DataType.STRING,
+          ImmutableList.createEmpty(),
+          ImmutableList.createEmpty()));
 
     //Creates countryTable.
     final var countryTable = //
-    Table.withName("Country").addColumn(
-      new Column(
-        "Name",
-        FieldType.VALUE_FIELD,
-        DataType.STRING,
-        ImmutableList.createEmpty(),
-        ImmutableList.createEmpty()));
+    Table.withName("Country")
+      .addColumn(
+        Column.withIdAndNameAndContentModel(
+          "3",
+          "Name",
+          FieldType.VALUE_FIELD,
+          DataType.STRING,
+          ImmutableList.createEmpty(),
+          ImmutableList.createEmpty()));
 
     //Creates citiesColumn.
     final var citiesColumn = //
-    new Column(
+    Column.withIdAndNameAndContentModel(
+      "4",
       "Cities",
       FieldType.MULTI_REFERENCE,
       DataType.STRING,
@@ -67,7 +73,8 @@ final class NodeSchemaAdapterTutorial {
 
     //Creates countryColumn.
     final var countryColumn = //
-    new Column(
+    Column.withIdAndNameAndContentModel(
+      "5",
       "Country",
       FieldType.BACK_REFERENCE,
       DataType.STRING,

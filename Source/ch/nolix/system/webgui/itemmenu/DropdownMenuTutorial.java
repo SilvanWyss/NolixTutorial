@@ -38,7 +38,7 @@ final class DropdownMenuTutorial {
     @Override
     protected void initialize() {
       //Creates a DropdownMenu.
-      final var dropdownMenu = new DropdownMenu().addItemWithText("red", "blue", "green", "yellow", "orange", "purple");
+      final var dropdownMenu = new DropdownMenu().addItems("red", "blue", "green", "yellow", "orange", "purple");
 
       //Adds the DropdownMenu to the GUI of the current Session.
       getStoredGui().pushLayerWithRootControl(dropdownMenu);

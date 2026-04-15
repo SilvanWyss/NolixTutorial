@@ -31,14 +31,16 @@ final class MsSqlSchemaAdapterTutorial {
     Table
       .withName("City")
       .addColumn(
-        new Column(
+        Column.withIdAndNameAndContentModel(
+          "1",
           "Name",
           FieldType.VALUE_FIELD,
           DataType.STRING,
           ImmutableList.createEmpty(),
           ImmutableList.createEmpty()))
       .addColumn(
-        new Column(
+        Column.withIdAndNameAndContentModel(
+          "2",
           "Population",
           FieldType.VALUE_FIELD,
           DataType.STRING,
@@ -48,7 +50,8 @@ final class MsSqlSchemaAdapterTutorial {
     //Creates countryTable.
     final var countryTable = //
     Table.withName("Country").addColumn(
-      new Column(
+      Column.withIdAndNameAndContentModel(
+        "3",
         "Name",
         FieldType.VALUE_FIELD,
         DataType.STRING,
@@ -57,7 +60,8 @@ final class MsSqlSchemaAdapterTutorial {
 
     //Creates citiesColumn.
     final var citiesColumn = //
-    new Column(
+    Column.withIdAndNameAndContentModel(
+      "4",
       "Cities",
       FieldType.MULTI_REFERENCE,
       DataType.STRING,
@@ -69,7 +73,8 @@ final class MsSqlSchemaAdapterTutorial {
 
     //Creates countryColumn.
     final var countryColumn = //
-    new Column(
+    Column.withIdAndNameAndContentModel(
+      "5",
       "Country",
       FieldType.BACK_REFERENCE,
       DataType.STRING,
