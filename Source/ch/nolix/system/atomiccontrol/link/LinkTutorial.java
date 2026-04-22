@@ -1,19 +1,19 @@
 /*
  * Copyright © by Silvan Wyss. All rights reserved.
  */
-package ch.nolix.system.webgui.itemmenu;
+package ch.nolix.system.atomiccontrol.link;
 
 import ch.nolix.base.environment.localcomputer.ShellProvider;
 import ch.nolix.base.programcontrol.flowcontrol.FlowController;
+import ch.nolix.baseapi.web.htmlattribute.LinkTarget;
 import ch.nolix.system.application.main.Server;
-import ch.nolix.system.atomiccontrol.dropdownmenu.DropdownMenu;
 import ch.nolix.system.webapplication.main.WebClientSession;
 
 /**
  * @author Silvan Wyss
  */
-final class DropdownMenuTutorial {
-  private DropdownMenuTutorial() {
+final class LinkTutorial {
+  private LinkTutorial() {
   }
 
   public static void main(String[] args) {
@@ -21,7 +21,7 @@ final class DropdownMenuTutorial {
     final var server = Server.forHttpPort();
 
     //Adds a default Application to the Server.
-    server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("DropdownMenu tutorial", Session.class);
+    server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("Link tutorial", Session.class);
 
     //Starts a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
@@ -37,11 +37,11 @@ final class DropdownMenuTutorial {
   private static final class Session extends WebClientSession<Object> {
     @Override
     protected void initialize() {
-      //Creates a DropdownMenu.
-      final var dropdownMenu = new DropdownMenu().addItems("red", "blue", "green", "yellow", "orange", "purple");
+      //Creates a Link.
+      final var link = new Link().setUrlAndDisplayTextFromIt("https://nolix.ch").setTarget(LinkTarget.NEW_TAB);
 
-      //Adds the DropdownMenu to the GUI of the current Session.
-      getStoredGui().pushLayerWithRootControl(dropdownMenu);
+      //Adds the Link to the GUI of the current Session.
+      getStoredGui().pushLayerWithRootControl(link);
     }
   }
 }

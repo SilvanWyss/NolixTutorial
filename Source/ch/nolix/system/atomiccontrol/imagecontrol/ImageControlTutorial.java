@@ -1,20 +1,19 @@
 /*
  * Copyright © by Silvan Wyss. All rights reserved.
  */
-package ch.nolix.system.webgui.atomiccontrol.link;
+package ch.nolix.system.atomiccontrol.imagecontrol;
 
 import ch.nolix.base.environment.localcomputer.ShellProvider;
 import ch.nolix.base.programcontrol.flowcontrol.FlowController;
-import ch.nolix.baseapi.web.htmlattribute.LinkTarget;
 import ch.nolix.system.application.main.Server;
-import ch.nolix.system.atomiccontrol.link.Link;
+import ch.nolix.system.graphic.image.MutableImage;
 import ch.nolix.system.webapplication.main.WebClientSession;
 
 /**
  * @author Silvan Wyss
  */
-final class LinkTutorial {
-  private LinkTutorial() {
+final class ImageControlTutorial {
+  private ImageControlTutorial() {
   }
 
   public static void main(String[] args) {
@@ -22,7 +21,7 @@ final class LinkTutorial {
     final var server = Server.forHttpPort();
 
     //Adds a default Application to the Server.
-    server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("Link tutorial", Session.class);
+    server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("ImageControl tutorial", Session.class);
 
     //Starts a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
@@ -38,11 +37,14 @@ final class LinkTutorial {
   private static final class Session extends WebClientSession<Object> {
     @Override
     protected void initialize() {
-      //Creates a Link.
-      final var link = new Link().setUrlAndDisplayTextFromIt("https://nolix.ch").setTarget(LinkTarget.NEW_TAB);
+      //Loads an image.
+      final var image = MutableImage.fromResource("image/singer_building.jpg");
 
-      //Adds the Link to the GUI of the current Session.
-      getStoredGui().pushLayerWithRootControl(link);
+      //Creates an ImageControl with the image.
+      final var imageControl = new ImageControl().setImage(image);
+
+      //Adds the ImageControl to the GUI of the current Session.
+      getStoredGui().pushLayerWithRootControl(imageControl);
     }
   }
 }
