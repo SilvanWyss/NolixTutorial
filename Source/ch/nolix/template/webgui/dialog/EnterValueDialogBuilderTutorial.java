@@ -8,12 +8,12 @@ import ch.nolix.base.programcontrol.flowcontrol.FlowController;
 import ch.nolix.base.validation.validator.Validator;
 import ch.nolix.baseapi.misc.variable.LowerCaseVariableCatalog;
 import ch.nolix.system.application.main.Server;
+import ch.nolix.system.atomiccontrol.button.Button;
+import ch.nolix.system.atomiccontrol.label.Label;
+import ch.nolix.system.containercontrol.verticalstack.VerticalStack;
 import ch.nolix.system.graphic.color.X11ColorCatalog;
 import ch.nolix.system.webapplication.main.WebClientSession;
-import ch.nolix.system.webatomiccontrol.button.Button;
-import ch.nolix.system.webatomiccontrol.label.Label;
-import ch.nolix.system.webcontainercontrol.verticalstack.VerticalStack;
-import ch.nolix.systemapi.webatomiccontrol.label.ILabel;
+import ch.nolix.systemapi.atomiccontrol.label.ILabel;
 
 /**
  * @author Silvan Wyss

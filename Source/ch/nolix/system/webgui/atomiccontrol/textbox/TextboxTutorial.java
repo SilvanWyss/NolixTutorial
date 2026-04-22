@@ -6,8 +6,8 @@ package ch.nolix.system.webgui.atomiccontrol.textbox;
 import ch.nolix.base.environment.localcomputer.ShellProvider;
 import ch.nolix.base.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
+import ch.nolix.system.atomiccontrol.textbox.Textbox;
 import ch.nolix.system.webapplication.main.WebClientSession;
-import ch.nolix.system.webatomiccontrol.textbox.Textbox;
 
 /**
  * @author Silvan Wyss

@@ -6,9 +6,9 @@ package ch.nolix.system.webgui.atomiccontrol.imagecontrol;
 import ch.nolix.base.environment.localcomputer.ShellProvider;
 import ch.nolix.base.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
+import ch.nolix.system.atomiccontrol.imagecontrol.ImageControl;
 import ch.nolix.system.graphic.image.MutableImage;
 import ch.nolix.system.webapplication.main.WebClientSession;
-import ch.nolix.system.webatomiccontrol.imagecontrol.ImageControl;
 
 /**
  * @author Silvan Wyss

@@ -6,15 +6,15 @@ package ch.nolix.system.webgui.main;
 import ch.nolix.base.environment.localcomputer.ShellProvider;
 import ch.nolix.base.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
+import ch.nolix.system.atomiccontrol.imagecontrol.ImageControl;
+import ch.nolix.system.atomiccontrol.label.Label;
+import ch.nolix.system.containercontrol.verticalstack.VerticalStack;
 import ch.nolix.system.graphic.color.X11ColorCatalog;
 import ch.nolix.system.graphic.image.Image;
 import ch.nolix.system.time.moment.Time;
 import ch.nolix.system.webapplication.main.WebClientSession;
-import ch.nolix.system.webatomiccontrol.imagecontrol.ImageControl;
-import ch.nolix.system.webatomiccontrol.label.Label;
-import ch.nolix.system.webcontainercontrol.verticalstack.VerticalStack;
+import ch.nolix.systemapi.atomiccontrol.label.ILabel;
 import ch.nolix.systemapi.graphic.image.IImage;
-import ch.nolix.systemapi.webatomiccontrol.label.ILabel;
 import ch.nolix.systemapi.webgui.main.ControlState;
 
 public final class PartialRefreshTutorial {

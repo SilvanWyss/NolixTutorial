@@ -6,9 +6,9 @@ package ch.nolix.system.webgui.container.grid;
 import ch.nolix.base.environment.localcomputer.ShellProvider;
 import ch.nolix.base.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
+import ch.nolix.system.atomiccontrol.label.Label;
+import ch.nolix.system.containercontrol.grid.Grid;
 import ch.nolix.system.webapplication.main.WebClientSession;
-import ch.nolix.system.webatomiccontrol.label.Label;
-import ch.nolix.system.webcontainercontrol.grid.Grid;
 import ch.nolix.systemapi.webgui.main.ControlState;
 
 /**

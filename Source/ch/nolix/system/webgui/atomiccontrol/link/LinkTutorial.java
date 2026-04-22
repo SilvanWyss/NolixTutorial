@@ -7,8 +7,8 @@ import ch.nolix.base.environment.localcomputer.ShellProvider;
 import ch.nolix.base.programcontrol.flowcontrol.FlowController;
 import ch.nolix.baseapi.web.htmlattribute.LinkTarget;
 import ch.nolix.system.application.main.Server;
+import ch.nolix.system.atomiccontrol.link.Link;
 import ch.nolix.system.webapplication.main.WebClientSession;
-import ch.nolix.system.webatomiccontrol.link.Link;
 
 /**
  * @author Silvan Wyss

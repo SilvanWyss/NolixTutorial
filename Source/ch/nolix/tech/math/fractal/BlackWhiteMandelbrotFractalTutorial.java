@@ -6,9 +6,9 @@ package ch.nolix.tech.math.fractal;
 import ch.nolix.base.environment.localcomputer.ShellProvider;
 import ch.nolix.base.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
+import ch.nolix.system.atomiccontrol.imagecontrol.ImageControl;
 import ch.nolix.system.graphic.color.X11ColorCatalog;
 import ch.nolix.system.webapplication.main.WebClientSession;
-import ch.nolix.system.webatomiccontrol.imagecontrol.ImageControl;
 import ch.nolix.tech.math.bigdecimalmath.ComplexNumber;
 import ch.nolix.tech.math.bigdecimalmath.ComplexSequenceDefinedBy1Predecessor;
 

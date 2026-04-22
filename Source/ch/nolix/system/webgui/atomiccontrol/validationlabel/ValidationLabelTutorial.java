@@ -9,12 +9,12 @@ import ch.nolix.base.validation.validator.Validator;
 import ch.nolix.baseapi.errorcontrol.invalidargumentexception.UnrepresentingArgumentException;
 import ch.nolix.baseapi.misc.variable.LowerCaseVariableCatalog;
 import ch.nolix.system.application.main.Server;
+import ch.nolix.system.atomiccontrol.button.Button;
+import ch.nolix.system.atomiccontrol.label.Label;
+import ch.nolix.system.atomiccontrol.textbox.Textbox;
+import ch.nolix.system.atomiccontrol.validationlabel.ValidationLabel;
+import ch.nolix.system.containercontrol.verticalstack.VerticalStack;
 import ch.nolix.system.webapplication.main.WebClientSession;
-import ch.nolix.system.webatomiccontrol.button.Button;
-import ch.nolix.system.webatomiccontrol.label.Label;
-import ch.nolix.system.webatomiccontrol.textbox.Textbox;
-import ch.nolix.system.webatomiccontrol.validationlabel.ValidationLabel;
-import ch.nolix.system.webcontainercontrol.verticalstack.VerticalStack;
 
 /**
  * @author Silvan Wyss
