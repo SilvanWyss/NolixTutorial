@@ -12,7 +12,7 @@ final class RunningJarTutorial {
   private RunningJarTutorial() {
   }
 
-  public static void main(String[] args) {
+  public static void main() {
     //Defines resourcePath.
     final var RESOURCE_PATH = "text/willkommen_und_abschied.txt";
 

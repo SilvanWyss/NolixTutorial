@@ -16,7 +16,7 @@ final class AsSoonAsMethodTutorial {
   private AsSoonAsMethodTutorial() {
   }
 
-  public static void main(String[] args) {
+  public static void main() {
     final var startTime = System.currentTimeMillis();
 
     FlowController

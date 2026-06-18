@@ -13,7 +13,7 @@ final class EmptyServerTutorial {
   private EmptyServerTutorial() {
   }
 
-  public static void main(String[] args) {
+  public static void main() {
     //Creates a Server.
     try (final var _ = Server.forHttpPort()) {
       //Starts a web browser that will connect to the Server.

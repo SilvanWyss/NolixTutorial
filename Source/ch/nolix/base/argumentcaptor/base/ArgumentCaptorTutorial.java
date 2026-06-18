@@ -12,7 +12,7 @@ final class ArgumentCaptorTutorial {
   private ArgumentCaptorTutorial() {
   }
 
-  public static void main(String[] args) {
+  public static void main() {
     //Builds a Pet.
     final var garfield = Pet.build().withName("Garfield").withAgeInYears(10).withWeightInKilogram(20);
 

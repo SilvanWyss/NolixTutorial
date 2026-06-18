@@ -13,7 +13,7 @@ final class ResultFutureTutorial {
   private ResultFutureTutorial() {
   }
 
-  public static void main(String[] args) {
+  public static void main() {
     final var matrix = Matrix.createIdendityMatrixWithLength(3000);
     final var resultFuture = FlowController.runInBackground(matrix::getRank);
 

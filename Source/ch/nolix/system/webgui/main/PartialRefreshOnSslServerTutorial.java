@@ -12,7 +12,7 @@ final class PartialRefreshOnSslServerTutorial {
   private PartialRefreshOnSslServerTutorial() {
   }
 
-  public static void main(String[] args) {
+  public static void main() {
     //Creates a SslServer.
     final var sslServer = SslServer.forHttpsPortAndDomainAndSSLCertificateFromNolixConfiguration();
 

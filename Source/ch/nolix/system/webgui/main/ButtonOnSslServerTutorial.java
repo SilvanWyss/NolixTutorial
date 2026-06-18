@@ -13,7 +13,7 @@ final class ButtonOnSslServerTutorial {
   private ButtonOnSslServerTutorial() {
   }
 
-  public static void main(String[] args) {
+  public static void main() {
     //Creates a SslServer.
     final var sslServer = SslServer.forHttpsPortAndDomainAndSSLCertificateFromNolixConfiguration();
 

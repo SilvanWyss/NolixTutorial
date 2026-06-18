@@ -16,7 +16,7 @@ final class MsSqlSchemaAdapterTutorial {
   private MsSqlSchemaAdapterTutorial() {
   }
 
-  public static void main(String[] args) {
+  public static void main() {
     //Creates a MsSqlSchemaAdapter.
     final var msSqlSchemaAdapter = //
     MsSqlSchemaAdapterBuilder.createMsSqlSchemaAdapter()

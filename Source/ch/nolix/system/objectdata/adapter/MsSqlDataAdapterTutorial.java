@@ -15,7 +15,7 @@ final class MsSqlDataAdapterTutorial {
   private MsSqlDataAdapterTutorial() {
   }
 
-  public static void main(String[] args) {
+  public static void main() {
     //Creates schema.
     final var entityTypeSet = EntityTypeSet.withEntityType(Person.class);
 

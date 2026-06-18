@@ -13,7 +13,7 @@ final class AsSoonAsNoMoreMethodTutorial {
   private AsSoonAsNoMoreMethodTutorial() {
   }
 
-  public static void main(String[] args) {
+  public static void main() {
     final var cats = ArrayList.withElements("Garfield", "Simba", "Smokey");
 
     FlowController

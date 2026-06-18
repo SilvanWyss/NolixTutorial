@@ -14,7 +14,7 @@ final class ComplexSequenceTutorial {
   private ComplexSequenceTutorial() {
   }
 
-  public static void main(String[] args) {
+  public static void main() {
     final var complexSequence = //
     ComplexSequenceDefinedBy1Predecessor.withFirstValueAndNextValueFunction(
       ComplexNumber.withRealComponentAndImaginaryComponent(0.0, 0.0),

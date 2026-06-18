@@ -16,7 +16,7 @@ final class NodeDataAdapterTutorial {
   private NodeDataAdapterTutorial() {
   }
 
-  public static void main(String[] args) {
+  public static void main() {
     //Creates nodeDatabase.
     final var nodeDatabase = MutableNode.createEmpty();
 

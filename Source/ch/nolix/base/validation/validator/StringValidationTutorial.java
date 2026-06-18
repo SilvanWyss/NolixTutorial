@@ -10,7 +10,7 @@ final class StringValidationTutorial {
   private StringValidationTutorial() {
   }
 
-  public static void main(String[] args) {
+  public static void main() {
     /*
      * Lets the Validator assert that the String 'Hello World!' is not null and not
      * empty, what will not result in any complain.

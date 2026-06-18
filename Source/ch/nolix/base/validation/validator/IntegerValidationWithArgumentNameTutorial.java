@@ -10,7 +10,7 @@ final class IntegerValidationWithArgumentNameTutorial {
   private IntegerValidationWithArgumentNameTutorial() {
   }
 
-  public static void main(String[] args) {
+  public static void main() {
     //Lets the Validator assert that 5 is positive, what will not result in any complain.
     Validator.assertThat(5).thatIsNamed("size").isPositive();
 

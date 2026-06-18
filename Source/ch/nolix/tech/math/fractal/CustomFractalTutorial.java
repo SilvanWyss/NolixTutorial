@@ -19,7 +19,7 @@ final class CustomFractalTutorial {
   private CustomFractalTutorial() {
   }
 
-  public static void main(String[] args) {
+  public static void main() {
     //Creates a Server.
     final var server = Server.forHttpPort();
 
