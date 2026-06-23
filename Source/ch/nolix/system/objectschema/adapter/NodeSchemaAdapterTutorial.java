@@ -3,7 +3,7 @@
  */
 package ch.nolix.system.objectschema.adapter;
 
-import ch.nolix.base.container.immutablelist.ImmutableList;
+import ch.nolix.base.datastructure.immutablelist.ImmutableList;
 import ch.nolix.base.document.node.MutableNode;
 import ch.nolix.base.errorcontrol.logging.Logger;
 import ch.nolix.baseapi.datamodel.fieldproperty.DataType;
