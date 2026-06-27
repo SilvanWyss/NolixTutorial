@@ -6,7 +6,9 @@ package ch.nolix.system.containercontrol.tabcontainer;
 import ch.nolix.base.environment.localcomputer.ShellProvider;
 import ch.nolix.base.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
-import ch.nolix.system.atomiccontrol.label.Label;
+import ch.nolix.system.control.label.Label;
+import ch.nolix.system.control.tabcontainer.TabContainer;
+import ch.nolix.system.control.tabcontainer.TabContainerTab;
 import ch.nolix.system.webapplication.main.WebClientSession;
 
 /**

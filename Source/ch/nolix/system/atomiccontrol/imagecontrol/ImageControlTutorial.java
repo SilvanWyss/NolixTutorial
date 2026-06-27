@@ -6,6 +6,7 @@ package ch.nolix.system.atomiccontrol.imagecontrol;
 import ch.nolix.base.environment.localcomputer.ShellProvider;
 import ch.nolix.base.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
+import ch.nolix.system.control.imagecontrol.ImageControl;
 import ch.nolix.system.graphic.image.MutableImage;
 import ch.nolix.system.webapplication.main.WebClientSession;
 

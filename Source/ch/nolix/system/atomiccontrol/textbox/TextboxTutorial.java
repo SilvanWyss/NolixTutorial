@@ -6,6 +6,7 @@ package ch.nolix.system.atomiccontrol.textbox;
 import ch.nolix.base.environment.localcomputer.ShellProvider;
 import ch.nolix.base.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
+import ch.nolix.system.control.textbox.Textbox;
 import ch.nolix.system.webapplication.main.WebClientSession;
 
 /**

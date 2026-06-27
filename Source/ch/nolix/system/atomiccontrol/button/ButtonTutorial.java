@@ -6,10 +6,11 @@ package ch.nolix.system.atomiccontrol.button;
 import ch.nolix.base.environment.localcomputer.ShellProvider;
 import ch.nolix.base.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
-import ch.nolix.system.atomiccontrol.label.Label;
-import ch.nolix.system.containercontrol.verticalstack.VerticalStack;
+import ch.nolix.system.control.button.Button;
+import ch.nolix.system.control.label.Label;
+import ch.nolix.system.control.verticalstack.VerticalStack;
 import ch.nolix.system.webapplication.main.WebClientSession;
-import ch.nolix.systemapi.atomiccontrol.label.ILabel;
+import ch.nolix.systemapi.control.label.ILabel;
 import ch.nolix.systemapi.gui.box.HorizontalContentAlignment;
 import ch.nolix.systemapi.webgui.main.ControlState;
 

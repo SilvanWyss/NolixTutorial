@@ -6,19 +6,19 @@ package ch.nolix.template.webgui.style;
 import ch.nolix.base.environment.localcomputer.ShellProvider;
 import ch.nolix.base.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
-import ch.nolix.system.atomiccontrol.button.Button;
-import ch.nolix.system.atomiccontrol.dropdownmenu.DropdownMenu;
-import ch.nolix.system.atomiccontrol.imagecontrol.ImageControl;
-import ch.nolix.system.atomiccontrol.label.Label;
-import ch.nolix.system.atomiccontrol.link.Link;
-import ch.nolix.system.atomiccontrol.textbox.Textbox;
-import ch.nolix.system.containercontrol.grid.Grid;
-import ch.nolix.system.containercontrol.horizontalstack.HorizontalStack;
-import ch.nolix.system.containercontrol.verticalstack.VerticalStack;
-import ch.nolix.system.graphic.image.Image;
+import ch.nolix.system.control.button.Button;
+import ch.nolix.system.control.dropdownmenu.DropdownMenu;
+import ch.nolix.system.control.grid.Grid;
+import ch.nolix.system.control.horizontalstack.HorizontalStack;
+import ch.nolix.system.control.imagecontrol.ImageControl;
+import ch.nolix.system.control.label.Label;
+import ch.nolix.system.control.link.Link;
+import ch.nolix.system.control.textbox.Textbox;
+import ch.nolix.system.control.verticalstack.VerticalStack;
+import ch.nolix.system.graphic.image.ImmutableImage;
 import ch.nolix.system.time.moment.Time;
 import ch.nolix.system.webapplication.main.WebClientSession;
-import ch.nolix.systemapi.atomiccontrol.label.LabelRole;
+import ch.nolix.systemapi.control.label.LabelRole;
 import ch.nolix.template.webgui.dialog.ShowValueDialogBuilder;
 
 /**
@@ -91,7 +91,7 @@ final class StyleCatalogTutorial {
                 .insertControlAtRowAndColumn(
                   4,
                   2,
-                  new ImageControl().setImage(Image.fromResource("image/singer_building.jpg")))))
+                  new ImageControl().setImage(ImmutableImage.fromResource("image/singer_building.jpg")))))
         .resetStyleRecursively();
     }
   }

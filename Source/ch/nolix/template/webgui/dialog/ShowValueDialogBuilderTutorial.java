@@ -5,9 +5,9 @@ package ch.nolix.template.webgui.dialog;
 
 import ch.nolix.base.environment.localcomputer.ShellProvider;
 import ch.nolix.base.programcontrol.flowcontrol.FlowController;
-import ch.nolix.baseapi.misc.variable.LowerCaseVariableCatalog;
+import ch.nolix.baseapi.misc.variablenamecatalog.LowerCaseVariableNameCatalog;
 import ch.nolix.system.application.main.Server;
-import ch.nolix.system.atomiccontrol.button.Button;
+import ch.nolix.system.control.button.Button;
 import ch.nolix.system.graphic.color.X11ColorCatalog;
 import ch.nolix.system.time.moment.Time;
 import ch.nolix.system.webapplication.main.WebClientSession;
@@ -64,7 +64,7 @@ final class ShowValueDialogBuilderTutorial {
       //Creates a dialog that shows the dateString.
       final var showDateDialog = //
       new ShowValueDialogBuilder()
-        .setValueName(LowerCaseVariableCatalog.DATE)
+        .setValueName(LowerCaseVariableNameCatalog.DATE)
         .setValue(dateString).build()
         .setBackgroundColor(X11ColorCatalog.WHITE);
 

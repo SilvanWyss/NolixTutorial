@@ -7,14 +7,15 @@ import ch.nolix.base.environment.localcomputer.ShellProvider;
 import ch.nolix.base.errorcontrol.generalexception.GeneralException;
 import ch.nolix.base.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
-import ch.nolix.system.atomiccontrol.button.Button;
-import ch.nolix.system.atomiccontrol.imagecontrol.ImageControl;
-import ch.nolix.system.atomiccontrol.validationlabel.ValidationLabel;
-import ch.nolix.system.containercontrol.verticalstack.VerticalStack;
-import ch.nolix.system.graphic.image.Image;
+import ch.nolix.system.control.button.Button;
+import ch.nolix.system.control.imagecontrol.ImageControl;
+import ch.nolix.system.control.uploader.Uploader;
+import ch.nolix.system.control.validationlabel.ValidationLabel;
+import ch.nolix.system.control.verticalstack.VerticalStack;
+import ch.nolix.system.graphic.image.ImmutableImage;
 import ch.nolix.system.webapplication.main.WebClientSession;
-import ch.nolix.systemapi.atomiccontrol.imagecontrol.IImageControl;
-import ch.nolix.systemapi.atomiccontrol.uploader.IUploader;
+import ch.nolix.systemapi.control.imagecontrol.IImageControl;
+import ch.nolix.systemapi.control.uploader.IUploader;
 
 /**
  * @author Silvan Wyss
@@ -71,7 +72,7 @@ final class UploaderTutorial {
       }
 
       //Creates an image from the file of the Uploader.
-      final var image = Image.fromBytes(uploader.getFile());
+      final var image = ImmutableImage.fromBytes(uploader.getFile());
 
       //Sets the image to the ImageControl.
       imageControl.setImage(image);

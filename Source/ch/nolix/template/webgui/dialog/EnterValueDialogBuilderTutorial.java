@@ -6,14 +6,14 @@ package ch.nolix.template.webgui.dialog;
 import ch.nolix.base.environment.localcomputer.ShellProvider;
 import ch.nolix.base.programcontrol.flowcontrol.FlowController;
 import ch.nolix.base.validation.validator.Validator;
-import ch.nolix.baseapi.misc.variable.LowerCaseVariableCatalog;
+import ch.nolix.baseapi.misc.variablenamecatalog.LowerCaseVariableNameCatalog;
 import ch.nolix.system.application.main.Server;
-import ch.nolix.system.atomiccontrol.button.Button;
-import ch.nolix.system.atomiccontrol.label.Label;
-import ch.nolix.system.containercontrol.verticalstack.VerticalStack;
+import ch.nolix.system.control.button.Button;
+import ch.nolix.system.control.label.Label;
+import ch.nolix.system.control.verticalstack.VerticalStack;
 import ch.nolix.system.graphic.color.X11ColorCatalog;
 import ch.nolix.system.webapplication.main.WebClientSession;
-import ch.nolix.systemapi.atomiccontrol.label.ILabel;
+import ch.nolix.systemapi.control.label.ILabel;
 
 /**
  * @author Silvan Wyss
@@ -71,7 +71,7 @@ final class EnterValueDialogBuilderTutorial {
 
     private void setNameInNameLabel(final String name) {
       //Asserts that the given name is not shorter than 4 characters.
-      Validator.assertThat(name).thatIsNamed(LowerCaseVariableCatalog.NAME).isNotShorterThan(4);
+      Validator.assertThat(name).thatIsNamed(LowerCaseVariableNameCatalog.NAME).isNotShorterThan(4);
 
       //Sets the given name to the nameLabel.
       nameLabel.setText(name);

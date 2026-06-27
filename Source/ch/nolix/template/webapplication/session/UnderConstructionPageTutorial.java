@@ -6,8 +6,8 @@ package ch.nolix.template.webapplication.session;
 import ch.nolix.base.environment.localcomputer.ShellProvider;
 import ch.nolix.base.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
-import ch.nolix.system.atomiccontrol.button.Button;
-import ch.nolix.system.containercontrol.verticalstack.VerticalStack;
+import ch.nolix.system.control.button.Button;
+import ch.nolix.system.control.verticalstack.VerticalStack;
 import ch.nolix.system.webapplication.main.WebClientSession;
 
 /**

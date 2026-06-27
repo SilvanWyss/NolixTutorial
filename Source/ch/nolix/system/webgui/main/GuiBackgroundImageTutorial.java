@@ -6,7 +6,7 @@ package ch.nolix.system.webgui.main;
 import ch.nolix.base.environment.localcomputer.ShellProvider;
 import ch.nolix.base.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
-import ch.nolix.system.graphic.image.Image;
+import ch.nolix.system.graphic.image.ImmutableImage;
 import ch.nolix.system.webapplication.main.WebClientSession;
 import ch.nolix.systemapi.gui.background.ImageApplication;
 
@@ -41,7 +41,7 @@ final class GuiBackgroundImageTutorial {
     @Override
     protected void initialize() {
       //Loads an Image.
-      final var image = Image.fromResource("image/pilatus.jpg");
+      final var image = ImmutableImage.fromResource("image/pilatus.jpg");
 
       //Sets the Image as background image to the GUI of the current Session.
       getStoredGui().setBackgroundImage(image, ImageApplication.SCALE_TO_FRAME);

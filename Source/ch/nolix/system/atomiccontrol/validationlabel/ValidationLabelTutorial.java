@@ -7,12 +7,13 @@ import ch.nolix.base.environment.localcomputer.ShellProvider;
 import ch.nolix.base.programcontrol.flowcontrol.FlowController;
 import ch.nolix.base.validation.validator.Validator;
 import ch.nolix.baseapi.errorcontrol.invalidargumentexception.UnrepresentingArgumentException;
-import ch.nolix.baseapi.misc.variable.LowerCaseVariableCatalog;
+import ch.nolix.baseapi.misc.variablenamecatalog.LowerCaseVariableNameCatalog;
 import ch.nolix.system.application.main.Server;
-import ch.nolix.system.atomiccontrol.button.Button;
-import ch.nolix.system.atomiccontrol.label.Label;
-import ch.nolix.system.atomiccontrol.textbox.Textbox;
-import ch.nolix.system.containercontrol.verticalstack.VerticalStack;
+import ch.nolix.system.control.button.Button;
+import ch.nolix.system.control.label.Label;
+import ch.nolix.system.control.textbox.Textbox;
+import ch.nolix.system.control.validationlabel.ValidationLabel;
+import ch.nolix.system.control.verticalstack.VerticalStack;
 import ch.nolix.system.webapplication.main.WebClientSession;
 
 /**
@@ -65,13 +66,13 @@ final class ValidationLabelTutorial {
         final var number = Integer.parseInt(input);
 
         //Asserts that the number is positive.
-        Validator.assertThat(number).thatIsNamed(LowerCaseVariableCatalog.NUMBER).isPositive();
+        Validator.assertThat(number).thatIsNamed(LowerCaseVariableNameCatalog.NUMBER).isPositive();
       } catch (final NumberFormatException _) {
         //Creates and throws an UnrepresentingArgumentException for the input.
         throw //
         UnrepresentingArgumentException.forArgumentAndArgumentNameAndType(
           input,
-          LowerCaseVariableCatalog.INPUT,
+          LowerCaseVariableNameCatalog.INPUT,
           Integer.class);
       }
     }
