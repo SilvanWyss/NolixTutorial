@@ -59,39 +59,41 @@ final class StyleCatalogTutorial {
                 .setText(getApplicationName()),
               new HorizontalStack()
                 .addControls(
-                  new Label().setText("Select style:"),
-                  new DropdownMenu()
-                    .addItemWithTextAndSelectAction("none", () -> getStoredGui().removeStyle())
-                    .addItemWithTextAndSelectAction(
-                      "Dark edge style",
-                      () -> getStoredGui().setStyle(StyleCatalog.DARK_EDGE_STYLE))
-                    .addItemWithTextAndSelectAction(
-                      "Parchment edge style",
-                      () -> getStoredGui().setStyle(StyleCatalog.PARCHMENT_EDGE_STYLE))),
-              new Grid()
-                .insertTextAtRowAndColumn(1, 1, "Textbox")
-                .insertControlAtRowAndColumn(1, 2, new Textbox())
-                .insertTextAtRowAndColumn(2, 1, "Link")
-                .insertControlAtRowAndColumn(2, 2, new Link().setDisplayText("nolix.ch").setUrl("https://nolix.ch"))
-                .insertTextAtRowAndColumn(3, 1, "Button")
-                .insertControlAtRowAndColumn(
-                  3,
-                  2,
-                  new Button()
-                    .setText("Show current year")
-                    .setLeftMouseButtonPressAction(
-                      () -> //
-                      getStoredGui()
-                        .pushLayer(
-                          new ShowValueDialogBuilder()
-                            .setValueName("Current year")
-                            .setValue(String.valueOf(Time.ofNow().getYear()))
-                            .build())))
-                .insertTextAtRowAndColumn(4, 1, "ImageControl")
-                .insertControlAtRowAndColumn(
-                  4,
-                  2,
-                  new ImageControl().setImage(ImmutableImage.fromResource("image/singer_building.jpg")))))
+                  new HorizontalStack()
+                    .addControls(
+                      new Label().setText("Select style:"),
+                      new DropdownMenu()
+                        .addItemWithTextAndSelectAction("none", () -> getStoredGui().removeStyle())
+                        .addItemWithTextAndSelectAction(
+                          "Dark edge style",
+                          () -> getStoredGui().setStyle(StyleCatalog.DARK_EDGE_STYLE))
+                        .addItemWithTextAndSelectAction(
+                          "Parchment edge style",
+                          () -> getStoredGui().setStyle(StyleCatalog.PARCHMENT_EDGE_STYLE))),
+                  new Grid()
+                    .insertTextAtRowAndColumn(1, 1, "Textbox:")
+                    .insertControlAtRowAndColumn(1, 2, new Textbox())
+                    .insertTextAtRowAndColumn(2, 1, "Link:")
+                    .insertControlAtRowAndColumn(2, 2, new Link().setDisplayText("nolix.ch").setUrl("https://nolix.ch"))
+                    .insertTextAtRowAndColumn(3, 1, "Button:")
+                    .insertControlAtRowAndColumn(
+                      3,
+                      2,
+                      new Button()
+                        .setText("Show current year")
+                        .setLeftMouseButtonPressAction(
+                          () -> //
+                          getStoredGui()
+                            .pushLayer(
+                              new ShowValueDialogBuilder()
+                                .setValueName("Current year")
+                                .setValue(String.valueOf(Time.ofNow().getYear()))
+                                .build())))
+                    .insertTextAtRowAndColumn(4, 1, "ImageControl:")
+                    .insertControlAtRowAndColumn(
+                      4,
+                      2,
+                      new ImageControl().setImage(ImmutableImage.fromResource("image/singer_building.jpg"))))))
         .resetStyleRecursively();
     }
   }
