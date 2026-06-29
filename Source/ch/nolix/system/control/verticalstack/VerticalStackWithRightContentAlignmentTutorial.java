@@ -1,22 +1,21 @@
 /*
  * Copyright © by Silvan Wyss. All rights reserved.
  */
-package ch.nolix.system.containercontrol.horizontalstack;
+package ch.nolix.system.control.verticalstack;
 
 import ch.nolix.base.environment.localcomputer.ShellProvider;
 import ch.nolix.base.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
-import ch.nolix.system.control.horizontalstack.HorizontalStack;
 import ch.nolix.system.control.label.Label;
 import ch.nolix.system.webapplication.main.WebClientSession;
-import ch.nolix.systemapi.gui.box.VerticalContentAlignment;
+import ch.nolix.systemapi.gui.box.HorizontalContentAlignment;
 import ch.nolix.systemapi.webgui.main.ControlState;
 
 /**
  * @author Silvan Wyss
  */
-final class HorizontalStackWithBottomContentAlignmentTutorial {
-  private HorizontalStackWithBottomContentAlignmentTutorial() {
+final class VerticalStackWithRightContentAlignmentTutorial {
+  private VerticalStackWithRightContentAlignmentTutorial() {
   }
 
   public static void main() {
@@ -25,7 +24,7 @@ final class HorizontalStackWithBottomContentAlignmentTutorial {
 
     //Adds a default Application to the Server.
     server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext(
-      "HorizontalStack with bottom content alignment tutorial",
+      "VerticalStack with right content alignment tutorial",
       Session.class);
 
     //Starts a web browser that will connect to the Server.
@@ -35,14 +34,15 @@ final class HorizontalStackWithBottomContentAlignmentTutorial {
     FlowController
       .waitForSeconds(2)
       .andThen()
-      .asSoonAsNoMore(server::hasClientConnected).runInBackground(server::close);
+      .asSoonAsNoMore(server::hasClientConnected)
+      .runInBackground(server::close);
   }
 
   private static final class Session extends WebClientSession<Object> {
     @Override
     protected void initialize() {
-      //Creates a HorizontalStack.
-      final var horizontalStack = new HorizontalStack();
+      //Creates a VerticalStack.
+      final var verticalStack = new VerticalStack();
 
       //Creates 4 Labels.
       final var label1 = new Label().setText("A");
@@ -57,14 +57,14 @@ final class HorizontalStackWithBottomContentAlignmentTutorial {
       label4.getStoredStyle().forStateSetTextSize(ControlState.BASE, 50);
 
       //Adds the Labels to the HorizontalStack.
-      horizontalStack.addControls(label1, label2, label3, label4);
+      verticalStack.addControls(label1, label2, label3, label4);
 
       //Configures the style of the HorizontalStack.
-      horizontalStack.setContentAlignment(VerticalContentAlignment.BOTTOM);
-      horizontalStack.getStoredStyle().setChildControlMarginForState(ControlState.BASE, 100);
+      verticalStack.setContentAlignment(HorizontalContentAlignment.RIGHT);
+      verticalStack.getStoredStyle().setChildControlMarginForState(ControlState.BASE, 100);
 
       //Adds the HorizontalStack to the GUI of the current Session.
-      getStoredGui().pushLayerWithRootControl(horizontalStack);
+      getStoredGui().pushLayerWithRootControl(verticalStack);
     }
   }
 }

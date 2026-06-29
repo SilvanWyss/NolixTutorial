@@ -1,7 +1,7 @@
 /*
  * Copyright © by Silvan Wyss. All rights reserved.
  */
-package ch.nolix.system.atomiccontrol.uploader;
+package ch.nolix.system.control.uploader;
 
 import ch.nolix.base.environment.localcomputer.ShellProvider;
 import ch.nolix.base.errorcontrol.generalexception.GeneralException;
@@ -9,7 +9,6 @@ import ch.nolix.base.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
 import ch.nolix.system.control.button.Button;
 import ch.nolix.system.control.imagecontrol.ImageControl;
-import ch.nolix.system.control.uploader.Uploader;
 import ch.nolix.system.control.validationlabel.ValidationLabel;
 import ch.nolix.system.control.verticalstack.VerticalStack;
 import ch.nolix.system.graphic.image.ImmutableImage;

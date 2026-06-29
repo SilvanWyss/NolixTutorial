@@ -4,7 +4,7 @@
 package ch.nolix.system.webgui.main;
 
 import ch.nolix.system.application.main.SslServer;
-import ch.nolix.system.atomiccontrol.button.ButtonTutorial;
+import ch.nolix.system.control.button.ButtonTutorial;
 
 /**
  * @author Silvan Wyss

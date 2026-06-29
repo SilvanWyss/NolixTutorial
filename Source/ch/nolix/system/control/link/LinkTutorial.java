@@ -1,19 +1,19 @@
 /*
  * Copyright © by Silvan Wyss. All rights reserved.
  */
-package ch.nolix.system.atomiccontrol.textbox;
+package ch.nolix.system.control.link;
 
 import ch.nolix.base.environment.localcomputer.ShellProvider;
 import ch.nolix.base.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.application.main.Server;
-import ch.nolix.system.control.textbox.Textbox;
 import ch.nolix.system.webapplication.main.WebClientSession;
+import ch.nolix.systemapi.control.link.LinkTarget;
 
 /**
  * @author Silvan Wyss
  */
-final class TextboxTutorial {
-  private TextboxTutorial() {
+final class LinkTutorial {
+  private LinkTutorial() {
   }
 
   public static void main() {
@@ -21,7 +21,7 @@ final class TextboxTutorial {
     final var server = Server.forHttpPort();
 
     //Adds a default Application to the Server.
-    server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("Textbox tutorial", Session.class);
+    server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("Link tutorial", Session.class);
 
     //Starts a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
@@ -37,11 +37,11 @@ final class TextboxTutorial {
   private static final class Session extends WebClientSession<Object> {
     @Override
     protected void initialize() {
-      //Creates a Textbox.
-      final var textBox = new Textbox();
+      //Creates a Link.
+      final var link = new Link().setUrlAndDisplayTextFromIt("https://nolix.ch").setTarget(LinkTarget.NEW_TAB);
 
-      //Adds the Textbox to the GUI of the current Session.
-      getStoredGui().pushLayerWithRootControl(textBox);
+      //Adds the Link to the GUI of the current Session.
+      getStoredGui().pushLayerWithRootControl(link);
     }
   }
 }
