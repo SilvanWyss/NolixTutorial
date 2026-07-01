@@ -34,11 +34,11 @@ final class ArgumentCaptorTutorial {
     }
 
     private Pet build() {
-      return new Pet(getName(), nxtArgCpt().getAgeInYears(), nxtArgCpt().nxtArgCpt().getWeightInKilogram());
+      return new Pet(getName(), scsArgCpt().getAgeInYears(), scsArgCpt().scsArgCpt().getWeightInKilogram());
     }
   }
 
-  private static class WithNameCaptor<N> extends ArgumentCaptor<String, N> {
+  private static class WithNameCaptor<N> extends AbstractArgumentCaptor<String, N> {
     public WithNameCaptor(final N nextArgumentCaptor) {
       super(nextArgumentCaptor);
     }
@@ -48,11 +48,11 @@ final class ArgumentCaptorTutorial {
     }
 
     public final N withName(final String name) {
-      return setArgumentAndGetNext(name);
+      return setArgumentAndGetStoredSuccessor(name);
     }
   }
 
-  private static class WithAgeInYearsCaptor<N> extends ArgumentCaptor<Integer, N> {
+  private static class WithAgeInYearsCaptor<N> extends AbstractArgumentCaptor<Integer, N> {
     public WithAgeInYearsCaptor(final N nextArgumentCaptor) {
       super(nextArgumentCaptor);
     }
@@ -62,17 +62,17 @@ final class ArgumentCaptorTutorial {
     }
 
     public final N withAgeInYears(final int ageInYears) {
-      return setArgumentAndGetNext(ageInYears);
+      return setArgumentAndGetStoredSuccessor(ageInYears);
     }
   }
 
-  private static class WithWeightInKilogramCaptor<N> extends ArgumentCaptor<Integer, N> {
+  private static class WithWeightInKilogramCaptor<N> extends AbstractArgumentCaptor<Integer, N> {
     public final int getWeightInKilogram() {
       return getStoredArgument();
     }
 
     public final N withWeightInKilogram(final int ageInYears) {
-      return setArgumentAndGetNext(ageInYears);
+      return setArgumentAndGetStoredSuccessor(ageInYears);
     }
   }
 }
