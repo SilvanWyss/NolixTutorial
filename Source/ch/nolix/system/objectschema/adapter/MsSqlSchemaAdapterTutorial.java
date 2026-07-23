@@ -20,7 +20,7 @@ final class MsSqlSchemaAdapterTutorial {
     //Creates a MsSqlSchemaAdapter.
     final var msSqlSchemaAdapter = //
     MsSqlSchemaAdapterBuilder.createMsSqlSchemaAdapter()
-      .toLocalAddress()
+      .toLocalHost()
       .andMsSqlPort()
       .toDatabase("CountryDB")
       .withLoginName("mssqluser")

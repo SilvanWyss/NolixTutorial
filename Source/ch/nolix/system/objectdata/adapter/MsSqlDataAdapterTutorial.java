@@ -23,7 +23,7 @@ final class MsSqlDataAdapterTutorial {
     final var msSqlDataAdapter = //
     MsSqlDataAdapterBuilder
       .createMsSqlDataAdapter()
-      .toLocalAddress()
+      .toLocalHost()
       .andMsSqlPort()
       .andDatabase("PersonDB")
       .withLoginName("mssqluser")
