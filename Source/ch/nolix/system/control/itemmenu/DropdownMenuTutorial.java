@@ -17,16 +17,16 @@ final class DropdownMenuTutorial {
   }
 
   public static void main() {
-    //Creates a Server.
+    // create a Server
     final var server = Server.forHttpPort();
 
-    //Adds a default Application to the Server.
+    // add a default Application to the Server
     server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("DropdownMenu tutorial", Session.class);
 
-    //Starts a web browser that will connect to the Server.
+    // start a web browser that will connect to the Server
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
 
-    //Closes the Server as soon as it does not have a client connected any more.
+    // close the Server as soon as it does not have a client connected any more
     FlowController
       .waitForSeconds(2)
       .andThen()
@@ -37,10 +37,10 @@ final class DropdownMenuTutorial {
   private static final class Session extends WebClientSession<Object> {
     @Override
     protected void initialize() {
-      //Creates a DropdownMenu.
+      // create a DropdownMenu
       final var dropdownMenu = new DropdownMenu().addItems("red", "blue", "green", "yellow", "orange", "purple");
 
-      //Adds the DropdownMenu to the GUI of the current Session.
+      // add the DropdownMenu to the GUI of the current Session
       getStoredGui().pushLayerWithRootControl(dropdownMenu);
     }
   }

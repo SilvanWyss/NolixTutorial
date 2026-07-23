@@ -20,16 +20,16 @@ final class JuliaFractalTutorial {
   }
 
   public static void main() {
-    //Creates a Server.
+    // create a Server
     final var server = Server.forHttpPort();
 
-    //Adds a default Application to the Server.
+    // add a default Application to the Server
     server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("Julia fractal tutorial", Session.class);
 
-    //Starts a web browser that will connect to the Server.
+    // start a web browser that will connect to the Server
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
 
-    //Closes the Server as soon as it does not have a client connected any more.
+    // close the Server as soon as it does not have a client connected any more
     FlowController
       .waitForSeconds(2)
       .andThen()
@@ -37,7 +37,7 @@ final class JuliaFractalTutorial {
       .runInBackground(server::close);
   }
 
-  private static final class Session //NOSONAR: A single-file-tutorial can contain a larger static class.
+  private static final class Session // NOSONAR: A single-file-tutorial can contain a larger static class.
   extends WebClientSession<Object> {
     @Override
     protected void initialize() {

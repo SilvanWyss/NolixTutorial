@@ -18,16 +18,16 @@ final class VerticalStackTutorial {
   }
 
   public static void main() {
-    //Creates a Server.
+    // create a Server
     final var server = Server.forHttpPort();
 
-    //Adds a default Application to the Server.
+    // add a default Application to the Server
     server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("VerticalStack tutorial", Session.class);
 
-    //Starts a web browser that will connect to the Server.
+    // start a web browser that will connect to the Server
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
 
-    //Closes the Server as soon as it does not have a client connected any more.
+    // close the Server as soon as it does not have a client connected any more
     FlowController
       .waitForSeconds(2)
       .andThen()
@@ -38,23 +38,23 @@ final class VerticalStackTutorial {
   private static final class Session extends WebClientSession<Object> {
     @Override
     protected void initialize() {
-      //Creates a VerticalStack.
+      // create a VerticalStack.
       final var verticalStack = new VerticalStack();
 
-      //Creates and adds 4 Labels to the VerticalStack.
+      // create and adds 4 Labels to the VerticalStack
       verticalStack.addControls(
         new Label().setText("A"),
         new Label().setText("B"),
         new Label().setText("C"),
         new Label().setText("D"));
 
-      //Configures the style of the VerticalStack.
+      // configure the style of the VerticalStack
       verticalStack
         .getStoredStyle()
         .setChildControlMarginForState(ControlState.BASE, 50)
         .forStateSetTextSize(ControlState.BASE, 100);
 
-      //Adds the VerticalStack to the GUI of the current Session.
+      // add the VerticalStack to the GUI of the current Session
       getStoredGui().pushLayerWithRootControl(verticalStack);
     }
   }

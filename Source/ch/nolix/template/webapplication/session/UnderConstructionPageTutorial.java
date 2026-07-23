@@ -18,18 +18,18 @@ final class UnderConstructionPageTutorial {
   }
 
   public static void main() {
-    //Creates a Server.
+    // create a Server
     final var server = Server.forHttpPort();
 
-    //Adds a default Application to the Server.
+    // add a default Application to the Server
     server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext(
       "Under construction page tutorial",
       Session.class);
 
-    //Starts a web browser that will connect to the Server.
+    // start a web browser that will connect to the Server
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
 
-    //Closes the Server as soon as it does not have a client connected any more.
+    // close the Server as soon as it does not have a client connected any more
     FlowController
       .waitForSeconds(2)
       .andThen()
@@ -40,7 +40,7 @@ final class UnderConstructionPageTutorial {
   private static final class Session extends WebClientSession<Object> {
     @Override
     protected void initialize() {
-      //Adds a Button that leads to an UnderConstructionPageSession to the GUI of the current Session.
+      // add a Button that leads to an UnderConstructionPageSession to the GUI of the current Session
       getStoredGui()
         .pushLayerWithRootControl(
           new VerticalStack()

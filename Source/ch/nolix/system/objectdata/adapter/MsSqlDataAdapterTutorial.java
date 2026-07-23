@@ -16,10 +16,10 @@ final class MsSqlDataAdapterTutorial {
   }
 
   public static void main() {
-    //Creates schema.
+    // create schema
     final var entityTypeSet = EntityTypeSet.withEntityType(Person.class);
 
-    //Creates a MsSqlDataAdapter.
+    // create a MsSqlDataAdapter
     final var msSqlDataAdapter = //
     MsSqlDataAdapterBuilder
       .createMsSqlDataAdapter()
@@ -30,31 +30,31 @@ final class MsSqlDataAdapterTutorial {
       .andLoginPassword("mssql1234")
       .andSchema(entityTypeSet);
 
-    //Creates a first Entity.
+    // create a first Entity
     final var donaldDuck = new Person();
     donaldDuck.firstName.setValue("Donald");
     donaldDuck.lastName.setValue("Duck");
 
-    //Creates a second Entity.
+    // create a second Entity
     final var daisyDuck = new Person();
     daisyDuck.firstName.setValue("Daisy");
     daisyDuck.lastName.setValue("Duck");
 
-    //Inserts the created Entities into the MsSqlDataAdapter.
+    // insert the created Entities into the MsSqlDataAdapter
     msSqlDataAdapter.insertEntity(daisyDuck).insertEntity(donaldDuck);
 
-    //Lets the MsSqlDataAdapter save its changes.
+    // let the MsSqlDataAdapter save its changes
     msSqlDataAdapter.saveChanges();
 
-    //Lets the MsSqlDataAdapter load the first Entity.
+    // let the MsSqlDataAdapter load the first Entity
     final var loadedDonaldDuck = //
     msSqlDataAdapter.getStoredTableByEntityType(Person.class).getStoredEntityById(donaldDuck.getId());
 
-    //Lets the MsSqlDataAdapter load the second Entity.
+    // let the MsSqlDataAdapter load the second Entity
     final var loadedDaisyDuck = //
     msSqlDataAdapter.getStoredTableByEntityType(Person.class).getStoredEntityById(daisyDuck.getId());
 
-    //Logs the loaded Entities.
+    // log the loaded Entities
     Logger.logInfo(loadedDonaldDuck.toString());
     Logger.logInfo(loadedDaisyDuck.toString());
   }

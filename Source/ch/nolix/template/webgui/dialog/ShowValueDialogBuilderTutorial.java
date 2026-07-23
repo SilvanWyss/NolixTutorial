@@ -20,18 +20,18 @@ final class ShowValueDialogBuilderTutorial {
   }
 
   public static void main() {
-    //Creates a Server.
+    // create a Server
     final var server = Server.forHttpPort();
 
-    //Adds a default Application to the Server.
+    // add a default Application to the Server
     server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext(
       "ShowValueDialogBuilder tutorial",
       Session.class);
 
-    //Starts a web browser that will connect to the Server.
+    // start a web browser that will connect to the Server
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
 
-    //Closes the Server as soon as it does not have a client connected any more.
+    // close the Server as soon as it does not have a client connected any more
     FlowController
       .waitForSeconds(2)
       .andThen()
@@ -39,36 +39,36 @@ final class ShowValueDialogBuilderTutorial {
       .runInBackground(server::close);
   }
 
-  private static final class Session //NOSONAR: A single-file-tutorial can contain a larger static class.
+  private static final class Session // NOSONAR: A single-file-tutorial can contain a larger static class.
   extends WebClientSession<Object> {
     private static String getDateAsStringFromTime(final Time time) {
-      //Formats the given time to a date String.
+      // formats the given time to a date String
       return String.format("%02d.%02d.%04d", time.getDayOfMonth(), time.getMonthOfYearAsInt(), time.getYear());
     }
 
     @Override
     protected void initialize() {
-      //Adds a Button, that leads to a dialog to show the date, to the GUI of the current Session.
+      // add a Button, that leads to a dialog to show the date, to the GUI of the current Session
       getStoredGui()
         .pushLayerWithRootControl(
           new Button().setText("Show date").setLeftMouseButtonPressAction(this::showDate));
     }
 
     private void showDate() {
-      //Gets the current time.
+      // get the current time
       final var currentTime = Time.ofNow();
 
-      //Gets a String with the date from the currentTime.
+      // get a String with the date from the currentTime
       final var dateString = getDateAsStringFromTime(currentTime);
 
-      //Creates a dialog that shows the dateString.
+      // create a dialog that shows the dateString
       final var showDateDialog = //
       new ShowValueDialogBuilder()
         .setValueName(LowerCaseVariableNameCatalog.DATE)
         .setValue(dateString).build()
         .setBackgroundColor(X11ColorCatalog.WHITE);
 
-      //Adds a new layer with the showDateDialog to the GUI of the current Session.
+      // add a new layer with the showDateDialog to the GUI of the current Session
       getStoredGui().pushLayer(showDateDialog);
     }
   }

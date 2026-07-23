@@ -16,7 +16,7 @@ final class ArgumentCaptorTutorial {
     //Builds a Pet.
     final var garfield = Pet.build().withName("Garfield").withAgeInYears(10).withWeightInKilogram(20);
 
-    //Logs the String representation of the Pet.
+    // log the String representation of the Pet.
     Logger.logInfo(garfield.toString());
   }
 

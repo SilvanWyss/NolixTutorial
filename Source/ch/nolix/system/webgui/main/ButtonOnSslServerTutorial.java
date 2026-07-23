@@ -14,10 +14,10 @@ final class ButtonOnSslServerTutorial {
   }
 
   public static void main() {
-    //Creates a SslServer.
+    // create a SslServer
     final var sslServer = SslServer.forHttpsPortAndDomainAndSSLCertificateFromNolixConfiguration();
 
-    //Adds a default Application to the SslServer.
+    // add a default Application to the SslServer
     sslServer.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext(
       "Button tutorial",
       ButtonTutorial.Session.class);

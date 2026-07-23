@@ -21,16 +21,16 @@ final class TextureCatalogTutorial {
   }
 
   public static void main() {
-    //Creates a Server.
+    // create a Server
     final var server = Server.forHttpPort();
 
-    //Adds a default Application to the Server.
+    // add a default Application to the Server
     server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("TextureCatalog tutorial", Session.class);
 
-    //Starts a web browser that will connect to the Server.
+    // start a web browser that will connect to the Server
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
 
-    //Closes the Server as soon as it does not have a client connected any more.
+    // close the Server as soon as it does not have a client connected any more
     FlowController
       .waitForSeconds(2)
       .andThen()
@@ -38,18 +38,18 @@ final class TextureCatalogTutorial {
       .runInBackground(server::close);
   }
 
-  private static final class Session //NOSONAR: A single-file-tutorial can contain a larger static class.
+  private static final class Session // NOSONAR: A single-file-tutorial can contain a larger static class.
   extends WebClientSession<Object> {
     @Override
     protected void initialize() {
-      //Creates textures.
+      // create textures
       final var concreteTexture = TextureCatalog.CONCRETE_TEXTURE.toScaledImage(10);
       final var fireWoodTexture = TextureCatalog.FIR_WOOD_TEXTURE.toScaledImage(10);
       final var juteTexture = TextureCatalog.JUTE_TEXTURE.toScaledImage(10);
       final var parchmentTexture = TextureCatalog.PARCHMENT_TEXTURE.toScaledImage(10);
       final var whiteMarbleTexture = TextureCatalog.WHITE_MARBLE_TEXTURE.toScaledImage(10);
 
-      //Adds the textures to the GUI of the current Session.
+      // add the textures to the GUI of the current Session
       getStoredGui().pushLayerWithRootControl(
         new FloatContainer()
           .setMaxWidth(1000)

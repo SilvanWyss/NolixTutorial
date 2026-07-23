@@ -18,16 +18,16 @@ final class HelloWorldTutorial {
   }
 
   public static void main() {
-    //Creates a Server.
+    // create a Server
     final var server = Server.forHttpPort();
 
-    //Adds a default Application to the Server.
+    // add a default Application to the Server
     server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("Hello World tutorial", Session.class);
 
-    //Starts a web browser that will connect to the Server.
+    // start a web browser that will connect to the Server
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
 
-    //Closes the Server as soon as it does not have a client connected any more.
+    // close the Server as soon as it does not have a client connected any more
     FlowController
       .waitForSeconds(2)
       .andThen()
@@ -38,13 +38,13 @@ final class HelloWorldTutorial {
   private static final class Session extends WebClientSession<Object> {
     @Override
     protected void initialize() {
-      //Creates a Label.
+      // create a Label
       final var label = new Label().setText("Hello World!");
 
-      //Configures the style of the Label.
+      // configure the style of the Label
       label.getStoredStyle().forStateSetTextSize(ControlState.BASE, 100);
 
-      //Adds the Label to the GUI of the current Session.
+      // add the Label to the GUI of the current Session
       getStoredGui().pushLayerWithRootControl(label);
     }
   }

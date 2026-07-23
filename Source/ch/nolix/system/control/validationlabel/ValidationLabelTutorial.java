@@ -23,16 +23,16 @@ final class ValidationLabelTutorial {
   }
 
   public static void main() {
-    //Creates a Server.
+    // create a Server
     final var server = Server.forHttpPort();
 
-    //Adds a default Application to the Server.
+    // add a default Application to the Server
     server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("ValidationLabel tutorial", Session.class);
 
-    //Starts a web browser that will connect to the Server.
+    // start a web browser that will connect to the Server
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
 
-    //Closes the Server as soon as it does not have a client connected any more.
+    // close the Server as soon as it does not have a client connected any more
     FlowController
       .waitForSeconds(2)
       .andThen()
@@ -40,13 +40,13 @@ final class ValidationLabelTutorial {
       .runInBackground(server::close);
   }
 
-  private static final class Session //NOSONAR: A single-file-tutorial can contain a larger static class.
+  private static final class Session // NOSONAR: A single-file-tutorial can contain a larger static class.
   extends WebClientSession<Object> {
     private final Textbox numberTextbox = new Textbox();
 
     @Override
     protected void initialize() {
-      //Adds a ValidationLabel to the GUI of the current Session.
+      // add a ValidationLabel to the GUI of the current Session
       getStoredGui().pushLayerWithRootControl(
         new VerticalStack()
           .addControls(
@@ -57,17 +57,17 @@ final class ValidationLabelTutorial {
     }
 
     private void enterPositiveNumber() {
-      //Gets the input of the numberTextBox.
+      // get the input of the numberTextBox
       final var input = numberTextbox.getText();
 
       try {
-        //Parses the input to a number.
+        // parse the input to a number
         final var number = Integer.parseInt(input);
 
-        //Asserts that the number is positive.
+        // assert that the number is positive
         Validator.assertThat(number).thatIsNamed(LowerCaseVariableNameCatalog.NUMBER).isPositive();
       } catch (final NumberFormatException _) {
-        //Creates and throws an UnrepresentingArgumentException for the input.
+        // create and throws an UnrepresentingArgumentException for the input
         throw //
         UnrepresentingArgumentException.forArgumentAndArgumentNameAndType(
           input,

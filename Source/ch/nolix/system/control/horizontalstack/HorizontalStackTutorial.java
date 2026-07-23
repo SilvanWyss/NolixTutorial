@@ -18,16 +18,16 @@ final class HorizontalStackTutorial {
   }
 
   public static void main() {
-    //Creates a Server.
+    // create a Server
     final var server = Server.forHttpPort();
 
-    //Adds a default Application to the Server.
+    // add a default Application to the Server
     server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("HorizontalStack tutorial", Session.class);
 
-    //Starts a web browser that will connect to the Server.
+    // start a web browser that will connect to the Server
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
 
-    //Closes the Server as soon as it does not have a client connected any more.
+    // close the Server as soon as it does not have a client connected any more
     FlowController
       .waitForSeconds(2)
       .andThen()
@@ -38,23 +38,23 @@ final class HorizontalStackTutorial {
   private static final class Session extends WebClientSession<Object> {
     @Override
     protected void initialize() {
-      //Creates a HorizontalStack.
+      // create a HorizontalStack
       final var horizontalStack = new HorizontalStack();
 
-      //Creates and adds 4 Labels to the HorizontalStack.
+      // create and adds 4 Labels to the HorizontalStack
       horizontalStack.addControls(
         new Label().setText("A"),
         new Label().setText("B"),
         new Label().setText("C"),
         new Label().setText("D"));
 
-      //Configures the style of the HorizontalStack.
+      // configure the style of the HorizontalStack
       horizontalStack
         .getStoredStyle()
         .setChildControlMarginForState(ControlState.BASE, 50)
         .forStateSetTextSize(ControlState.BASE, 100);
 
-      //Adds the HorizontalStack to the GUI of the current Session.
+      // add the HorizontalStack to the GUI of the current Session
       getStoredGui().pushLayerWithRootControl(horizontalStack);
     }
   }

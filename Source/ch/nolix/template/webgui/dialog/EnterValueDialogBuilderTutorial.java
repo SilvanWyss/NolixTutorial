@@ -23,18 +23,18 @@ final class EnterValueDialogBuilderTutorial {
   }
 
   public static void main() {
-    //Creates a Server.
+    // create a Server
     final var server = Server.forHttpPort();
 
-    //Adds a default Application to the Server.
+    // add a default Application to the Server
     server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext(
       "EnterValueDialogBuilder tutorial",
       Session.class);
 
-    //Starts a web browser that will connect to the Server.
+    // start a web browser that will connect to the Server
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
 
-    //Closes the Server as soon as it does not have a client connected any more.
+    // close the Server as soon as it does not have a client connected any more
     FlowController
       .waitForSeconds(2)
       .andThen()
@@ -42,13 +42,13 @@ final class EnterValueDialogBuilderTutorial {
       .runInBackground(server::close);
   }
 
-  private static final class Session //NOSONAR: A single-file-tutorial can contain a larger static class.
+  private static final class Session // NOSONAR: A single-file-tutorial can contain a larger static class.
   extends WebClientSession<Object> {
     private final ILabel nameLabel = new Label().setText("?");
 
     @Override
     protected void initialize() {
-      //Adds the nameLabel and a Button, that leads to a dialog to enter a name, to the GUI of the current Session.
+      // add the nameLabel and a Button, that leads to a dialog to enter a name, to the GUI of the current Session
       getStoredGui()
         .pushLayerWithRootControl(
           new VerticalStack()
@@ -70,10 +70,10 @@ final class EnterValueDialogBuilderTutorial {
     }
 
     private void setNameInNameLabel(final String name) {
-      //Asserts that the given name is not shorter than 4 characters.
+      // assert that the given name is not shorter than 4 characters
       Validator.assertThat(name).thatIsNamed(LowerCaseVariableNameCatalog.NAME).isNotShorterThan(4);
 
-      //Sets the given name to the nameLabel.
+      // set the given name to the nameLabel
       nameLabel.setText(name);
     }
   }

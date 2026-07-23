@@ -17,16 +17,16 @@ final class ImageControlTutorial {
   }
 
   public static void main() {
-    //Creates a Server.
+    // create a Server
     final var server = Server.forHttpPort();
 
-    //Adds a default Application to the Server.
+    // add a default Application to the Server
     server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("ImageControl tutorial", Session.class);
 
-    //Starts a web browser that will connect to the Server.
+    // start a web browser that will connect to the Server
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
 
-    //Closes the Server as soon as it does not have a client connected any more.
+    // close the Server as soon as it does not have a client connected any more
     FlowController
       .waitForSeconds(2)
       .andThen()
@@ -37,13 +37,13 @@ final class ImageControlTutorial {
   private static final class Session extends WebClientSession<Object> {
     @Override
     protected void initialize() {
-      //Loads an image.
+      // load an image
       final var image = MutableImage.fromResource("image/singer_building.jpg");
 
-      //Creates an ImageControl with the image.
+      // create an ImageControl with the image
       final var imageControl = new ImageControl().setImage(image);
 
-      //Adds the ImageControl to the GUI of the current Session.
+      // add the ImageControl to the GUI of the current Session
       getStoredGui().pushLayerWithRootControl(imageControl);
     }
   }

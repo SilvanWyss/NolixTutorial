@@ -17,41 +17,41 @@ final class NodeDataAdapterTutorial {
   }
 
   public static void main() {
-    //Creates nodeDatabase.
+    // create nodeDatabase.
     final var nodeDatabase = MutableNode.createEmpty();
 
-    //Creates schema.
+    // create schema
     final var entityTypeSet = EntityTypeSet.withEntityType(Person.class);
 
-    //Creates a NodeDataAdapter.
+    // create a NodeDataAdapter
     final var nodeDataAdapter = //
     NodeDataAdapter.forNodeDatabase(nodeDatabase).withName("PersonDB").andSchema(entityTypeSet);
 
-    //Creates a first Entity.
+    // create a first Entity
     final var donaldDuck = new Person();
     donaldDuck.firstName.setValue("Donald");
     donaldDuck.lastName.setValue("Duck");
 
-    //Creates a second Entity.
+    // create a second Entity
     final var daisyDuck = new Person();
     daisyDuck.firstName.setValue("Daisy");
     daisyDuck.lastName.setValue("Duck");
 
-    //Inserts the created Entities into the NodeDataAdapter.
+    // insert the created Entities into the NodeDataAdapter
     nodeDataAdapter.insertEntity(daisyDuck).insertEntity(donaldDuck);
 
-    //Lets the NodeDataAdapter save its changes.
+    // let the NodeDataAdapter save its changes
     nodeDataAdapter.saveChanges();
 
-    //Lets the NodeDataAdapter load the first Entity.
+    // let the NodeDataAdapter load the first Entity
     final var loadedDonaldDuck = //
     nodeDataAdapter.getStoredTableByEntityType(Person.class).getStoredEntityById(donaldDuck.getId());
 
-    //Lets the NodeDataAdapter load the second Entity.
+    // let the NodeDataAdapter load the second Entity
     final var loadedDaisyDuck = //
     nodeDataAdapter.getStoredTableByEntityType(Person.class).getStoredEntityById(daisyDuck.getId());
 
-    //Logs the loaded Entities.
+    // log the loaded Entities
     Logger.logInfo(loadedDonaldDuck.toString());
     Logger.logInfo(loadedDaisyDuck.toString());
   }
