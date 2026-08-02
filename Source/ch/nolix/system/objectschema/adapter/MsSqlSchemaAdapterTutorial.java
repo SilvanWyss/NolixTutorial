@@ -24,7 +24,7 @@ final class MsSqlSchemaAdapterTutorial {
       .andMsSqlPort()
       .toDatabase("CountryDB")
       .withLoginName("mssqluser")
-      .andLoginPassword("mssql1234");
+      .andPassword("mssql1234");
 
     // create cityTable
     final var cityTable = //

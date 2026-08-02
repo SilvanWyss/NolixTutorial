@@ -15,6 +15,7 @@ import ch.nolix.system.time.moment.Time;
 import ch.nolix.system.webapplication.main.WebClientSession;
 import ch.nolix.systemapi.control.label.ILabel;
 import ch.nolix.systemapi.graphic.image.IImage;
+import ch.nolix.systemapi.time.timestructure.TimeZone;
 import ch.nolix.systemapi.webgui.main.ControlState;
 
 public final class PartialRefreshTutorial {
@@ -47,7 +48,7 @@ public final class PartialRefreshTutorial {
 
     private static String getCurrentTimeAsString() {
       // get the currentTime.
-      final var currentTime = Time.ofNow();
+      final var currentTime = Time.ofNowAndTimeZone(TimeZone.UTC);
 
       // return the current time as String
       return getTimeAsString(currentTime);

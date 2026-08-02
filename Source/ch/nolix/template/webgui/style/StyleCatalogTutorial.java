@@ -19,6 +19,7 @@ import ch.nolix.system.graphic.image.ImmutableImage;
 import ch.nolix.system.time.moment.Time;
 import ch.nolix.system.webapplication.main.WebClientSession;
 import ch.nolix.systemapi.control.label.LabelRole;
+import ch.nolix.systemapi.time.timestructure.TimeZone;
 import ch.nolix.template.webgui.dialog.ShowValueDialogBuilder;
 
 /**
@@ -87,7 +88,7 @@ final class StyleCatalogTutorial {
                             .pushLayer(
                               new ShowValueDialogBuilder()
                                 .setValueName("Current year")
-                                .setValue(String.valueOf(Time.ofNow().getYear()))
+                                .setValue(String.valueOf(Time.ofNowAndTimeZone(TimeZone.UTC).getYear()))
                                 .build())))
                     .insertTextAtRowAndColumn(4, 1, "ImageControl:")
                     .insertControlAtRowAndColumn(

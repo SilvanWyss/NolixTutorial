@@ -27,7 +27,7 @@ final class MsSqlDataAdapterTutorial {
       .andMsSqlPort()
       .andDatabase("PersonDB")
       .withLoginName("mssqluser")
-      .andLoginPassword("mssql1234")
+      .andPassword("mssql1234")
       .andSchema(entityTypeSet);
 
     // create a first Entity

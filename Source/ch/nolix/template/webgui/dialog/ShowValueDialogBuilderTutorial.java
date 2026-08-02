@@ -11,6 +11,7 @@ import ch.nolix.system.control.button.Button;
 import ch.nolix.system.graphic.color.X11ColorCatalog;
 import ch.nolix.system.time.moment.Time;
 import ch.nolix.system.webapplication.main.WebClientSession;
+import ch.nolix.systemapi.time.timestructure.TimeZone;
 
 /**
  * @author Silvan Wyss
@@ -56,7 +57,7 @@ final class ShowValueDialogBuilderTutorial {
 
     private void showDate() {
       // get the current time
-      final var currentTime = Time.ofNow();
+      final var currentTime = Time.ofNowAndTimeZone(TimeZone.UTC);
 
       // get a String with the date from the currentTime
       final var dateString = getDateAsStringFromTime(currentTime);
