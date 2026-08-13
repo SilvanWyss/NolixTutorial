@@ -4,11 +4,11 @@
 package ch.nolix.system.control.validationlabel;
 
 import ch.nolix.base.environment.localcomputer.ShellProvider;
+import ch.nolix.base.net.clientserver.Server;
 import ch.nolix.base.programcontrol.flowcontrol.FlowController;
 import ch.nolix.base.validation.validator.Validator;
 import ch.nolix.baseapi.errorcontrol.invalidargumentexception.UnrepresentingArgumentException;
 import ch.nolix.baseapi.generalcatalog.variablenamecatalog.LowerCaseVariableNameCatalog;
-import ch.nolix.system.application.main.Server;
 import ch.nolix.system.control.button.Button;
 import ch.nolix.system.control.label.Label;
 import ch.nolix.system.control.textbox.Textbox;

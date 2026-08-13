@@ -4,8 +4,8 @@
 package ch.nolix.template.webgui.style;
 
 import ch.nolix.base.environment.localcomputer.ShellProvider;
+import ch.nolix.base.net.clientserver.Server;
 import ch.nolix.base.programcontrol.flowcontrol.FlowController;
-import ch.nolix.system.application.main.Server;
 import ch.nolix.system.control.button.Button;
 import ch.nolix.system.control.dropdownmenu.DropdownMenu;
 import ch.nolix.system.control.grid.Grid;

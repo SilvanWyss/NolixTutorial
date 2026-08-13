@@ -4,8 +4,8 @@
 package ch.nolix.system.webgui.main;
 
 import ch.nolix.base.environment.localcomputer.ShellProvider;
+import ch.nolix.base.net.clientserver.Server;
 import ch.nolix.base.programcontrol.flowcontrol.FlowController;
-import ch.nolix.system.application.main.Server;
 import ch.nolix.system.control.imagecontrol.ImageControl;
 import ch.nolix.system.control.label.Label;
 import ch.nolix.system.control.verticalstack.VerticalStack;
@@ -14,9 +14,9 @@ import ch.nolix.system.graphic.image.ImmutableImage;
 import ch.nolix.system.time.moment.Time;
 import ch.nolix.system.webapplication.main.WebClientSession;
 import ch.nolix.systemapi.control.label.ILabel;
-import ch.nolix.systemapi.graphic.image.IImage;
+import ch.nolix.systemapi.graphic.image.Image;
 import ch.nolix.systemapi.time.timestructure.TimeZone;
-import ch.nolix.systemapi.webgui.main.ControlState;
+import ch.nolix.systemapi.webgui.webguiproperty.ControlState;
 
 public final class PartialRefreshTutorial {
   private PartialRefreshTutorial() {
@@ -42,7 +42,7 @@ public final class PartialRefreshTutorial {
 
   public static final class Session // NOSONAR: A single-file-tutorial can contain a larger static class.
   extends WebClientSession<Object> {
-    private static final IImage IMAGE = ImmutableImage.fromResource("image/pilatus.jpg").withWidthAndHeight(1200, 600);
+    private static final Image IMAGE = ImmutableImage.fromResource("image/pilatus.jpg").withWidthAndHeight(1200, 600);
 
     private final ILabel timeLabel = new Label();
 

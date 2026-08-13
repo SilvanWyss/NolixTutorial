@@ -4,12 +4,12 @@
 package ch.nolix.system.webgui.main;
 
 import ch.nolix.base.environment.localcomputer.ShellProvider;
+import ch.nolix.base.net.clientserver.Server;
 import ch.nolix.base.programcontrol.flowcontrol.FlowController;
-import ch.nolix.system.application.main.Server;
+import ch.nolix.system.graphic.color.ColorGradient;
 import ch.nolix.system.graphic.color.X11ColorCatalog;
-import ch.nolix.system.gui.colorgradient.ColorGradient;
 import ch.nolix.system.webapplication.main.WebClientSession;
-import ch.nolix.systemapi.gui.box.Direction;
+import ch.nolix.systemapi.graphic.graphicproperty.Direction;
 
 /**
  * @author Silvan Wyss

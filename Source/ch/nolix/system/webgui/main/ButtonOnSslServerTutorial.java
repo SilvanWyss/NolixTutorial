@@ -3,7 +3,7 @@
  */
 package ch.nolix.system.webgui.main;
 
-import ch.nolix.system.application.main.SslServer;
+import ch.nolix.base.net.clientserver.SslServer;
 import ch.nolix.system.control.button.ButtonTutorial;
 
 /**

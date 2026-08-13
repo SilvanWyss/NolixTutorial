@@ -5,8 +5,8 @@ package ch.nolix.system.control.uploader;
 
 import ch.nolix.base.environment.localcomputer.ShellProvider;
 import ch.nolix.base.errorcontrol.generalexception.GeneralException;
+import ch.nolix.base.net.clientserver.Server;
 import ch.nolix.base.programcontrol.flowcontrol.FlowController;
-import ch.nolix.system.application.main.Server;
 import ch.nolix.system.control.button.Button;
 import ch.nolix.system.control.imagecontrol.ImageControl;
 import ch.nolix.system.control.validationlabel.ValidationLabel;

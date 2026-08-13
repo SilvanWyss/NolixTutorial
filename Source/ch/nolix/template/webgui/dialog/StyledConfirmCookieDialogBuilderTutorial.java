@@ -4,8 +4,8 @@
 package ch.nolix.template.webgui.dialog;
 
 import ch.nolix.base.environment.localcomputer.ShellProvider;
+import ch.nolix.base.net.clientserver.Server;
 import ch.nolix.base.programcontrol.flowcontrol.FlowController;
-import ch.nolix.system.application.main.Server;
 import ch.nolix.system.webapplication.main.WebClientSession;
 import ch.nolix.system.webgui.main.Layer;
 import ch.nolix.template.webgui.style.StyleCatalog;

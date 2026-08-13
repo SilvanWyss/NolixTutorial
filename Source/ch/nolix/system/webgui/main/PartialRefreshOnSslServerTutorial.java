@@ -3,7 +3,7 @@
  */
 package ch.nolix.system.webgui.main;
 
-import ch.nolix.system.application.main.SslServer;
+import ch.nolix.base.net.clientserver.SslServer;
 
 /**
  * @author Silvan Wyss

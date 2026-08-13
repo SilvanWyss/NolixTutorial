@@ -4,9 +4,9 @@
 package ch.nolix.system.objectschema.adapter;
 
 import ch.nolix.base.datastructure.immutablelist.ImmutableList;
-import ch.nolix.baseapi.datamodel.fieldproperty.DataType;
 import ch.nolix.system.objectschema.model.Column;
 import ch.nolix.system.objectschema.model.Table;
+import ch.nolix.systemapi.database.databaseproperty.DataType;
 import ch.nolix.systemapi.midschema.fieldproperty.FieldType;
 
 /**

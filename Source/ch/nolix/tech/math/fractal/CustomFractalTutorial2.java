@@ -4,8 +4,8 @@
 package ch.nolix.tech.math.fractal;
 
 import ch.nolix.base.environment.localcomputer.ShellProvider;
+import ch.nolix.base.net.clientserver.Server;
 import ch.nolix.base.programcontrol.flowcontrol.FlowController;
-import ch.nolix.system.application.main.Server;
 import ch.nolix.system.control.imagecontrol.ImageControl;
 import ch.nolix.system.graphic.color.Color;
 import ch.nolix.system.webapplication.main.WebClientSession;
