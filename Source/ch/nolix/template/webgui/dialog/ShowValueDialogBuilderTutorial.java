@@ -9,9 +9,9 @@ import ch.nolix.base.programcontrol.flowcontrol.FlowController;
 import ch.nolix.baseapi.generalcatalog.variablenamecatalog.LowerCaseVariableNameCatalog;
 import ch.nolix.system.control.button.Button;
 import ch.nolix.system.graphic.color.X11ColorCatalog;
-import ch.nolix.system.time.moment.Time;
+import ch.nolix.system.time.main.Time;
 import ch.nolix.system.webapplication.main.WebClientSession;
-import ch.nolix.systemapi.time.timestructure.TimeZone;
+import ch.nolix.systemapi.time.main.TimeZone;
 
 /**
  * @author Silvan Wyss

@@ -1,7 +1,7 @@
 /*
  * Copyright © by Silvan Wyss. All rights reserved.
  */
-package ch.nolix.tech.math.bigdecimalmath;
+package ch.nolix.system.math.bigdecimalmath;
 
 import java.util.function.IntConsumer;
 

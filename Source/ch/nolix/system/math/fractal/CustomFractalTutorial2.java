@@ -1,16 +1,16 @@
 /*
  * Copyright © by Silvan Wyss. All rights reserved.
  */
-package ch.nolix.tech.math.fractal;
+package ch.nolix.system.math.fractal;
 
 import ch.nolix.base.environment.localcomputer.ShellProvider;
 import ch.nolix.base.net.clientserver.Server;
 import ch.nolix.base.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.control.imagecontrol.ImageControl;
 import ch.nolix.system.graphic.color.Color;
+import ch.nolix.system.math.bigdecimalmath.ComplexNumber;
+import ch.nolix.system.math.bigdecimalmath.ComplexSequenceDefinedBy1Predecessor;
 import ch.nolix.system.webapplication.main.WebClientSession;
-import ch.nolix.tech.math.bigdecimalmath.ComplexNumber;
-import ch.nolix.tech.math.bigdecimalmath.ComplexSequenceDefinedBy1Predecessor;
 
 /**
  * @author Silvan Wyss

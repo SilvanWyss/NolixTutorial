@@ -11,11 +11,11 @@ import ch.nolix.system.control.label.Label;
 import ch.nolix.system.control.verticalstack.VerticalStack;
 import ch.nolix.system.graphic.color.X11ColorCatalog;
 import ch.nolix.system.graphic.image.ImmutableImage;
-import ch.nolix.system.time.moment.Time;
+import ch.nolix.system.time.main.Time;
 import ch.nolix.system.webapplication.main.WebClientSession;
 import ch.nolix.systemapi.control.label.ILabel;
 import ch.nolix.systemapi.graphic.image.Image;
-import ch.nolix.systemapi.time.timestructure.TimeZone;
+import ch.nolix.systemapi.time.main.TimeZone;
 import ch.nolix.systemapi.webgui.webguiproperty.ControlState;
 
 public final class PartialRefreshTutorial {

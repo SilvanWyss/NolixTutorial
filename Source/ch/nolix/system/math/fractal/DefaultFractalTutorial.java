@@ -1,7 +1,7 @@
 /*
  * Copyright © by Silvan Wyss. All rights reserved.
  */
-package ch.nolix.tech.math.fractal;
+package ch.nolix.system.math.fractal;
 
 import ch.nolix.base.environment.localcomputer.ShellProvider;
 import ch.nolix.base.net.clientserver.Server;

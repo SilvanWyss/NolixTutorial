@@ -16,10 +16,10 @@ import ch.nolix.system.control.link.Link;
 import ch.nolix.system.control.textbox.Textbox;
 import ch.nolix.system.control.verticalstack.VerticalStack;
 import ch.nolix.system.graphic.image.ImmutableImage;
-import ch.nolix.system.time.moment.Time;
+import ch.nolix.system.time.main.Time;
 import ch.nolix.system.webapplication.main.WebClientSession;
 import ch.nolix.systemapi.control.label.LabelRole;
-import ch.nolix.systemapi.time.timestructure.TimeZone;
+import ch.nolix.systemapi.time.main.TimeZone;
 import ch.nolix.template.webgui.dialog.ShowValueDialogBuilder;
 
 /**

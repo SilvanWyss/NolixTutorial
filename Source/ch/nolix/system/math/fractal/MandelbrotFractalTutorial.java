@@ -1,22 +1,22 @@
 /*
  * Copyright © by Silvan Wyss. All rights reserved.
  */
-package ch.nolix.tech.math.fractal;
+package ch.nolix.system.math.fractal;
 
 import ch.nolix.base.environment.localcomputer.ShellProvider;
 import ch.nolix.base.net.clientserver.Server;
 import ch.nolix.base.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.control.imagecontrol.ImageControl;
-import ch.nolix.system.graphic.color.X11ColorCatalog;
+import ch.nolix.system.graphic.color.Color;
+import ch.nolix.system.math.bigdecimalmath.ComplexNumber;
+import ch.nolix.system.math.bigdecimalmath.ComplexSequenceDefinedBy1Predecessor;
 import ch.nolix.system.webapplication.main.WebClientSession;
-import ch.nolix.tech.math.bigdecimalmath.ComplexNumber;
-import ch.nolix.tech.math.bigdecimalmath.ComplexSequenceDefinedBy1Predecessor;
 
 /**
  * @author Silvan Wyss
  */
-final class BlackWhiteJuliaFractalTutorial {
-  private BlackWhiteJuliaFractalTutorial() {
+final class MandelbrotFractalTutorial {
+  private MandelbrotFractalTutorial() {
   }
 
   public static void main() {
@@ -25,7 +25,7 @@ final class BlackWhiteJuliaFractalTutorial {
 
     // add a default Application to the Server
     server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext(
-      "Black-white Julia fractal tutorial",
+      "Mandelbrot fractal tutorial",
       Session.class);
 
     // start a web browser that will connect to the Server
@@ -48,18 +48,20 @@ final class BlackWhiteJuliaFractalTutorial {
           new ImageControl()
             .setImage(
               new FractalBuilder()
-                .setRealComponentInterval(-1.5, 1.5)
+                .setRealComponentInterval(-2.0, 1.0)
                 .setImaginaryComponentInterval(-1.5, 1.5)
                 .setWidthInPixel(500)
                 .setHeightInPixel(500)
                 .setSequenceCreator(
                   z -> //
                   ComplexSequenceDefinedBy1Predecessor.withFirstValueAndNextValueFunction(
-                    z,
-                    p -> p.getPower2().getSum(ComplexNumber.withRealComponentAndImaginaryComponent(-0.8, 0.15))))
+                    ComplexNumber.withRealComponentAndImaginaryComponent(0.0, 0.0),
+                    p -> p.getPower2().getSum(z)))
                 .setMinMagnitudeForDivergence(10.0)
                 .setMaxIterationCount(50)
-                .setColorFunction(_ -> X11ColorCatalog.WHITE)
+                .setColorFunction(
+                  i -> Color.withRedValueAndGreenValueAndBlueValue((2 * i) % 256, (3 * i) % 256,
+                    (4 * i) % 256))
                 .setDecimalPlaces(10)
                 .build()
                 .startImageGeneration()

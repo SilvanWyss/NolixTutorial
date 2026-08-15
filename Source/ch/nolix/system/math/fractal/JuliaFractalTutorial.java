@@ -1,22 +1,22 @@
 /*
  * Copyright © by Silvan Wyss. All rights reserved.
  */
-package ch.nolix.tech.math.fractal;
+package ch.nolix.system.math.fractal;
 
 import ch.nolix.base.environment.localcomputer.ShellProvider;
 import ch.nolix.base.net.clientserver.Server;
 import ch.nolix.base.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.control.imagecontrol.ImageControl;
 import ch.nolix.system.graphic.color.Color;
+import ch.nolix.system.math.bigdecimalmath.ComplexNumber;
+import ch.nolix.system.math.bigdecimalmath.ComplexSequenceDefinedBy1Predecessor;
 import ch.nolix.system.webapplication.main.WebClientSession;
-import ch.nolix.tech.math.bigdecimalmath.ComplexNumber;
-import ch.nolix.tech.math.bigdecimalmath.ComplexSequenceDefinedBy1Predecessor;
 
 /**
  * @author Silvan Wyss
  */
-final class CustomFractalTutorial {
-  private CustomFractalTutorial() {
+final class JuliaFractalTutorial {
+  private JuliaFractalTutorial() {
   }
 
   public static void main() {
@@ -24,7 +24,7 @@ final class CustomFractalTutorial {
     final var server = Server.forHttpPort();
 
     // add a default Application to the Server
-    server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("Custom fractal tutorial", Session.class);
+    server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("Julia fractal tutorial", Session.class);
 
     // start a web browser that will connect to the Server
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
@@ -53,13 +53,13 @@ final class CustomFractalTutorial {
                 .setSequenceCreator(
                   z -> //
                   ComplexSequenceDefinedBy1Predecessor.withFirstValueAndNextValueFunction(
-                    ComplexNumber.withRealComponentAndImaginaryComponent(0.0, 0.0),
-                    p -> p.getPower4().getSum(z)))
+                    z,
+                    p -> p.getPower2().getSum(ComplexNumber.withRealComponentAndImaginaryComponent(-0.8, 0.15))))
                 .setMinMagnitudeForDivergence(10.0)
                 .setMaxIterationCount(50)
                 .setColorFunction(
-                  i -> Color.withRedValueAndGreenValueAndBlueValue((2 * i) % 256, (10 * i) % 256,
-                    (3 * i) % 256))
+                  i -> Color.withRedValueAndGreenValueAndBlueValue((2 * i) % 256, (3 * i) % 256,
+                    (4 * i) % 256))
                 .setDecimalPlaces(10)
                 .build()
                 .startImageGeneration()

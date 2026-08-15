@@ -1,22 +1,22 @@
 /*
  * Copyright © by Silvan Wyss. All rights reserved.
  */
-package ch.nolix.tech.math.fractal;
+package ch.nolix.system.math.fractal;
 
 import ch.nolix.base.environment.localcomputer.ShellProvider;
 import ch.nolix.base.net.clientserver.Server;
 import ch.nolix.base.programcontrol.flowcontrol.FlowController;
 import ch.nolix.system.control.imagecontrol.ImageControl;
-import ch.nolix.system.graphic.color.X11ColorCatalog;
+import ch.nolix.system.graphic.color.Color;
+import ch.nolix.system.math.bigdecimalmath.ComplexNumber;
+import ch.nolix.system.math.bigdecimalmath.ComplexSequenceDefinedBy1Predecessor;
 import ch.nolix.system.webapplication.main.WebClientSession;
-import ch.nolix.tech.math.bigdecimalmath.ComplexNumber;
-import ch.nolix.tech.math.bigdecimalmath.ComplexSequenceDefinedBy1Predecessor;
 
 /**
  * @author Silvan Wyss
  */
-final class BlackWhiteMandelbrotFractalTutorial {
-  private BlackWhiteMandelbrotFractalTutorial() {
+final class CustomFractalTutorial {
+  private CustomFractalTutorial() {
   }
 
   public static void main() {
@@ -24,9 +24,7 @@ final class BlackWhiteMandelbrotFractalTutorial {
     final var server = Server.forHttpPort();
 
     // add a default Application to the Server
-    server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext(
-      "Black-white Mandelbrot fractal tutorial",
-      Session.class);
+    server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("Custom fractal tutorial", Session.class);
 
     // start a web browser that will connect to the Server
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
@@ -48,7 +46,7 @@ final class BlackWhiteMandelbrotFractalTutorial {
           new ImageControl()
             .setImage(
               new FractalBuilder()
-                .setRealComponentInterval(-2.0, 1.0)
+                .setRealComponentInterval(-1.5, 1.5)
                 .setImaginaryComponentInterval(-1.5, 1.5)
                 .setWidthInPixel(500)
                 .setHeightInPixel(500)
@@ -56,10 +54,12 @@ final class BlackWhiteMandelbrotFractalTutorial {
                   z -> //
                   ComplexSequenceDefinedBy1Predecessor.withFirstValueAndNextValueFunction(
                     ComplexNumber.withRealComponentAndImaginaryComponent(0.0, 0.0),
-                    p -> p.getPower2().getSum(z)))
+                    p -> p.getPower4().getSum(z)))
                 .setMinMagnitudeForDivergence(10.0)
                 .setMaxIterationCount(50)
-                .setColorFunction(_ -> X11ColorCatalog.WHITE)
+                .setColorFunction(
+                  i -> Color.withRedValueAndGreenValueAndBlueValue((2 * i) % 256, (10 * i) % 256,
+                    (3 * i) % 256))
                 .setDecimalPlaces(10)
                 .build()
                 .startImageGeneration()
