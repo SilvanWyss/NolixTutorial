@@ -34,7 +34,7 @@ final class ArgumentCaptorTutorial {
     }
 
     private Pet build() {
-      return new Pet(getName(), scsArgCpt().getAgeInYears(), scsArgCpt().scsArgCpt().getWeightInKilogram());
+      return new Pet(getName(), suArCa().getAgeInYears(), suArCa().suArCa().getWeightInKilogram());
     }
   }
 

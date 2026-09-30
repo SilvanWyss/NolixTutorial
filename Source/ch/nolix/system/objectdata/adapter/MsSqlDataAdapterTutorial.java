@@ -4,7 +4,7 @@
 package ch.nolix.system.objectdata.adapter;
 
 import ch.nolix.base.errorcontrol.logging.Logger;
-import ch.nolix.system.objectdata.model.Entity;
+import ch.nolix.system.objectdata.model.AbstractEntity;
 import ch.nolix.system.objectdata.model.EntityTypeSet;
 import ch.nolix.system.objectdata.model.ValueField;
 
@@ -59,7 +59,7 @@ final class MsSqlDataAdapterTutorial {
     Logger.logInfo(loadedDaisyDuck.toString());
   }
 
-  private static final class Person extends Entity {
+  private static final class Person extends AbstractEntity {
     private final ValueField<String> firstName = ValueField.withValueType(String.class);
 
     private final ValueField<String> lastName = ValueField.withValueType(String.class);
