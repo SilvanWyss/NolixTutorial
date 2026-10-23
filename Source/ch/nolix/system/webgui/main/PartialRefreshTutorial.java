@@ -23,16 +23,16 @@ public final class PartialRefreshTutorial {
   }
 
   public static void main() {
-    // create a Server
+    // Create a Server.
     final var server = Server.forHttpPort();
 
-    // add a default Application to the Server
+    // Add a default Application to the Server.
     server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("Partial refresh tutorial", Session.class);
 
-    // start a web browser that will connect to the Server
+    // Start a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
 
-    // close the Server as soon as it does not have a client connected any more
+    // Close the Server as soon as it does not have a client connected any more.
     FlowController
       .waitForSeconds(2)
       .andThen()
@@ -47,15 +47,15 @@ public final class PartialRefreshTutorial {
     private final ILabel timeLabel = new Label();
 
     private static String getCurrentTimeAsString() {
-      // get the currentTime.
+      // Get the currentTime.
       final var currentTime = Time.ofNowAndTimeZone(TimeZone.UTC);
 
-      // return the current time as String
+      // Return the current time as String.
       return getTimeAsString(currentTime);
     }
 
     private static String getTimeAsString(final Time time) {
-      // formats the given time to a String
+      // Format the given time to a String.
       return //
       String.format(
         "%02d:%02d:%02d:%d00",
@@ -67,20 +67,20 @@ public final class PartialRefreshTutorial {
 
     @Override
     protected void initialize() {
-      // configure the style of the timeLabel
+      // Configure the style of the timeLabel.
       timeLabel
         .getStoredStyle()
         .forStateSetTextSize(ControlState.BASE, 100)
         .forStateSetTextColor(ControlState.BASE, X11ColorCatalog.GREY);
 
-      // add an ImageContorl and the timeLabel to the GUI of the current Session
+      // Add an ImageContorl and the timeLabel to the GUI of the current Session.
       getStoredGui().pushLayerWithRootControl(
         new VerticalStack().addControls(new ImageControl().setImage(IMAGE), timeLabel));
 
-      // update the timeLabel every 100 milliseconds.
+      // Update the timeLabel every 100 milliseconds.
       FlowController.runInBackground(
         () -> {
-          // there have to be wait until the client has received the web page
+          // There have to be wait until the client has received the web page.
           FlowController.waitForSeconds(1);
 
           FlowController
@@ -91,10 +91,10 @@ public final class PartialRefreshTutorial {
     }
 
     private void updateTime() {
-      // set the current time to the timeLabel
+      // Set the current time to the timeLabel.
       timeLabel.setText(getCurrentTimeAsString());
 
-      // update the timeLable on the counterpart of the current Session
+      // Update the timeLable on the counterpart of the current Session.
       updateControlOnCounterpart(timeLabel, false);
     }
   }

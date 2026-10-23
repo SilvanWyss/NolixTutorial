@@ -19,16 +19,16 @@ final class LayerTutorial {
   }
 
   public static void main() {
-    // create a Server
+    // Create a Server.
     final var server = Server.forHttpPort();
 
-    // add a default Application to the Server
+    // Add a default Application to the Server.
     server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("Layer tutorial", Session.class);
 
-    // start a web browser that will connect to the Server
+    // Start a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
 
-    // close the Server as soon as it does not have a client connected any more
+    // Close the Server as soon as it does not have a client connected any more.
     FlowController
       .waitForSeconds(2)
       .andThen()
@@ -41,28 +41,28 @@ final class LayerTutorial {
     protected void initialize() {
       getStoredGui().setTitle("Layer tutorial");
 
-      // create layer1Label
+      // Create layer1Label.
       final var layer1Label = new Label().setText("Layer 1");
 
-      // create layer2Label
+      // Create layer2Label.
       final var layer2Label = new Label().setText("Layer 2");
 
-      // configure the style of layer1Label
+      // Configure the style of layer1Label.
       layer1Label
         .getStoredStyle()
         .forStateSetTextSize(ControlState.BASE, 100)
         .forStateSetTextColor(ControlState.BASE, X11ColorCatalog.BLACK);
 
-      // configure the style of layer2Label
+      // Configure the style of layer2Label.
       layer2Label
         .getStoredStyle()
         .forStateSetTextSize(ControlState.BASE, 200)
         .forStateSetTextColor(ControlState.BASE, X11ColorCatalog.GREY);
 
-      // add a new layer with the layer1Label to the GUI of the current Session
+      // Add a new layer with the layer1Label to the GUI of the current Session.
       getStoredGui().pushLayerWithRootControl(layer1Label);
 
-      // add a new layer with the layer2Label to the GUI of the current Session
+      // Add a new layer with the layer2Label to the GUI of the current Session.
       getStoredGui().pushLayerWithRootControl(layer2Label);
     }
   }

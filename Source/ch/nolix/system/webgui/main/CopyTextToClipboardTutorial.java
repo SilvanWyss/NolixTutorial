@@ -20,18 +20,18 @@ final class CopyTextToClipboardTutorial {
   }
 
   public static void main() {
-    // create a Server
+    // Create a Server.
     final var server = Server.forHttpPort();
 
-    // add a default Application to the Server
+    // Add a default Application to the Server.
     server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext(
       "Copy text to clipboard tutorial",
       Session.class);
 
-    // start a web browser that will connect to the Server
+    // Start a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
 
-    // close the Server as soon as it does not have a client connected any more
+    // Close the Server as soon as it does not have a client connected any more.
     FlowController
       .waitForSeconds(2)
       .andThen()
@@ -42,16 +42,16 @@ final class CopyTextToClipboardTutorial {
   private static final class Session extends WebClientSession<Object> {
     @Override
     protected void initialize() {
-      // create inputTextbox.
+      // Create inputTextbox.
       final var inputTextbox = new Textbox();
 
-      // configure the style of the inputTextbox
+      // Configure the style of the inputTextbox.
       inputTextbox.getStoredStyle().forStateSetWidth(ControlState.BASE, 500);
 
-      // add an initial text to the inputTextbox
+      // Add an initial text to the inputTextbox.
       inputTextbox.setText("Supercalifragilisticexpialigetisch");
 
-      // add the inputTextbox to the GUI of the current Session
+      // Add the inputTextbox to the GUI of the current Session.
       getStoredGui().pushLayerWithRootControl(
         new VerticalStack()
           .addControls(

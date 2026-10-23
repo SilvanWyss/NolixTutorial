@@ -19,13 +19,13 @@ final class NodeSchemaAdapterTutorial {
   }
 
   public static void main() {
-    // create nodeDatabase
+    // Create nodeDatabase.
     final var nodeDatabase = MutableNode.createEmpty();
 
-    // create a NodeSchemaAdapter
+    // Create a NodeSchemaAdapter.
     final var nodeSchemaAdapter = NodeSchemaAdapter.forNodeDatabase("CountryDB", nodeDatabase);
 
-    // create cityTable
+    // Create cityTable.
     final var cityTable = //
     Table
       .withName("City")
@@ -46,7 +46,7 @@ final class NodeSchemaAdapterTutorial {
           ImmutableList.createEmpty(),
           ImmutableList.createEmpty()));
 
-    // create countryTable
+    // Create countryTable.
     final var countryTable = //
     Table.withName("Country")
       .addColumn(
@@ -58,7 +58,7 @@ final class NodeSchemaAdapterTutorial {
           ImmutableList.createEmpty(),
           ImmutableList.createEmpty()));
 
-    // create citiesColumn
+    // Create citiesColumn.
     final var citiesColumn = //
     Column.withIdAndNameAndContentModel(
       "4",
@@ -68,10 +68,10 @@ final class NodeSchemaAdapterTutorial {
       ImmutableList.withElement(cityTable),
       ImmutableList.createEmpty());
 
-    // add the citiesColumn to the countryTable
+    // Add the citiesColumn to the countryTable.
     countryTable.addColumn(citiesColumn);
 
-    // create countryColumn
+    // Create countryColumn.
     final var countryColumn = //
     Column.withIdAndNameAndContentModel(
       "5",
@@ -81,16 +81,16 @@ final class NodeSchemaAdapterTutorial {
       ImmutableList.createEmpty(),
       ImmutableList.withElement(citiesColumn));
 
-    // add countryColumn to the cityTable
+    // Add countryColumn to the cityTable.
     cityTable.addColumn(countryColumn);
 
-    // add the cityTable and countryTable to the NodeSchemaAdapter
+    // Add the cityTable and countryTable to the NodeSchemaAdapter.
     nodeSchemaAdapter.addTable(cityTable).addTable(countryTable);
 
-    // let the NodeSchemaAdapter save its changes
+    // Let the NodeSchemaAdapter save its changes.
     nodeSchemaAdapter.saveChanges();
 
-    // log the nodeDatabase
+    // Log the nodeDatabase.
     Logger.logInfo(nodeDatabase.toFormattedString());
   }
 }

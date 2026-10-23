@@ -18,18 +18,18 @@ final class StyledConfirmCookieDialogBuilderTutorial {
   }
 
   public static void main() {
-    // create a Server
+    // Create a Server.
     final var server = Server.forHttpPort();
 
-    // add a default Application to the Server
+    // Add a default Application to the Server.
     server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext(
       "Styled ConfirmCookieDialogBuilder tutorial",
       Session.class);
 
-    // start a web browser that will connect to the Server
+    // Start a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
 
-    // close the Server as soon as it does not have a client connected any more
+    // Close the Server as soon as it does not have a client connected any more.
     FlowController
       .waitForSeconds(2)
       .andThen()
@@ -40,17 +40,17 @@ final class StyledConfirmCookieDialogBuilderTutorial {
   private static final class Session extends WebClientSession<Object> {
     @Override
     protected void initialize() {
-      // create confirmCookieDialog.
+      // Create confirmCookieDialog.
       final var confirmCookieDialogBuilder = new ConfirmCookieDialogBuilder();
       final var confirmCookieDialog = confirmCookieDialogBuilder.build();
 
-      // add an empty layer to the GUI of the current Session
+      // Add an empty layer to the GUI of the current Session.
       getStoredGui().pushLayer(new Layer());
 
-      // add a new layer with the confirmCookieDialog to the GUI of the current Session
+      // Add a new layer with the confirmCookieDialog to the GUI of the current Session.
       getStoredGui().pushLayer(confirmCookieDialog);
 
-      // set a style to the GUI of the current Session
+      // Set a style to the GUI of the current Session.
       getStoredGui().setStyle(StyleCatalog.DARK_EDGE_STYLE);
     }
   }

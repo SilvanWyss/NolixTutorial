@@ -13,10 +13,10 @@ final class PartialRefreshOnSslServerTutorial {
   }
 
   public static void main() {
-    // create a SslServer
+    // Create a SslServer.
     final var sslServer = SslServer.forHttpsPortAndDomainAndSSLCertificateFromNolixConfiguration();
 
-    // add a default Application to the SslServer
+    // Add a default Application to the SslServer.
     sslServer.addApplicationWithNameAndInitialSessionClassAndVoidContext(
       "Partial refresh tutorial",
       PartialRefreshTutorial.Session.class);

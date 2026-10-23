@@ -19,18 +19,18 @@ final class GuiBackgroundColorGradientTutorial {
   }
 
   public static void main() {
-    // create a Server
+    // Create a Server.
     final var server = Server.forHttpPort();
 
-    // add a default Application to the Server
+    // Add a default Application to the Server.
     server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext(
       "Background ColorGradient tutorial",
       Session.class);
 
-    // start a web browser that will connect to the Server
+    // Start a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
 
-    // close the Server as soon as it does not have a client connected any more
+    // Close the Server as soon as it does not have a client connected any more.
     FlowController
       .waitForSeconds(2)
       .andThen()
@@ -41,11 +41,11 @@ final class GuiBackgroundColorGradientTutorial {
   private static final class Session extends WebClientSession<Object> {
     @Override
     protected void initialize() {
-      // create a ColorGradient
+      // Create a ColorGradient.
       final var colorGradient = //
       ColorGradient.withDirectionAndColors(Direction.VERTICAL, X11ColorCatalog.SKY_BLUE, X11ColorCatalog.WHITE);
 
-      // set the ColorGradient as background ColorGradient to the GUI of the current Session
+      // Set the ColorGradient as background ColorGradient to the GUI of the current Session.
       getStoredGui().setBackgroundColorGradient(colorGradient);
     }
   }

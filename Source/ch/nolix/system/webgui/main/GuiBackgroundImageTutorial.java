@@ -18,18 +18,18 @@ final class GuiBackgroundImageTutorial {
   }
 
   public static void main() {
-    // create a Server
+    // Create a Server.
     final var server = Server.forHttpPort();
 
-    // add a default Application to the Server
+    // Add a default Application to the Server.
     server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext(
       "Background Image tutorial",
       Session.class);
 
-    // start a web browser that will connect to the Server
+    // Start a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
 
-    // close the Server as soon as it does not have a client connected any more
+    // Close the Server as soon as it does not have a client connected any more.
     FlowController
       .waitForSeconds(2)
       .andThen()
@@ -40,10 +40,10 @@ final class GuiBackgroundImageTutorial {
   private static final class Session extends WebClientSession<Object> {
     @Override
     protected void initialize() {
-      // load an Image
+      // Load an Image.
       final var image = ImmutableImage.fromResource("image/pilatus.jpg");
 
-      // set the Image as background image to the GUI of the current Session
+      // Set the Image as background image to the GUI of the current Session.
       getStoredGui().setBackgroundImage(image, ImageApplication.SCALE_TO_FRAME);
     }
   }

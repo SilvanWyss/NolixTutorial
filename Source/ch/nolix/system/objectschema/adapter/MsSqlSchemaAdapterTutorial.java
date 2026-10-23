@@ -17,7 +17,7 @@ final class MsSqlSchemaAdapterTutorial {
   }
 
   public static void main() {
-    // create a MsSqlSchemaAdapter
+    // Create a MsSqlSchemaAdapter.
     final var msSqlSchemaAdapter = //
     MsSqlSchemaAdapterBuilder.createMsSqlSchemaAdapter()
       .toLocalHost()
@@ -26,7 +26,7 @@ final class MsSqlSchemaAdapterTutorial {
       .withLoginName("mssqluser")
       .andPassword("mssql1234");
 
-    // create cityTable
+    // Create cityTable.
     final var cityTable = //
     Table
       .withName("City")
@@ -47,7 +47,7 @@ final class MsSqlSchemaAdapterTutorial {
           ImmutableList.createEmpty(),
           ImmutableList.createEmpty()));
 
-    // create countryTable
+    // Create countryTable.
     final var countryTable = //
     Table.withName("Country").addColumn(
       Column.withIdAndNameAndContentModel(
@@ -58,7 +58,7 @@ final class MsSqlSchemaAdapterTutorial {
         ImmutableList.createEmpty(),
         ImmutableList.createEmpty()));
 
-    // create citiesColumn
+    // Create citiesColumn.
     final var citiesColumn = //
     Column.withIdAndNameAndContentModel(
       "4",
@@ -68,10 +68,10 @@ final class MsSqlSchemaAdapterTutorial {
       ImmutableList.withElement(cityTable),
       ImmutableList.createEmpty());
 
-    // add the citiesColumn to the countryTable
+    // Add the citiesColumn to the countryTable.
     countryTable.addColumn(citiesColumn);
 
-    // create countryColumn.
+    // Create countryColumn.
     final var countryColumn = //
     Column.withIdAndNameAndContentModel(
       "5",
@@ -81,13 +81,13 @@ final class MsSqlSchemaAdapterTutorial {
       ImmutableList.createEmpty(),
       ImmutableList.withElement(citiesColumn));
 
-    // add countryColumn to the cityTable
+    // Add countryColumn to the cityTable.
     cityTable.addColumn(countryColumn);
 
-    // add the cityTable and countryTable to the MsSqlSchemaAdapter
+    // Add the cityTable and countryTable to the MsSqlSchemaAdapter.
     msSqlSchemaAdapter.addTable(cityTable).addTable(countryTable);
 
-    // let the MsSqlSchemaAdapter save its changes
+    // Let the MsSqlSchemaAdapter save its changes.
     msSqlSchemaAdapter.saveChanges();
   }
 }

@@ -24,16 +24,16 @@ final class UploaderTutorial {
   }
 
   public static void main() {
-    // create a Server
+    // Create a Server.
     final var server = Server.forHttpPort();
 
-    // add a default Application to the Server
+    // Add a default Application to the Server.
     server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("Uploader tutorial", Session.class);
 
-    // start a web browser that will connect to the Server
+    // Start a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
 
-    // close the Server as soon as it does not have a client connected any more
+    // Close the Server as soon as it does not have a client connected any more.
     FlowController
       .waitForSeconds(2)
       .andThen()
@@ -48,7 +48,7 @@ final class UploaderTutorial {
 
     @Override
     protected void initialize() {
-      // add the Uploader to the GUI of the current Session
+      // Add the Uploader to the GUI of the current Session.
       getStoredGui()
         .pushLayerWithRootControl(
           new VerticalStack()
@@ -60,20 +60,20 @@ final class UploaderTutorial {
                 .setText("Upload image")
                 .setLeftMouseButtonPressAction(this::displayImage)));
 
-      // configure the style of the imageControl
+      // Configure the style of the imageControl.
       imageControl.setMinWidth(200).setMinHeight(200).setMaxWidth(500).setMaxHeight(500);
     }
 
     private void displayImage() {
-      // assert that the Uploader has a file
+      // Assert that the Uploader has a file.
       if (!uploader.hasFile()) {
         throw GeneralException.withErrorMessage("No image selected.");
       }
 
-      // create an image from the file of the Uploader
+      // Create an image from the file of the Uploader.
       final var image = ImmutableImage.fromBytes(uploader.getFile());
 
-      // set the image to the ImageControl
+      // Set the image to the ImageControl.
       imageControl.setImage(image);
     }
   }

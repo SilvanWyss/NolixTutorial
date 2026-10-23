@@ -13,10 +13,10 @@ final class ArgumentCaptorTutorial {
   }
 
   public static void main() {
-    //Builds a Pet.
+    // Build a Pet.
     final var garfield = Pet.build().withName("Garfield").withAgeInYears(10).withWeightInKilogram(20);
 
-    // log the String representation of the Pet.
+    // Log the String representation of the Pet.
     Logger.logInfo(garfield.toString());
   }
 

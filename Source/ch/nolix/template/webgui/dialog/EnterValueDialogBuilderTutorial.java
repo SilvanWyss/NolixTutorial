@@ -23,18 +23,18 @@ final class EnterValueDialogBuilderTutorial {
   }
 
   public static void main() {
-    // create a Server
+    // Create a Server.
     final var server = Server.forHttpPort();
 
-    // add a default Application to the Server
+    // Add a default Application to the Server.
     server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext(
       "EnterValueDialogBuilder tutorial",
       Session.class);
 
-    // start a web browser that will connect to the Server
+    // Start a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
 
-    // close the Server as soon as it does not have a client connected any more
+    // Close the Server as soon as it does not have a client connected any more.
     FlowController
       .waitForSeconds(2)
       .andThen()
@@ -48,7 +48,7 @@ final class EnterValueDialogBuilderTutorial {
 
     @Override
     protected void initialize() {
-      // add the nameLabel and a Button, that leads to a dialog to enter a name, to the GUI of the current Session
+      // Add the nameLabel and a Button, that leads to a dialog to enter a name, to the GUI of the current Session.
       getStoredGui()
         .pushLayerWithRootControl(
           new VerticalStack()
@@ -70,10 +70,10 @@ final class EnterValueDialogBuilderTutorial {
     }
 
     private void setNameInNameLabel(final String name) {
-      // assert that the given name is not shorter than 4 characters
+      // Assert that the given name is not shorter than 4 characters.
       Validator.assertThat(name).thatIsNamed(LowerCaseVariableNameCatalog.NAME).isNotShorterThan(4);
 
-      // set the given name to the nameLabel
+      // Set the given name to the nameLabel.
       nameLabel.setText(name);
     }
   }

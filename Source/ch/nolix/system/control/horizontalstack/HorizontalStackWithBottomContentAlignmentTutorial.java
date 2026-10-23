@@ -19,18 +19,18 @@ final class HorizontalStackWithBottomContentAlignmentTutorial {
   }
 
   public static void main() {
-    // create a Server
+    // Create a Server.
     final var server = Server.forHttpPort();
 
-    // add a default Application to the Server
+    // Add a default Application to the Server.
     server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext(
       "HorizontalStack with bottom content alignment tutorial",
       Session.class);
 
-    // start a web browser that will connect to the Server
+    // Start a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
 
-    // close the Server as soon as it does not have a client connected any more
+    // Close the Server as soon as it does not have a client connected any more.
     FlowController
       .waitForSeconds(2)
       .andThen()
@@ -40,29 +40,29 @@ final class HorizontalStackWithBottomContentAlignmentTutorial {
   private static final class Session extends WebClientSession<Object> {
     @Override
     protected void initialize() {
-      // create a HorizontalStack
+      // Create a HorizontalStack.
       final var horizontalStack = new HorizontalStack();
 
-      // create 4 Labels
+      // Create 4 Labels.
       final var label1 = new Label().setText("A");
       final var label2 = new Label().setText("B");
       final var label3 = new Label().setText("C");
       final var label4 = new Label().setText("D");
 
-      // configure the style of the Labels
+      // Configure the style of the Labels.
       label1.getStoredStyle().forStateSetTextSize(ControlState.BASE, 100);
       label2.getStoredStyle().forStateSetTextSize(ControlState.BASE, 50);
       label3.getStoredStyle().forStateSetTextSize(ControlState.BASE, 100);
       label4.getStoredStyle().forStateSetTextSize(ControlState.BASE, 50);
 
-      // add the Labels to the HorizontalStack
+      // Add the Labels to the HorizontalStack.
       horizontalStack.addControls(label1, label2, label3, label4);
 
-      // configure the style of the HorizontalStack
+      // Configure the style of the HorizontalStack.
       horizontalStack.setContentAlignment(VerticalContentAlignment.BOTTOM);
       horizontalStack.getStoredStyle().setChildControlMarginForState(ControlState.BASE, 100);
 
-      // add the HorizontalStack to the GUI of the current Session
+      // Add the HorizontalStack to the GUI of the current Session.
       getStoredGui().pushLayerWithRootControl(horizontalStack);
     }
   }

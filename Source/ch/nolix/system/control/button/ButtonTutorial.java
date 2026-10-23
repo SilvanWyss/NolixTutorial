@@ -18,16 +18,16 @@ public final class ButtonTutorial {
   }
 
   public static void main() {
-    // create a Server
+    // Create a Server.
     final var server = Server.forHttpPort();
 
-    // add a default Application to the Server
+    // Add a default Application to the Server.
     server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("Button tutorial", Session.class);
 
-    // start a web browser that will connect to the Server
+    // Start a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
 
-    // close the Server as soon as it does not have a client connected any more
+    // Close the Server as soon as it does not have a client connected any more.
     FlowController
       .waitForSeconds(2)
       .andThen()
@@ -44,28 +44,28 @@ public final class ButtonTutorial {
 
     @Override
     protected void initialize() {
-      // create incrementButton
+      // Create incrementButton.
       final var incrementButton = //
       new Button().setText("Increment").setLeftMouseButtonPressAction(this::incrementCountAndUpdateCountLabel);
 
-      // configure the style of the countLabel
+      // Configure the style of the countLabel.
       countLabel.getStoredStyle().forStateSetTextSize(ControlState.BASE, 100);
 
-      // create a VerticalStack with the countLabel and the incrementButton
+      // Create a VerticalStack with the countLabel and the incrementButton.
       final var verticalStack = new VerticalStack().addControls(countLabel, incrementButton);
 
-      // configure the style of the verticalStack
+      // Configure the style of the verticalStack.
       verticalStack.setContentAlignment(HorizontalContentAlignment.CENTER);
 
-      // add the VerticalStack to the GUI of the current Session
+      // Add the VerticalStack to the GUI of the current Session.
       getStoredGui().pushLayerWithRootControl(verticalStack);
     }
 
     private void incrementCountAndUpdateCountLabel() {
-      // increment the count
+      // Increment the count.
       count++;
 
-      // update the countLabel
+      // Update the countLabel.
       countLabel.setText(String.valueOf(count));
     }
   }

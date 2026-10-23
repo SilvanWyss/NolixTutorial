@@ -13,13 +13,13 @@ final class RunningJarTutorial {
   }
 
   public static void main() {
-    //Defines resourcePath.
+    // Define resourcePath.
     final var RESOURCE_PATH = "text/willkommen_und_abschied.txt";
 
-    // get the resource from the resourcePath.
+    // Get the resource from the resourcePath.
     final var resource = RunningJar.getResource(RESOURCE_PATH);
 
-    // log the resource.
+    // Log the resource.
     Logger.logInfo(resource);
   }
 }

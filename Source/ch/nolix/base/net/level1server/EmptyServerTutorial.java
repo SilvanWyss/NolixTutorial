@@ -15,12 +15,12 @@ final class EmptyServerTutorial {
   }
 
   public static void main() {
-    // create a Server
+    // Create a Server.
     try (final var _ = Server.forHttpPort()) {
-      // start a web browser that will connect to the Server
+      // Start a web browser that will connect to the Server.
       ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
 
-      //Waits 2 seconds.
+      // Wait 2 seconds.
       FlowController.waitForSeconds(2);
     }
   }

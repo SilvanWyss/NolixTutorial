@@ -23,16 +23,16 @@ final class ValidationLabelTutorial {
   }
 
   public static void main() {
-    // create a Server
+    // Create a Server.
     final var server = Server.forHttpPort();
 
-    // add a default Application to the Server
+    // Add a default Application to the Server.
     server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("ValidationLabel tutorial", Session.class);
 
-    // start a web browser that will connect to the Server
+    // Start a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
 
-    // close the Server as soon as it does not have a client connected any more
+    // Close the Server as soon as it does not have a client connected any more.
     FlowController
       .waitForSeconds(2)
       .andThen()
@@ -46,7 +46,7 @@ final class ValidationLabelTutorial {
 
     @Override
     protected void initialize() {
-      // add a ValidationLabel to the GUI of the current Session
+      // Add a ValidationLabel to the GUI of the current Session.
       getStoredGui().pushLayerWithRootControl(
         new VerticalStack()
           .addControls(
@@ -57,17 +57,17 @@ final class ValidationLabelTutorial {
     }
 
     private void enterPositiveNumber() {
-      // get the input of the numberTextBox
+      // Get the input of the numberTextBox.
       final var input = numberTextbox.getText();
 
       try {
-        // parse the input to a number
+        // Parse the input to a number.
         final var number = Integer.parseInt(input);
 
-        // assert that the number is positive
+        // Assert that the number is positive.
         Validator.assertThat(number).thatIsNamed(LowerCaseVariableNameCatalog.NUMBER).isPositive();
       } catch (final NumberFormatException _) {
-        // create and throws an UnrepresentingArgumentException for the input
+        // Create and throw an UnrepresentingArgumentException for the input.
         throw //
         UnrepresentingArgumentException.forArgumentAndArgumentNameAndType(
           input,

@@ -18,16 +18,16 @@ final class GridTutorial {
   }
 
   public static void main() {
-    // create a Server
+    // Create a Server.
     final var server = Server.forHttpPort();
 
-    // add a default Application to the Server
+    // Add a default Application to the Server.
     server.addDefaultApplicationWithNameAndInitialSessionClassAndVoidContext("Grid tutorial", Session.class);
 
-    // start a web browser that will connect to the Server
+    // Start a web browser that will connect to the Server.
     ShellProvider.startDefaultWebBrowserOpeningLoopBackAddress();
 
-    // close the Server as soon as it does not have a client connected any more
+    // Close the Server as soon as it does not have a client connected any more.
     FlowController
       .waitForSeconds(2)
       .andThen()
@@ -38,10 +38,10 @@ final class GridTutorial {
   private static final class Session extends WebClientSession<Object> {
     @Override
     protected void initialize() {
-      // create a Grid
+      // Create a Grid.
       final var grid = new Grid();
 
-      // insert Controls into the Grid
+      // Insert Controls into the Grid.
       grid
         .insertControlAtRowAndColumn(1, 1, new Label().setText("A"))
         .insertControlAtRowAndColumn(1, 3, new Label().setText("B"))
@@ -52,10 +52,10 @@ final class GridTutorial {
         .insertControlAtRowAndColumn(4, 2, new Label().setText("G"))
         .insertControlAtRowAndColumn(4, 4, new Label().setText("H"));
 
-      // configure the style of the Grid
+      // Configure the style of the Grid.
       grid.getStoredStyle().forStateSetTextSize(ControlState.BASE, 100);
 
-      // add the Grid to the GUI of the current Session
+      // Add the Grid to the GUI of the current Session.
       getStoredGui().pushLayerWithRootControl(grid);
     }
   }
