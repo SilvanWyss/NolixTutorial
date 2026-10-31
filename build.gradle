@@ -9,10 +9,6 @@ java {
 
 repositories {
   mavenCentral()
-
-  flatDir {
-    dirs 'Library'
-  }
 }
 
 dependencies {
